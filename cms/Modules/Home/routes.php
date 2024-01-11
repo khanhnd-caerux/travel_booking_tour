@@ -7,7 +7,7 @@ Route::group([
     'namespace' => 'Cms\Modules\Home\Controllers',
     'middleware' => 'web',
 ], function() {
-    Route::get('/', 'HomeController@welcome')->name('home.welcome');
+    Route::get('/', 'HomeController@home')->name('home.home');
 
     Route::group([
         'middleware' => ['auth', 'cms.verified']

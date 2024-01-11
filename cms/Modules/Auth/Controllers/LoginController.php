@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
 
     protected $service;
 
@@ -21,5 +23,11 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('Auth::login');
+    }
+
+    public function logout(Request $request)
+    {
+        $this->performLogout($request);
+        return redirect()->route('login');
     }
 }

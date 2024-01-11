@@ -20,7 +20,7 @@ Route::group([
         Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
         Route::post('password/reset', 'ResetPasswordController@reset')->name('password.update');
     });
-    Route::post('logout', 'LoginController@logout')->name('logout');
+    Route::get('logout', 'LoginController@logout')->name('logout');
 
     Route::get('email/verify', 'VerificationController@show')->name('verification.notice');
     Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');

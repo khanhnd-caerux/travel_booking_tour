@@ -26,8 +26,8 @@ class HomeController extends Controller
         return view('Home::index');
     }
 
-    public function welcome(): \Illuminate\Contracts\Support\Renderable
+    public function home(): \Illuminate\Contracts\Support\Renderable
     {
-        return view('Home::welcome');
+        return view('Home::home');
     }
 }

@@ -41,7 +41,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HmhzSbk22CEYxsDo',
+            '_route' => 'generated::2u0CK6oMpUoVwS7Z',
           ),
           1 => NULL,
           2 => 
@@ -77,7 +77,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::C08PriLuHs4Nf0Gs',
+            '_route' => 'generated::YCYZlhjHsmMTlDtB',
           ),
           1 => NULL,
           2 => 
@@ -156,7 +156,8 @@ app('router')->setCompiledRoutes(
           1 => NULL,
           2 => 
           array (
-            'POST' => 0,
+            'GET' => 0,
+            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -210,7 +211,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'home.welcome',
+            '_route' => 'home.home',
           ),
           1 => NULL,
           2 => 
@@ -351,7 +352,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HmhzSbk22CEYxsDo' => 
+    'generated::2u0CK6oMpUoVwS7Z' => 
     array (
       'methods' => 
       array (
@@ -372,7 +373,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::HmhzSbk22CEYxsDo',
+        'as' => 'generated::2u0CK6oMpUoVwS7Z',
       ),
       'fallback' => false,
       'defaults' => 
@@ -426,7 +427,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::C08PriLuHs4Nf0Gs' => 
+    'generated::YCYZlhjHsmMTlDtB' => 
     array (
       'methods' => 
       array (
@@ -447,7 +448,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::C08PriLuHs4Nf0Gs',
+        'as' => 'generated::YCYZlhjHsmMTlDtB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -617,7 +618,8 @@ app('router')->setCompiledRoutes(
     array (
       'methods' => 
       array (
-        0 => 'POST',
+        0 => 'GET',
+        1 => 'HEAD',
       ),
       'uri' => 'logout',
       'action' => 
@@ -760,7 +762,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'home.welcome' => 
+    'home.home' => 
     array (
       'methods' => 
       array (
@@ -771,14 +773,14 @@ app('router')->setCompiledRoutes(
       'action' => 
       array (
         'middleware' => 'web',
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@welcome',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@welcome',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@home',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@home',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'home.welcome',
+        'as' => 'home.home',
       ),
       'fallback' => false,
       'defaults' => 
