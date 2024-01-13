@@ -4,8 +4,9 @@ namespace Cms\Modules\Admin\Services;
 
 use Cms\Modules\Admin\Repositories\Contracts\UserRepositoryContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
+use Cms\Modules\Core\Services\CoreBaseService;
 
-class UserService implements UserServiceContract
+class UserService extends CoreBaseService implements UserServiceContract
 {
     protected $repository;
 
@@ -14,14 +15,4 @@ class UserService implements UserServiceContract
         $this->repository = $repository;
     }
 
-    public function store($data)
-    {
-        $user = [
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => $data['password'],
-        ];
-        
-        return $this->repository->store($user);
-    }
 }

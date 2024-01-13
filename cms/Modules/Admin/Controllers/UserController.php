@@ -21,6 +21,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $this->service->store($request);
+        $this->service->store($request->all());
     }
 }

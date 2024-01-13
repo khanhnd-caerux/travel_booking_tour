@@ -2,7 +2,7 @@
 
 namespace Cms\Modules\Core\Services\Contracts;
 
-interface CoreUserServiceContract
+interface CoreBaseServiceContract
 {
     public function store($data);
 }

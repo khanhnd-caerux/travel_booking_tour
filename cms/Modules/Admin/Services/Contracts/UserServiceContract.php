@@ -2,6 +2,7 @@
 
 namespace Cms\Modules\Admin\Services\Contracts;
 
-interface UserServiceContract {
-    public function store($data);
+use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
+
+interface UserServiceContract extends CoreBaseServiceContract {
 }
