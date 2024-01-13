@@ -18,7 +18,66 @@ app('router')->setCompiledRoutes(
     0 => false,
     1 => 
     array (
-      '/login' => 
+      '/admin' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/login' => 
       array (
         0 => 
         array (
@@ -41,7 +100,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::2u0CK6oMpUoVwS7Z',
+            '_route' => 'generated::HhkzDiCRyhvpIU1V',
           ),
           1 => NULL,
           2 => 
@@ -54,7 +113,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/register' => 
+      '/admin/register' => 
       array (
         0 => 
         array (
@@ -77,7 +136,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YCYZlhjHsmMTlDtB',
+            '_route' => 'generated::NBfJiohCnnLx6MKh',
           ),
           1 => NULL,
           2 => 
@@ -90,7 +149,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/password/reset' => 
+      '/admin/password/reset' => 
       array (
         0 => 
         array (
@@ -126,7 +185,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/password/email' => 
+      '/admin/password/email' => 
       array (
         0 => 
         array (
@@ -211,27 +270,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'home.home',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/home' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'home.index',
+            '_route' => 'client.index',
           ),
           1 => NULL,
           2 => 
@@ -248,11 +287,11 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/password/reset/([^/]++)(*:31)|/email/verify/([^/]++)/([^/]++)(*:69))/?$}sDu',
+      0 => '{^(?|/admin/password/reset/([^/]++)(*:37)|/email/verify/([^/]++)/([^/]++)(*:75))/?$}sDu',
     ),
     3 => 
     array (
-      31 => 
+      37 => 
       array (
         0 => 
         array (
@@ -275,7 +314,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      69 => 
+      75 => 
       array (
         0 => 
         array (
@@ -314,6 +353,116 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
+    'admin.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\HomeController@index',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\HomeController@index',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@create',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@create',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/user',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.user.create',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/user/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@store',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@store',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/user',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.user.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -321,7 +470,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'login',
+      'uri' => 'admin/login',
       'action' => 
       array (
         'middleware' => 
@@ -332,7 +481,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\LoginController@showLoginForm',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\LoginController@showLoginForm',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -352,13 +501,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::2u0CK6oMpUoVwS7Z' => 
+    'generated::HhkzDiCRyhvpIU1V' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'login',
+      'uri' => 'admin/login',
       'action' => 
       array (
         'middleware' => 
@@ -369,11 +518,11 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\LoginController@login',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\LoginController@login',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'generated::2u0CK6oMpUoVwS7Z',
+        'as' => 'generated::HhkzDiCRyhvpIU1V',
       ),
       'fallback' => false,
       'defaults' => 
@@ -396,7 +545,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'register',
+      'uri' => 'admin/register',
       'action' => 
       array (
         'middleware' => 
@@ -407,7 +556,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\RegisterController@showRegistrationForm',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\RegisterController@showRegistrationForm',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -427,13 +576,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YCYZlhjHsmMTlDtB' => 
+    'generated::NBfJiohCnnLx6MKh' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'register',
+      'uri' => 'admin/register',
       'action' => 
       array (
         'middleware' => 
@@ -444,11 +593,11 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\RegisterController@register',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\RegisterController@register',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'generated::YCYZlhjHsmMTlDtB',
+        'as' => 'generated::NBfJiohCnnLx6MKh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -471,7 +620,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'password/reset',
+      'uri' => 'admin/password/reset',
       'action' => 
       array (
         'middleware' => 
@@ -482,7 +631,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\ForgotPasswordController@showLinkRequestForm',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\ForgotPasswordController@showLinkRequestForm',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -508,7 +657,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'password/email',
+      'uri' => 'admin/password/email',
       'action' => 
       array (
         'middleware' => 
@@ -519,7 +668,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\ForgotPasswordController@sendResetLinkEmail',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\ForgotPasswordController@sendResetLinkEmail',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -546,7 +695,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'password/reset/{token}',
+      'uri' => 'admin/password/reset/{token}',
       'action' => 
       array (
         'middleware' => 
@@ -557,7 +706,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\ResetPasswordController@showResetForm',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\ResetPasswordController@showResetForm',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -583,7 +732,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'password/reset',
+      'uri' => 'admin/password/reset',
       'action' => 
       array (
         'middleware' => 
@@ -594,7 +743,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Auth\\Controllers\\ResetPasswordController@reset',
         'controller' => 'Cms\\Modules\\Auth\\Controllers\\ResetPasswordController@reset',
         'namespace' => 'Cms\\Modules\\Auth\\Controllers',
-        'prefix' => '',
+        'prefix' => '/admin',
         'where' => 
         array (
         ),
@@ -762,7 +911,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'home.home' => 
+    'client.index' => 
     array (
       'methods' => 
       array (
@@ -780,46 +929,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'home.home',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'home.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'home',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'cms.verified',
-        ),
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@index',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@index',
-        'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'home.index',
+        'as' => 'client.index',
       ),
       'fallback' => false,
       'defaults' => 

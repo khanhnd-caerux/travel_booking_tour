@@ -7,11 +7,6 @@ Route::group([
     'namespace' => 'Cms\Modules\Home\Controllers',
     'middleware' => 'web',
 ], function() {
-    Route::get('/', 'HomeController@home')->name('home.home');
+    Route::get('/', 'HomeController@home')->name('client.index');
 
-    Route::group([
-        'middleware' => ['auth', 'cms.verified']
-    ], function () {
-        Route::get('/home', 'HomeController@index')->name('home.index');
-    });
 });

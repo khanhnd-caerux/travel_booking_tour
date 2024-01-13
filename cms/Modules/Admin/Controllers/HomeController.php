@@ -1,6 +1,6 @@
 <?php
 
-namespace Cms\Modules\Home\Controllers;
+namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -23,11 +23,6 @@ class HomeController extends Controller
      */
     public function index(): \Illuminate\Contracts\Support\Renderable
     {
-        return view('Home::index');
-    }
-
-    public function home(): \Illuminate\Contracts\Support\Renderable
-    {
-        return view('Home::home');
+        return view('Admin::index');
     }
 }

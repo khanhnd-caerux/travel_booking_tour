@@ -7,6 +7,7 @@ Route::group([
     'middleware' => ['web'],
 ], function () {
     Route::group([
+        'prefix' => 'admin',
         'middleware' => ['cms.authenticated'],
     ], function () {
         Route::get('/login', 'LoginController@showLoginForm')->name('login');

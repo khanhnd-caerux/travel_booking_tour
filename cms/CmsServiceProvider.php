@@ -2,8 +2,10 @@
 
 namespace Cms;
 
+use Cms\Modules\Admin\AdminServiceProvider;
 use Cms\Modules\Auth\AuthServiceProvider;
 use Cms\Modules\Core\CoreServiceProvider;
+use Cms\Modules\Home\HomeServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Routing\Router;
@@ -112,5 +114,7 @@ class CmsServiceProvider extends ServiceProvider
     {
          $this->app->register(CoreServiceProvider::class);
          $this->app->register(AuthServiceProvider::class);
+         $this->app->register(AdminServiceProvider::class);
+         $this->app->register(HomeServiceProvider::class);
     }
 }
