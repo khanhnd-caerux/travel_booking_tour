@@ -3,9 +3,9 @@
 namespace Cms\Modules\Auth\Repositories\Contracts;
 
 
-use Cms\Modules\Core\Repositories\Contracts\CoreUserRepositoryContract;
+use Cms\Modules\Core\Repositories\Contracts\CoreBaseRepositoryContract;
 
-interface AuthUserRepositoryContract extends CoreUserRepositoryContract
+interface AuthUserRepositoryContract extends CoreBaseRepositoryContract
 {
 
 }

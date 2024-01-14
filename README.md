@@ -69,17 +69,17 @@ cms
 |   |   |
 |   |   |___Contracts
 |   |   |   |
-|   |   |   |___CoreUserRepositoryContract.php
+|   |   |   |___CoreBaseRepositoryContract.php
 |   |   |
-|   |   |___CoreUserRepository.php
+|   |   |___CoreBaseRepository.php
 |   |
 |   |___Services
 |   |   |
 |   |   |___Contracts
 |   |   |   |
-|   |   |   |___CoreUserServiceContract.php
+|   |   |   |___CoreBaseServiceContract.php
 |   |   |
-|   |   |___CoreUserService.php
+|   |   |___CoreBaseService.php
 |   |
 |   |___CoreServiceProvider.php
 |

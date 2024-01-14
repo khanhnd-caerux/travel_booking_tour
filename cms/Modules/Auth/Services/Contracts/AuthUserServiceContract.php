@@ -2,9 +2,9 @@
 
 namespace Cms\Modules\Auth\Services\Contracts;
 
-use Cms\Modules\Core\Services\Contracts\CoreUserServiceContract;
+use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
 
-interface AuthUserServiceContract extends CoreUserServiceContract
+interface AuthUserServiceContract extends CoreBaseServiceContract
 {
 
 }
