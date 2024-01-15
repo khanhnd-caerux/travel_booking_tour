@@ -20,4 +20,23 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
     {
         return $this->model->create($data);
     }
+    public function getAll()
+    {
+        return $this->model->get();
+    }
+
+    public function find($id)
+    {
+        return $this->model->findOrFail($id);
+    }
+
+    public function update($id, $data)
+    {
+        return $this->model->find($id)->update($data);
+    }
+
+    public function delete($id)
+    {
+        return $this->model->destroy($id);
+    }
 }

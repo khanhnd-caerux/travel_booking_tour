@@ -18,4 +18,23 @@ class CoreBaseService implements CoreBaseServiceContract
     {
         return $this->repository->store($data);
     }
+    public function getAll()
+    {
+        return $this->repository->getAll();
+    }
+
+    public function find($id)
+    {
+        return $this->repository->find($id);
+    }
+
+    public function update($id, $data)
+    {
+        return $this->repository->find($id)->update($data);
+    }
+
+    public function delete($id)
+    {
+        return $this->repository->delete($id);
+    }
 }
