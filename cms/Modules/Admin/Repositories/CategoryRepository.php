@@ -9,9 +9,15 @@ use Cms\Modules\Core\Repositories\CoreBaseRepository;
 class CategoryRepository extends CoreBaseRepository implements CategoryRepositoryContract
 {
     protected $category;
-    
-    public function __construct()
+
+    public function __construct(Category $category)
     {
-        parent::__construct(new Category);
+        parent::__construct($category);
+        $this->category = $category;
+    }
+
+    public function cateWithParent()
+    {
+        return $this->category->with('parent')->get();
     }
 }

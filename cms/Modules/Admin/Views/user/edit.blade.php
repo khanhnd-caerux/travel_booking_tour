@@ -1,4 +1,4 @@
-@extends('Core::layouts.backend.app')
+@extends('Core::layouts.backend.app', ['activePage' => __('user') , 'titlePage' => __('Chỉnh sửa tài khoản')])
 
 @section('content')
 <div class="container-fluid py-4">

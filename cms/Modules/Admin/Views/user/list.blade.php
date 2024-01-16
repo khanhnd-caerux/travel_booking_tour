@@ -1,4 +1,4 @@
-@extends('Core::layouts.backend.app')
+@extends('Core::layouts.backend.app', ['activePage' => __('user') , 'titlePage' => __('Danh sách tài khoản')])
 @section('js')
     <script src="{{ asset('backend/assets/js/sweetAlert/sweetAlert.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/sweetAlert/sweetAlertFunction.js') }}"></script>

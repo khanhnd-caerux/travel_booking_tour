@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Components\Recusive;
 
 class CategoryController extends Controller
 {
@@ -28,13 +29,15 @@ class CategoryController extends Controller
 
     public function list()
     {
-        $categories = $this->service->getAll();
+        $categories = $this->service->cateWithParent();
         return view('Admin::category.list', compact('categories'));
     }
 
     public function create(Request $request)
     {
-        return view('Admin::category.create');
+        $categoryList = $this->getCategory($parent_id = '');
+
+        return view('Admin::category.create', compact('categoryList'));
     }
 
     public function store(Request $request)
@@ -46,17 +49,40 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->name),
                 'description' => $request->description,
                 'status' => $request->status === "show" ? 0 : 1,
-                'content' => $request->content,
                 'parent_id' => $request->parent_id,
             ];
-            $dataUploadFeatureImage = $this->storageImageUpload($request, 'image_path', 'category');
-            if (!empty($dataUploadFeatureImage)) {
-                $dataCategoryCreate['feature_image_name'] = $dataUploadFeatureImage['file_name'];
-                $dataCategoryCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
-            }
+
             $this->service->store($dataCategoryCreate);
             DB::commit();
-            return redirect()->route('admin.category.list');
+            return redirect()->route('admin.category.list')->with('success', 'Created category success!');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+        }
+    }
+
+    public function edit($id)
+    {
+        $category = $this->service->find($id);
+        $categoryList = $this->getCategory($category->parent_id);
+        return view('Admin::category.edit', compact('category', 'categoryList'));
+    }
+
+    public function update($id, Request $request)
+    {
+
+        try {
+            DB::beginTransaction();
+            $data = [
+                'name' => $request->name,
+                'parent_id' => $request->parent_id,
+                'description' => $request->description,
+                'slug' => Str::slug($request->name),
+                'status' => $request->status === "show" ? 0 : 1,
+            ];
+            $this->service->update($id, $data);
+            DB::commit();
+            return redirect()->route('admin.category.list')->with('success', 'Updated category success!');
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
@@ -77,6 +103,15 @@ class CategoryController extends Controller
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
         }
+    }
+
+    public function getCategory($parent_id)
+    {
+        $data = $this->service->getAll();
+        $recusive = new Recusive($data);
+        $categoryList = $recusive->categoryRecusive($parent_id);
+
+        return $categoryList;
     }
 
 }

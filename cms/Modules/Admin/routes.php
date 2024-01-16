@@ -20,6 +20,8 @@ Route::group([
     Route::group(['prefix' => 'category'], function() {
         Route::get('/', 'CategoryController@list')->name('admin.category.list');
         Route::get('/create', 'CategoryController@create')->name('admin.category.create');
+        Route::get('/edit/{id}', 'CategoryController@edit')->name('admin.category.edit');
+        Route::post('/update/{id}', 'CategoryController@update')->name('admin.category.update');
         Route::post('/store', 'CategoryController@store')->name('admin.category.store');
         Route::get('/delete/{id}', 'CategoryController@delete')->name('admin.category.delete');
     });

@@ -18,7 +18,10 @@ class Category extends Model
         'slug',
         'description',
         'parent_id',
-        'image_path',
-        'image_name',
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id', 'id');
+    }
 }

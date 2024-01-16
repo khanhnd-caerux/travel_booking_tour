@@ -5,7 +5,7 @@
     'env' => 'local',
     'version' => '1.0.0',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://travel.local.com',
     'asset_url' => NULL,
     'force_ssl' => false,
     'timezone' => 'UTC',
@@ -183,7 +183,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/var/www/html/storage/framework/cache/data',
+        'path' => '/home/projects/travel_booking_tour/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -274,11 +274,11 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => 'mariadb_travel_booking',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'travel_booking',
-        'username' => 'caerux',
-        'password' => '.caerux',
+        'username' => 'root',
+        'password' => '12345',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -294,11 +294,11 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => 'mariadb_travel_booking',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'travel_booking',
-        'username' => 'caerux',
-        'password' => '.caerux',
+        'username' => 'root',
+        'password' => '12345',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -309,11 +309,11 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => 'mariadb_travel_booking',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'travel_booking',
-        'username' => 'caerux',
-        'password' => '.caerux',
+        'username' => 'root',
+        'password' => '12345',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -354,13 +354,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/storage/app',
+        'root' => '/home/projects/travel_booking_tour/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/var/www/html/storage/app/public',
-        'url' => 'http://localhost/storage',
+        'root' => '/home/projects/travel_booking_tour/storage/app/public',
+        'url' => 'http://travel.local.com/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -377,7 +377,7 @@
     ),
     'links' => 
     array (
-      '/var/www/html/public/storage' => '/var/www/html/storage/app/public',
+      '/home/projects/travel_booking_tour/public/storage' => '/home/projects/travel_booking_tour/storage/app/public',
     ),
   ),
   'hashing' => 
@@ -412,13 +412,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/var/www/html/storage/logs/laravel.log',
+        'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/var/www/html/storage/logs/laravel.log',
+        'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -469,7 +469,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/var/www/html/storage/logs/laravel.log',
+        'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -535,7 +535,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/var/www/html/resources/views/vendor/mail',
+        0 => '/home/projects/travel_booking_tour/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -654,7 +654,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'localhost',
+      5 => 'travel.local.com',
     ),
     'guard' => 
     array (
@@ -692,7 +692,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/var/www/html/storage/framework/sessions',
+    'files' => '/home/projects/travel_booking_tour/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -712,9 +712,9 @@
   array (
     'paths' => 
     array (
-      0 => '/var/www/html/resources/views',
+      0 => '/home/projects/travel_booking_tour/resources/views',
     ),
-    'compiled' => '/var/www/html/storage/framework/views',
+    'compiled' => '/home/projects/travel_booking_tour/storage/framework/views',
   ),
   'flare' => 
   array (
