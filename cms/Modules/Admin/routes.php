@@ -18,11 +18,19 @@ Route::group([
         Route::delete('/delete', 'UserController@delete')->name('admin.user.delete');
     });
     Route::group(['prefix' => 'category'], function() {
-        Route::get('/', 'CategoryController@list')->name('admin.category.list');
+        Route::get('/list', 'CategoryController@list')->name('admin.category.list');
         Route::get('/create', 'CategoryController@create')->name('admin.category.create');
         Route::get('/edit/{id}', 'CategoryController@edit')->name('admin.category.edit');
         Route::post('/update/{id}', 'CategoryController@update')->name('admin.category.update');
         Route::post('/store', 'CategoryController@store')->name('admin.category.store');
         Route::get('/delete/{id}', 'CategoryController@delete')->name('admin.category.delete');
+    });
+    Route::group(['prefix' => 'setting'], function() {
+        Route::get('/list', 'SettingController@list')->name('admin.setting.list');
+        Route::get('/create', 'SettingController@create')->name('admin.setting.create');
+        Route::get('/edit/{id}', 'SettingController@edit')->name('admin.setting.edit');
+        Route::post('/update/{id}', 'SettingController@update')->name('admin.setting.update');
+        Route::post('/store', 'SettingController@store')->name('admin.setting.store');
+        Route::get('/delete/{id}', 'SettingController@delete')->name('admin.setting.delete');
     });
 });

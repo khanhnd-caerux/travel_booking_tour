@@ -32,7 +32,15 @@
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">table_view</i>
                 </div>
-                <span class="nav-link-text ms-1">User</span>
+                <span class="nav-link-text ms-1">Tài khoản</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white @if($activePage === 'setting') active bg-gradient-primary @endif }}" href="{{ route('admin.setting.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">table_view</i>
+                </div>
+                <span class="nav-link-text ms-1">Cài đặt chung</span>
             </a>
         </li>
     </ul>
