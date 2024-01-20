@@ -1,4 +1,4 @@
-@extends('Core::layouts.backend.app')
+@extends('Core::layouts.backend.app', ['titlePage' => 'Trang đăng nhập'])
 @section('content')
 <main class="main-content  mt-0">
     <div class="page-header align-items-start min-vh-100"
