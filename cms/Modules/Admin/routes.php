@@ -41,4 +41,12 @@ Route::group([
         Route::post('/store', 'SliderController@store')->name('admin.slider.store');
         Route::get('/delete/{id}', 'SliderController@delete')->name('admin.slider.delete');
     });
+    Route::group(['prefix' => 'post'], function() {
+        Route::get('/list', 'PostController@list')->name('admin.post.list');
+        Route::get('/create', 'PostController@create')->name('admin.post.create');
+        Route::get('/edit/{id}', 'PostController@edit')->name('admin.post.edit');
+        Route::post('/update/{id}', 'PostController@update')->name('admin.post.update');
+        Route::post('/store', 'PostController@store')->name('admin.post.store');
+        Route::get('/delete/{id}', 'PostController@delete')->name('admin.post.delete');
+    });
 });
