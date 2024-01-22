@@ -23,7 +23,9 @@ class CreateToursTable extends Migration
             $table->longText('content');
             $table->string('feature_image_path')->nullable();
             $table->integer('category_id');
+            $table->integer('status');
             $table->string('price');
+            $table->string('vehicle');
             $table->string('discount_percent');
             $table->timestamps();
             $table->softDeletes();

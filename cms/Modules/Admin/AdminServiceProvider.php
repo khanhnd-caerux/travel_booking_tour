@@ -8,20 +8,28 @@ use Cms\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\PostRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\SettingRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\SliderRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\TourImageRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\TourRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\UserRepositoryContract;
 use Cms\Modules\Admin\Repositories\PostRepository;
 use Cms\Modules\Admin\Repositories\SettingRepository;
 use Cms\Modules\Admin\Repositories\SliderRepository;
+use Cms\Modules\Admin\Repositories\TourImageRepository;
+use Cms\Modules\Admin\Repositories\TourRepository;
 use Cms\Modules\Admin\Repositories\UserRepository;
 use Cms\Modules\Admin\Services\CategoryService;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SettingServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
+use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
+use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
 use Cms\Modules\Admin\Services\PostService;
 use Cms\Modules\Admin\Services\SettingService;
 use Cms\Modules\Admin\Services\SliderService;
+use Cms\Modules\Admin\Services\TourImageService;
+use Cms\Modules\Admin\Services\TourService;
 use Cms\Modules\Admin\Services\UserService;
 use Illuminate\Routing\Router;
 
@@ -43,5 +51,9 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(SliderServiceContract::class, SliderService::class);
         $this->app->bind(PostServiceContract::class, PostService::class);
         $this->app->bind(PostRepositoryContract::class, PostRepository::class);
+        $this->app->bind(TourServiceContract::class, TourService::class);
+        $this->app->bind(TourRepositoryContract::class, TourRepository::class);
+        $this->app->bind(TourImageRepositoryContract::class, TourImageRepository::class);
+        $this->app->bind(TourImageServiceContract::class, TourImageService::class);
     }
 }

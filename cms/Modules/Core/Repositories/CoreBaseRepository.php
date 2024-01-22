@@ -22,7 +22,7 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
     }
     public function getAll()
     {
-        return $this->model->get();
+        return $this->model->paginate(10);
     }
 
     public function find($id)

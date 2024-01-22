@@ -14,8 +14,8 @@ class Tour extends Model
 
     protected $guarded = [];
 
-    public function productImages(){
-        return $this->hasMany(Tour::class, 'tour_id');
+    public function tourImages(){
+        return $this->hasMany(TourImage::class, 'tour_id');
     }
 
     public function category(){

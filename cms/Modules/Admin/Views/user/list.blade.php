@@ -55,6 +55,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12 pagination">
+                {{$users->links("pagination::bootstrap-4")}}
+            </div>
         </div>
     </div>
 </div>

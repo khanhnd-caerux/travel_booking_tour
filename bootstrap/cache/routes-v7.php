@@ -352,6 +352,65 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/tour/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/tour/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/tour/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/login' => 
       array (
         0 => 
@@ -375,7 +434,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9ZSc3WPUw0sn1EdS',
+            '_route' => 'generated::8Eha376gPseXNCdH',
           ),
           1 => NULL,
           2 => 
@@ -411,7 +470,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::S3fVzXqZsTcxFZCH',
+            '_route' => 'generated::oWF2YcPplkSdye8Y',
           ),
           1 => NULL,
           2 => 
@@ -562,7 +621,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|category/(?|edit/([^/]++)(*:93)|update/([^/]++)(*:115)|delete/([^/]++)(*:138))|s(?|etting/(?|edit/([^/]++)(*:174)|update/([^/]++)(*:197)|delete/([^/]++)(*:220))|lider/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297)))|p(?|ost/(?|edit/([^/]++)(*:331)|update/([^/]++)(*:354)|delete/([^/]++)(*:377))|assword/reset/([^/]++)(*:408)))|/email/verify/([^/]++)/([^/]++)(*:449))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|category/(?|edit/([^/]++)(*:93)|update/([^/]++)(*:115)|delete/([^/]++)(*:138))|s(?|etting/(?|edit/([^/]++)(*:174)|update/([^/]++)(*:197)|delete/([^/]++)(*:220))|lider/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297)))|p(?|ost/(?|edit/([^/]++)(*:331)|update/([^/]++)(*:354)|delete/([^/]++)(*:377))|assword/reset/([^/]++)(*:408))|tour/(?|edit/([^/]++)(*:438)|update/([^/]++)(*:461)|delete/([^/]++)(*:484)))|/email/verify/([^/]++)/([^/]++)(*:525))/?$}sDu',
     ),
     3 => 
     array (
@@ -906,7 +965,75 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      449 => 
+      438 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      461 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      484 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.tour.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      525 => 
       array (
         0 => 
         array (
@@ -2081,6 +2208,226 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.tour.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/tour/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.tour.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/tour/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@create',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@create',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.create',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.tour.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/tour/edit/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@edit',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@edit',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.edit',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.tour.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/tour/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.tour.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/tour/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@store',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@store',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.tour.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/tour/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.tour.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -2119,7 +2466,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9ZSc3WPUw0sn1EdS' => 
+    'generated::8Eha376gPseXNCdH' => 
     array (
       'methods' => 
       array (
@@ -2140,7 +2487,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::9ZSc3WPUw0sn1EdS',
+        'as' => 'generated::8Eha376gPseXNCdH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2194,7 +2541,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::S3fVzXqZsTcxFZCH' => 
+    'generated::oWF2YcPplkSdye8Y' => 
     array (
       'methods' => 
       array (
@@ -2215,7 +2562,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::S3fVzXqZsTcxFZCH',
+        'as' => 'generated::oWF2YcPplkSdye8Y',
       ),
       'fallback' => false,
       'defaults' => 

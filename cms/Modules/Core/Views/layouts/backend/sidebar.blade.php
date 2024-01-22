@@ -55,6 +55,15 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link text-white @if($activePage === 'tour') active bg-gradient-primary @endif }}"
+                href="{{ route('admin.tour.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">tour</i>
+                </div>
+                <span class="nav-link-text ms-1">Tour du lịch</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-white @if($activePage === 'post') active bg-gradient-primary @endif }}"
                 href="{{ route('admin.post.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

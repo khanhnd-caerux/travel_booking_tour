@@ -49,4 +49,12 @@ Route::group([
         Route::post('/store', 'PostController@store')->name('admin.post.store');
         Route::get('/delete/{id}', 'PostController@delete')->name('admin.post.delete');
     });
+    Route::group(['prefix' => 'tour'], function() {
+        Route::get('/list', 'TourController@list')->name('admin.tour.list');
+        Route::get('/create', 'TourController@create')->name('admin.tour.create');
+        Route::get('/edit/{id}', 'TourController@edit')->name('admin.tour.edit');
+        Route::post('/update/{id}', 'TourController@update')->name('admin.tour.update');
+        Route::post('/store', 'TourController@store')->name('admin.tour.store');
+        Route::get('/delete/{id}', 'TourController@delete')->name('admin.tour.delete');
+    });
 });
