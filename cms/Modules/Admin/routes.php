@@ -75,4 +75,12 @@ Route::group([
         Route::post('/store', 'TourController@store')->name('admin.tour.store');
         Route::get('/delete/{id}', 'TourController@delete')->name('admin.tour.delete');
     });
+    Route::group([
+        'prefix' => 'order',
+        'middleware' => ['auth']
+    ], function () {
+        Route::get('/list', 'OrderController@list')->name('admin.order.list');
+        Route::get('/detail', 'OrderController@detail')->name('admin.order.detail');
+        Route::put('/update/order_detail', 'OrderController@update')->name('admin.order.update');
+    });
 });

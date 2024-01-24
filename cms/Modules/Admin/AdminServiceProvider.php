@@ -5,12 +5,16 @@ namespace Cms\Modules\Admin;
 use Cms\CmsServiceProvider;
 use Cms\Modules\Admin\Repositories\CategoryRepository;
 use Cms\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\OrderDetailRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\OrderRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\PostRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\SettingRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\SliderRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\TourImageRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\TourRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\UserRepositoryContract;
+use Cms\Modules\Admin\Repositories\OrderDetailRepository;
+use Cms\Modules\Admin\Repositories\OrderRepository;
 use Cms\Modules\Admin\Repositories\PostRepository;
 use Cms\Modules\Admin\Repositories\SettingRepository;
 use Cms\Modules\Admin\Repositories\SliderRepository;
@@ -55,5 +59,7 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(TourRepositoryContract::class, TourRepository::class);
         $this->app->bind(TourImageRepositoryContract::class, TourImageRepository::class);
         $this->app->bind(TourImageServiceContract::class, TourImageService::class);
+        $this->app->bind(OrderRepositoryContract::class, OrderRepository::class);
+        $this->app->bind(OrderDetailRepositoryContract::class, OrderDetailRepository::class);
     }
 }

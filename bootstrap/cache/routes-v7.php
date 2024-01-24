@@ -411,6 +411,65 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/order/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/order/detail' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.detail',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/order/update/order_detail' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.update',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'PUT' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/login' => 
       array (
         0 => 
@@ -434,7 +493,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::SjEXTufwvAan37jH',
+            '_route' => 'generated::ktMN0q2s4LWVv60y',
           ),
           1 => NULL,
           2 => 
@@ -470,7 +529,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::zhWrTQO6fcoBFUct',
+            '_route' => 'generated::qio46Mwh07XMBd8K',
           ),
           1 => NULL,
           2 => 
@@ -2464,6 +2523,119 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.order.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.detail' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/detail',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.detail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'admin/order/update/order_detail',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -2502,7 +2674,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::SjEXTufwvAan37jH' => 
+    'generated::ktMN0q2s4LWVv60y' => 
     array (
       'methods' => 
       array (
@@ -2523,7 +2695,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::SjEXTufwvAan37jH',
+        'as' => 'generated::ktMN0q2s4LWVv60y',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2577,7 +2749,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::zhWrTQO6fcoBFUct' => 
+    'generated::qio46Mwh07XMBd8K' => 
     array (
       'methods' => 
       array (
@@ -2598,7 +2770,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::zhWrTQO6fcoBFUct',
+        'as' => 'generated::qio46Mwh07XMBd8K',
       ),
       'fallback' => false,
       'defaults' => 
