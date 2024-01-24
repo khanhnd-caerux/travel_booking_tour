@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -31,7 +32,7 @@ class PostController extends Controller
         return view('Admin::post.create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -61,7 +62,7 @@ class PostController extends Controller
         }
     }
 
-    public function update($id, Request $request)
+    public function update($id, PostRequest $request)
     {
         try {
             DB::beginTransaction();

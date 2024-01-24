@@ -12,6 +12,7 @@ use Cms\Modules\Admin\Components\Recusive;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
+use Cms\Modules\Admin\Requests\TourRequest;
 
 class TourController extends Controller
 {
@@ -37,7 +38,7 @@ class TourController extends Controller
         return view('Admin::tour.create', compact('categoryList'));
     }
 
-    public function store(Request $request)
+    public function store(TourRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -76,7 +77,7 @@ class TourController extends Controller
         }
     }
 
-    public function update($id, Request $request)
+    public function update($id, TourRequest $request)
     {
         try {
             DB::beginTransaction();

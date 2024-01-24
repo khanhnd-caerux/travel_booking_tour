@@ -1,93 +1,48 @@
 @extends('Core::layouts.frontend.app')
 @section('content')
 
-<div class="lds-css ng-scope hidden">
-    <div style="width:100%;height:100%" class="lds-eclipse">
-        <div></div>
-    </div>
-</div>
-
 
 
 <h1 class="hidden"> DU LỊCH HÀ GIANG - TOUR HÀ GIANG - TOUR DU LỊCH HÀ GIANG</h1>
 
 <main>
-
-
-
-
-
+    @if($sliders)
     <section class="banner-home">
-
         <div id="slider-home" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-
-
-            <div class="item"><a href="#"><img alt=""
-                        src="https://hagiangopentour.com/upload/images/banner-2024/banner-tet-2024-vi.png')}}" /></a>
-
+            @foreach($sliders as $slider)
+            <div class="item"><a href="#"><img src="{{ asset($slider->image_path) }}" /></a>
             </div>
-
-
+            @endforeach
         </div>
-
     </section>
-
-
-
-
-
-
-
-
-
+    @endif
     <section class="taisaochon wow fadeInUp">
-
         <div class="container">
-
             <div class="row">
-
-
                 <div class="col-md-4 col-xs-12 col-sm-4">
-
                     <div class="item-taisaochon">
-
                         <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/langnghe.png"
                                 alt="LẮNG NGHE">
-
                         </div>
-
                         <div class="info">
                             <h3>LẮNG NGHE</h3>
-
                             <p>Chúng tôi luôn lắng nghe những phản hồi, góp ý của khách hàng để phục vụ tốt
                                 hơn</p>
                         </div>
-
                     </div>
-
                 </div>
-
-
                 <div class="col-md-4 col-xs-12 col-sm-4">
-
                     <div class="item-taisaochon">
-
                         <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/antam.png"
                                 alt="AN TÂM - TIN TƯỞNG">
 
                         </div>
-
                         <div class="info">
                             <h3>AN TÂM - TIN TƯỞNG</h3>
-
                             <p>Hơn 7 năm kinh nghiệm và đồng hành cùng 100.000+ khách hàng</p>
                         </div>
-
                     </div>
-
                 </div>
-
-
                 <div class="col-md-4 col-xs-12 col-sm-4">
 
                     <div class="item-taisaochon">

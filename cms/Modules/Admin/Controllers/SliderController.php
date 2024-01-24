@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Cms\Modules\Admin\Requests\SliderRequest;
 
 class SliderController extends Controller
 {
@@ -30,7 +31,7 @@ class SliderController extends Controller
         return view('Admin::slider.create');
     }
 
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -67,7 +68,7 @@ class SliderController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(SliderRequest $request, $id)
     {
         try {
             DB::beginTransaction();

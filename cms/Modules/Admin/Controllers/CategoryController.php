@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
 use Cms\Modules\Admin\Components\Recusive;
+use Cms\Modules\Admin\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -40,7 +41,7 @@ class CategoryController extends Controller
         return view('Admin::category.create', compact('categoryList'));
     }
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -68,7 +69,7 @@ class CategoryController extends Controller
         return view('Admin::category.edit', compact('category', 'categoryList'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, CategoryRequest $request)
     {
 
         try {

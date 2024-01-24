@@ -37,6 +37,9 @@ $posts = [
                                         @endforeach
                                     </select>
                                 </div>
+                                @error('type')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <label class="form-label">Tên bài viết (tên bài viết sẽ tự động khi bạn chọn loại bài
                                     viết)</label>
                                 <div class="input-group input-group-outline my-1">

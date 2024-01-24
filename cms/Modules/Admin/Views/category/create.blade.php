@@ -20,8 +20,11 @@
                             <div class="col-md-12">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Tên danh mục</label>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control">
                                 </div>
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="input-group input-group-outline my-3">
                                     <label for="exampleFormControlTextarea1" class="mx-2">Mô tả</label>
                                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
@@ -31,7 +34,7 @@
                                     Trạng thái
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios1"
-                                            value="show">
+                                            value="show" checked>
                                         Hiển thị
                                         <span class="circle">
                                             <span class="check"></span>
@@ -39,7 +42,7 @@
                                     </label>
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios2"
-                                            value="hide" checked>
+                                            value="hide">
                                         Ẩn
                                         <span class="circle">
                                             <span class="check"></span>

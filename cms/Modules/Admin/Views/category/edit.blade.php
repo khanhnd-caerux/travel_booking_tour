@@ -23,6 +23,9 @@
                                     <!-- <label class="form-label">Tên danh mục</label> -->
                                     <input type="text" name="name" value="{{ $category->name }}" class="form-control">
                                 </div>
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="input-group input-group-outline my-3">
                                     <label for="exampleFormControlTextarea1" class="mx-2">Mô tả</label>
                                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1"

@@ -41,7 +41,11 @@
                                     <td class="text-center">{{$loop->index + 1}}</td>
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->description}}</td>
+                                    @if ($category->parent)
                                     <td>{{ $category->parent->name }}</td>
+                                    @else
+                                    <td></td>
+                                    @endif
                                     <td><span class="badge badge-sm bg-gradient-secondary">{{ $category->status === 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td class="text-right"><span class="text-secondary text-xs font-weight-bold">{{

@@ -434,7 +434,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8Eha376gPseXNCdH',
+            '_route' => 'generated::SjEXTufwvAan37jH',
           ),
           1 => NULL,
           2 => 
@@ -470,7 +470,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::oWF2YcPplkSdye8Y',
+            '_route' => 'generated::zhWrTQO6fcoBFUct',
           ),
           1 => NULL,
           2 => 
@@ -1122,6 +1122,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@create',
@@ -1159,6 +1160,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@edit',
@@ -1196,6 +1198,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@list',
@@ -1232,6 +1235,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@store',
@@ -1268,6 +1272,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@update',
@@ -1304,6 +1309,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\UserController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\UserController@delete',
@@ -1341,6 +1347,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@list',
@@ -1378,6 +1385,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@create',
@@ -1415,6 +1423,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@edit',
@@ -1451,6 +1460,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@update',
@@ -1487,6 +1497,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@store',
@@ -1524,6 +1535,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\CategoryController@delete',
@@ -1561,6 +1573,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@list',
@@ -1598,6 +1611,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@create',
@@ -1635,6 +1649,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@edit',
@@ -1671,6 +1686,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@update',
@@ -1707,6 +1723,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@store',
@@ -1744,6 +1761,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SettingController@delete',
@@ -1781,6 +1799,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@list',
@@ -1818,6 +1837,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@create',
@@ -1855,6 +1875,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@edit',
@@ -1891,6 +1912,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@update',
@@ -1927,6 +1949,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@store',
@@ -1964,6 +1987,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\SliderController@delete',
@@ -2001,6 +2025,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@list',
@@ -2038,6 +2063,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@create',
@@ -2075,6 +2101,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@edit',
@@ -2111,6 +2138,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@update',
@@ -2147,6 +2175,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@store',
@@ -2184,6 +2213,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\PostController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\PostController@delete',
@@ -2221,6 +2251,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@list',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@list',
@@ -2258,6 +2289,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@create',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@create',
@@ -2295,6 +2327,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@edit',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@edit',
@@ -2331,6 +2364,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@update',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@update',
@@ -2367,6 +2401,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@store',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@store',
@@ -2404,6 +2439,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth',
         ),
         'uses' => 'Cms\\Modules\\Admin\\Controllers\\TourController@delete',
         'controller' => 'Cms\\Modules\\Admin\\Controllers\\TourController@delete',
@@ -2466,7 +2502,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8Eha376gPseXNCdH' => 
+    'generated::SjEXTufwvAan37jH' => 
     array (
       'methods' => 
       array (
@@ -2487,7 +2523,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::8Eha376gPseXNCdH',
+        'as' => 'generated::SjEXTufwvAan37jH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2541,7 +2577,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::oWF2YcPplkSdye8Y' => 
+    'generated::zhWrTQO6fcoBFUct' => 
     array (
       'methods' => 
       array (
@@ -2562,7 +2598,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::oWF2YcPplkSdye8Y',
+        'as' => 'generated::zhWrTQO6fcoBFUct',
       ),
       'fallback' => false,
       'defaults' => 

@@ -18,6 +18,6 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
 
     public function cateWithParent()
     {
-        return $this->category->with('parent')->get();
+        return $this->category->with('parent')->paginate(10);
     }
 }

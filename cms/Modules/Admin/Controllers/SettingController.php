@@ -8,6 +8,7 @@ use Cms\Modules\Admin\Services\Contracts\SettingServiceContract;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Cms\Modules\Admin\Requests\SettingRequest;
 
 class SettingController extends Controller
 {
@@ -28,7 +29,7 @@ class SettingController extends Controller
         return view('Admin::setting.create');
     }
 
-    public function store(Request $request)
+    public function store(SettingRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -46,7 +47,7 @@ class SettingController extends Controller
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
         }
     }
-    public function update($id, Request $request)
+    public function update($id, SettingRequest $request)
     {
         try {
             DB::beginTransaction();
