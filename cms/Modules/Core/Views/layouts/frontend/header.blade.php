@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row flex-row" style="position: relative">
-            
+
             <div class="header-left col-md-7 col-sm-6 col-xs-12" style="padding-right: 0px;">
                 <div class="flex-row">
                     <div class="wLOGO">
@@ -29,10 +29,11 @@
                     </div>
                     <div class="wSLOGAN">
                         <a href="index.html" style="float: left;">
-                            <div style="font-family: UTM-AvoBold;color: #00933d;font-weight: bold">HA GIANG
-                                OPEN TOUR - OHG TRAVEL</div>
+                            <div style="font-family: UTM-AvoBold;color: #00933d;font-weight: bold">
+                                {{ Str::upper($configValues['ten-web-chinh']) }}
+                            </div>
                             <div style="font-family: UTM-EdwardianB;color: #f67e17; font-size: 21px" ;>
-                                Chuyên Tour Hà Giang & Du Lịch Miền Bắc
+                                {{ $configValues['ten-web-phu'] }}
                             </div>
                         </a>
                     </div>
@@ -597,12 +598,12 @@
 
                 <div class="top-hotline flex-row">
 
-                    <a href="tel:0984.650.239" class="hotline">
-                        <p>ĐẶT TOUR</p>0984.650.239
+                    <a href="tel:{{ $configValues['dat-tour'] }}" class="hotline">
+                        <p>{{ Str::upper($configLabels['dat-tour']) }}</p>{{ $configValues['dat-tour'] }}
                     </a>
 
-                    <a href="tel:0333.575.689" class="hotline">
-                        <p>ĐẶT XE</p>0333.575.689
+                    <a href="tel:{{ $configValues['dat-xe'] }}" class="hotline">
+                        <p>{{ Str::upper($configLabels['dat-xe']) }}</p>{{ $configValues['dat-xe'] }}
                     </a>
 
                 </div>
@@ -640,7 +641,7 @@
 
         <div class="row flex-row">
 
-            
+
 
             <div class="header-left col-md-12 hidden-xs col-sm-12">
 

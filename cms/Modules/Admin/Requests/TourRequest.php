@@ -25,7 +25,7 @@ class TourRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'tour_code' => 'required|unique:tours',
+            'tour_code' => 'required',
             'image_path' => 'required',
             'destination_from' => 'required',
             'destination_to' => 'required',

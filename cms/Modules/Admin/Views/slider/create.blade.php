@@ -4,7 +4,8 @@
 @php
 $sliders = [
 "banner" => 'Banner',
-"partner" => 'Đối tác'
+"partner" => 'Đối tác',
+"gallery" => 'Thư viện ảnh',
 ]
 @endphp
 <div class="container-fluid py-4">

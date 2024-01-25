@@ -8,7 +8,8 @@
 @php
 $slidersConfig = [
 "banner" => 'Banner',
-"partner" => 'Đối tác'
+"partner" => 'Đối tác',
+"gallery" => 'Thư viện ảnh',
 ]
 @endphp
 <div class="container-fluid py-4">
@@ -74,7 +75,7 @@ $slidersConfig = [
 </div>
 <style>
     .img {
-        width: 300px;
+        width: 200px;
         object-fit: cover;
     }
 </style>

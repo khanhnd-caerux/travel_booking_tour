@@ -6,6 +6,7 @@ use Cms\CmsServiceProvider;
 use Cms\Modules\Core\Commands\CmsCreateModuleCommand;
 use Cms\Modules\Core\Commands\CmsSetupCommand;
 use Illuminate\Routing\Router;
+use Cms\Modules\Core\ViewComposer;
 
 class CoreServiceProvider extends CmsServiceProvider
 {
@@ -34,9 +35,15 @@ class CoreServiceProvider extends CmsServiceProvider
                 CmsSetupCommand::class,
             ]);
         }
+
+        view()->composer(
+            ['Core::layouts.frontend.header'],
+            'Cms\Modules\Core\ViewComposer'
+        );
     }
 
     public function register()
     {
+        $this->app->singleton(ViewComposer::class);
     }
 }

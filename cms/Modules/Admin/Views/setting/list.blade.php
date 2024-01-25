@@ -28,6 +28,7 @@
                                 <tr>
                                     <th class="text-center">STT</th>
                                     <th>Tên cài đặt</th>
+                                    <th>Tên key</th>
                                     <th>Nội dung</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Chức năng</th>
@@ -38,6 +39,7 @@
                                 <tr style="text-align: left">
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
                                     <td>{{ $setting->name }}</td>
+                                    <td>{{ $setting->config_key }}</td>
                                     <td>{{ $setting->config_value }}</td>
                                     <td>{{ $setting->updated_at }}</td>
                                     <td class="td-actions text-right">

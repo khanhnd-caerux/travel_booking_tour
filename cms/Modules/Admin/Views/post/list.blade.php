@@ -66,7 +66,7 @@
 </div>
 <style>
     .img {
-        width: 300px;
+        width: 200px;
         object-fit: cover;
     }
 </style>

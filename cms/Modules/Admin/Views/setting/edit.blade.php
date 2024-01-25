@@ -14,23 +14,30 @@
                     </div>
                 </div>
                 <div class="card-body px-3 pb-2">
-                    <form method="POST" action="{{route('admin.setting.update', ['id' => $setting->id])}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('admin.setting.update', ['id' => $setting->id])}}"
+                        enctype="multipart/form-data">
                         @csrf()
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="input-group input-group-outline my-3 is-filled">
-                                    <label class="form-label">Tên cài đặt chung</label>
-                                    <input type="text" name="name" class="form-control" autocomplete="off" value="{{ $setting->name }}">
+                                <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
+                                    <label for="exampleFormControlSelect1">Chọn giá trị cài đặt</label>
+                                    <select class="form-control w-100" name="name" id="exampleFormControlSelect1">
+                                        <option value="0">Chọn giá trị cài đặt</option>
+                                        @foreach(config('settings.settings') as $key => $value)
+                                        <option value="{{ $value }}" @if($setting->config_key === $key) selected @endif>{{$value}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 @error('name')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="input-group input-group-outline my-3 is-filled">
                                     <label class="form-label">Giá trị</label>
-                                    <input type="text" name="config_value" value="{{ $setting->config_value }}" class="form-control" autocomplete="off">
+                                    <input type="text" name="config_value" value="{{ $setting->config_value }}"
+                                        class="form-control" autocomplete="off">
                                 </div>
                                 @error('config_value')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="mt-3">
