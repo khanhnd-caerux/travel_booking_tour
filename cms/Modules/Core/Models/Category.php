@@ -18,10 +18,21 @@ class Category extends Model
         'slug',
         'description',
         'parent_id',
+        'image_path'
     ];
 
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id', 'id');
+    }
+
+    public function tour()
+    {
+        return $this->hasMany(Tour::class, 'category_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany(Category::class, 'parent_id');
     }
 }

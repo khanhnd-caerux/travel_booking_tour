@@ -3,16 +3,15 @@
 namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
-use Cms\Modules\Admin\Components\Recusive;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
+use Cms\Modules\Admin\Requests\TourUpdateRequest;
 
 class TourController extends Controller
 {
@@ -44,6 +43,7 @@ class TourController extends Controller
             DB::beginTransaction();
             $dataTourCreate = [
                 'name' => $request->name,
+                'slug' => Str::slug($request->name),
                 'price' => $request->price,
                 'content' => $request->content,
                 'tour_code' => $request->tour_code,
@@ -77,12 +77,13 @@ class TourController extends Controller
         }
     }
 
-    public function update($id, TourRequest $request)
+    public function update($id, TourUpdateRequest $request)
     {
         try {
             DB::beginTransaction();
             $dataTourCreate = [
                 'name' => $request->name,
+                'slug' => Str::slug($request->name),
                 'price' => $request->price,
                 'content' => $request->content,
                 'tour_code' => $request->tour_code,
@@ -98,12 +99,14 @@ class TourController extends Controller
             if (!empty($dataUploadFeatureImage)) {
                 $dataTourCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
             }
-            $tour = $this->service->update($id, $dataTourCreate);
+            $this->service->update($id, $dataTourCreate);
 
+            $tourUpdated = $this->service->find($id);
             if ($request->hasFile('image_path')) {
+                $tourUpdated->tourImages()->delete();
                 foreach ($request->image_path as $file_item) {
                     $dataTourImageDetail = $this->storageImageUploadMultiple($file_item, 'tour');
-                    $tour->tourImages()->create([
+                    $tourUpdated->tourImages()->create([
                         'image_path' => $dataTourImageDetail['file_path'],
                     ]);
                 }

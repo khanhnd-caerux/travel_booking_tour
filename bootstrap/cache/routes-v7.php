@@ -493,7 +493,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ktMN0q2s4LWVv60y',
+            '_route' => 'generated::FHoBcgdyCoDpHABo',
           ),
           1 => NULL,
           2 => 
@@ -529,7 +529,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qio46Mwh07XMBd8K',
+            '_route' => 'generated::EXFPdgWwL1gU0rom',
           ),
           1 => NULL,
           2 => 
@@ -680,7 +680,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|category/(?|edit/([^/]++)(*:93)|update/([^/]++)(*:115)|delete/([^/]++)(*:138))|s(?|etting/(?|edit/([^/]++)(*:174)|update/([^/]++)(*:197)|delete/([^/]++)(*:220))|lider/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297)))|p(?|ost/(?|edit/([^/]++)(*:331)|update/([^/]++)(*:354)|delete/([^/]++)(*:377))|assword/reset/([^/]++)(*:408))|tour/(?|edit/([^/]++)(*:438)|update/([^/]++)(*:461)|delete/([^/]++)(*:484)))|/email/verify/([^/]++)/([^/]++)(*:525))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|category/(?|edit/([^/]++)(*:93)|update/([^/]++)(*:115)|delete/([^/]++)(*:138))|s(?|etting/(?|edit/([^/]++)(*:174)|update/([^/]++)(*:197)|delete/([^/]++)(*:220))|lider/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297)))|p(?|ost/(?|edit/([^/]++)(*:331)|update/([^/]++)(*:354)|delete/([^/]++)(*:377))|assword/reset/([^/]++)(*:408))|tour/(?|edit/([^/]++)(*:438)|update/([^/]++)(*:461)|delete/([^/]++)(*:484)))|/email/verify/([^/]++)/([^/]++)(*:525)|/([^/]++)(*:542)|/tour(?|/([^/]++)(*:567)|\\-detail/([^/]++)(*:592)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1104,6 +1104,75 @@ app('router')->setCompiledRoutes(
           array (
             0 => 'id',
             1 => 'hash',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      542 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.postDetail',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      567 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.tourList',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      592 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.tourDetail',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
           ),
           2 => 
           array (
@@ -2674,7 +2743,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ktMN0q2s4LWVv60y' => 
+    'generated::FHoBcgdyCoDpHABo' => 
     array (
       'methods' => 
       array (
@@ -2695,7 +2764,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ktMN0q2s4LWVv60y',
+        'as' => 'generated::FHoBcgdyCoDpHABo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2749,7 +2818,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::qio46Mwh07XMBd8K' => 
+    'generated::EXFPdgWwL1gU0rom' => 
     array (
       'methods' => 
       array (
@@ -2770,7 +2839,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::qio46Mwh07XMBd8K',
+        'as' => 'generated::EXFPdgWwL1gU0rom',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3103,6 +3172,116 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'client.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.postDetail' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => '{slug}',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@postDetail',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@postDetail',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.postDetail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.tourList' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'tour/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourList',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourList',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '/tour',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.tourList',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.tourDetail' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'tour-detail/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourDetail',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourDetail',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '/tour-detail',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.tourDetail',
       ),
       'fallback' => false,
       'defaults' => 

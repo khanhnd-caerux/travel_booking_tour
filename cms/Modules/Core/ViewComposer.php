@@ -5,14 +5,15 @@ namespace Cms\Modules\Core;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Cms\Modules\Admin\Services\Contracts\SettingServiceContract;
+use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 
 class ViewComposer
 {
 
     protected $global = [];
-    protected $settingService;
+    protected $settingService, $categoryService;
 
-    private $values, $labels;
+    private $values, $labels, $categories;
 
     /**
      * Create a movie composer.
@@ -21,9 +22,11 @@ class ViewComposer
      */
     public function __construct
     (
-        SettingServiceContract $settingService
+        SettingServiceContract $settingService,
+        CategoryServiceContract $categoryService
     ) {
         $this->settingService = $settingService;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -34,12 +37,14 @@ class ViewComposer
      */
     public function compose(View $view)
     {
-        $this->values = $this->settingService->getAll()->pluck('config_value', 'config_key')->toArray();
-        $this->labels = $this->settingService->getAll()->pluck('name', 'config_key')->toArray();
+        $this->values = $this->settingService->getAllValue()->pluck('config_value', 'config_key')->toArray();
+        $this->labels = $this->settingService->getAllValue()->pluck('name', 'config_key')->toArray();
+        $this->categories = $this->categoryService->getCategoryParent();
 
         $view->with([
             'configValues' => $this->values,
-            'configLabels' => $this->labels
+            'configLabels' => $this->labels,
+            'categories' => $this->categories
         ]);
     }
 }

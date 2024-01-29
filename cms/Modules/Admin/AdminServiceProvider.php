@@ -23,12 +23,16 @@ use Cms\Modules\Admin\Repositories\TourRepository;
 use Cms\Modules\Admin\Repositories\UserRepository;
 use Cms\Modules\Admin\Services\CategoryService;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
+use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
+use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SettingServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
+use Cms\Modules\Admin\Services\OrderDetailService;
+use Cms\Modules\Admin\Services\OrderService;
 use Cms\Modules\Admin\Services\PostService;
 use Cms\Modules\Admin\Services\SettingService;
 use Cms\Modules\Admin\Services\SliderService;
@@ -61,5 +65,7 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(TourImageServiceContract::class, TourImageService::class);
         $this->app->bind(OrderRepositoryContract::class, OrderRepository::class);
         $this->app->bind(OrderDetailRepositoryContract::class, OrderDetailRepository::class);
+        $this->app->bind(OrderServiceContract::class, OrderService::class);
+        $this->app->bind(OrderDetailServiceContract::class, OrderDetailService::class);
     }
 }

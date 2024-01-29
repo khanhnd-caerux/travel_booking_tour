@@ -53,6 +53,12 @@ class CategoryController extends Controller
                 'parent_id' => $request->parent_id,
             ];
 
+            $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
+
+            if (!empty($dataImage)) {
+                $dataCategoryCreate['image_path'] = $dataImage['file_path'];
+            }
+
             $this->service->store($dataCategoryCreate);
             DB::commit();
             return redirect()->route('admin.category.list')->with('success', 'Created category success!');
@@ -81,6 +87,13 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->name),
                 'status' => $request->status === "show" ? 0 : 1,
             ];
+
+            $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
+
+            if (!empty($dataImage)) {
+                $data['image_path'] = $dataImage['file_path'];
+            }
+
             $this->service->update($id, $data);
             DB::commit();
             return redirect()->route('admin.category.list')->with('success', 'Updated category success!');

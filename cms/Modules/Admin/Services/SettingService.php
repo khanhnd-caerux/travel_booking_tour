@@ -15,4 +15,8 @@ class SettingService extends CoreBaseService implements SettingServiceContract
         $this->repository = $repository;
     }
 
+    public function getAllValue()
+    {
+        return $this->repository->getAllValue();
+    }
 }

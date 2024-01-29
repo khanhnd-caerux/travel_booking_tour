@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->string('image_path');
             $table->text('description')->nullable();
             $table->integer('status')->default(0);
             $table->integer('parent_id')->default(0);

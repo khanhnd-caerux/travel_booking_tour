@@ -57,6 +57,11 @@
                                         {!! $categoryList !!}
                                     </select>
                                 </div>
+                                <div class="form-group form-file-upload form-file-simple">
+                                    <label for="exampleFormControlSelect1">Chọn hình ảnh</label>
+                                    <input type="file" class="inputFileHidden" name="image_path">
+                                    <img src="{{ asset($category->image_path) }}" style="width: 100px; height: auto;" alt="">
+                                </div>
                             </div>
                             <div class="mt-3">
                                 <input type="submit" class="btn btn-success" value="Thêm mới">

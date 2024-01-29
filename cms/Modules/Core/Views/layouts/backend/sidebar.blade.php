@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white  @if($activePage ?? 'category') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white  @if($activePage && $activePage == 'category') active bg-gradient-primary @endif"
                 href="{{ route('admin.category.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">category</i>
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'user') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'user') active bg-gradient-primary @endif"
                 href="{{ route('admin.user.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">person</i>
@@ -37,7 +37,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'setting') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'setting') active bg-gradient-primary @endif"
                 href="{{ route('admin.setting.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">settings</i>
@@ -46,7 +46,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'slider') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'slider') active bg-gradient-primary @endif"
                 href="{{ route('admin.slider.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">photo_library</i>
@@ -55,7 +55,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'tour') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'tour') active bg-gradient-primary @endif"
                 href="{{ route('admin.tour.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">tour</i>
@@ -64,7 +64,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'post') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'post') active bg-gradient-primary @endif"
                 href="{{ route('admin.post.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">post_add</i>
@@ -73,7 +73,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage ?? 'order') active bg-gradient-primary @endif }}"
+            <a class="nav-link text-white @if($activePage && $activePage == 'order') active bg-gradient-primary @endif"
                 href="{{ route('admin.order.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">shopping_cart_checkout</i>

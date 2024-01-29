@@ -20,4 +20,14 @@ class CategoryService extends CoreBaseService implements CategoryServiceContract
         return $this->repository->cateWithParent();
     }
 
+    public function getCateWithTour($slug)
+    {
+        return $this->repository->getCateWithTour($slug);
+    }
+
+    public function getCategoryParent()
+    {
+        return $this->repository->getCategoryParent();
+    }
+
 }

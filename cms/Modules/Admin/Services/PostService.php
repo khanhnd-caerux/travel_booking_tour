@@ -15,4 +15,23 @@ class PostService extends CoreBaseService implements PostServiceContract
         $this->repository = $repository;
     }
 
+    public function getPostByType($type)
+    {
+        return $this->repository->getPostByType($type);
+    }
+
+    public function getFirstPost($type)
+    {
+        return $this->repository->getFirstPost($type);
+    }
+
+    public function getPostBySlug($slug)
+    {
+        return $this->repository->getPostBySlug($slug);
+    }
+
+    public function getPostRelated($id, $type)
+    {
+        return $this->repository->getPostRelated($id, $type);
+    }
 }

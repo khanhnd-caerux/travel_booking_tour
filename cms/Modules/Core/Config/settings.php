@@ -12,7 +12,7 @@ return [
         "nam-kinh-nghiem-to-chuc-tour" => "Năm kinh nghiệm tổ chức tour",
         "top-20-doanh-nghiep-du-lich" => "Top 20 doanh nghiệp du lịch",
         "top-tour-ha-giang" => "Top Tour Hà Giang",
-        "khang-hang-hai-long" => "Khách hàng hài lòng",
+        "khach-hang-hai-long" => "Khách hàng hài lòng",
         "van-phong" => "Văn Phòng",
         "email" => "Email",
         "hotline" => "Hotline"

@@ -15,4 +15,11 @@ class TourImageRepository extends CoreBaseRepository implements TourImageReposit
         parent::__construct($tourImage);
         $this->tourImage = $tourImage;
     }
+
+    public function deleteBeforeUpdate($id)
+    {
+        return $this->tourImage
+            ->where('tour_id', $id)
+            ->delete();
+    }
 }

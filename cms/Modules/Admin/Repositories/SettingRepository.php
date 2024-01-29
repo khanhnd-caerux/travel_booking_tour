@@ -16,8 +16,8 @@ class SettingRepository extends CoreBaseRepository implements SettingRepositoryC
         $this->setting = $setting;
     }
 
-    public function cateWithParent()
+    public function getAllValue()
     {
-        return $this->setting->with('parent')->get();
+        return $this->setting->where('deleted_at', null)->get();
     }
 }

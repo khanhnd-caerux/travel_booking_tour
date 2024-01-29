@@ -1,4 +1,4 @@
-@extends('Core::layouts.backend.app', ['activePage' => __('tour') , 'titlePage' => __('Tạo mới Tour')])
+@extends('Core::layouts.backend.app', ['activePage' => __('tour') , 'titlePage' => __('Cập nhật Tour du lịch')])
 @section('content')
 <div class="container-fluid py-4">
     <div class="row">
@@ -7,7 +7,7 @@
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div
                         class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3 d-flex justify-content-between align-items-center">
-                        <h6 class="text-white text-capitalize ps-3">Thêm mới bài viết</h6>
+                        <h6 class="text-white text-capitalize ps-3">Cập nhật Tour du lịch</h6>
                         <a class="btn bg-gradient-dark mb-0 mx-3" href="{{ route('admin.tour.list') }}"><i
                                 class="material-icons text-sm">list</i>Danh sách</a>
                     </div>
@@ -117,7 +117,8 @@
                                         id="exampleFormControlSelect1">
                                         <option value="0">Chọn danh mục Tour</option>
                                         @foreach($categoryList as $category)
-                                        <option value="{{$category->id}}" @if($tour->category_id == $category->id) selected @endif>{{$category->name}}</option>
+                                        <option value="{{$category->id}}" @if($tour->category_id == $category->id)
+                                            selected @endif>{{$category->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -142,15 +143,30 @@
                                 </div>
                                 <div class="form-group form-file-upload form-file-simple my-3">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>
-                                    <input type="file"
+                                    <input type="file" id="file-input"
                                         class="inputFileHidden @error('feature_image_path') in-valid @enderror"
                                         value="{{ $tour->feature_image_path }}" name="feature_image_path">
+                                    <img src="{{ asset($tour->feature_image_path) }}" class="preview-image" id="img-preview" alt="">
                                 </div>
+                                @error('feature_image_path')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="form-group form-file-upload form-file-simple my-3">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh chi tiết</label>
                                     <input type="file" class="inputFileHidden @error('name') in-valid @enderror"
-                                        multiple value="{{ old('image_path') }}" name="image_path[]">
+                                        multiple value="{{ old('image_path') }}" name="image_path[]"
+                                        onchange="preview(this)">
+                                    <div class="preview-area">
+                                        @if ($tour->tourImages)
+                                        @foreach($tour->tourImages as $image)
+                                        <img src="{{ asset($image->image_path) }}" class="preview-image" alt="">
+                                        @endforeach
+                                        @endif
+                                    </div>
                                 </div>
+                                @error('image_path')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Nội dung</label>
@@ -176,5 +192,33 @@
     .ck-editor__editable {
         min-height: 500px;
     }
+
+    .preview-image {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        object-fit: contain;
+    }
 </style>
+@section('js')
+<script>
+    const input = document.getElementById('file-input');
+    const image = document.getElementById('img-preview');
+
+    input.addEventListener('change', (e) => {
+        if (e.target.files.length) {
+            const src = URL.createObjectURL(e.target.files[0]);
+            image.src = src;
+        }
+    });
+
+    function preview(elem, output = "") {
+        Array.from(elem.files).map((file) => {
+            const blobUrl = window.URL.createObjectURL(file);
+            output += `<img src=${blobUrl} class="preview-image">`;
+        });
+        elem.nextElementSibling.innerHTML = output;
+    }
+</script>
+@endsection
 @endsection

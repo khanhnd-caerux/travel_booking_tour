@@ -18,6 +18,7 @@ class CreateTourImagesTable extends Migration
             $table->string('image_path')->nullable();
             $table->integer('tour_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

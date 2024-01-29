@@ -15,4 +15,9 @@ class SliderRepository extends CoreBaseRepository implements SliderRepositoryCon
         parent::__construct($slider);
         $this->slider = $slider;
     }
+
+    public function getByType($type)
+    {
+        return $this->slider->where('type', $type)->get();
+    }
 }

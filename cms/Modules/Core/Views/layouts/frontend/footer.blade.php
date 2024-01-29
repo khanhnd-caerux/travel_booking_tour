@@ -6,22 +6,16 @@
                     HA GIANG OPEN TOUR - OHG TRAVEL
                 </h4>
                 <div class="bottom-address">
-                    <p><i class="fa fa-map-marker"></i> Văn phòng Hà Nội: Số 11 Hàng Rươi, Hoàn Kiếm, Hà Nội
-                    </p>
-                    <p><i class="fa fa-map-marker"></i> Văn phòng Hà Giang: Số 5C Đại Lộ Hữu Nghị, Phương
-                        Thiện, Hà Giang</p>
-                    <p><i class="fa fa-map-marker"></i> Văn phòng HCM: 246 Phan Xích Long, Phường 7, Phú
-                        Nhuận, HCM </p>
-                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i> Email:
-                        Salehagiangopentours@gmail.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> Hotline: 0984.650.239 - 0333.575.689
+                    <p><i class="fa fa-map-marker"></i> {{ $configLabels['van-phong'] }} : {{ $configValues['van-phong']}}</p>
+                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ $configLabels['email'] }} : {{
+                        $configValues['email'] }}</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{ $configLabels['hotline'] }} : {{
+                        $configValues['hotline'] }}
                         <br>
-                        Giấy phép kinh doanh số: 0110000073/2022
-                        https://hagiangopentour.com/
+                        {{ $configLabels['giay-phep-kinh-doanh'] }} : {{ $configValues['giay-phep-kinh-doanh'] }}
                     </p>
                 </div>
-                <div class="clearfix-20"></div>
-                <div style="display: flex;">
+                <!-- <div style="display: flex;">
                     <div style="border-top: 2px solid #fff;padding-top: 20px">
                         <p>Được Ðiều hành bởi:<br />
                             Mr. Lưu Ðình Tùng<br />
@@ -30,7 +24,7 @@
                     </div>
                     <img class="img_dh" src="https://hagiangopentour.com/upload/images/logo/at.jpg"
                         alt="ảnh giám đốc" />
-                </div>
+                </div> -->
             </div>
             <div class="clearfix-20 visible-xs"></div>
             <div class="col-md-3 col-xs-12 col-sm-3">
@@ -39,15 +33,15 @@
                 </h4>
                 <div class="bottom-address">
                     <ul>
-                        <li><a href="index.html">Chính sách bảo mật</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">Chính sách bảo mật</a>
                         </li>
-                        <li><a href="index.html">Hình thức thanh toán</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">Hình thức thanh toán</a>
                         </li>
-                        <li><a href="index.html">Chính sách Đặt, hủy vé</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">Chính sách Đặt, hủy vé</a>
                         </li>
-                        <li><a href="index.html">Kinh nghiệm du lịch</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'kinh-nghiem-du-lich']) }}">Kinh nghiệm du lịch</a>
                         </li>
-                        <li><a href="gioi-thieu-ve-ha-giang-open-tour.html">Giới thiệu</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'gioi-thieu']) }}">Giới thiệu</a>
                         </li>
                     </ul>
                 </div>

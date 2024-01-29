@@ -21,7 +21,9 @@
                                     <div class="col-8">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Tên tour</label>
-                                            <input type="text" name="name" value="{{ old('name') }}"  class="form-control @error('name') in-valid @enderror" autocomplete="off">
+                                            <input type="text" name="name" value="{{ old('name') }}"
+                                                class="form-control @error('name') in-valid @enderror"
+                                                autocomplete="off">
                                         </div>
                                         @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -31,7 +33,9 @@
                                     <div class="col-4">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Mã Tour</label>
-                                            <input type="text" name="tour_code" value="{{ old('tour_code') }}" class="form-control @error('tour_code') in-valid @enderror" autocomplete="off">
+                                            <input type="text" name="tour_code" value="{{ old('tour_code') }}"
+                                                class="form-control @error('tour_code') in-valid @enderror"
+                                                autocomplete="off">
                                         </div>
                                         @error('tour_code')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -40,7 +44,9 @@
                                     <div class="col-6">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Điểm xuất phát</label>
-                                            <input type="text" name="destination_from" value="{{ old('destination_from') }}" class="form-control @error('destination_from') in-valid @enderror"
+                                            <input type="text" name="destination_from"
+                                                value="{{ old('destination_from') }}"
+                                                class="form-control @error('destination_from') in-valid @enderror"
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_from')
@@ -50,7 +56,8 @@
                                     <div class="col-6">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Lịch trình</label>
-                                            <input type="text" name="destination_to" value="{{ old('destination_to') }}" class="form-control @error('destination_to') in-valid @enderror"
+                                            <input type="text" name="destination_to" value="{{ old('destination_to') }}"
+                                                class="form-control @error('destination_to') in-valid @enderror"
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_to')
@@ -60,7 +67,9 @@
                                     <div class="col-6">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Khởi hành</label>
-                                            <input type="text" name="schedule" value="{{ old('schedule') }}" class="form-control @error('schedule') in-valid @enderror" autocomplete="off">
+                                            <input type="text" name="schedule" value="{{ old('schedule') }}"
+                                                class="form-control @error('schedule') in-valid @enderror"
+                                                autocomplete="off">
                                         </div>
                                         @error('schedule')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -69,7 +78,9 @@
                                     <div class="col-6">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Phương tiện</label>
-                                            <input type="text" name="vehicle" value="{{ old('vehicle') }}" class="form-control @error('vehicle') in-valid @enderror" autocomplete="off">
+                                            <input type="text" name="vehicle" value="{{ old('vehicle') }}"
+                                                class="form-control @error('vehicle') in-valid @enderror"
+                                                autocomplete="off">
                                         </div>
                                         @error('vehicle')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -78,7 +89,9 @@
                                     <div class="col-8">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">Giá Tour</label>
-                                            <input type="text" name="price" value="{{ old('price') }}" class="form-control @error('price') in-valid @enderror" autocomplete="off">
+                                            <input type="text" name="price" value="{{ old('price') }}"
+                                                class="form-control @error('price') in-valid @enderror"
+                                                autocomplete="off">
                                         </div>
                                         @error('price')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -87,7 +100,9 @@
                                     <div class="col-4">
                                         <div class="input-group input-group-outline my-3">
                                             <label class="form-label">% giảm</label>
-                                            <input type="text" name="discount_percent" value="{{ old('discount_percent') }}" class="form-control @error('discount_price') in-valid @enderror"
+                                            <input type="text" name="discount_percent"
+                                                value="{{ old('discount_percent') }}"
+                                                class="form-control @error('discount_price') in-valid @enderror"
                                                 autocomplete="off">
                                         </div>
                                         @error('discount_percent')
@@ -126,11 +141,16 @@
                                 </div>
                                 <div class="form-group form-file-upload form-file-simple my-3">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>
-                                    <input type="file" class="inputFileHidden @error('feature_image_path') in-valid @enderror" value="{{ old('feature_image_path') }}" name="feature_image_path">
+                                    <input type="file" id="file-input"
+                                        class="inputFileHidden @error('feature_image_path') in-valid @enderror"
+                                        value="{{ old('feature_image_path') }}" name="feature_image_path">
+                                    <img id="img-preview" src="" class="preview-image" />
                                 </div>
                                 <div class="form-group form-file-upload form-file-simple my-3">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh chi tiết</label>
-                                    <input type="file" class="inputFileHidden @error('name') in-valid @enderror" multiple value="{{ old('image_path') }}" name="image_path[]">
+                                    <input type="file" class="inputFileHidden @error('name') in-valid @enderror"
+                                        multiple value="{{ old('image_path') }}" name="image_path[]" onchange="preview(this)">
+                                    <div class="preview-area"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -157,5 +177,33 @@
     .ck-editor__editable {
         min-height: 500px;
     }
+
+    .preview-image {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        object-fit: contain;
+    }
 </style>
+@section('js')
+<script>
+    const input = document.getElementById('file-input');
+    const image = document.getElementById('img-preview');
+
+    input.addEventListener('change', (e) => {
+        if (e.target.files.length) {
+            const src = URL.createObjectURL(e.target.files[0]);
+            image.src = src;
+        }
+    });
+
+    function preview(elem, output = "") {
+        Array.from(elem.files).map((file) => {
+            const blobUrl = window.URL.createObjectURL(file);
+            output += `<img src=${blobUrl} class="preview-image">`;
+        });
+        elem.nextElementSibling.innerHTML = output;
+    }
+</script>
+@endsection
 @endsection

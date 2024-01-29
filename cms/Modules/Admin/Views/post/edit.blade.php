@@ -46,6 +46,13 @@ $posts = [
                                 @error('title')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+                                <label class="form-label">Mô tả</label>
+                                <div class="input-group input-group-outline my-3">
+                                    <textarea name="description" class="w-100" id="" rows="3">{{ $post->description }}</textarea>
+                                </div>
+                                @error('description')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="form-check form-check-radio p-0">
                                     Trạng thái
                                     <label class="form-check-label">
