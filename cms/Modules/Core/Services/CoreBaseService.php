@@ -37,4 +37,9 @@ class CoreBaseService implements CoreBaseServiceContract
     {
         return $this->repository->delete($id);
     }
+
+    public function paginate($number)
+    {
+        return $this->repository->paginate($number);
+    }
 }

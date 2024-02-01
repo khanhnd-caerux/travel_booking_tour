@@ -27,7 +27,7 @@ class TicketController extends Controller
     }
     public function list()
     {
-        $tickets = $this->service->getAll();
+        $tickets = $this->service->paginate(10);
         return view('Admin::ticket.list', compact('tickets'));
     }
 

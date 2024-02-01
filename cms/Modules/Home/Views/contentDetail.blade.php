@@ -231,11 +231,14 @@
                     <div class="hotline-aside">
                         <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ liên
                             hệ với bạn!</p>
-                        <form class="form-hotline" action="#" id="mailsubricre">
+                        <form class="form-hotline" action="{{ route('client.contact.store') }}" id="mailsubricre"
+                            method="post">
+                            @csrf
                             <div class="error"></div>
                             <div class="rel">
-                                <input type="phone" name="phone" class="form-control phone"
+                                <input type="phone" name="phone_number" class="form-control phone"
                                     placeholder="Số điện thoại của tôi" required>
+                                <input type="hidden" name="url" value="{{Request::url()}}">
                                 <button type="submit">Gửi</button>
                             </div>
                         </form>
@@ -282,45 +285,18 @@
                         <div class="hotline-aside">
                             <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ
                                 liên hệ với bạn!</p>
-                            <form class="form-hotline"
-                                action="https://hagiangopentour.com/contact/frontend/contact/create"
-                                id="mailsubricre_1">
+                            <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
+                                @csrf
                                 <div class="error"></div>
-
                                 <div class="rel">
-                                    <input type="phone" name="phone" class="form-control phone"
+                                    <input type="phone" name="phone_number" class="form-control phone"
                                         placeholder="Số điện thoại của tôi" required>
+                                    <input type="hidden" name="url" value="{{Request::url()}}">
                                     <button type="submit">Gửi</button>
                                 </div>
                             </form>
 
                         </div>
-                        <script>
-                            $(document).ready(function () {
-                                $('#mailsubricre_1 .error').hide();
-                                var uri = $('#mailsubricre_1').attr('action');
-                                $('#mailsubricre_1').on('submit', function () {
-                                    var postData = $(this).serializeArray();
-                                    $.post(uri, {
-                                        post: postData,
-                                        fullnam)(),
-                                        phone: $('#mailsubricre_1 .phone                                ,
-                                        email                                ilsubricre_1.email').val()
-                                                            }, function (data) {
-                                                                va                                        rse(data);
-                                    $('#mailsubricre_1 .error').s                                                                       if (json.er                                                                                                                     ricre_1.error').remo                                        lert-success').addClass('aler                                        ;
-                                                                          ilsubricre_1.error').htm                                            r);
-                                        } else {
-
-                                1 .error').removeClass('alert alert- danger').addClass('                                        ess');
-                                                                    $('#mailsubricre_1 .error').html('').html('Đăng ký tư vấn thành công.');
-                            $('#mailsubricre_1').trigger("reset");
-                            setTimeout(function () {
-                            }, 3000)                                                                                                                                                                                                        });
-                            return false;
-                                });
-                            });
-                        </script>
                     </div>
 
 
@@ -379,17 +355,16 @@
                 <div class="hotline-aside">
                     <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ liên hệ
                         với bạn!</p>
-                    <form class="form-hotline" action="https://hagiangopentour.com/contact/frontend/contact/create"
-                        id="mailsubricre">
+                    <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
+                        @csrf
                         <div class="error"></div>
-
                         <div class="rel">
-                            <input type="phone" name="phone" class="form-control phone"
+                            <input type="phone" name="phone_number" class="form-control phone"
                                 placeholder="Số điện thoại của tôi" required>
+                            <input type="hidden" name="url" value="{{Request::url()}}">
                             <button type="submit">Gửi</button>
                         </div>
                     </form>
-
                 </div>
 
                 @if (count($tourRelated) > 0)
@@ -443,8 +418,32 @@
         </div>
 
     </div>
-
+    @if(session('success'))
+    <div class="modal fade in" id="exampleModalCenter" aria-hidden="false"
+        style="display: block; background: #00000070">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; justify-content: space-between;">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Hà Giang Tour xin cảm ơn</h5>
+                    <button type="button" class="close hide-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ session('success') }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary hide-modal" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
     </div>
-
+    @endif
+    </div>
 </section>
+<script>
+    $(".hide-modal").click(function () {
+        $("#exampleModalCenter").toggle();
+    });
+</script>
 @endsection

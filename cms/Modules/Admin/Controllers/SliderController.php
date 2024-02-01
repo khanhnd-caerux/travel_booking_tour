@@ -22,7 +22,7 @@ class SliderController extends Controller
 
     public function list()
     {
-        $sliders = $this->service->getAll();
+        $sliders = $this->service->paginate(10);
 
         return view('Admin::slider.list', compact('sliders'));
     }

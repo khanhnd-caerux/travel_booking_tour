@@ -8,6 +8,7 @@ Route::group([
     'middleware' => 'web',
 ], function() {
     Route::get('/', 'HomeController@home')->name('client.index');
+    Route::post('/send-contact', 'HomeController@sendContact')->name('client.contact.store');
     Route::get('/{slug}', 'HomeController@postDetail')->name('client.postDetail');
 
     Route::group([

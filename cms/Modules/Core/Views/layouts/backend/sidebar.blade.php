@@ -1,8 +1,7 @@
 <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
-    <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-        target="_blank">
+    <a class="navbar-brand m-0" href="{{ route('client.index') }}" target="_blank">
         <img src="{{asset('backend/assets/img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold text-white">Administator</span>
     </a>
@@ -11,7 +10,8 @@
 <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-white" href="#">
+            <a class="nav-link text-white @if($activePage && $activePage == 'dashboard') active bg-gradient-primary @endif"
+                href="{{ route('admin.dashboard') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">dashboard</i>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">photo_library</i>
                 </div>
-                <span class="nav-link-text ms-1">Slider</span>
+                <span class="nav-link-text ms-1">Slider & Hình ảnh</span>
             </a>
         </li>
         <li class="nav-item">
@@ -97,6 +97,15 @@
                     <i class="material-icons opacity-10">shopping_cart_checkout</i>
                 </div>
                 <span class="nav-link-text ms-1">Order</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white @if($activePage && $activePage == 'contact') active bg-gradient-primary @endif"
+                href="{{ route('admin.contact.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">call</i>
+                </div>
+                <span class="nav-link-text ms-1">Liên hệ</span>
             </a>
         </li>
     </ul>

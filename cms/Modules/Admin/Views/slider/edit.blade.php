@@ -32,7 +32,7 @@ $sliders = [
                                         autocomplete="off">
                                 </div>
                                 @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
                                     <label for="exampleFormControlSelect1">Chọn loại</label>
@@ -46,7 +46,7 @@ $sliders = [
                                     </select>
                                 </div>
                                 @error('type')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group form-file-upload form-file-simple">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>

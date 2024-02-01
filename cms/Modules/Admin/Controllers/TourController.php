@@ -27,7 +27,7 @@ class TourController extends Controller
     }
     public function list()
     {
-        $tours = $this->service->getAll();
+        $tours = $this->service->paginate(10);
         return view('Admin::tour.list', compact('tours'));
     }
 

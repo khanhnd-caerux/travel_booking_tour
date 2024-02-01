@@ -8,6 +8,7 @@ Route::group([
     'middleware' => ['web'],
 ], function () {
     Route::get('/', 'HomeController@index')->name('admin.index');
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('admin.dashboard');
 
     Route::group([
         'prefix' => 'user',
@@ -104,5 +105,12 @@ Route::group([
         Route::get('/list', 'OrderController@list')->name('admin.order.list');
         Route::get('/detail', 'OrderController@detail')->name('admin.order.detail');
         Route::put('/update/order_detail', 'OrderController@update')->name('admin.order.update');
+    });
+    Route::group([
+        'prefix' => 'contact',
+        'middleware' => ['auth']
+    ], function () {
+        Route::get('/list', 'ContactController@list')->name('admin.contact.list');
+        Route::get('/delete/{id}', 'ContactController@delete')->name('admin.contact.delete');
     });
 });

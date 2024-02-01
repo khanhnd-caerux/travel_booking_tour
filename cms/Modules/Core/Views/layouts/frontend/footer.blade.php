@@ -85,11 +85,11 @@
             </div>
         </div>
     </div>
-    <div class="copyright">
+    <div class="copyright" style="margin-top: 20px">
         <div class="container">
             <div class="row text-center">
-                <p style="margin: 0px;font-size: 16px">Copyright 2020
-                    - HA GIANG OPEN TOUR - OHG TRAVEL</p>
+                <p style="margin: 0px;font-size: 16px">Copyright 2024
+                    - HA GIANG AWESOME TOURS</p>
             </div>
         </div>
     </div>

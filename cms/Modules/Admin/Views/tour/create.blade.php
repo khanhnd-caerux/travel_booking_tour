@@ -26,7 +26,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('name')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
 
                                     </div>
@@ -38,7 +38,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('tour_code')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -50,7 +50,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_from')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -61,7 +61,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_to')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -72,7 +72,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('schedule')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -83,7 +83,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('vehicle')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-8">
@@ -94,7 +94,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('price')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-4">
@@ -106,7 +106,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('discount_percent')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                         rows="10">{{ old('content') }}</textarea>
                                 </div>
                                 @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="mt-3">

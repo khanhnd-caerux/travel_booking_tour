@@ -23,7 +23,7 @@ class PostController extends Controller
     }
     public function list()
     {
-        $posts = $this->service->getAll();
+        $posts = $this->service->paginate(10);
         return view('Admin::post.list', compact('posts'));
     }
 

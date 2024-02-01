@@ -24,7 +24,7 @@
                                     <input type="text" name="name" value="{{ $category->name }}" class="form-control">
                                 </div>
                                 @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="input-group input-group-outline my-3">
                                     <label for="exampleFormControlTextarea1" class="mx-2">Mô tả</label>
@@ -67,7 +67,7 @@
                                     </select>
                                 </div>
                                 @error('type')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group form-file-upload form-file-simple">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>

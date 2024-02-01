@@ -29,7 +29,7 @@
                                     </select>
                                 </div>
                                 @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="input-group input-group-outline my-3 is-filled">
                                     <label class="form-label">Giá trị</label>
@@ -37,7 +37,7 @@
                                         class="form-control" autocomplete="off">
                                 </div>
                                 @error('config_value')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="mt-3">

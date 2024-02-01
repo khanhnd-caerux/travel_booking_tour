@@ -17,7 +17,7 @@ class UserController extends Controller
     }
 
     public function list(){
-        $users = $this->service->getAll();
+        $users = $this->service->paginate(10);
         return view('Admin::user.list', [
             'users' => $users
         ]);
@@ -37,7 +37,7 @@ class UserController extends Controller
         $data = $this->service->update($id, $request->all());
 
         if ($data) return redirect()->route('admin.user.list')->with('success', 'Updated user success!');
-        
+
         return redirect()->back();
     }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
         $store = $this->service->store($request->all());
 
         if ($store) return redirect()->route('admin.user.list')->with('success', 'Created user success!');
-        
+
         return redirect()->back();
     }
 

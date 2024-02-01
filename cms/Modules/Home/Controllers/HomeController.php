@@ -4,16 +4,20 @@ namespace Cms\Modules\Home\Controllers;
 
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
+use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TicketServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $category, $tour, $car, $ticket;
+    protected $slider, $post, $category, $tour, $car, $ticket, $contact;
     /**
      * Create a new controller instance.
      *
@@ -26,7 +30,8 @@ class HomeController extends Controller
         CategoryServiceContract $category,
         TourServiceContract $tour,
         CarServiceContract $car,
-        TicketServiceContract $ticket
+        TicketServiceContract $ticket,
+        ContactServiceContract $contact
     ) {
         $this->slider = $slider;
         $this->post = $post;
@@ -34,6 +39,7 @@ class HomeController extends Controller
         $this->tour = $tour;
         $this->car = $car;
         $this->ticket = $ticket;
+        $this->contact = $contact;
     }
 
     /**
@@ -54,8 +60,10 @@ class HomeController extends Controller
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
         $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
+        $categoryWithCar = $this->category->getCateWithTour($slug = 'cho-thue-xe-du-lich');
+        $categoryWithTicket = $this->category->getCateWithTour($slug = 've-xe-bus-hang-ngay');
 
-        return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour'));
+        return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'categoryWithCar', 'categoryWithTicket'));
     }
 
     public function postDetail($slug)
@@ -99,5 +107,22 @@ class HomeController extends Controller
             $tourRelated = $this->ticket->getTicketRelated($contentDetail->id, $contentDetail->category_id);
         }
         return view('Home::contentDetail', compact('contentDetail', 'tourRelated'));
+    }
+
+    public function sendContact(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $dataContact = [
+                'phone_number' => $request->phone_number,
+                'url' => $request->url,
+            ];
+            $this->contact->store($dataContact);
+            DB::commit();
+            return redirect()->back()->with('success', 'Cảm ơn bạn đã gửi số điện thoại chúng tôi sẽ liên hệ sớm với bạn !');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+        }
     }
 }

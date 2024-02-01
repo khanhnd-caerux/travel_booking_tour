@@ -23,14 +23,14 @@
                                     <input type="text" name="name" class="form-control" autocomplete="off">
                                 </div>
                                 @error('name')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Email</label>
                                     <input type="text" name="email" class="form-control" autocomplete="off">
                                 </div>
                                 @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">Password</label>

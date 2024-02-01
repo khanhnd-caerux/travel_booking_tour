@@ -59,6 +59,9 @@
                                     <input class="form-check-input" type="checkbox" id="rememberMe" checked>
                                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                                 </div>
+                                @if (session('password-fail'))
+                                <p class="alert alert-danger text-white">{{ session('password-fail') }}</p>
+                                @endif
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign
                                         in</button>
@@ -123,8 +126,8 @@
     var win = n.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
         var options = {
-              damping: '                 }
-                ba        (document.querySelector('#sidenav-scrollbar'), options);
+            damping: '                 }
+                ba(document.querySelector('#sidenav-scrollbar'), options);
     }
 </script>
 <!-- Github buttons -->

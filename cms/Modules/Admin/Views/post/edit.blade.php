@@ -44,14 +44,14 @@ $posts = [
                                         autocomplete="off">
                                 </div>
                                 @error('title')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <label class="form-label">Mô tả</label>
                                 <div class="input-group input-group-outline my-3">
                                     <textarea name="description" class="w-100" id="" rows="3">{{ $post->description }}</textarea>
                                 </div>
                                 @error('description')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="form-check form-check-radio p-0">
                                     Trạng thái
@@ -84,7 +84,7 @@ $posts = [
                                         rows="10">{!! $post->content !!}</textarea>
                                 </div>
                                 @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="mt-3">

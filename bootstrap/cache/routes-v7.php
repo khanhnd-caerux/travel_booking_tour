@@ -38,6 +38,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.dashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/user/create' => 
       array (
         0 => 
@@ -588,6 +608,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/contact/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.contact.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/login' => 
       array (
         0 => 
@@ -611,7 +651,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::5GffITSdqSiXo3h0',
+            '_route' => 'generated::KKSoXgCye3LU7ZDO',
           ),
           1 => NULL,
           2 => 
@@ -647,7 +687,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::hHT9B8DHGd3k9rV8',
+            '_route' => 'generated::XzO4K8LB4DhTLxny',
           ),
           1 => NULL,
           2 => 
@@ -795,10 +835,29 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/send-contact' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.contact.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|ca(?|tegory/(?|edit/([^/]++)(*:96)|update/([^/]++)(*:118)|delete/([^/]++)(*:141))|r/(?|edit/([^/]++)(*:168)|update/([^/]++)(*:191)|delete/([^/]++)(*:214)))|s(?|etting/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|lider/(?|edit/([^/]++)(*:328)|update/([^/]++)(*:351)|delete/([^/]++)(*:374)))|p(?|ost/(?|edit/([^/]++)(*:408)|update/([^/]++)(*:431)|delete/([^/]++)(*:454))|assword/reset/([^/]++)(*:485))|t(?|our/(?|edit/([^/]++)(*:518)|update/([^/]++)(*:541)|delete/([^/]++)(*:564))|icket/(?|edit/([^/]++)(*:595)|update/([^/]++)(*:618)|delete/([^/]++)(*:641))))|/email/verify/([^/]++)/([^/]++)(*:683)|/([^/]++)(*:700)|/noi\\-dung(?|/([^/]++)(*:730)|\\-chi\\-tiet/([^/]++)(*:758)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|ontact/delete/([^/]++)(*:249))|s(?|etting/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331))|lider/(?|edit/([^/]++)(*:362)|update/([^/]++)(*:385)|delete/([^/]++)(*:408)))|p(?|ost/(?|edit/([^/]++)(*:442)|update/([^/]++)(*:465)|delete/([^/]++)(*:488))|assword/reset/([^/]++)(*:519))|t(?|our/(?|edit/([^/]++)(*:552)|update/([^/]++)(*:575)|delete/([^/]++)(*:598))|icket/(?|edit/([^/]++)(*:629)|update/([^/]++)(*:652)|delete/([^/]++)(*:675))))|/email/verify/([^/]++)/([^/]++)(*:717)|/([^/]++)(*:734)|/noi\\-dung(?|/([^/]++)(*:764)|\\-chi\\-tiet/([^/]++)(*:792)))/?$}sDu',
     ),
     3 => 
     array (
@@ -847,7 +906,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      96 => 
+      99 => 
       array (
         0 => 
         array (
@@ -870,7 +929,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      118 => 
+      121 => 
       array (
         0 => 
         array (
@@ -892,7 +951,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      141 => 
+      144 => 
       array (
         0 => 
         array (
@@ -915,7 +974,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      168 => 
+      171 => 
       array (
         0 => 
         array (
@@ -938,7 +997,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      191 => 
+      194 => 
       array (
         0 => 
         array (
@@ -960,7 +1019,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      214 => 
+      217 => 
       array (
         0 => 
         array (
@@ -983,7 +1042,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      251 => 
+      249 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.contact.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      285 => 
       array (
         0 => 
         array (
@@ -1006,7 +1088,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      274 => 
+      308 => 
       array (
         0 => 
         array (
@@ -1028,7 +1110,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      297 => 
+      331 => 
       array (
         0 => 
         array (
@@ -1051,7 +1133,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      328 => 
+      362 => 
       array (
         0 => 
         array (
@@ -1074,7 +1156,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      351 => 
+      385 => 
       array (
         0 => 
         array (
@@ -1096,7 +1178,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      374 => 
+      408 => 
       array (
         0 => 
         array (
@@ -1119,7 +1201,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      408 => 
+      442 => 
       array (
         0 => 
         array (
@@ -1142,7 +1224,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      431 => 
+      465 => 
       array (
         0 => 
         array (
@@ -1164,7 +1246,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      454 => 
+      488 => 
       array (
         0 => 
         array (
@@ -1187,7 +1269,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      485 => 
+      519 => 
       array (
         0 => 
         array (
@@ -1210,7 +1292,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      518 => 
+      552 => 
       array (
         0 => 
         array (
@@ -1233,7 +1315,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      541 => 
+      575 => 
       array (
         0 => 
         array (
@@ -1255,7 +1337,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      564 => 
+      598 => 
       array (
         0 => 
         array (
@@ -1278,7 +1360,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      595 => 
+      629 => 
       array (
         0 => 
         array (
@@ -1301,7 +1383,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      618 => 
+      652 => 
       array (
         0 => 
         array (
@@ -1323,7 +1405,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      641 => 
+      675 => 
       array (
         0 => 
         array (
@@ -1346,7 +1428,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      683 => 
+      717 => 
       array (
         0 => 
         array (
@@ -1370,7 +1452,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      700 => 
+      734 => 
       array (
         0 => 
         array (
@@ -1393,7 +1475,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      730 => 
+      764 => 
       array (
         0 => 
         array (
@@ -1416,7 +1498,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      758 => 
+      792 => 
       array (
         0 => 
         array (
@@ -1476,6 +1558,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'admin.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.dashboard' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\DashboardController@dashboard',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\DashboardController@dashboard',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.dashboard',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3411,6 +3530,82 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.contact.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/contact/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\ContactController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\ContactController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/contact',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.contact.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.contact.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/contact/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\ContactController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\ContactController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/contact',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.contact.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -3449,7 +3644,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::5GffITSdqSiXo3h0' => 
+    'generated::KKSoXgCye3LU7ZDO' => 
     array (
       'methods' => 
       array (
@@ -3470,7 +3665,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::5GffITSdqSiXo3h0',
+        'as' => 'generated::KKSoXgCye3LU7ZDO',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3524,7 +3719,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::hHT9B8DHGd3k9rV8' => 
+    'generated::XzO4K8LB4DhTLxny' => 
     array (
       'methods' => 
       array (
@@ -3545,7 +3740,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::hHT9B8DHGd3k9rV8',
+        'as' => 'generated::XzO4K8LB4DhTLxny',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3878,6 +4073,39 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'client.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.contact.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'send-contact',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@sendContact',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@sendContact',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.contact.store',
       ),
       'fallback' => false,
       'defaults' => 

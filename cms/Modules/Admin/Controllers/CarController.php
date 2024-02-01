@@ -27,7 +27,7 @@ class CarController extends Controller
     }
     public function list()
     {
-        $cars = $this->service->getAll();
+        $cars = $this->service->paginate(10);
         return view('Admin::car.list', compact('cars'));
     }
 

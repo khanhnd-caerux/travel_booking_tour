@@ -6,9 +6,11 @@ use Cms\CmsServiceProvider;
 use Cms\Modules\Admin\Repositories\CarImageRepository;
 use Cms\Modules\Admin\Repositories\CarRepository;
 use Cms\Modules\Admin\Repositories\CategoryRepository;
+use Cms\Modules\Admin\Repositories\ContactRepository;
 use Cms\Modules\Admin\Repositories\Contracts\CarImageRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\CarRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\ContactRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\OrderDetailRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\OrderRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\PostRepositoryContract;
@@ -32,9 +34,11 @@ use Cms\Modules\Admin\Repositories\UserRepository;
 use Cms\Modules\Admin\Services\CarImageService;
 use Cms\Modules\Admin\Services\CarService;
 use Cms\Modules\Admin\Services\CategoryService;
+use Cms\Modules\Admin\Services\ContactService;
 use Cms\Modules\Admin\Services\Contracts\CarImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
+use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
@@ -91,5 +95,7 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(TicketRepositoryContract::class, TicketRepository::class);
         $this->app->bind(TicketServiceContract::class, TicketService::class);
         $this->app->bind(TicketImageServiceContract::class, TicketImageService::class);
+        $this->app->bind(ContactServiceContract::class, ContactService::class);
+        $this->app->bind(ContactRepositoryContract::class, ContactRepository::class);
     }
 }

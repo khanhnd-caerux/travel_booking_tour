@@ -27,7 +27,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('name')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -39,7 +39,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_from')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -50,7 +50,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('destination_to')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -61,7 +61,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('free')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-6">
@@ -72,7 +72,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('road')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-8">
@@ -83,7 +83,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('price')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-4">
@@ -95,7 +95,7 @@
                                                 autocomplete="off">
                                         </div>
                                         @error('discount_percent')
-                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        <div class="alert alert-danger text-white">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                         id="img-preview" alt="">
                                 </div>
                                 @error('feature_image_path')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group form-file-upload form-file-simple my-3">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh chi tiết</label>
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 @error('image_path')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-md-6">
@@ -164,7 +164,7 @@
                                         rows="10">{!! $car->content !!}</textarea>
                                 </div>
                                 @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="mt-3">

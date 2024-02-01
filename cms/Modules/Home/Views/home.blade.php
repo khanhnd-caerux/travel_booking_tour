@@ -2,11 +2,11 @@
 @section('content')
 <h1 class="hidden"> DU LỊCH HÀ GIANG - TOUR HÀ GIANG - TOUR DU LỊCH HÀ GIANG</h1>
 <main>
-    @if(!empty($banners))
+    @if(!empty($sliders))
     <section class="banner-home">
         <div id="slider-home" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-            @foreach($banners as $banner)
-            <div class="item"><a href="#"><img src="{{ asset($banner->image_path) }}" /></a>
+            @foreach($sliders as $slider)
+            <div class="item"><a href="#"><img src="{{ asset($slider->image_path) }}" /></a>
             </div>
             @endforeach
         </div>
@@ -116,11 +116,12 @@
                         @foreach($categoryWithTour->children as $cate)
                         <div class="item">
                             <div class="relativeTour">
-                                <a href="tour-o-to-ha-giang.html">
-                                    <img src="https://hagiangopentour.com/upload/images/1.jpg" alt="{{ $cate->name }}">
+                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">
+                                    <img src="{{ asset($cate->image_path) }}" alt="{{ $cate->name }}">
                                 </a>
                                 <div class="absoluteTour">
-                                    <a href="tour-o-to-ha-giang.html">{{ $cate->name }}</a>
+                                    <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name
+                                        }}</a>
                                 </div>
                             </div>
                         </div>
@@ -132,43 +133,43 @@
 
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
                         @foreach($categoryWithTour->children as $cate)
-                            @foreach($cate->tour as $tour)
-                                <div class="item">
-                                    <div class="img">
-                                        <a href="index.html"><img src="{{ asset($tour->feature_image_path) }}"
-                                                alt="{{ $tour->name }}"></a>
-                                        <div class="poAB">-{{ $tour->discount_percent }}%</div>
-                                    </div>
-                                    <div class="info">
-                                        <h3 class="h3-name">
-                                            <a href="index.html">
-                                                {{ $tour->name }}
-                                            </a>
-                                        </h3>
-                                        <ul class="ulproduct">
-                                            <li>
-                                                <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                                <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
-                                            </li>
-                                            <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
-                                                    từ: </span> {{ $tour->destination_from }}
-                                            </li>
-                                            <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
-                                                    trình: </span> {{ $tour->destination_to }}
-                                            </li>
-                                            <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
-                                                    hành: </span> {{ $tour->schedule }}
-                                            </li>
-                                            <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
-                                                    tiện: </span> {{ $tour->vehicle }}
-                                            </li>
-                                        </ul>
-                                        <div class="priceproduct"> Giá chỉ từ:
-                                            <span class="price mr-2">{{ $tour->price }} VND</span>
-                                        </div>
-                                    </div>
+                        @foreach($cate->tour as $tour)
+                        <div class="item">
+                            <div class="img">
+                                <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
+                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
+                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
+                            </div>
+                            <div class="info">
+                                <h3 class="h3-name">
+                                    <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">
+                                        {{ $tour->name }}
+                                    </a>
+                                </h3>
+                                <ul class="ulproduct">
+                                    <li>
+                                        <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
+                                        <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
+                                    </li>
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
+                                            từ: </span> {{ $tour->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
+                                            trình: </span> {{ $tour->destination_to }}
+                                    </li>
+                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span> {{ $tour->schedule }}
+                                    </li>
+                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
+                                            tiện: </span> {{ $tour->vehicle }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Giá chỉ từ:
+                                    <span class="price mr-2">{{ $tour->price }} VND</span>
                                 </div>
-                            @endforeach
+                            </div>
+                        </div>
+                        @endforeach
                         @endforeach
                     </div>
                 </div>
@@ -184,32 +185,62 @@
                         <h2 class="h2-title">CHO THUÊ XE DU LỊCH HÀ GIANG</h2>
                     </div>
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
+                        @if ($categoryWithCar->car)
+                        @foreach ($categoryWithCar->car as $car)
                         <div class="item">
                             <div class="img">
-                                <a href="cho-thue-xe-jeep-tour-ha-giang.html"><img
-                                        src="https://hagiangopentour.com/upload/images/video/jeeeeppppppppppp.jfif"
-                                        alt="Cho thuê xe JEEP Tour Hà Giang"></a>
-                                <div class="poAB">-22%</div>
+                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
+                                <div class="poAB">-{{ $car->discount_percent }}%</div>
                             </div>
                             <div class="info">
-                                <h3 class="h3-name"><a href="cho-thue-xe-jeep-tour-ha-giang.html">Cho thuê
-                                        xe JEEP Tour Hà Giang</a></h3>
+                                <h3 class="h3-name"><a
+                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
+                                        }}</a></h3>
                                 <ul class="ulproduct">
                                     <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>Từ Hà Giang
+                                            hành: </span>{{ $car->destination_from }}
                                     </li>
                                     <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> Hà Giang
+                                            trả: </span> {{ $car->destination_to }}
                                     </li>
                                 </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">7,000,000
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
                                         VND</span>
-
                                 </div>
-
                             </div>
-
                         </div>
+                        @endforeach
+                        @endif
+                        @if ($categoryWithCar->children)
+                        @foreach ($categoryWithCar->children as $children)
+                        @foreach ($children->car as $car)
+                        <div class="item">
+                            <div class="img">
+                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
+                                <div class="poAB">-{{ $car->discount_percent }}%</div>
+                            </div>
+                            <div class="info">
+                                <h3 class="h3-name"><a
+                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
+                                        }}</a></h3>
+                                <ul class="ulproduct">
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span>{{ $car->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
+                                            trả: </span> {{ $car->destination_to }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
+                                        VND</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        @endforeach
+                        @endif
                     </div>
 
                 </div>
@@ -238,34 +269,64 @@
                     </div>
 
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
+                        @if ($categoryWithCar->ticket)
+                        @foreach ($categoryWithCar->ticket as $ticket)
                         <div class="item">
                             <div class="img">
-                                <a href="xe-cung-dien-ha-giang.html"><img
-                                        src="https://hagiangopentour.com/upload/images/anh-cho-thue-xe/cung-dien-1.jpg"
-                                        alt="XE CUNG ĐIỆN HÀ GIANG"></a>
-
-                                <div class="poAB">-22%</div>
+                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
+                                        src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
+                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
                             </div>
                             <div class="info">
-                                <h3 class="h3-name"><a href="xe-cung-dien-ha-giang.html">XE CUNG ĐIỆN HÀ
-                                        GIANG</a></h3>
+                                <h3 class="h3-name"><a href="xe-cung-dien-ha-giang.html">{{ $ticket->name }}</a></h3>
                                 <ul class="ulproduct">
                                     <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí:
-                                        </span>Đón - trả Phố Cổ, sân bay Nội Bài
+                                        </span>{{ $ticket->free }}
                                     </li>
                                     <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>Từ Hà Nội
+                                            hành: </span>{{ $ticket->destination_from }}
                                     </li>
                                     <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> Hà Nội - Hà Giang
+                                            trả: </span> {{ $ticket->destination_to }}
                                     </li>
                                 </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">350,000
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $ticket->price }}
                                         VND</span>
-
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        @endif
+                        @if ($categoryWithTicket->children)
+                        @foreach ($categoryWithTicket->children as $children)
+                        @foreach ($children->ticket as $ticket)
+                        <div class="item">
+                            <div class="img">
+                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
+                                        src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
+                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
+                            </div>
+                            <div class="info">
+                                <h3 class="h3-name"><a href="xe-cung-dien-ha-giang.html">{{ $ticket->name }}</a></h3>
+                                <ul class="ulproduct">
+                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí:
+                                        </span>{{ $ticket->free }}
+                                    </li>
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span>{{ $ticket->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
+                                            trả: </span> {{ $ticket->destination_to }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $ticket->price }}
+                                        VND</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
@@ -328,7 +389,7 @@
                                                 Giang Open Tour</span></a></strong><span style="color:#000000;"> các bạn
                                         sẽ có những trải nghiệm mới theo
                                         phong cách riêng và những trải nghiệm đáng nhớ nhất ,là nhà tiên
-                                        phong mở ra những chương trình </span><a href="tour-o-to-ha-giang.html"><span
+                                        phong mở ra những chương trình </span><a href="#"><span
                                             style="color:#000000;">tour du
                                             lịch Hà Giang bằng ô tô</span></a><span style="color:#000000;">
                                         và </span><a href="tour-phuot-xe-may.html"><span style="color:#000000;">tour du
