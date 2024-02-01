@@ -10,4 +10,6 @@ interface CategoryRepositoryContract extends CoreBaseRepositoryContract {
     public function getCateWithTour($slug);
 
     public function getCategoryParent();
+
+    public function getAllCategory();
 }

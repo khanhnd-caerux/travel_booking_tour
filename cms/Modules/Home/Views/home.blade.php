@@ -104,7 +104,7 @@
     </style>
 
 
-
+    @if ($categoryWithTour)
     <section class="product-item wow fadeInUp">
         <div class="container">
             <div class="row">
@@ -175,6 +175,7 @@
             </div>
         </div>
     </section>
+    @endif
     <section class="product-item bgfff wow fadeInUp">
         <div class="container">
             <div class="row">

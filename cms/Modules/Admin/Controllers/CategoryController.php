@@ -51,6 +51,7 @@ class CategoryController extends Controller
                 'description' => $request->description,
                 'status' => $request->status === "show" ? 0 : 1,
                 'parent_id' => $request->parent_id,
+                'type' => $request->type,
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
@@ -77,7 +78,6 @@ class CategoryController extends Controller
 
     public function update($id, CategoryRequest $request)
     {
-
         try {
             DB::beginTransaction();
             $data = [
@@ -86,6 +86,7 @@ class CategoryController extends Controller
                 'description' => $request->description,
                 'slug' => Str::slug($request->name),
                 'status' => $request->status === "show" ? 0 : 1,
+                'type' => $request->type,
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
@@ -121,7 +122,7 @@ class CategoryController extends Controller
 
     public function getCategory($parent_id)
     {
-        $data = $this->service->getAll();
+        $data = $this->service->getAllCategory();
         $recusive = new Recusive($data);
         $categoryList = $recusive->categoryRecusive($parent_id);
 

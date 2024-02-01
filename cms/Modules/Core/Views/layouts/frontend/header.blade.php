@@ -55,12 +55,12 @@
                             @if($categories)
                             @foreach($categories as $cate)
                             <li>
-                                <a href="{{ route('client.tourList', ['slug' => $cate->slug]) }}">{{ $cate->name }}</a>
+                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name }}</a>
                                 @if($cate->children)
                                 <ul>
                                     @foreach($cate->children as $subCate)
                                     <li>
-                                        <a href="{{ route('client.tourList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
+                                        <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -125,12 +125,12 @@
                         @if($categories)
                         @foreach($categories as $cate)
                         <li>
-                            <a href="{{ route('client.tourList', ['slug' => $cate->slug]) }}">{{ $cate->name }}</a>
+                            <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name }}</a>
                             @if($cate->children)
                             <ul>
                                 @foreach($cate->children as $subCate)
                                 <li>
-                                    <a href="{{ route('client.tourList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
+                                    <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
                                 </li>
                                 @endforeach
                             </ul>

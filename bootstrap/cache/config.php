@@ -756,6 +756,15 @@
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
   ),
+  'categories' => 
+  array (
+    'categories' => 
+    array (
+      'tour' => 'Đặt Tour',
+      'booking_car' => 'Cho thuê xe',
+      'booking_ticket' => 'Đặt vé xe',
+    ),
+  ),
   'settings' => 
   array (
     'settings' => 

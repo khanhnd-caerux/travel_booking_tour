@@ -30,4 +30,9 @@ class CategoryService extends CoreBaseService implements CategoryServiceContract
         return $this->repository->getCategoryParent();
     }
 
+    public function getAllCategory()
+    {
+        return $this->repository->getAllCategory();
+    }
+
 }

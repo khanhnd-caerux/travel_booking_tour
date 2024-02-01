@@ -11,4 +11,6 @@ interface CategoryServiceContract extends CoreBaseServiceContract
     public function getCateWithTour($slug);
 
     public function getCategoryParent();
+
+    public function getAllCategory();
 }

@@ -11,15 +11,15 @@ Route::group([
     Route::get('/{slug}', 'HomeController@postDetail')->name('client.postDetail');
 
     Route::group([
-        'prefix' => 'tour',
+        'prefix' => 'noi-dung',
         'middleware' => ['web']
     ], function () {
-        Route::get('/{slug}', 'HomeController@tourList')->name('client.tourList');
+        Route::get('/{slug}', 'HomeController@contentList')->name('client.contentList');
     });
     Route::group([
-        'prefix' => 'tour-detail',
+        'prefix' => 'noi-dung-chi-tiet',
         'middleware' => ['web']
     ], function () {
-        Route::get('/{slug}', 'HomeController@tourDetail')->name('client.tourDetail');
+        Route::get('/{slug}', 'HomeController@contentDetail')->name('client.contentDetail');
     });
 });

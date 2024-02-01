@@ -20,6 +20,7 @@ class PostRepository extends CoreBaseRepository implements PostRepositoryContrac
     {
         return $this->post
             ->where('deleted_at', null)
+            ->where('status', 0)
             ->where('type', $type)
             ->get();
     }
@@ -29,6 +30,7 @@ class PostRepository extends CoreBaseRepository implements PostRepositoryContrac
         return $this->post
             ->where('deleted_at', null)
             ->where('type', $type)
+            ->where('status', 0)
             ->orderBy('created_at', 'desc')
             ->first();
     }

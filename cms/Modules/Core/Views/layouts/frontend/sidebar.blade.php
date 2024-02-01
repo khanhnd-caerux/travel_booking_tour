@@ -6,7 +6,7 @@
         <ul>
             @if ($category->children)
             @foreach($category->children as $subCate)
-            <li><a href="{{ route('client.tourList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a></li>
+            <li><a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a></li>
             @endforeach
             @endif
         </ul>
