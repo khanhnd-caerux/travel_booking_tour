@@ -64,6 +64,24 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link text-white @if($activePage && $activePage == 'car') active bg-gradient-primary @endif"
+                href="{{ route('admin.car.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">directions_car</i>
+                </div>
+                <span class="nav-link-text ms-1">Thuê xe</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white @if($activePage && $activePage == 'ticket') active bg-gradient-primary @endif"
+                href="{{ route('admin.ticket.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">confirmation_number</i>
+                </div>
+                <span class="nav-link-text ms-1">Vé xe</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-white @if($activePage && $activePage == 'post') active bg-gradient-primary @endif"
                 href="{{ route('admin.post.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

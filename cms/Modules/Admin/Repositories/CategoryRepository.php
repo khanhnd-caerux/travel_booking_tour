@@ -21,15 +21,23 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
         return $this->category->with('parent')->paginate(10);
     }
 
+    public function getAllCategory()
+    {
+        return $this->category
+            ->where('status', 0)
+            ->where('deleted_at', null)
+            ->get();
+    }
+
     public function getCateWithTour($slug)
     {
         return $this->category
             ->with([
                 'children' => function ($q) {
-                    $q->with('tour');
+                    $q->with(['tour', 'car', 'ticket']);
                 }
             ])
-            ->with('tour')
+            ->with(['tour', 'ticket', 'car'])
             ->where('slug', $slug)
             ->where('status', 0)
             ->where('deleted_at', null)

@@ -56,6 +56,18 @@
                                         {!! $categoryList !!}
                                     </select>
                                 </div>
+                                <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
+                                    <label for="exampleFormControlSelect1">Chọn loại</label>
+                                    <select class="form-control w-100" name="type" id="exampleFormControlSelect1">
+                                        <option value="">Chọn loại Danh mục</option>
+                                        @foreach(config('categories.categories') as $key => $value)
+                                        <option value="{{$key}}">{{$value}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('type')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="form-group form-file-upload form-file-simple">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>
                                     <input type="file" class="inputFileHidden" name="image_path">

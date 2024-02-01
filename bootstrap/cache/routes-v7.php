@@ -411,6 +411,124 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/car/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.car.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/car/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.car.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/car/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.car.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/ticket/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/ticket/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/ticket/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/order/list' => 
       array (
         0 => 
@@ -493,7 +611,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::FHoBcgdyCoDpHABo',
+            '_route' => 'generated::5GffITSdqSiXo3h0',
           ),
           1 => NULL,
           2 => 
@@ -529,7 +647,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::EXFPdgWwL1gU0rom',
+            '_route' => 'generated::hHT9B8DHGd3k9rV8',
           ),
           1 => NULL,
           2 => 
@@ -680,7 +798,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|category/(?|edit/([^/]++)(*:93)|update/([^/]++)(*:115)|delete/([^/]++)(*:138))|s(?|etting/(?|edit/([^/]++)(*:174)|update/([^/]++)(*:197)|delete/([^/]++)(*:220))|lider/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297)))|p(?|ost/(?|edit/([^/]++)(*:331)|update/([^/]++)(*:354)|delete/([^/]++)(*:377))|assword/reset/([^/]++)(*:408))|tour/(?|edit/([^/]++)(*:438)|update/([^/]++)(*:461)|delete/([^/]++)(*:484)))|/email/verify/([^/]++)/([^/]++)(*:525)|/([^/]++)(*:542)|/tour(?|/([^/]++)(*:567)|\\-detail/([^/]++)(*:592)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|ca(?|tegory/(?|edit/([^/]++)(*:96)|update/([^/]++)(*:118)|delete/([^/]++)(*:141))|r/(?|edit/([^/]++)(*:168)|update/([^/]++)(*:191)|delete/([^/]++)(*:214)))|s(?|etting/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|lider/(?|edit/([^/]++)(*:328)|update/([^/]++)(*:351)|delete/([^/]++)(*:374)))|p(?|ost/(?|edit/([^/]++)(*:408)|update/([^/]++)(*:431)|delete/([^/]++)(*:454))|assword/reset/([^/]++)(*:485))|t(?|our/(?|edit/([^/]++)(*:518)|update/([^/]++)(*:541)|delete/([^/]++)(*:564))|icket/(?|edit/([^/]++)(*:595)|update/([^/]++)(*:618)|delete/([^/]++)(*:641))))|/email/verify/([^/]++)/([^/]++)(*:683)|/([^/]++)(*:700)|/noi\\-dung(?|/([^/]++)(*:730)|\\-chi\\-tiet/([^/]++)(*:758)))/?$}sDu',
     ),
     3 => 
     array (
@@ -729,7 +847,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      93 => 
+      96 => 
       array (
         0 => 
         array (
@@ -752,7 +870,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      115 => 
+      118 => 
       array (
         0 => 
         array (
@@ -774,7 +892,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      138 => 
+      141 => 
       array (
         0 => 
         array (
@@ -797,13 +915,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      174 => 
+      168 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.setting.edit',
+            '_route' => 'admin.car.edit',
           ),
           1 => 
           array (
@@ -820,13 +938,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      197 => 
+      191 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.setting.update',
+            '_route' => 'admin.car.update',
           ),
           1 => 
           array (
@@ -842,13 +960,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      220 => 
+      214 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.setting.delete',
+            '_route' => 'admin.car.delete',
           ),
           1 => 
           array (
@@ -871,7 +989,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.slider.edit',
+            '_route' => 'admin.setting.edit',
           ),
           1 => 
           array (
@@ -894,7 +1012,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'admin.slider.update',
+            '_route' => 'admin.setting.update',
           ),
           1 => 
           array (
@@ -911,6 +1029,74 @@ app('router')->setCompiledRoutes(
         ),
       ),
       297 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.setting.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      328 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.slider.edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      351 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.slider.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      374 => 
       array (
         0 => 
         array (
@@ -933,7 +1119,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      331 => 
+      408 => 
       array (
         0 => 
         array (
@@ -956,7 +1142,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      354 => 
+      431 => 
       array (
         0 => 
         array (
@@ -978,7 +1164,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      377 => 
+      454 => 
       array (
         0 => 
         array (
@@ -1001,7 +1187,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      408 => 
+      485 => 
       array (
         0 => 
         array (
@@ -1024,7 +1210,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      438 => 
+      518 => 
       array (
         0 => 
         array (
@@ -1047,7 +1233,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      461 => 
+      541 => 
       array (
         0 => 
         array (
@@ -1069,7 +1255,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      484 => 
+      564 => 
       array (
         0 => 
         array (
@@ -1092,7 +1278,75 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      525 => 
+      595 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.edit',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      618 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      641 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.ticket.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      683 => 
       array (
         0 => 
         array (
@@ -1116,7 +1370,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      542 => 
+      700 => 
       array (
         0 => 
         array (
@@ -1139,13 +1393,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      567 => 
+      730 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'client.tourList',
+            '_route' => 'client.contentList',
           ),
           1 => 
           array (
@@ -1162,13 +1416,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      592 => 
+      758 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'client.tourDetail',
+            '_route' => 'client.contentDetail',
           ),
           1 => 
           array (
@@ -2592,6 +2846,458 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.car.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/car/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.car.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/car/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@create',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@create',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.create',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.car.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/car/edit/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@edit',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@edit',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.edit',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.car.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/car/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.car.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/car/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@store',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@store',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.car.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/car/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CarController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CarController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/car',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.car.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/ticket/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/ticket/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@create',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@create',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.create',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/ticket/edit/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@edit',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@edit',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.edit',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/ticket/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/ticket/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@store',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@store',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.ticket.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/ticket/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\TicketController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/ticket',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.ticket.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'admin.order.list' => 
     array (
       'methods' => 
@@ -2743,7 +3449,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::FHoBcgdyCoDpHABo' => 
+    'generated::5GffITSdqSiXo3h0' => 
     array (
       'methods' => 
       array (
@@ -2764,7 +3470,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::FHoBcgdyCoDpHABo',
+        'as' => 'generated::5GffITSdqSiXo3h0',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2818,7 +3524,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::EXFPdgWwL1gU0rom' => 
+    'generated::hHT9B8DHGd3k9rV8' => 
     array (
       'methods' => 
       array (
@@ -2839,7 +3545,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::EXFPdgWwL1gU0rom',
+        'as' => 'generated::hHT9B8DHGd3k9rV8',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3221,14 +3927,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'client.tourList' => 
+    'client.contentList' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'tour/{slug}',
+      'uri' => 'noi-dung/{slug}',
       'action' => 
       array (
         'middleware' => 
@@ -3236,14 +3942,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'web',
         ),
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourList',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourList',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/tour',
+        'prefix' => '/noi-dung',
         'where' => 
         array (
         ),
-        'as' => 'client.tourList',
+        'as' => 'client.contentList',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3259,14 +3965,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'client.tourDetail' => 
+    'client.contentDetail' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'tour-detail/{slug}',
+      'uri' => 'noi-dung-chi-tiet/{slug}',
       'action' => 
       array (
         'middleware' => 
@@ -3274,14 +3980,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'web',
         ),
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourDetail',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@tourDetail',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/tour-detail',
+        'prefix' => '/noi-dung-chi-tiet',
         'where' => 
         array (
         ),
-        'as' => 'client.tourDetail',
+        'as' => 'client.contentDetail',
       ),
       'fallback' => false,
       'defaults' => 

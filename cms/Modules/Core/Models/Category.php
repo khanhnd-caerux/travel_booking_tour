@@ -18,7 +18,9 @@ class Category extends Model
         'slug',
         'description',
         'parent_id',
-        'image_path'
+        'image_path',
+        'status',
+        'type'
     ];
 
     public function parent()
@@ -29,6 +31,16 @@ class Category extends Model
     public function tour()
     {
         return $this->hasMany(Tour::class, 'category_id');
+    }
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class, 'category_id');
+    }
+
+    public function car()
+    {
+        return $this->hasMany(Car::class, 'category_id');
     }
 
     public function children()
