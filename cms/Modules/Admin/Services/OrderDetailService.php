@@ -8,10 +8,10 @@ use Cms\Modules\Core\Services\CoreBaseService;
 
 class OrderDetailService extends CoreBaseService implements OrderDetailServiceContract
 {
-    protected $orderDetailRepository;
+    protected $repository;
 
-    public function __construct(OrderDetailRepositoryContract $orderDetailRepository)
+    public function __construct(OrderDetailRepositoryContract $repository)
     {
-        $this->orderDetailRepository = $orderDetailRepository;
+        $this->repository = $repository;
     }
 }

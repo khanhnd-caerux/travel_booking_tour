@@ -97,6 +97,7 @@
     <script type="text/javascript" src="{{asset('frontend/template/frontend/js/wow.min.js')}}"></script>
     <script src="{{asset('frontend/template/frontend/js/hc-offcanvas-nav9b70.js?ver=3.3.0')}}"></script>
     <script type="text/javascript" src="{{asset('frontend/template/frontend/js/main.js')}}"></script>
+    @yield('js')
     <script>
         $(document).ready(function () {
 

@@ -569,26 +569,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/order/detail' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.order.detail',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/admin/order/update/order_detail' => 
       array (
         0 => 
@@ -651,7 +631,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::KKSoXgCye3LU7ZDO',
+            '_route' => 'generated::BtErjPoA0y2nOWbO',
           ),
           1 => NULL,
           2 => 
@@ -687,7 +667,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::XzO4K8LB4DhTLxny',
+            '_route' => 'generated::hcjoZzJ7q8Ct7731',
           ),
           1 => NULL,
           2 => 
@@ -857,7 +837,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|ontact/delete/([^/]++)(*:249))|s(?|etting/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331))|lider/(?|edit/([^/]++)(*:362)|update/([^/]++)(*:385)|delete/([^/]++)(*:408)))|p(?|ost/(?|edit/([^/]++)(*:442)|update/([^/]++)(*:465)|delete/([^/]++)(*:488))|assword/reset/([^/]++)(*:519))|t(?|our/(?|edit/([^/]++)(*:552)|update/([^/]++)(*:575)|delete/([^/]++)(*:598))|icket/(?|edit/([^/]++)(*:629)|update/([^/]++)(*:652)|delete/([^/]++)(*:675))))|/email/verify/([^/]++)/([^/]++)(*:717)|/([^/]++)(*:734)|/noi\\-dung(?|/([^/]++)(*:764)|\\-chi\\-tiet/([^/]++)(*:792)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|ontact/delete/([^/]++)(*:249))|s(?|etting/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331))|lider/(?|edit/([^/]++)(*:362)|update/([^/]++)(*:385)|delete/([^/]++)(*:408)))|p(?|ost/(?|edit/([^/]++)(*:442)|update/([^/]++)(*:465)|delete/([^/]++)(*:488))|assword/reset/([^/]++)(*:519))|t(?|our/(?|edit/([^/]++)(*:552)|update/([^/]++)(*:575)|delete/([^/]++)(*:598))|icket/(?|edit/([^/]++)(*:629)|update/([^/]++)(*:652)|delete/([^/]++)(*:675)))|order/de(?|tail/([^/]++)(*:709)|lete/([^/]++)(*:730)))|/email/verify/([^/]++)/([^/]++)(*:771)|/([^/]++)(*:788)|/noi\\-dung(?|/([^/]++)(*:818)|\\-chi\\-tiet/([^/]++)(*:846))|/dat\\-tour/(?|([^/]++)(*:877)|thanh\\-cong(*:896))|/xem\\-lai/([^/]++)(*:923)|/hoan\\-thanh/([^/]++)(*:952))/?$}sDu',
     ),
     3 => 
     array (
@@ -1428,7 +1408,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      717 => 
+      709 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.detail',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      730 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      771 => 
       array (
         0 => 
         array (
@@ -1452,7 +1478,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      734 => 
+      788 => 
       array (
         0 => 
         array (
@@ -1475,7 +1501,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      764 => 
+      818 => 
       array (
         0 => 
         array (
@@ -1498,7 +1524,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      792 => 
+      846 => 
       array (
         0 => 
         array (
@@ -1514,6 +1540,95 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      877 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.bookingTour',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      896 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.successBooking',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      923 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.addToCart',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      952 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.storeBooking',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -3462,7 +3577,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/order/detail',
+      'uri' => 'admin/order/detail/{id}',
       'action' => 
       array (
         'middleware' => 
@@ -3478,6 +3593,44 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'admin.order.detail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.delete',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3644,7 +3797,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::KKSoXgCye3LU7ZDO' => 
+    'generated::BtErjPoA0y2nOWbO' => 
     array (
       'methods' => 
       array (
@@ -3665,7 +3818,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::KKSoXgCye3LU7ZDO',
+        'as' => 'generated::BtErjPoA0y2nOWbO',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3719,7 +3872,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::XzO4K8LB4DhTLxny' => 
+    'generated::hcjoZzJ7q8Ct7731' => 
     array (
       'methods' => 
       array (
@@ -3740,7 +3893,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::XzO4K8LB4DhTLxny',
+        'as' => 'generated::hcjoZzJ7q8Ct7731',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4216,6 +4369,140 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'client.contentDetail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.bookingTour' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dat-tour/{id}',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@bookingTour',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@bookingTour',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.bookingTour',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.addToCart' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'xem-lai/{id}',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@addToCart',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@addToCart',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.addToCart',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.storeBooking' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'hoan-thanh/{id}',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@storeBooking',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@storeBooking',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.storeBooking',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.successBooking' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'dat-tour/thanh-cong',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@successBooking',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@successBooking',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.successBooking',
       ),
       'fallback' => false,
       'defaults' => 

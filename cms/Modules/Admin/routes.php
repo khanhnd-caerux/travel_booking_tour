@@ -103,7 +103,8 @@ Route::group([
         'middleware' => ['auth']
     ], function () {
         Route::get('/list', 'OrderController@list')->name('admin.order.list');
-        Route::get('/detail', 'OrderController@detail')->name('admin.order.detail');
+        Route::get('/detail/{id}', 'OrderController@detail')->name('admin.order.detail');
+        Route::get('/delete/{id}', 'OrderController@delete')->name('admin.order.delete');
         Route::put('/update/order_detail', 'OrderController@update')->name('admin.order.update');
     });
     Route::group([

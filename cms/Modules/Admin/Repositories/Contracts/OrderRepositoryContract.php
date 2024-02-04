@@ -6,5 +6,5 @@ use Cms\Modules\Core\Repositories\Contracts\CoreBaseRepositoryContract;
 
 interface OrderRepositoryContract extends CoreBaseRepositoryContract
 {
-    
+    public function getOrderWithDetail($id);
 }

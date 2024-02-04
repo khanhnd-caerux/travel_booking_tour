@@ -18,5 +18,11 @@ class Order extends Model
         'email',
         'note',
         'phone',
+        'status'
     ];
+
+    public function orderDetail()
+    {
+        return $this->hasMany(OrderDetail::class, 'order_id');
+    }
 }

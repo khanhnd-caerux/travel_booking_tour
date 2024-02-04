@@ -214,7 +214,7 @@
 
 
                 <div class="mt-15">
-                    <a href="#" class="btn btn-primary btn-lg btn-block button-booking-tour">
+                    <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
                         @if ($contentDetail->category->type == 'tour')
                         <span class="main-text text-uppercase">Đặt tour ngay <i
                                 class="fa fa-angle-right icon-arrow-right"></i></span>
@@ -275,7 +275,7 @@
                     <div class="clearfix-10"></div>
                     <div class="col-md-4 col-sm-4 visible-xs">
                         <div class="mt-15">
-                            <a href="dat-tour1e35.html?id=39"
+                            <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}"
                                 class="btn btn-primary btn-lg btn-block button-booking-tour">
                                 <span class="main-text text-uppercase">Đặt tour ngay <i
                                         class="fa fa-angle-right icon-arrow-right"></i></span>
@@ -403,7 +403,7 @@
                             </div>
                         </div>
                         <div class="clearfix-10"></div>
-                        <a href="dat-tour1e35.html?id=39" class="btn btn-primary btn-lg btn-block button-booking-tour">
+                        <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
                             <span class="main-text text-uppercase">Đặt tour ngay <i
                                     class="fa fa-angle-right icon-arrow-right"></i></span>
                             <span class="tiny-text">Giữ chỗ, chưa cần thanh toán</span>

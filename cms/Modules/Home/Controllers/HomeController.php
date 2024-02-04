@@ -13,11 +13,17 @@ use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Session;
+use Carbon\Carbon;
+use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
+use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 
 class HomeController extends Controller
 {
 
     protected $slider, $post, $category, $tour, $car, $ticket, $contact;
+    protected $orderService;
+    protected $orderDetailService;
     /**
      * Create a new controller instance.
      *
@@ -31,7 +37,9 @@ class HomeController extends Controller
         TourServiceContract $tour,
         CarServiceContract $car,
         TicketServiceContract $ticket,
-        ContactServiceContract $contact
+        ContactServiceContract $contact,
+        OrderServiceContract $orderService,
+        OrderDetailServiceContract $orderDetailService
     ) {
         $this->slider = $slider;
         $this->post = $post;
@@ -40,6 +48,8 @@ class HomeController extends Controller
         $this->car = $car;
         $this->ticket = $ticket;
         $this->contact = $contact;
+        $this->orderService = $orderService;
+        $this->orderDetailService = $orderDetailService;
     }
 
     /**
@@ -124,5 +134,63 @@ class HomeController extends Controller
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
         }
+    }
+
+    public function bookingTour($id)
+    {
+        $tourBooking = $this->tour->find($id);
+
+        return view('Home::bookingView', compact('tourBooking'));
+    }
+
+    public function addToCart(Request $request, $id)
+    {
+        $tourBooking = $this->tour->find($id);
+        Session::put('bookingCart', $request->all());
+        $bookingCart = session('bookingCart', $request->all());
+        session(['bookingCart' => $bookingCart]);
+        $totalPrice = ($request->namnguoilon * (int) str_replace(',', '', $tourBooking->price)) + ($request->namnguoilon811 * (int) str_replace(',', '', $tourBooking->price));
+
+        return view('Home::previewBooking', compact('tourBooking', 'totalPrice'));
+    }
+
+    public function storeBooking(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            if (Session::get('bookingCart')) {
+                $data = Session::get('bookingCart');
+                $dataBooking = [
+                    'name' => $data['name'],
+                    'phone' => $data['phone'],
+                    'email' => $data['email'],
+                    'note' => $data['note']
+                ];
+                $order = $this->orderService->store($dataBooking);
+                $dataBookingDetail = [
+                    'order_id' => $order->id,
+                    'tour_id' => $id,
+                    'quantity' => json_encode(['nguoilon' => $data['namnguoilon'], 'treem' => $data['namnguoilon811'], 'sosinh' => $data['nametreem']]),
+                    'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
+                    'date_selected' => Carbon::createFromFormat('d-m-Y', $data['date_selected']),
+                    'total_price' => $request->total_price,
+                    'status' => 0,
+                ];
+                if ($order) {
+                    $this->orderDetailService->store($dataBookingDetail);
+                }
+            }
+            DB::commit();
+            Session::forget('bookingCart');
+            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+        }
+    }
+
+    public function successBooking()
+    {
+        return view('Home::successBooking');
     }
 }

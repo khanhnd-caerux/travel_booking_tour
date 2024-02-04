@@ -15,4 +15,13 @@ class OrderRepository extends CoreBaseRepository implements OrderRepositoryContr
         parent::__construct($order);
         $this->order = $order;
     }
+
+    public function getOrderWithDetail($id)
+    {
+        return $this->order
+            ->with('orderDetail')
+            ->where('id', $id)
+            ->whereNull('deleted_at')
+            ->first();
+    }
 }
