@@ -12,7 +12,7 @@
         </div>
     </div>
 </section>
-<section style="style=" background: #f5f5f5"">
+<section>
     <div class="container">
         <div class="row">
             <div class="clearfix-20"></div>
@@ -49,7 +49,13 @@
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
-                            {{ Session::get('success') }}
+                            <div class="thankyou">
+                                <div class="thank_content">
+                                    <h2>Chân thành cảm ơn !</h2>
+                                    <p>{{ Session::get('success') }}</p>
+                                    <a href="{{ route('client.index') }}" class="text_back">Về trang chủ</a>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -60,4 +66,23 @@
         </div>
     </div>
 </section>
+<style>
+    .thankyou {
+        height: 500px;
+        margin-bottom: 20px;
+    }
+
+    .thank_content {
+        text-align: center;
+        padding: 20px;
+        background: #f5f5f5;
+        height: 100%;
+        border-radius: 30px;
+    }
+
+    .text_back {
+        font-size: 30px;
+        color: red;
+    }
+</style>
 @endsection

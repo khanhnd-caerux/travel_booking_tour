@@ -17,11 +17,13 @@ use Session;
 use Carbon\Carbon;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
+use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
+use Cms\Modules\Admin\Jobs\SendEmail;
 
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $category, $tour, $car, $ticket, $contact;
+    protected $slider, $post, $category, $tour, $car, $ticket, $contact, $userService;
     protected $orderService;
     protected $orderDetailService;
     /**
@@ -39,7 +41,8 @@ class HomeController extends Controller
         TicketServiceContract $ticket,
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
-        OrderDetailServiceContract $orderDetailService
+        OrderDetailServiceContract $orderDetailService,
+        UserServiceContract $userService
     ) {
         $this->slider = $slider;
         $this->post = $post;
@@ -50,6 +53,7 @@ class HomeController extends Controller
         $this->contact = $contact;
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
+        $this->userService = $userService;
     }
 
     /**
@@ -128,6 +132,14 @@ class HomeController extends Controller
                 'url' => $request->url,
             ];
             $this->contact->store($dataContact);
+            $message = [
+                'type' => 'Thông báo có khách cần tư vấn',
+                'task' => 'Khách hàng để lại SĐT ' . $request->phone_number,
+                'content' => 'Liên hệ ngay',
+                'link' => route('admin.contact.list'),
+            ];
+            $users = $this->userService->getAll();
+            SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             DB::commit();
             return redirect()->back()->with('success', 'Cảm ơn bạn đã gửi số điện thoại chúng tôi sẽ liên hệ sớm với bạn !');
         } catch (\Exception $exception) {
@@ -149,7 +161,7 @@ class HomeController extends Controller
         Session::put('bookingCart', $request->all());
         $bookingCart = session('bookingCart', $request->all());
         session(['bookingCart' => $bookingCart]);
-        $totalPrice = ($request->namnguoilon * (int) str_replace(',', '', $tourBooking->price)) + ($request->namnguoilon811 * (int) str_replace(',', '', $tourBooking->price));
+        $totalPrice = ($request->namnguoilon * (int) str_replace(',', '', $tourBooking->price)) + ($request->namnguoilon811 * (int) str_replace(',', '', $tourBooking->price) * 0.5);
 
         return view('Home::previewBooking', compact('tourBooking', 'totalPrice'));
     }
@@ -178,10 +190,18 @@ class HomeController extends Controller
                 ];
                 if ($order) {
                     $this->orderDetailService->store($dataBookingDetail);
+                    $message = [
+                        'type' => 'Thông báo có khách đặt Tour',
+                        'task' => 'Khách hàng có tên: ' . $data['name'] .' có số điện thoại '. $data['phone'],
+                        'content' => 'Đã đặt Tour cần liên hệ gấp',
+                        'link' => route('admin.order.list'),
+                    ];
+                    $users = $this->userService->getAll();
+                    SendEmail::dispatch($message, $users)->delay(now()->addMinute());
                 }
             }
-            DB::commit();
             Session::forget('bookingCart');
+            DB::commit();
             return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
         } catch (\Exception $exception) {
             DB::rollBack();

@@ -335,18 +335,15 @@ $(document).on('click', '.minus', function (e) {
 })
 function loadPriceTotal() {
 
-    var price = $('select[name="optionTour"]').find(':selected').attr('data-price');
-    if (!price) {
-        price = Number(39)
-    }
+    var price = $('input[name="namnguoilon"]').attr('data-price');
     var total = 0;
     var quantityAdults = Number($('input[name="namnguoilon"]').val())
     var quantityChildren = Number($('input[name="namnguoilon811"]').val())
     var quantityInfants = Number($('input[name="nametreem"]').val())
 
     var priceAdults = price * quantityAdults
-    var priceChildren = ((price / 100) * percentChildren) * quantityChildren
-    var priceInfants = ((price / 100) * percentInfants) * quantityInfants
+    var priceChildren = ((price / 100) * 50) * quantityChildren
+    var priceInfants = 0
     total = priceAdults + priceChildren + priceInfants
 
     $('.valueNUM').html(number_format(total, 0, '.', '.'));

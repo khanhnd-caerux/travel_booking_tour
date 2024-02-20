@@ -37,10 +37,11 @@ $sliders = [
                                 <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
                                     <label for="exampleFormControlSelect1">Chọn loại</label>
                                     <select class="form-control w-100" name="type" id="exampleFormControlSelect1">
-                                        <option value="">{{ $sliders[$slider->type] }}</option>
                                         @foreach($sliders as $key => $value)
                                         @if ($key != $slider->type)
                                         <option value="{{$key}}">{{$value}}</option>
+                                        @else
+                                        <option value="{{$key}}" selected>{{$value}}</option>
                                         @endif
                                         @endforeach
                                     </select>

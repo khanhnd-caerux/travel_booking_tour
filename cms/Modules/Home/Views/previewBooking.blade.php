@@ -125,7 +125,8 @@
                                             <div class="content-schedule">
                                                 <span class="font-14 page_speed_1413671375">{{
                                                     Session::get('bookingCart')['namnguoilon'] }} x {{
-                                                    $tourBooking->price }} VND</span>
+                                                    number_format((int) str_replace(',', '',
+                                                    $tourBooking->price)) }} VND</span>
                                             </div>
                                         </div>
                                     </div>
@@ -137,7 +138,8 @@
                                             <div class="content-schedule">
                                                 <span class="font-14 page_speed_1413671375">{{
                                                     Session::get('bookingCart')['namnguoilon811'] }} x {{
-                                                    $tourBooking->price }} VND</span>
+                                                    number_format((int) str_replace(',', '',
+                                                    $tourBooking->price) * 0.5) }} VND</span>
                                             </div>
                                         </div>
                                     </div>

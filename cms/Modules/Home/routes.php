@@ -26,5 +26,5 @@ Route::group([
     Route::get('/dat-tour/{id}', 'HomeController@bookingTour')->name('client.bookingTour');
     Route::post('/xem-lai/{id}', 'HomeController@addToCart')->name('client.addToCart');
     Route::post('/hoan-thanh/{id}', 'HomeController@storeBooking')->name('client.storeBooking');
-    Route::get('/dat-tour/thanh-cong', 'HomeController@successBooking')->name('client.successBooking');
+    Route::get('/booking/thanh-cong', 'HomeController@successBooking')->name('client.successBooking');
 });

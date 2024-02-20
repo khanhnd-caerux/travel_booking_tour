@@ -191,7 +191,8 @@
                                                                         <input type="number" value="" placeholder="0"
                                                                             name="namnguoilon" min="1"
                                                                             class="namnguoilon form-control page_speed_1017920312 changeNum1"
-                                                                            data-price="115" required>
+                                                                            data-price="{{ (int) str_replace(',', '', $tourBooking->price) }}"
+                                                                            required>
                                                                         <div class="input-group-append">
                                                                             <span
                                                                                 class="input-group-text change-value-hv plus"><i
@@ -218,7 +219,8 @@
                                                                     <span
                                                                         class="font-weight-bold ts__pricePerPerson page_speed_1358849455"
                                                                         id="price_children_true">
-                                                                        {{ $tourBooking->price }} VNĐ</span>
+                                                                        {{ number_format((int) str_replace(',', '',
+                                                                        $tourBooking->price) * 0.5) }} VNĐ</span>
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-4 text-center ts__mbView ">
                                                                     <div class="input-group mb-3 page_speed_1343872355">
@@ -230,7 +232,7 @@
                                                                         <input type="number" value="" placeholder="0"
                                                                             name="namnguoilon811" min="1"
                                                                             class="namnguoilon811 form-control page_speed_1017920312 changeNum2"
-                                                                            data-price="86.25">
+                                                                            data-price="{{ (int) str_replace(',', '', $tourBooking->price) * 0.5 }}">
                                                                         <div class="input-group-append">
                                                                             <span
                                                                                 class="input-group-text change-value-hv plus"><i
@@ -299,10 +301,8 @@
                                                                 class="totalPriceQ" style="display: none">
                                                             <input type="text" value="0" id="valueNUMINPUT"
                                                                 style="display: none">
-                                                            <span class="valueNUM">0</span> $ </span>
+                                                            <span class="valueNUM">0</span> VND </span>
                                                     </li>
-
-
                                                 </ul>
                                             </div>
                                         </div>
@@ -373,8 +373,7 @@
                                         <div class="row style-margin-bot-booking">
                                             <div class="col-md-8 ">
                                                 <label id="add_booking_note">Yêu cầu đặc biệt :</label>
-                                                <textarea name="note" cols="40" rows="10"
-                                                    class="form-control message"
+                                                <textarea name="note" cols="40" rows="10" class="form-control message"
                                                     placeholder="Ví dụ: Gia đình có trẻ em, có người say xe..."
                                                     autocomplete="off"></textarea>
 

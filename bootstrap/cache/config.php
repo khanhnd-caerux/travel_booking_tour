@@ -354,13 +354,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/projects/travel_booking_tour/storage/app',
+        'root' => '/home/projects/travel_booking_tour/public/storage',
       ),
       'public' => 
       array (
         'driver' => 'local',
         'root' => '/home/projects/travel_booking_tour/storage/app/public',
-        'url' => 'http://travel.local.com/storage',
+        'url' => 'http://travel.local.com',
         'visibility' => 'public',
       ),
       's3' => 
@@ -484,8 +484,8 @@
         'host' => 'smtp.gmail.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => '',
-        'password' => '',
+        'username' => 'nguyenduykhanh827@gmail.com',
+        'password' => 'ahqehzrjycrikhgy',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -527,7 +527,7 @@
     ),
     'from' => 
     array (
-      'address' => '',
+      'address' => 'nguyenduykhanh827@gmail.com',
       'name' => 'Laravel',
     ),
     'markdown' => 
