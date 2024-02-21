@@ -354,13 +354,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/projects/travel_booking_tour/public/storage',
+        'root' => '/home/projects/travel_booking_tour/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/projects/travel_booking_tour/storage/app/public',
-        'url' => 'http://travel.local.com',
+        'root' => '/home/projects/travel_booking_tour/public/storage',
+        'url' => 'http://travel.local.com/storage',
         'visibility' => 'public',
       ),
       's3' => 
