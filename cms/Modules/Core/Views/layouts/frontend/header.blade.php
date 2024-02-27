@@ -4,26 +4,22 @@
             <div class="col-xs-12 visible-xs">
                 <div class="language_mobile">
                     <ul class="flex-row " style="justify-content: center;padding-bottom: 5px">
-                        <li><a href="indexe358.html?lang=vietnamese"><img
-                                    src="{{asset('frontend/template/backend/img/vietnam.gif')}}" alt="vietnamese"></a>
+                        <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"
+                                    alt="vietnamese"></a>
                         </li>
-                        <li><a href="javascript:void(0)" onclick="en()"><img
+                        <li><a href="{{ url('language/en') }}"><img
                                     src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a>
-                        </li>
-                        <li><a href="javascript:void(0)" onclick="fr()"><img
-                                    src="{{asset('frontend/template/125px-Flag_of_France.svg.png')}}" alt="france"></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row flex-row" style="position: relative">
-
             <div class="header-left col-md-7 col-sm-6 col-xs-12" style="padding-right: 0px;">
                 <div class="flex-row">
                     <div class="wLOGO">
                         <a href="{{ route('client.index') }}">
-                            <img src="https://hagiangopentour.com/upload/images/logo-hg.jpg"
+                            <img src="{{ asset('storage/logo.jpeg') }}" style="border-radius: 50%"
                                 alt="HA GIANG OPEN TOUR - OHG TRAVEL">
                         </a>
                     </div>
@@ -50,17 +46,19 @@
                         </style>
                         <ul class="second-nav">
                             <li>
-                                <a href="{{ route('client.postDetail', ['slug' => 'gioi-thieu']) }}">GIỚI THIỆU</a>
+                                <a href="{{ route('client.index') }}">@lang('language.name')</a>
                             </li>
                             @if($categories)
                             @foreach($categories as $cate)
                             <li>
-                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name }}</a>
+                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name
+                                    }}</a>
                                 @if($cate->children)
                                 <ul>
                                     @foreach($cate->children as $subCate)
                                     <li>
-                                        <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
+                                        <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{
+                                            $subCate->name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -82,29 +80,21 @@
 
             <div class="header-left col-md-5 hidden-xs col-sm-6">
                 <div class="top-hotline flex-row">
-                    <a href="tel:{{ $configValues['dat-tour'] }}" class="hotline">
-                        <p>{{ Str::upper($configLabels['dat-tour']) }}</p>{{ $configValues['dat-tour'] }}
+                    @if (isset($configValues['hotline']))
+                    <a href="tel:{{ $configValues['hotline'] }}" class="hotline">
+                        <p>{{ Str::upper($configLabels['hotline']) }}</p>{{ $configValues['hotline'] }}
                     </a>
-                    <a href="tel:{{ $configValues['dat-xe'] }}" class="hotline">
-                        <p>{{ Str::upper($configLabels['dat-xe']) }}</p>{{ $configValues['dat-xe'] }}
-                    </a>
+                    @endif
                 </div>
             </div>
 
             <div class="language hidden-xs">
-
                 <ul class="flex-row">
+                    <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"
+                                alt="vietnamese"></a> </li>
 
-                    <li><a href="indexe358.html?lang=vietnamese"><img
-                                src="{{asset('frontend/template/backend/img/vietnam.gif')}}" alt="vietnamese"></a> </li>
-
-                    <li><a href="javascript:void(0)" onclick="en()">
+                    <li><a href="{{ url('language/en') }}">
                             <img src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a> </li>
-
-                    <li><a href="javascript:void(0)" onclick="fr()"><img
-                                src="{{asset('frontend/template/125px-Flag_of_France.svg.png')}}" alt="france"></a>
-                    </li>
-
                 </ul>
 
             </div>
@@ -118,9 +108,8 @@
                 <div class="menu-pc">
 
                     <ul class="pull-right flex-row">
-                        <li class="active"><a href="{{ route('client.index') }}"><i class="fa fa-home"></i></a></li>
                         <li>
-                            <a href="{{ route('client.postDetail', ['slug' => 'gioi-thieu']) }}">GIỚI THIỆU</a>
+                            <a href="{{ route('client.index') }}">@lang('language.name')</a>
                         </li>
                         @if($categories)
                         @foreach($categories as $cate)
@@ -130,7 +119,8 @@
                             <ul>
                                 @foreach($cate->children as $subCate)
                                 <li>
-                                    <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{ $subCate->name }}</a>
+                                    <a href="{{ route('client.contentList', ['slug' => $subCate->slug]) }}">{{
+                                        $subCate->name }}</a>
                                 </li>
                                 @endforeach
                             </ul>

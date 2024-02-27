@@ -360,7 +360,7 @@
       array (
         'driver' => 'local',
         'root' => '/home/projects/travel_booking_tour/public/storage',
-        'url' => 'http://travel.local.com/storage',
+        'url' => 'http://travel.local.com',
         'visibility' => 'public',
       ),
       's3' => 

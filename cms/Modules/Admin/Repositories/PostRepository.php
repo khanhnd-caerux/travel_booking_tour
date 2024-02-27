@@ -18,10 +18,12 @@ class PostRepository extends CoreBaseRepository implements PostRepositoryContrac
 
     public function getPostByType($type)
     {
+        $locale = session()->get('locale');
         return $this->post
             ->where('deleted_at', null)
             ->where('status', 0)
             ->where('type', $type)
+            ->where('locale', $locale)
             ->get();
     }
 

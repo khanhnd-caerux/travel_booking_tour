@@ -74,7 +74,7 @@ class HomeController extends Controller
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
         $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
-        $categoryWithCar = $this->category->getCateWithTour($slug = 'cho-thue-xe-du-lich');
+        $categoryWithCar = $this->category->getCateWithTour($slug = 'du-an-thien-nguyen');
         $categoryWithTicket = $this->category->getCateWithTour($slug = 've-xe-bus-hang-ngay');
 
         return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'categoryWithCar', 'categoryWithTicket'));

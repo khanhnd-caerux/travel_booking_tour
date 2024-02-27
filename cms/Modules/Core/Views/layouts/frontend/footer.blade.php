@@ -3,16 +3,25 @@
         <div class="row">
             <div class="col-md-5 margin-bottom-20 col-xs-12 col-sm-5">
                 <h4 class="h4-footer">
-                    HA GIANG OPEN TOUR - OHG TRAVEL
+                    {{ Str::upper($configValues['ten-web-chinh']) }} Travel
                 </h4>
                 <div class="bottom-address">
-                    <p><i class="fa fa-map-marker"></i> {{ $configLabels['van-phong'] }} : {{ $configValues['van-phong']}}</p>
+                    @if (isset($configLabels['van-phong']))
+                    <p><i class="fa fa-map-marker"></i> {{ $configLabels['van-phong'] }} : {{
+                        $configValues['van-phong']}}</p>
+                    @endif
+                    @if (isset($configLabels['email']))
                     <p><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ $configLabels['email'] }} : {{
                         $configValues['email'] }}</p>
+                    @endif
+                    @if (isset($configLabels['hotline']))
                     <p><i class="fa fa-phone" aria-hidden="true"></i> {{ $configLabels['hotline'] }} : {{
                         $configValues['hotline'] }}
                         <br>
+                        @endif
+                        @if (isset($configLabels['giay-phep-kinh-doanh']))
                         {{ $configLabels['giay-phep-kinh-doanh'] }} : {{ $configValues['giay-phep-kinh-doanh'] }}
+                        @endif
                     </p>
                 </div>
                 <!-- <div style="display: flex;">
@@ -29,17 +38,21 @@
             <div class="clearfix-20 visible-xs"></div>
             <div class="col-md-3 col-xs-12 col-sm-3">
                 <h4 class="h4-footer">
-                    HOẠT ĐỘNG
+                    @lang('language.activity')
                 </h4>
                 <div class="bottom-address">
                     <ul>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">Chính sách bảo mật</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">Chính sách bảo
+                                mật</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">Hình thức thanh toán</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">Hình thức
+                                thanh toán</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">Chính sách Đặt, hủy vé</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">Chính sách
+                                Đặt, hủy vé</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'kinh-nghiem-du-lich']) }}">Kinh nghiệm du lịch</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'kinh-nghiem-du-lich']) }}">Kinh nghiệm du
+                                lịch</a>
                         </li>
                         <li><a href="{{ route('client.postDetail', ['slug' => 'gioi-thieu']) }}">Giới thiệu</a>
                         </li>
@@ -49,7 +62,7 @@
             <div class="clearfix-20 visible-xs"></div>
             <div class="col-md-4 col-xs-12 col-sm-4">
                 <h4 class="h4-footer">
-                    Truyền thông
+                    @lang('language.media')
                 </h4>
                 <div class="bottom-address">
                     <ul class="flex-row social">
@@ -65,10 +78,11 @@
 
                         </li>
 
-                        <li class="fphone"><a href="tel:0984.650.239"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        <li class="fphone"><a href="tel:{{$configValues['hotline'] }}}}"><i class="fa fa-phone"
+                                    aria-hidden="true"></i></a>
                         </li>
 
-                        <li class="fyoutube"><a href="Youtube.html" target="_blank"><i class="fa fa-youtube-play"
+                        <li class="fyoutube"><a href="" target="_blank"><i class="fa fa-youtube-play"
                                     aria-hidden="true"></i></a></li>
                     </ul>
                     <div class="clearfix-20"></div>

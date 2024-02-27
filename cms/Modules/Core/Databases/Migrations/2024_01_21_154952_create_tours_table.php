@@ -17,6 +17,7 @@ class CreateToursTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->string('locale')->default('vi');
             $table->string('tour_code');
             $table->string('destination_from');
             $table->string('destination_to');

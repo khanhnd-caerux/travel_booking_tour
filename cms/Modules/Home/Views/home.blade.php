@@ -20,10 +20,12 @@
                         <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/langnghe.png"
                                 alt="LẮNG NGHE">
                         </div>
+                        @if(isset($configLabels['du-lich']))
                         <div class="info">
-                            <h3>{{ $configLabels['lang-nghe'] }}</h3>
-                            <p>{{ $configValues['lang-nghe'] }}</p>
+                            <h3>{{ $configLabels['du-lich'] }}</h3>
+                            <p>{{ $configValues['du-lich'] }}</p>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 col-sm-4">
@@ -32,10 +34,12 @@
                                 alt="AN TÂM - TIN TƯỞNG">
 
                         </div>
+                        @if(isset($configLabels['tu-thien']))
                         <div class="info">
-                            <h3>{{ $configLabels['an-tam-tin-tuong'] }}</h3>
-                            <p>{{ $configValues['an-tam-tin-tuong'] }}</p>
+                            <h3>{{ $configLabels['tu-thien'] }}</h3>
+                            <p>{{ $configValues['tu-thien'] }}</p>
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12 col-sm-4">
@@ -47,11 +51,12 @@
 
                         </div>
 
+                        @if(isset($configLabels['trai-nghiem']))
                         <div class="info">
-                            <h3>{{ $configLabels['trai-nghiem-moi-la'] }}</h3>
-
-                            <p>{{ $configValues['trai-nghiem-moi-la'] }}</p>
+                            <h3>{{ $configLabels['trai-nghiem'] }}</h3>
+                            <p>{{ $configValues['trai-nghiem'] }}</p>
                         </div>
+                        @endif
 
                     </div>
 
@@ -102,241 +107,11 @@
             left: -40px;
         }
     </style>
-
-
-    @if ($categoryWithTour)
-    <section class="product-item wow fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <h2 class="h2-title">{{ $categoryWithTour->name }}</h2>
-                    </div>
-                    <div class="product-category-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @foreach($categoryWithTour->children as $cate)
-                        <div class="item">
-                            <div class="relativeTour">
-                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">
-                                    <img src="{{ asset($cate->image_path) }}" alt="{{ $cate->name }}">
-                                </a>
-                                <div class="absoluteTour">
-                                    <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name
-                                        }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                    <div class="text-center">
-                        <h2 class="h2-title">Chương trình tour nổi bật</h2>
-                    </div>
-
-                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @foreach($categoryWithTour->children as $cate)
-                        @foreach($cate->tour as $tour)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
-                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">
-                                        {{ $tour->name }}
-                                    </a>
-                                </h3>
-                                <ul class="ulproduct">
-                                    <li>
-                                        <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                        <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
-                                    </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
-                                            từ: </span> {{ $tour->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
-                                            trình: </span> {{ $tour->destination_to }}
-                                    </li>
-                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span> {{ $tour->schedule }}
-                                    </li>
-                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
-                                            tiện: </span> {{ $tour->vehicle }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Giá chỉ từ:
-                                    <span class="price mr-2">{{ $tour->price }} VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    @endif
-    <section class="product-item bgfff wow fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <h2 class="h2-title">CHO THUÊ XE DU LỊCH HÀ GIANG</h2>
-                    </div>
-                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @if ($categoryWithCar->car)
-                        @foreach ($categoryWithCar->car as $car)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
-                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a
-                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
-                                        }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $car->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $car->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endif
-                        @if ($categoryWithCar->children)
-                        @foreach ($categoryWithCar->children as $children)
-                        @foreach ($children->car as $car)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
-                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a
-                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
-                                        }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $car->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $car->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endforeach
-                        @endif
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-
-
-    <section class="product-item  wow fadeInUp">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <div class="text-center">
-                        <h2 class="h2-title">VÉ XE BUS HÀ GIANG HÀNG NGÀY</h2>
-                    </div>
-
-                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @if ($categoryWithCar->ticket)
-                        @foreach ($categoryWithCar->ticket as $ticket)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
-                                        src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
-                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a href="xe-cung-dien-ha-giang.html">{{ $ticket->name }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí:
-                                        </span>{{ $ticket->free }}
-                                    </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $ticket->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $ticket->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $ticket->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endif
-                        @if ($categoryWithTicket->children)
-                        @foreach ($categoryWithTicket->children as $children)
-                        @foreach ($children->ticket as $ticket)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
-                                        src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
-                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a href="xe-cung-dien-ha-giang.html">{{ $ticket->name }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí:
-                                        </span>{{ $ticket->free }}
-                                    </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $ticket->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $ticket->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $ticket->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endforeach
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="aboutus wow fadeInUp">
+<section class="aboutus wow fadeInUp">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-6">
-                    <h2 class="h2-title none">HÀ GIANG ĐIỂM ĐẾN LÝ TƯỞNG</h2>
+                    <h2 class="h2-title none">@lang('language.theIdea')</h2>
                     <div class="text-justify" id="text-justify-home">
                         <p style="text-align: justify;"><span style="font-size:16px;"><span
                                     style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><a
@@ -418,111 +193,143 @@
 
     </section>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css')}}">
-
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js')}}"></script>
-
-
+    @if ($categoryWithTour)
     <section class="product-item wow fadeInUp">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-md-12">
-
                     <div class="text-center">
-                        <h2 class="h2-title">Video review Hà Giang</h2>
+                        <h2 class="h2-title">{{ $categoryWithTour->name }}</h2>
+                    </div>
+                    <div class="product-category-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
+                        @foreach($categoryWithTour->children as $cate)
+                        <div class="item">
+                            <div class="relativeTour">
+                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">
+                                    <img src="{{ asset($cate->image_path) }}" alt="{{ $cate->name }}">
+                                </a>
+                                <div class="absoluteTour">
+                                    <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name
+                                        }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="text-center">
+                        <h2 class="h2-title">Chương trình tour nổi bật</h2>
                     </div>
 
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-
-
+                        @foreach($categoryWithTour->children as $cate)
+                        @foreach($cate->tour as $tour)
                         <div class="item">
-
                             <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=qZgqbdn1MYM"><img
-                                        src="https://hagiangopentour.com/upload/images/video/hq720.jpg"
-                                        alt="Let's Go - Ma Pi Leng Pass | Ha Giang Travel Guide"></a>
-
-
+                                <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
+                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
+                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
                             </div>
-
+                            <div class="info">
+                                <h3 class="h3-name">
+                                    <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">
+                                        {{ $tour->name }}
+                                    </a>
+                                </h3>
+                                <ul class="ulproduct">
+                                    <li>
+                                        <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
+                                        <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
+                                    </li>
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
+                                            từ: </span> {{ $tour->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
+                                            trình: </span> {{ $tour->destination_to }}
+                                    </li>
+                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span> {{ $tour->schedule }}
+                                    </li>
+                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
+                                            tiện: </span> {{ $tour->vehicle }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Giá chỉ từ:
+                                    <span class="price mr-2">{{ $tour->price }} VND</span>
+                                </div>
+                            </div>
                         </div>
-
-
+                        @endforeach
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+    <section class="product-item bgfff wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h2 class="h2-title">{{$categoryWithCar->name}}</h2>
+                    </div>
+                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
+                        @if ($categoryWithCar->car)
+                        @foreach ($categoryWithCar->car as $car)
                         <div class="item">
-
                             <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=kXWVDcta6BU"><img
-                                        src="https://hagiangopentour.com/upload/images/video/hqdefault.jpg"
-                                        alt="HA GIANG - " MASTERPIECE" OF THE NORTHWEST VIETNAM | Ma Pi Lè and Song Nho
-                                        Que"></a>
-
-
+                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
+                                <div class="poAB">-{{ $car->discount_percent }}%</div>
                             </div>
-
+                            <div class="info">
+                                <h3 class="h3-name"><a
+                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
+                                        }}</a></h3>
+                                <ul class="ulproduct">
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span>{{ $car->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
+                                            trả: </span> {{ $car->destination_to }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
+                                        VND</span>
+                                </div>
+                            </div>
                         </div>
-
-
+                        @endforeach
+                        @endif
+                        @if ($categoryWithCar->children)
+                        @foreach ($categoryWithCar->children as $children)
+                        @foreach ($children->car as $car)
                         <div class="item">
-
                             <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=1NtV5KgRo0c"><img
-                                        src="https://hagiangopentour.com/upload/images/video/hq720-1-.jpg"
-                                        alt="Tìm về Hà Giang: Tuyệt tác thiên nhiên nơi núi rừng Tây Bắc - Đông Bắc"></a>
-
-
+                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
+                                <div class="poAB">-{{ $car->discount_percent }}%</div>
                             </div>
-
-                        </div>
-
-
-                        <div class="item">
-
-                            <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=MwdmFog6fc4"><img
-                                        src="https://hagiangopentour.com/upload/images/video/a-video.jpg"
-                                        alt="[PHIM TỰ GIỚI THIỆU] AMAZING HÀ GIANG | S35FILM"></a>
-
-
+                            <div class="info">
+                                <h3 class="h3-name"><a
+                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
+                                        }}</a></h3>
+                                <ul class="ulproduct">
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                            hành: </span>{{ $car->destination_from }}
+                                    </li>
+                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
+                                            trả: </span> {{ $car->destination_to }}
+                                    </li>
+                                </ul>
+                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
+                                        VND</span>
+                                </div>
                             </div>
-
                         </div>
-
-
-                        <div class="item">
-
-                            <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=wElFDsqrL50"><img
-                                        src="https://hagiangopentour.com/upload/images/video/anh-video-2.jpg"
-                                        alt="HÀ GIANG ƠI (MV Official) I Quách Beem I Gửi tặng Hà Giang nơi tôi đến và ...yêu"></a>
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="item">
-
-                            <div class="img">
-
-                                <a data-fancybox="gallery" href="https://www.youtube.com/watch?v=PtqIj-ZqFqI"><img
-                                        src="https://hagiangopentour.com/upload/images/video/0-1-.jpg"
-                                        alt="Ha Giang Loop in Vietnam"></a>
-
-
-                            </div>
-
-                        </div>
-
-
+                        @endforeach
+                        @endforeach
+                        @endif
                     </div>
 
                 </div>
@@ -532,6 +339,10 @@
         </div>
 
     </section>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css')}}">
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js')}}"></script>
 
 
 
@@ -605,11 +416,9 @@
                 <div class="col-md-12">
 
                     <div class="text-center">
-                        <h2 class="h2-title">Ý kiến khách hàng</h2>
+                        <h2 class="h2-title">@lang('language.customerReview')</h2>
 
-                        <i><a style="color: red"
-                                href="https://www.google.com/maps/place/Ha+giang+Open+tour/@21.0372799,105.8458299,17.25z/data=!4m7!3m6!1s0x3135ab456e0a23cd:0x98840b4dfd4a308d!8m2!3d21.0369699!4d105.8479462!9m1!1b1?fbclid=IwAR1qcdjfnQmjhxrqaZPShxg-Kv64z1g_JiGVkH8DIjwdkG3dHRyfj3LPgrg"
-                                target="_blank">Xem thêm đánh giá trên Google</a> </i>
+                        <i><a style="color: red" href="/" target="_blank">@lang('language.watchMore')</a> </i>
 
 
                     </div>
@@ -774,7 +583,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <h2 class="h2-title">Kinh nghiệm du lịch</h2>
+                        <h2 class="h2-title">@lang('language.experience')</h2>
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 col-sm-6">
@@ -804,36 +613,13 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="text-right"><a class="bt-view" href="index.html">Xem tất cả <i
+                    <div class="text-right"><a class="bt-view" href="index.html">@lang('language.watchMore')<i
                                 class="fa fa-angle-right"></i></a></div>
                 </div>
             </div>
         </div>
     </section>
     @endif
-    <section class="kinhnghiemdulich wow fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <h2 class="h2-title">Thương hiệu cùng đồng hành</h2>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    @if(!empty($partners))
-                    <div id="slider-home-partner" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @foreach($partners as $partner)
-                        <div class="item" style="border: 1px solid #dddddd">
-                            <a href="#"><img alt="{{ $partner->name }}" src="{{ asset($partner->image_path) }}"
-                                    style="height: 100px;object-fit: contain" /></a>
-                        </div>
-                        @endforeach
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 
 @endsection
