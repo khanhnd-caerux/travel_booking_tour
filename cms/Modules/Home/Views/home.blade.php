@@ -266,6 +266,7 @@
         </div>
     </section>
     @endif
+    @if (isset($categoryWithCar))
     <section class="product-item bgfff wow fadeInUp">
         <div class="container">
             <div class="row">
@@ -339,6 +340,7 @@
         </div>
 
     </section>
+    @endif
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css')}}">
 
@@ -587,13 +589,13 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12 col-sm-6">
-                    <div class="img-kn"><a href="index.html"> <img src="{{ asset($firstPostExperience->image_path) }}"
+                    <div class="img-kn"><a href="{{ route('client.postDetail', ['slug' => $firstPostExperience->slug]) }}"> <img src="{{ asset($firstPostExperience->image_path) }}"
                                 alt="{{ $firstPostExperience->title }}"
                                 style="max-height: 435px;width: 100%;object-fit: cover"> </a>
 
                         <div class="clearfix-10"></div>
                         <h3>
-                            <a href="index.html">{{ $firstPostExperience->title }}</a>
+                            <a href="{{ route('client.postDetail', ['slug' => $firstPostExperience->slug]) }}">{{ $firstPostExperience->title }}</a>
                         </h3>
                         <div class="margin-bottom-10">{{ Str::limit($firstPostExperience->description, 150, '...') }}
                         </div>
@@ -601,11 +603,11 @@
                 </div>
                 <div class="col-md-6 col-xs-12 col-sm-6">
                     @foreach($postExperiences->skip(1)->take(6) as $post)
-                    <div class="clearfix margin-bottom-20"><a href="index.html"> <img class="img-p-small"
+                    <div class="clearfix margin-bottom-20"><a href="{{ route('client.postDetail', ['slug' => $post->slug]) }}"> <img class="img-p-small"
                                 src="{{ asset($post->image_path) }}" alt="{{ $post->title }}">
                         </a>
                         <div style="overflow: hidden">
-                            <h4 class="f16 font-semi"><a href="index.html">{{ $post->title }}</a>
+                            <h4 class="f16 font-semi"><a href="{{ route('client.postDetail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                             </h4>
                             <div class="font-desc">
                                 <p>{{ Str::limit($post->description, 150, '...') }}</p>
@@ -613,7 +615,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="text-right"><a class="bt-view" href="index.html">@lang('language.watchMore')<i
+                    <div class="text-right"><a class="bt-view" href="/">@lang('language.watchAll')<i
                                 class="fa fa-angle-right"></i></a></div>
                 </div>
             </div>

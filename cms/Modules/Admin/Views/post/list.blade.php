@@ -40,7 +40,7 @@
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td><img src="{{ asset($post->image_path) }}" class="img" alt="Post Image"></td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $post->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $post->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td>{{ $post->updated_at }}</td>
                                     <td class="td-actions text-right">

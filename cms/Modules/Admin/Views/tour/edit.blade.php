@@ -126,7 +126,7 @@
                                     Trạng thái
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios1"
-                                            value="show" @if($tour->status === 0) checked @endif>
+                                            value="show" @if($tour->status == 0) checked @endif>
                                         Hiển thị
                                         <span class="circle">
                                             <span class="check"></span>
@@ -134,7 +134,7 @@
                                     </label>
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios2"
-                                            value="hide" @if($tour->status === 1) checked @endif>
+                                            value="hide" @if($tour->status == 1) checked @endif>
                                         Ẩn
                                         <span class="circle">
                                             <span class="check"></span>

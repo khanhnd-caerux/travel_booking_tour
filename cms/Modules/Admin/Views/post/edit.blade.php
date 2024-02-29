@@ -57,7 +57,7 @@ $posts = [
                                     Trạng thái
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios1"
-                                            value="show" @if($post->status === 0) checked @endif>
+                                            value="show" @if($post->status == 0) checked @endif>
                                         Hiển thị
                                         <span class="circle">
                                             <span class="check"></span>
@@ -65,7 +65,7 @@ $posts = [
                                     </label>
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="status" id="exampleRadios2"
-                                            value="hide" @if($post->status === 1) checked @endif>
+                                            value="hide" @if($post->status == 1) checked @endif>
                                         Ẩn
                                         <span class="circle">
                                             <span class="check"></span>

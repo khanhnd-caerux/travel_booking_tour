@@ -46,7 +46,7 @@
                                     <td>{{ $car->name }}</td>
                                     <td><img src="{{ asset($car->feature_image_path) }}" class="img" alt="Thuê xe Image">
                                     </td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $car->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $car->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td>{{ $car->destination_from }}</td>
                                     <td>{{ $car->destination_to }}</td>

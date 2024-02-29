@@ -46,7 +46,7 @@
                                     <td>{{ $ticket->name }}</td>
                                     <td><img src="{{ asset($ticket->feature_image_path) }}" class="img" alt="Vé xe Image">
                                     </td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $ticket->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $ticket->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td>{{ $ticket->destination_from }}</td>
                                     <td>{{ $ticket->destination_to }}</td>

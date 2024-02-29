@@ -35,7 +35,7 @@
                                     <td>{{ $order->name }}</td>
                                     <td>{{ $order->phone }}</td>
                                     <td>{{ $order->email }}</td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $order->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $order->status == 0 ?
                                             'Chưa xác nhận' : 'Đã xác nhận' }}</span></td>
                                     <td>{{ $order->updated_at }}</td>
                                     <td class="td-actions text-right">

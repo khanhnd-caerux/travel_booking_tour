@@ -46,7 +46,7 @@
                                     <td>{{ $tour->name }}</td>
                                     <td><img src="{{ asset($tour->feature_image_path) }}" class="img" alt="Tour Image">
                                     </td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $tour->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $tour->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td>{{ $tour->destination_from }}</td>
                                     <td>{{ $tour->destination_to }}</td>

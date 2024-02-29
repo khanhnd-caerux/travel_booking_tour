@@ -63,7 +63,7 @@
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
-                                        src="{{ $tour->feature_image_path }}" alt="{{ $tour->name }}"></a>
+                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
                                 <div class="poAB">-{{ $tour->discount_percent }}%</div>
                             </div>
                             <div class="clearfix"></div>
@@ -104,7 +104,7 @@
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
-                                        src="{{ $tour->feature_image_path }}" alt="{{ $tour->name }}"></a>
+                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
                                 <div class="poAB">-{{ $tour->discount_percent }}%</div>
                             </div>
                             <div class="clearfix"></div>

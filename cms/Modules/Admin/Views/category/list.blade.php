@@ -52,7 +52,7 @@
                                     @else
                                     <td></td>
                                     @endif
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $category->status === 0 ?
+                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $category->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
                                     <td class="text-right"><span class="text-secondary text-xs font-weight-bold">{{
                                             $category->updated_at
