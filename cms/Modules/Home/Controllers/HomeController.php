@@ -157,50 +157,37 @@ class HomeController extends Controller
 
     public function addToCart(Request $request, $id)
     {
-        $tourBooking = $this->tour->find($id);
-        Session::put('bookingCart', $request->all());
-        $bookingCart = session('bookingCart', $request->all());
-        session(['bookingCart' => $bookingCart]);
-        $totalPrice = ($request->namnguoilon * (int) str_replace(',', '', $tourBooking->price)) + ($request->namnguoilon811 * (int) str_replace(',', '', $tourBooking->price) * 0.5);
-
-        return view('Home::previewBooking', compact('tourBooking', 'totalPrice'));
-    }
-
-    public function storeBooking(Request $request, $id)
-    {
         try {
             DB::beginTransaction();
-            if (Session::get('bookingCart')) {
-                $data = Session::get('bookingCart');
-                $dataBooking = [
-                    'name' => $data['name'],
-                    'phone' => $data['phone'],
-                    'email' => $data['email'],
-                    'note' => $data['note']
+            $data = $request->all();
+            $tourBooking = $this->tour->find($id);
+            $dataBooking = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'note' => $data['note']
+            ];
+            $order = $this->orderService->store($dataBooking);
+            $dataBookingDetail = [
+                'order_id' => $order->id,
+                'tour_id' => $id,
+                'quantity' => json_encode(['nguoilon' => $data['nguoilon'], 'treem' => $data['treem'], 'sosinh' => $data['sosinh']]),
+                'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
+                'date_selected' => Carbon::createFromFormat('d-m-Y', $data['date_selected']),
+                'total_price' => ($data['nguoilon'] * (int) str_replace(',', '', $tourBooking->price)) + ($data['treem'] * (int) str_replace(',', '', $tourBooking->price) * 0.5),
+                'status' => 0,
+            ];
+            if ($order) {
+                $this->orderDetailService->store($dataBookingDetail);
+                $message = [
+                    'type' => 'Thông báo có khách đặt Tour',
+                    'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
+                    'content' => 'Đã đặt Tour cần liên hệ gấp',
+                    'link' => route('admin.order.list'),
                 ];
-                $order = $this->orderService->store($dataBooking);
-                $dataBookingDetail = [
-                    'order_id' => $order->id,
-                    'tour_id' => $id,
-                    'quantity' => json_encode(['nguoilon' => $data['namnguoilon'], 'treem' => $data['namnguoilon811'], 'sosinh' => $data['nametreem']]),
-                    'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
-                    'date_selected' => Carbon::createFromFormat('d-m-Y', $data['date_selected']),
-                    'total_price' => $request->total_price,
-                    'status' => 0,
-                ];
-                if ($order) {
-                    $this->orderDetailService->store($dataBookingDetail);
-                    $message = [
-                        'type' => 'Thông báo có khách đặt Tour',
-                        'task' => 'Khách hàng có tên: ' . $data['name'] .' có số điện thoại '. $data['phone'],
-                        'content' => 'Đã đặt Tour cần liên hệ gấp',
-                        'link' => route('admin.order.list'),
-                    ];
-                    $users = $this->userService->getAll();
-                    SendEmail::dispatch($message, $users)->delay(now()->addMinute());
-                }
+                $users = $this->userService->getAll();
+                SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
-            Session::forget('bookingCart');
             DB::commit();
             return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
         } catch (\Exception $exception) {

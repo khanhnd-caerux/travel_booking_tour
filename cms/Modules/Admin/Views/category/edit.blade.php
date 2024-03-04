@@ -50,6 +50,25 @@
                                         </span>
                                     </label>
                                 </div>
+                                <div class="form-check form-check-radio p-0">
+                                    Ngôn ngữ
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="locale" id="exampleRadios1"
+                                            value="vi" @if($category->locale == 'vi') checked @endif>
+                                        Tiếng Việt
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="locale" id="exampleRadios2"
+                                            value="en" @if($category->locale == 'en') checked @endif>
+                                        Tiếng Anh
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
                                 <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
                                     <label for="exampleFormControlSelect1">Chọn danh mục cha</label>
                                     <select class="form-control w-100" name="parent_id" id="exampleFormControlSelect1">

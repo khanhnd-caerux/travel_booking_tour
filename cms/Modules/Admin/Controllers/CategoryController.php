@@ -52,6 +52,7 @@ class CategoryController extends Controller
                 'status' => $request->status === "show" ? 0 : 1,
                 'parent_id' => $request->parent_id,
                 'type' => $request->type,
+                'locale' => $request->locale,
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
@@ -87,6 +88,7 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->name),
                 'status' => $request->status === "show" ? 0 : 1,
                 'type' => $request->type,
+                'locale' => $request->locale,
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'category');

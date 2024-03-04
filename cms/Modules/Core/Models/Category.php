@@ -20,7 +20,8 @@ class Category extends Model
         'parent_id',
         'image_path',
         'status',
-        'type'
+        'type',
+        'locale',
     ];
 
     public function parent()

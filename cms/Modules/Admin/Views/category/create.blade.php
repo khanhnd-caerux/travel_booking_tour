@@ -49,6 +49,25 @@
                                         </span>
                                     </label>
                                 </div>
+                                <div class="form-check form-check-radio p-0">
+                                    Ngôn ngữ
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="locale" id="exampleRadios1"
+                                            value="vi" checked>
+                                        Tiếng Việt
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="locale" id="exampleRadios2"
+                                            value="en">
+                                        Tiếng Anh
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
                                 <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
                                     <label for="exampleFormControlSelect1">Chọn danh mục cha</label>
                                     <select class="form-control w-100" name="parent_id" id="exampleFormControlSelect1">
@@ -56,18 +75,18 @@
                                         {!! $categoryList !!}
                                     </select>
                                 </div>
+                                @error('type')
+                                <div class="alert alert-danger text-white">{{ $message }}</div>
+                                @enderror
                                 <div class="form-group w-100 input-group input-group-outline my-3 d-flex flex-column">
-                                    <label for="exampleFormControlSelect1">Chọn loại</label>
+                                    <label for="exampleFormControlSelect1">Chọn ngôn ngữ</label>
                                     <select class="form-control w-100" name="type" id="exampleFormControlSelect1">
-                                        <option value="">Chọn loại Danh mục</option>
+                                        <option value="">Chọn loại Ngôn ngữ</option>
                                         @foreach(config('categories.categories') as $key => $value)
                                         <option value="{{$key}}">{{$value}}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                @error('type')
-                                <div class="alert alert-danger text-white">{{ $message }}</div>
-                                @enderror
                                 <div class="form-group form-file-upload form-file-simple">
                                     <label for="exampleFormControlSelect1">Chọn hình ảnh</label>
                                     <input type="file" class="inputFileHidden" name="image_path">

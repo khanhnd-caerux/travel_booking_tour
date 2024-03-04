@@ -31,6 +31,7 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
 
     public function getCateWithTour($slug)
     {
+        $locale = session()->get('locale');
         return $this->category
             ->with([
                 'children' => function ($q) {
@@ -39,6 +40,7 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
             ])
             ->with(['tour', 'ticket', 'car'])
             ->where('slug', $slug)
+            ->where('locale', $locale)
             ->where('status', 0)
             ->where('deleted_at', null)
             ->first();
@@ -46,10 +48,12 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
 
     public function getCategoryParent()
     {
+        $locale = session()->get('locale');
         return $this->category
             ->with('children')
             ->where('parent_id', 0)
             ->where('status', 0)
+            ->where('locale', $locale)
             ->where('deleted_at', null)
             ->get();
     }
