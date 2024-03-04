@@ -16,6 +16,8 @@ class OrderDetail extends Model
     protected $fillable = [
         'order_id',
         'tour_id',
+        'car_id',
+        'ticket_id',
         'quantity',
         'gender',
         'status',

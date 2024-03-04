@@ -42,19 +42,13 @@
                 </h4>
                 <div class="bottom-address">
                     <ul>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">Chính sách bảo
-                                mật</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">@lang('language.policy')</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">Hình thức
-                                thanh toán</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">@lang('language.payment')</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">Chính sách
-                                Đặt, hủy vé</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">@lang('language.cancel')</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'kinh-nghiem-du-lich']) }}">Kinh nghiệm du
-                                lịch</a>
-                        </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'gioi-thieu']) }}">Giới thiệu</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
                         </li>
                     </ul>
                 </div>

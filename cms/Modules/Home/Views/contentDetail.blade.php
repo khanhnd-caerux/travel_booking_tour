@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="{{ route('client.index') }}">@lang('language.homepage')</a></li>
                     <li class="uk-active"><a href="tour-ha-giang.html" title="TOUR HÀ GIANG">TOUR HÀ GIANG</a>
                     </li>
                 </ul>
@@ -176,32 +176,32 @@
                         </li>
                         <li>
                             <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành từ: </span> {{
-                            $contentDetail->destination_from }}
+        $contentDetail->destination_from }}
                         </li>
                         <li>
                             <i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch trình: </span> {{
-                            $contentDetail->destination_to }}
+        $contentDetail->destination_to }}
                         </li>
                         <li>
                             <i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi hành: </span> {{
-                            $contentDetail->schedule }}
+        $contentDetail->schedule }}
                         </li>
                         <li>
                             <i class="fa fa-car text-pri"></i><span class="font-semi">Phương tiện: </span> {{
-                            $contentDetail->vehicle }}
+        $contentDetail->vehicle }}
                         </li>
                     </ul>
                     @else
                     <ul class="ulproduct">
                         <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
-                            $contentDetail->free }} </li>
+        $contentDetail->free }} </li>
                         <li>
                             <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành: </span> {{
-                            $contentDetail->destination_from }}
+        $contentDetail->destination_from }}
                         </li>
                         <li>
                             <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả: </span> {{
-                            $contentDetail->destination_to }}
+        $contentDetail->destination_to }}
                         </li>
                     </ul>
                     <div class="service-child service-child-mobile" style="padding-left: 0px; border: none">
@@ -211,10 +211,8 @@
                     </div>
                     @endif
                 </div>
-
-
                 <div class="mt-15">
-                    <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
+                    <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
                         @if ($contentDetail->category->type == 'tour')
                         <span class="main-text text-uppercase">Đặt tour ngay <i
                                 class="fa fa-angle-right icon-arrow-right"></i></span>
@@ -249,33 +247,14 @@
 
             <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12 wow fadeInUp">
                 <div class="menu-body-tour">
-                    <ul class="nav nav-tour nav-tour-mobile">
-                        @if ($contentDetail->category->type == 'tour')
-                        <li class="nav-item nav-item-tour">
-                            <a id="introduce" href="#gioithieu" class="nav-link nav-link-tour active">Giới thiệu</a>
-                        </li>
-                        <li class="nav-item nav-item-tour">
-                            <a id="schedule" href="#lichtrinh" class="nav-link nav-link-tour">Lịch trình</a>
-                        </li>
-                        <li class="nav-item nav-item-tour">
-                            <a id="clause" href="#dieukhoan" class="nav-link nav-link-tour">Bao gồm và Điều khoản</a>
-                        </li>
-                        @else
-                        <li class="nav-item nav-item-tour">
-                            <a id="introduce" href="javascript:void(0)" class="nav-link nav-link-tour active"
-                                data-toggle="tab">Chi tiết</a>
-                        </li>
-                        @endif
-                    </ul>
                     <div class="clearfix-10"></div>
-
                     <div id="gioithieu">
                         {!! $contentDetail->content !!}
                     </div>
                     <div class="clearfix-10"></div>
                     <div class="col-md-4 col-sm-4 visible-xs">
                         <div class="mt-15">
-                            <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}"
+                            <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}"
                                 class="btn btn-primary btn-lg btn-block button-booking-tour">
                                 <span class="main-text text-uppercase">Đặt tour ngay <i
                                         class="fa fa-angle-right icon-arrow-right"></i></span>
@@ -403,7 +382,7 @@
                             </div>
                         </div>
                         <div class="clearfix-10"></div>
-                        <a href="{{ route('client.bookingTour', ['id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
+                        <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
                             <span class="main-text text-uppercase">Đặt tour ngay <i
                                     class="fa fa-angle-right icon-arrow-right"></i></span>
                             <span class="tiny-text">Giữ chỗ, chưa cần thanh toán</span>

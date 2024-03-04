@@ -29,7 +29,7 @@ Route::group([
     ], function () {
         Route::get('/{slug}', 'HomeController@contentDetail')->name('client.contentDetail');
     });
-    Route::get('/dat-tour/{id}', 'HomeController@bookingTour')->name('client.bookingTour');
-    Route::post('/xem-lai/{id}', 'HomeController@addToCart')->name('client.addToCart');
-    Route::get('/booking/thanh-cong', 'HomeController@successBooking')->name('client.successBooking');
+    Route::get('/booking/{type}/{id}', 'HomeController@booking')->name('client.booking');
+    Route::post('/booking/{type}/{id}', 'HomeController@addToCart')->name('client.addToCart');
+    Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
 });

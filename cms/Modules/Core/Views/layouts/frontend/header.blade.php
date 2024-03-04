@@ -67,7 +67,10 @@
                             @endforeach
                             @endif
                             <li>
-                                <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">LIÊN HỆ</a>
+                                <a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
                             </li>
                         </ul>
                     </nav>
@@ -129,7 +132,10 @@
                         @endforeach
                         @endif
                         <li>
-                            <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">LIÊN HỆ</a>
+                        <a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
                         </li>
                     </ul>
                 </div>

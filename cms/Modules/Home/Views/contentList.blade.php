@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="{{ route('client.index') }}">Trang chủ</a></li>
+                    <li><a href="{{ route('client.index') }}">@lang('language.homepage')</a></li>
                     <li class="uk-active"><a href="{{ route('client.contentList', ['slug' => $contentList->slug]) }}"
                             title="{{ $contentList->name }}">{{ $contentList->name }}</a>
                     </li>
@@ -220,7 +220,7 @@
                     @endif
                     @if(count($contentList->children) > 0)
                     @foreach($contentList->children as $category)
-                    @foreach($category->car as $ticket)
+                    @foreach($category->car as $car)
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">

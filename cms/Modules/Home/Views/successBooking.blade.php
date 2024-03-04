@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb ">
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href=""> Đặt Tour thành công</a></li>
+                    <li><a href="/">@lang('language.homepage')</a></li>
+                    <li><a href=""> @lang('language.success')</a></li>
                 </ul>
             </div>
         </div>
@@ -22,14 +22,14 @@
                     <div class="col-md-12 page_speed_909149143">
                         <div class="fix-width-booking">
                             <div class="text-center">
-                                <h2 class="h2-title" style="margin-bottom: 20px">Đặt Tour thành công</h2>
+                                <h2 class="h2-title" style="margin-bottom: 20px">@lang('language.success')</h2>
                             </div>
                             <div class="clearfix"></div>
                             <div class="thankyou">
                                 <div class="thank_content">
-                                    <h2>Chân thành cảm ơn !</h2>
+                                    <h2>@lang('language.thank')</h2>
                                     <p>{{ Session::get('success') }}</p>
-                                    <a href="{{ route('client.index') }}" class="text_back">Về trang chủ</a>
+                                    <a href="{{ route('client.index') }}" class="text_back">@lang('language.backhomepage')</a>
                                 </div>
                             </div>
                         </div>

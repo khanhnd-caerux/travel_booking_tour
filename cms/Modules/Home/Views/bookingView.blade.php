@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb ">
-                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/">@lang('language.homepage')</a></li>
                     <li><a href=""> Đặt Tour</a></li>
                 </ul>
             </div>
@@ -24,7 +24,7 @@
                             <div class="text-center">
                                 <h2 class="h2-title" style="margin-bottom: 20px">Đặt Tour</h2>
                             </div>
-                            @if ($tourBooking)
+                            @if (isset($tourBooking))
                             <div id="tsTourDetail">
                                 <div class="item-info-combo">
                                     <div class="styl-image-booking">
@@ -53,8 +53,7 @@
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-calendar text-pri"></i><span
-                                                            class="font-semi">Khởi hành: </span> {{
-        $tourBooking->schedule }}
+                                                            class="font-semi">Khởi hành: </span> {{ $tourBooking->schedule }}
                                                     </li>
                                                     <li>
                                                         <i class="fa fa-car text-pri"></i><span class="font-semi">Phương
@@ -68,8 +67,96 @@
                                 </div>
                             </div>
                             @endif
+                            @if (isset($carBooking))
+                            <div id="tsTourDetail">
+                                <div class="item-info-combo">
+                                    <div class="styl-image-booking">
+                                        <div class="img-booking">
+                                            <img src="{{ asset($carBooking->feature_image_path) }}"
+                                                alt="{{ $carBooking->name }}">
+                                        </div>
+                                        <div class="item-info-booking booking-info-tour">
+                                            <p class="page_speed_1021675572">
+                                                {{ $carBooking->name }} </p>
+                                            <div class="item-booking">
+                                                <style>
+                                                    .ulproduct li {
+                                                        margin-bottom: 5px;
+                                                    }
+                                                </style>
+                                                <ul class="ulproduct">
+                                                    <li>
+                                                        <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                                            hành từ: </span> {{ $carBooking->destination_from }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-clock-o text-pri"></i><span
+                                                            class="font-semi">Lịch trình:
+                                                        </span> {{ $carBooking->destination_to }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-calendar text-pri"></i><span
+                                                            class="font-semi">Lộ trình: </span> {{ $carBooking->road }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-car text-pri"></i><span class="font-semi">Miễn phí:
+                                                        </span> {{ $carBooking->free }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @if (isset($ticketBooking))
+                            <div id="tsTourDetail">
+                                <div class="item-info-combo">
+                                    <div class="styl-image-booking">
+                                        <div class="img-booking">
+                                            <img src="{{ asset($ticketBooking->feature_image_path) }}"
+                                                alt="{{ $ticketBooking->name }}">
+                                        </div>
+                                        <div class="item-info-booking booking-info-tour">
+                                            <p class="page_speed_1021675572">
+                                                {{ $ticketBooking->name }} </p>
+                                            <div class="item-booking">
+                                                <style>
+                                                    .ulproduct li {
+                                                        margin-bottom: 5px;
+                                                    }
+                                                </style>
+                                                <ul class="ulproduct">
+                                                    <li>
+                                                        <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
+                                                            hành từ: </span> {{ $ticketBooking->destination_from }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-clock-o text-pri"></i><span
+                                                            class="font-semi">Lịch trình:
+                                                        </span> {{ $ticketBooking->destination_to }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-calendar text-pri"></i><span
+                                                            class="font-semi">Khởi hành: </span> {{ $ticketBooking->schedule }}
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-car text-pri"></i><span class="font-semi">Phương
+                                                            tiện:
+                                                        </span> {{ $ticketBooking->vehicle }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
                             <form method="post" id="mailsubricrexe"
-                                action="{{ route('client.addToCart', ['id' => $tourBooking->id]) }}">
+                                @if(isset($tourBooking)) action="{{ route('client.addToCart', ['type' => $type, 'id' => $tourBooking->id]) }}" @endif
+                                @if(isset($carBooking)) action="{{ route('client.addToCart', ['type' => $type, 'id' => $carBooking->id]) }}" @endif
+                                @if(isset($ticketBooking)) action="{{ route('client.addToCart', ['type' => $type, 'id' => $ticketBooking->id]) }}" @endif
+                                >
                                 @csrf
                                 <div class="content-booking content-booking-update price-detail-animation page_speed_1628318564"
                                     id="formQ">
@@ -105,6 +192,7 @@
 
                                                 </div>
                                             </div>
+                                            @if(!isset($carBooking))
                                             <label class="font-12">Mời anh/chị chọn số lượng</label>
                                             <div class="row">
                                                 <div class="col-md-4 mb-3">
@@ -129,6 +217,7 @@
                                                         required />
                                                 </div>
                                             </div>
+                                            @endif
                                             <div class="row">
                                                 <div class="col-md-12">
                                                 <label class="font-12">Mời anh/chị chọn ngày</label>

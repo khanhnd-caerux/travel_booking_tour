@@ -23,7 +23,7 @@ class OrderController extends Controller
 
     public function list()
     {
-        $orders = $this->orderService->paginate(10);
+        $orders = $this->orderService->paginateWithDetail(10);
 
         return view('Admin::order.list', compact('orders'));
     }
@@ -31,7 +31,7 @@ class OrderController extends Controller
     public function detail($id)
     {
         $order = $this->orderService->getOrderWithDetail($id);
-        
+
         return view('Admin::order.detail', compact('order'));
     }
 

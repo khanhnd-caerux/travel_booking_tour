@@ -17,6 +17,8 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('tour_id');
+            $table->unsignedBigInteger('car_id');
+            $table->unsignedBigInteger('ticket_id');
             $table->integer('quantity');
             $table->string('gender');
             $table->timestamp('date_selected');

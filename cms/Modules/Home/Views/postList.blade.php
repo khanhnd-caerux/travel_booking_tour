@@ -5,18 +5,38 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="https://hagiangopentour.com/">Trang chủ</a></li>
+                    <li><a href="https://hagiangopentour.com/">@lang('language.homepage')</a></li>
                     <li class="uk-active"><a href="https://hagiangopentour.com/kinh-nghiem-du-lich.html"
-                            title="Kinh nghiệm du lịch">Kinh nghiệm du lịch</a>
+                            title="@lang('language.experience')">@lang('language.experience')</a>
                     </li>
                 </ul>
                 <div class="text-center">
-                    <h1 class="h2-title">Kinh nghiệm du lịch</h1>
+                    <h1 class="h2-title">@lang('language.experience')</h1>
                 </div>
                 <div class="clearfix"></div>
                 <div class="desc-catalogue">
+
+                    @if (session()->get('locale') == 'en')
                     <div style="text-align: justify;">
-                        <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span
+                        <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">Traveling to <strong>Hà Giang</strong> is very convenient and easy with various time frames from <strong>07h - 22h</strong> daily at bus stations from <strong>Hanoi</strong> such as <strong>Mỹ Đình</strong> bus station, <strong>Gia Lâm</strong> bus station. But the most convenient option is to book tickets from travel companies offering free pick-up services with modern and comfortable vehicles like: </span><a href="https://hagiangopentour.com/xe-limousine-ha-giang-ha-noi.html"><span style="color:#000000;"><strong>Ha Giang Epic Limousine</strong></span></a><span style="color:#000000;">,</span><strong><span style="color:#000000;"> </span><a href="https://hagiangopentour.com/xe-cung-dien-ha-giang-ha-giang-open-tour.html"><span style="color:#000000;">Hà Giang Royal Car</span></a><span style="color:#000000;">, Hà Giang sleeper buses</span></strong><span style="color:#000000;"> ... With extremely reasonable prices ranging from <strong>200,000 VND to 350,000 VND per ticket.</strong></span></span></span></p>
+
+                            <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">For those who enjoy traveling - You don't need to ride a motorbike from Hanoi, you can take a passenger bus to <strong>Ha Giang City</strong>, then you can rent a motorbike from rental shops easily online or directly with various types of motorbikes such as: </span><strong><span style="color:#000000;"> </span><a href="https://hagiangopentour.com/ha-giang-cho-thue-xe-may-cao-cao.html"><span style="color:#000000;">Scooters</span></a></strong><span style="color:#000000;"> in large distribution, </span><a href="https://hagiangopentour.com/cho-thue-xe-may-wave-110-tai-ha-giang.html"><span style="color:#000000;"><strong>Wave motorbikes</strong></span></a><span style="color:#000000;"> ... with prices ranging from <strong>150,000 VND to 450,000 VND per day.</strong> Or you can also rent a tourist car with friends and family for sightseeing, exploring all over the <strong>Rocky Plateau.</strong></span></span></span></p>
+
+                                <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">For first-time visitors, you can easily contact </span><strong><a href="https://hagiangopentour.com/"><span style="color:#000000;">Ha Giang Open Tour</span></a><span style="color:#000000;"> </span></strong><span style="color:#000000;">company for experiential trips with </span><strong><span style="color:#000000;"> </span><a href="https://hagiangopentour.com/tour-phuot-xe-may.html"><span style="color:#000000;">Ha Giang Motorcycle Adventure Tours</span></a></strong><span style="color:#000000;"> or </span><a href="https://hagiangopentour.com/tour-o-to-ha-giang.html"><span style="color:#000000;"><strong>Ha Giang Car Tours</strong></span></a><span style="color:#000000;"> combining sightseeing and enjoyable check-ins.</span></span></span></p>
+
+                                    <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">When is the best time to visit <strong>Ha Giang</strong>?</span></span></span></p>
+
+                                    <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">+ From January, February, March of the lunar calendar: <strong>Ha Giang</strong> becomes vibrant with the colors of <strong>Peach Blossoms</strong>, <strong>Plum Blossoms</strong>, <strong>Mustard Flowers</strong>. At the same time, this period coincides with our country's <strong>Tết Nguyên Đán (Lunar New Year)</strong> so there are also many traditional festivals of the highland ethnic groups.</span></span></span></p>
+
+                                    <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">+ From April, May, June, July of the lunar calendar: <strong>Ha Giang</strong> turns into smooth yellow of mountains besides the emerald green of <strong>Nho Quế River</strong>, with the cool atmosphere of <strong>Đồng Văn</strong>, <strong>Lũng Cú</strong>, and peaceful countryside of <strong>Du Già...</strong></span></span></span></p>
+
+                                    <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">+ From August, September of the lunar calendar: <strong>Ha Giang</strong> is famous for its magnificent terraced rice fields in <strong>Hoàng Su Phì</strong> district, cloud hunting at <strong>Quản Bạ Heaven's Gate</strong>, admiring the majestic rocky mountains at <strong>Mã Pí Lèng Pass</strong>...</span></span></span></p>
+
+                                    <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span style="color:#000000;">+ From October, November, December of the lunar calendar: <strong>Ha Giang</strong> becomes intense red with the blooms of <strong>Buckwheat Flowers</strong> in the cold winter atmosphere on the border region.</span></span></span></p>
+                                </div>
+                                @else
+                                <div style="text-align: justify;">
+                                <p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><span
                                         style="color:#000000;">Việc đi lại nên <strong>Hà Giang</strong>&nbsp;rất thuận
                                         tiện và dễ dàng với nhiều khung giờ khác nhau từ <strong>07h&nbsp;-
                                             22h</strong>&nbsp;hàng ngày tại các bến xe từ <strong>Hà Nội</strong> như
@@ -95,7 +115,8 @@
                                         trở lên đỏ sẫm rực rỡ của những cánh đồng<strong> Hoa Tam Giác Mạch</strong>
                                         trong cái không khí&nbsp;xe lạnh của mùa đông tại vùng biên
                                         cương.</span></span></span></p>
-                    </div>
+                        </div>
+                    @endif
 
                 </div>
                 <div class="row">

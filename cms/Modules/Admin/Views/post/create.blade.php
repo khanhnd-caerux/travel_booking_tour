@@ -8,7 +8,7 @@ $posts = [
 "policy" => "Chính sách bảo mật",
 "payment" => "Chính sách thanh toán",
 "cancel" => "Chính sách huỷ, đặt vé",
-"experience" => "Kinh nghiệm du lịch",
+"experience" => "Trải nghiệm du lịch",
 ]
 @endphp
 <div class="container-fluid py-4">

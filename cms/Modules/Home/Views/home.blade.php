@@ -112,6 +112,7 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-6">
                     <h2 class="h2-title none">@lang('language.theIdea')</h2>
+                    @if(session()->get('locale') == 'vi')
                     <div class="text-justify" id="text-justify-home">
                         <p style="text-align: justify;"><span style="font-size:16px;"><span
                                     style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><a
@@ -174,6 +175,15 @@
                         <p>&nbsp;</p>
 
                     </div>
+                    @else
+                        <div class="text-justify" id="text-justify-home">
+                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><a href="index.html"><strong>Hà Giang</strong></a> has a global geopark recognized by UNESCO as a world heritage site - <strong>Dong Van Karst Plateau</strong>. This place is famous for its beautiful roads and steep passes, making it an ideal destination for adventurers. These include: <strong>Happiness Road, Mã Pí Lèng Pass, Nho Quế River, Thẩm Mã Slope</strong>...</span></span></span></p>
+                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><strong>Hà Giang</strong> is home to many ethnic groups such as: <strong>Hmong, Lolo, Tay, Dao</strong>... With various customs and traditions, this place has diverse cultural aspects, providing interesting experiences for travelers through car or motorbike tours.</span></span></span></p>
+                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><strong>Hà Giang</strong> is also famous for its <strong>terraced fields</strong> in <strong>Hoàng Su Phì</strong>, with fields of <strong>Buckwheat Flowers, Cherry Blossoms, Plum Blossoms, Mustard Flowers</strong>... These provide perfect spots for "Check-in Tours" with stunning photographs.</span></span></span></p>
+                        <p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;">With newly constructed and expanded roads, traveling to <strong>Hà Giang</strong> is now very convenient with many modern tourist vehicles operating at various times. Additionally, you can easily book <strong>Hà Giang tours</strong>. Come to <strong>Hà Giang Open Tour</strong> for unique experiences and unforgettable memories, as pioneers offering <strong>car tours</strong> and <strong>motorbike tours</strong> in Hà Giang.</span></span></span></p>
+                        <p>&nbsp;</p>
+                        </div>
+                    @endif
 
                 </div>
                 @if (!empty($galleries))
@@ -199,25 +209,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <h2 class="h2-title">{{ $categoryWithTour->name }}</h2>
-                    </div>
-                    <div class="product-category-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @foreach($categoryWithTour->children as $cate)
-                        <div class="item">
-                            <div class="relativeTour">
-                                <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">
-                                    <img src="{{ asset($cate->image_path) }}" alt="{{ $cate->name }}">
-                                </a>
-                                <div class="absoluteTour">
-                                    <a href="{{ route('client.contentList', ['slug' => $cate->slug]) }}">{{ $cate->name
-                                        }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                    <div class="text-center">
-                        <h2 class="h2-title">Chương trình tour nổi bật</h2>
+                        <h2 class="h2-title">@lang('language.highlight')</h2>
                     </div>
 
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
@@ -345,69 +337,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css')}}">
 
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js')}}"></script>
-
-
-
-
-
-
-
-    <section class="section wow fadeInUp" style="background: #00933d;color:#ffffff" id="box-whyus">
-
-        <div class="container">
-
-            <div class="row text-center text-300">
-
-
-                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
-
-                    <h5 class="h5-count"><span class="count-element">{{ $configValues['nam-kinh-nghiem-to-chuc-tour']
-                            }}</span></h5>
-                    {{ $configLabels['nam-kinh-nghiem-to-chuc-tour'] }}
-                </div>
-
-
-                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
-
-                    <h5 class="h5-count"><span class="count-element">{{ $configValues['top-20-doanh-nghiep-du-lich']
-                            }}</span>
-
-                    </h5>{{ $configLabels['top-20-doanh-nghiep-du-lich'] }}
-
-                </div>
-
-
-                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
-
-                    <h5 class="h5-count"><span class="count-element">{{ $configValues['top-tour-ha-giang'] }}</span>
-
-                    </h5> {{ $configLabels['top-tour-ha-giang'] }}
-
-                </div>
-
-                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
-
-                    <h5 class="h5-count"><span class="count-element">{{ $configValues['khach-hang-hai-long'] }}</span>
-
-                    </h5> {{ $configLabels['khach-hang-hai-long'] }}
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-
-
-
-
-
-
 
     <section class="ykienkhachhang wow fadeInUp">
 

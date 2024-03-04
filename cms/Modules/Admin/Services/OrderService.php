@@ -19,4 +19,9 @@ class OrderService extends CoreBaseService implements OrderServiceContract
     {
         return $this->repository->getOrderWithDetail($id);
     }
+
+    public function paginateWithDetail($number)
+    {
+        return $this->repository->paginateWithDetail($number);
+    }
 }

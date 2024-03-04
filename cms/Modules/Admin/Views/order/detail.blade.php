@@ -83,7 +83,7 @@
                                     <tr class="total">
                                         <td></td>
 
-                                        <td>Tổng tiền: {{ $detail->total_price }}</td>
+                                        <td>Tổng tiền: {{ $order->total_price }}</td>
                                     </tr>
                                 </table>
                             </div>

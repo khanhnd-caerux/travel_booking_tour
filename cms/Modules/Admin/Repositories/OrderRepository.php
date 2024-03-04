@@ -24,4 +24,12 @@ class OrderRepository extends CoreBaseRepository implements OrderRepositoryContr
             ->whereNull('deleted_at')
             ->first();
     }
+
+    public function paginateWithDetail($number)
+    {
+        return $this->order
+            ->with('orderDetail')
+            ->whereNull('deleted_at')
+            ->paginate($number);
+    }
 }
