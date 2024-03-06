@@ -35,6 +35,13 @@ class OrderController extends Controller
         return view('Admin::order.detail', compact('order'));
     }
 
+    public function update($id)
+    {
+        $order = $this->orderDetailService->update($id, ['status' => 1]);
+
+        return redirect()->route('admin.order.list')->with('success', 'Hoàn thành xác nhận đơn hàng!');
+    }
+
     public function delete($id)
     {
         try {

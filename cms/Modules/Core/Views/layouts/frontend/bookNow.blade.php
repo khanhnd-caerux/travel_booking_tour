@@ -1,8 +1,9 @@
-<div class="book_now" style="position: fixed;">
+<div class="book_now" style="position: fixed; z-index: 100;">
     <img class="img_booknow" id="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
 </div>
 <div class="contact_layout d-none" id="contact_layout">
 <div class="contact_form d-none" id="contact_form">
+    <button class="btn_close" id="close">X</button>
     <form action="{{ route('client.contact.store') }}" method="post">
     @csrf
     <h1>@lang('language.labelForm')</h1>
@@ -26,7 +27,6 @@
     <label for="the-message">@lang('language.note')</label>
         <textarea name="note" id="the-message"></textarea>
         <input type="submit" value="@lang('language.send')">
-        <input type="button" id="close" src="{{ asset('frontend/book_now.png') }}" value="@lang('language.close')">
     </div>
     </form>
 </div>
@@ -41,7 +41,7 @@
         left: 30%;
         background: #f0f0f0;
         padding: 10px;
-        top: 10%;
+        top: 5%;
         z-index: 9999;
         border-radius: 15px;
     }
@@ -54,7 +54,7 @@
         top: 0;
         left: 0;
     }
-    h1, p{
+    .contact_form h1, .contact_form p{
     text-align: center;
     }
     label{
@@ -72,7 +72,7 @@
     resize:vertical;
     }
     textarea{
-    min-height:180px;
+    min-height:60px;
     }
     select{
     color:indigo;
@@ -87,13 +87,13 @@
     color:red;
     }
 
-    input[type=submit], input[type=button]{
+    input[type=submit]{
     background:lightcoral;
     margin:1em 0 0;
     color:white;
     border:none;
     float: left;
-    width: 48%;
+    width: 100%;
     margin-right: 10px;
     border-radius:8px;
     transition:all .3s ease-out;
@@ -143,6 +143,15 @@
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
             40% {transform: translateY(-20px);}
             60% {transform: translateY(-10px);}
+        }
+        .btn_close {
+            padding: 10;
+            border-radius: 10px;
+            border: none;
+            position: absolute;
+            font-size: 20px;
+            top: 5px;
+            right: 5px;
         }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

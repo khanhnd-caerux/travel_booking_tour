@@ -64,7 +64,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
                                         src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
@@ -105,7 +105,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
                                         src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
@@ -147,7 +147,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
-                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
@@ -186,7 +186,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
-                                <div class="poAB">-{{ $ticket->discount_percent }}%</div>
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
@@ -226,7 +226,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
+                                
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
@@ -265,7 +265,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">

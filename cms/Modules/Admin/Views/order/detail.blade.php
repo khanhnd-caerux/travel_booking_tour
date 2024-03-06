@@ -32,13 +32,14 @@
                                                     class="text-dark ms-sm-2 font-weight-bold">{{
                                                     $order->note }}</span></span>
                                         </div>
-                                        <div class="ms-auto text-end">
-                                            <a class="btn btn-link text-danger text-gradient px-3 mb-0"
-                                                href="javascript:;"><i
-                                                    class="material-icons text-sm me-2">delete</i>Delete</a>
-                                            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                    class="material-icons text-sm me-2">edit</i>Edit</a>
-                                        </div>
+                                        <form action="{{ route('admin.order.update', ['id' => $order->orderDetail[0]->id]) }}" method="post">
+                                            @csrf
+                                            <div class="ms-auto text-end">
+                                                <button class="btn btn-link text-dark px-3 mb-0" href="">
+                                                <i class="material-icons text-sm me-2">edit</i>Hoàn tất xác nhận thông tin
+                                                </button>
+                                            </div>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -64,7 +65,6 @@
                                     @foreach($order->orderDetail as $detail)
                                     <tr class="heading">
                                         <td>Tên Tour</td>
-
                                         <td>{{ $detail->tour_id }}</td>
                                     </tr>
                                     <tr class="heading">
@@ -74,16 +74,16 @@
                                     </tr>
                                     <tr class="heading">
                                         <td>Số lượng </td>
+                                        @if($detail->quantity != 0)
                                         @foreach (json_decode($detail->quantity, true) as $key => $value)
                                         <td>@if($key == "nguoilon")  Người lớn @elseif ($key == "treem") Trẻ em @else Trẻ sơ sinh @endif: @if ($value !== null) {{ $value }} @else 0 @endif</td>
                                         @endforeach
-
+                                        @endif
                                     </tr>
                                     @endforeach
                                     <tr class="total">
                                         <td></td>
-
-                                        <td>Tổng tiền: {{ $order->total_price }}</td>
+                                        <td>Tổng tiền: {{ number_format($detail->total_price, 0) }} VND</td>
                                     </tr>
                                 </table>
                             </div>

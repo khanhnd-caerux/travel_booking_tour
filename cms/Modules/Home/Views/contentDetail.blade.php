@@ -156,7 +156,6 @@
                     <p class="dp-n-tablet-small">Giá chỉ từ: </p>
 
                     <p class="price-new">{{ $contentDetail->price }} VND</p>
-                    <p class="price-old">{{ $contentDetail->price }} VND</p>
 
                     <div class="star star-mobile">
                         <span><i class="fa fa-star"></i></span>
@@ -294,7 +293,7 @@
                                 <div class="img">
                                     <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
                                             src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                                    <div class="poAB">-{{ $tour->discount_percent }}%</div>
+
                                 </div>
 
                                 <div class="info">
@@ -353,7 +352,7 @@
                         <div class="img">
                             <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
                                     src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                            <div class="poAB">-{{ $tour->discount_percent }}%</div>
+
                         </div>
 
                         <div class="info">

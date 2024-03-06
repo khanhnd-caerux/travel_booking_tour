@@ -1,4 +1,4 @@
-@extends('Core::layouts.backend.app', ['activePage' => __('order') , 'titlePage' => __('Danh sách Order')])
+@extends('Core::layouts.backend.app', ['activePage' => __('order'), 'titlePage' => __('Danh sách Order')])
 @section('js')
 <script src="{{ asset('backend/assets/js/sweetAlert/sweetAlert.min.js') }}"></script>
 <script src="{{ asset('backend/assets/js/sweetAlert/sweetAlertFunction.js') }}"></script>
@@ -14,6 +14,11 @@
                         <h6 class="text-white text-capitalize ps-3">Danh sách Order</h6>
                     </div>
                 </div>
+                @if (session('success'))
+                <div class="alert alert-success mt-1">
+                    {{ session('success') }}
+                </div>
+                @endif
                 <div class="card-body px-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table">
@@ -35,8 +40,9 @@
                                     <td>{{ $order->name }}</td>
                                     <td>{{ $order->phone }}</td>
                                     <td>{{ $order->email }}</td>
-                                    <td><span class="badge badge-sm bg-gradient-secondary">{{ $order->status == 0 ?
-                                            'Chưa xác nhận' : 'Đã xác nhận' }}</span></td>
+                                    <td><span class="badge badge-sm {{ $order->orderDetail[0]->status == 0 ?
+                                    'bg-gradient-secondary' : 'bg-gradient-primary' }}">{{ $order->orderDetail[0]->status == 0 ?
+                                    'Chưa xác nhận' : 'Đã xác nhận' }}</span></td>
                                     <td>{{ $order->updated_at }}</td>
                                     <td class="td-actions text-right">
                                         <a class="btn text-danger text-gradient px-3 mb-0 action_delete" href=""

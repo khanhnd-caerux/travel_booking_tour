@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row flex-row" style="position: relative">
-            <div class="header-left col-md-7 col-sm-6 col-xs-12" style="padding-right: 0px;">
+            <div class="header-left col-md-9 col-sm-6 col-xs-12" style="padding-right: 0px;">
                 <div class="flex-row">
                     <div class="wLOGO">
                         <a href="{{ route('client.index') }}">
@@ -81,7 +81,7 @@
                 <!-- end mobile -->
             </div>
 
-            <div class="header-left col-md-5 hidden-xs col-sm-6">
+            <div class="header-left col-md-3 hidden-xs col-sm-6">
                 <div class="top-hotline flex-row">
                     @if (isset($configValues['hotline']))
                     <a href="tel:{{ $configValues['hotline'] }}" class="hotline">

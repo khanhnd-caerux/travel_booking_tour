@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-6">
                     <div class="item-taisaochon">
-                        <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/langnghe.png"
+                        <div class="img"><img style="border-radius: 50%" src="https://hagiangmountaintravel.com/storage/logo.jpeg"
                                 alt="LẮNG NGHE">
                         </div>
                         @if(isset($configLabels['du-lich']))
@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-md-6 col-xs-12 col-sm-6">
                     <div class="item-taisaochon">
-                        <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/antam.png"
+                        <div class="img"><img style="border-radius: 50%" src="https://hagiangmountaintravel.com/storage/logo.jpeg"
                                 alt="AN TÂM - TIN TƯỞNG">
 
                         </div>
@@ -48,9 +48,57 @@
 
     </section>
 
-
-
-
+    <section class="product-item bgfff wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h2 class="h2-title">Dự án thiện nguyện</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <h3>Số lượng khách đã đặt Tour</h3>
+                                <p>{{ $customerTour }}</p>
+                            </div>
+                            <div>
+                                <h3>Số tiền được trích ra làm từ thiện</h3>
+                                <p>{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">{{ (session()->get('locale') == 'en') ? 'Name' : 'Tên khách hàng' }} </th>
+                                <th scope="col">{{ (session()->get('locale') == 'en') ? 'Phone number' : 'SDT' }}</th>
+                                <th scope="col">{{ (session()->get('locale') == 'en') ? 'Tour name' : 'Tour đã đặt' }}</th>
+                                <th scope="col">{{ (session()->get('locale') == 'en') ? 'Money' : 'Tiền' }}</th>
+                                </tr>
+                            </thead>
+                            @if($tourInfos)
+                            <tbody>
+                                @foreach($tourInfos as $info)
+                                <tr>
+                                <th scope="row">{{ $loop->index + 1 }}</th>
+                                <td>{{ $info['name'] }}</td>
+                                <td>{{ $info['phone'] }}</td>
+                                <td>{{ $info['tour_name'] }}</td>
+                                <td>{{ $info['total_price'] }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            @endif
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <style>
         .absoluteTour {
             position: absolute;
@@ -197,7 +245,7 @@
                             <div class="img">
                                 <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
                                         src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
-                                <div class="poAB">-{{ $tour->discount_percent }}%</div>
+
                             </div>
                             <div class="info">
                                 <h3 class="h3-name">
@@ -236,255 +284,6 @@
         </div>
     </section>
     @endif
-    @if (isset($categoryWithCar))
-    <section class="product-item bgfff wow fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <h2 class="h2-title">{{$categoryWithCar->name}}</h2>
-                    </div>
-                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                        @if ($categoryWithCar->car)
-                        @foreach ($categoryWithCar->car as $car)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
-                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a
-                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
-                                        }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $car->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $car->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endif
-                        @if ($categoryWithCar->children)
-                        @foreach ($categoryWithCar->children as $children)
-                        @foreach ($children->car as $car)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
-                                        src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                <div class="poAB">-{{ $car->discount_percent }}%</div>
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name"><a
-                                        href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{ $car->name
-                                        }}</a></h3>
-                                <ul class="ulproduct">
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span>{{ $car->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón
-                                            trả: </span> {{ $car->destination_to }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> Chỉ từ <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        @endforeach
-                        @endif
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    @endif
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css')}}">
-
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js')}}"></script>
-
-    <section class="ykienkhachhang wow fadeInUp">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <div class="text-center">
-                        <h2 class="h2-title">@lang('language.customerReview')</h2>
-
-                        <i><a style="color: red" href="/" target="_blank">@lang('language.watchMore')</a> </i>
-
-
-                    </div>
-
-
-
-                    <div id="slider-ykien" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-
-
-                        <div class="item">
-
-                            <div class="avatar "><img
-                                    src="https://hagiangopentour.com/upload/images/anh-y-kien/y-kien-khach-hang-4.jpg"
-                                    alt="Trải nghiệm tour xe máy 3Đ2N">
-
-                                <div>
-
-                                    <div class="name-test color-orange font-weight-bold f18">Trải nghiệm
-                                        tour xe máy 3Đ2N
-                                    </div>
-
-                                    <div class="tour-test color-orange f14">Mình vừa trải nghiệm tour xe máy
-                                        cùng Hà Giang Open Tour, an toàn, xe máy đi rất thích&nbsp;và thú vị
-                                        cùng bạn HDV nhiệt tình, vui tính,&nbsp;Team phục vụ rất chuyên
-                                        nghiệp và nhiệt tình.
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <div class="margin-bottom-10" style="font-size: 16px">
-
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="item">
-
-                            <div class="avatar "><img
-                                    src="https://hagiangopentour.com/upload/images/anh-y-kien/y-kien-khach-hang-2.jpg"
-                                    alt="Trải nghiệm Hà Giang 3N2D">
-
-                                <div>
-
-                                    <div class="name-test color-orange font-weight-bold f18">Trải nghiệm Hà
-                                        Giang 3N2D
-                                    </div>
-
-                                    <div class="tour-test color-orange f14">I just had a wonderful
-                                        experience with Ha Giang Open Tour in Ha Giang 3N2D trip ... under
-                                        the witty, graceful, thoughtful direction of Tuan; The absolute
-                                        safety of Loc driving and his enthusiasm Tuan helps me and the team
-                                        have beautiful photos ...
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <div class="margin-bottom-10" style="font-size: 16px">
-
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="item">
-
-                            <div class="avatar "><img
-                                    src="https://hagiangopentour.com/upload/images/anh-y-kien/y-kien-khach-hang-1.jpg"
-                                    alt="Trải nghiệm chuyến đi Hà Giang, đúng thật vui hết cỡ!">
-
-                                <div>
-
-                                    <div class="name-test color-orange font-weight-bold f18">Trải nghiệm
-                                        chuyến đi Hà Giang, đúng thật vui hết cỡ!
-                                    </div>
-
-                                    <div class="tour-test color-orange f14">Chị rất ấn tượng về bạn
-                                        Hùng&nbsp;- HDV tour chị đi với những chia sẻ là :"Dù biết đấy là
-                                        đặc thù công việc, nhưng với giọng nói hay, dí dỏm, nhiệt tình với
-                                        tất cả các thành viên của đoàn đã đem lại hứng thú cho mình.
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <div class="margin-bottom-10" style="font-size: 16px">
-
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="item">
-
-                            <div class="avatar "><img
-                                    src="https://hagiangopentour.com/upload/images/anh-y-kien/y-kien-khach-hang-3.jpg"
-                                    alt="Hà Giang những chuyến đi trải nghiệm thú vị">
-
-                                <div>
-
-                                    <div class="name-test color-orange font-weight-bold f18">Hà Giang những
-                                        chuyến đi trải nghiệm thú vị
-                                    </div>
-
-                                    <div class="tour-test color-orange f14">Nhóm chúng mình đã đồng hành
-                                        trên mọi nẻo đường cùng Hà Giang Open Tour liên tục trong 2 năm liền
-                                        và gần đây nhất là chuyến đi Hoàng Su Phì....
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <div class="margin-bottom-10" style="font-size: 16px">
-
-
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
 
     @if(!empty($postExperiences))
     <section class="kinhnghiemdulich wow fadeInUp">
