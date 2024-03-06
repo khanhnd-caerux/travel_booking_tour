@@ -15,7 +15,7 @@
     <section class="taisaochon wow fadeInUp">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-12 col-sm-4">
+                <div class="col-md-6 col-xs-12 col-sm-6">
                     <div class="item-taisaochon">
                         <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/langnghe.png"
                                 alt="LẮNG NGHE">
@@ -23,12 +23,12 @@
                         @if(isset($configLabels['du-lich']))
                         <div class="info">
                             <h3>{{ $configLabels['du-lich'] }}</h3>
-                            <p>{{ $configValues['du-lich'] }}</p>
+                            <p style="text-align: left;">{{ $configValues['du-lich'] }}</p>
                         </div>
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-12 col-sm-4">
+                <div class="col-md-6 col-xs-12 col-sm-6">
                     <div class="item-taisaochon">
                         <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/antam.png"
                                 alt="AN TÂM - TIN TƯỞNG">
@@ -37,32 +37,11 @@
                         @if(isset($configLabels['tu-thien']))
                         <div class="info">
                             <h3>{{ $configLabels['tu-thien'] }}</h3>
-                            <p>{{ $configValues['tu-thien'] }}</p>
+                            <p style="text-align: left;">{{ $configValues['tu-thien'] }}</p>
                         </div>
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-12 col-sm-4">
-
-                    <div class="item-taisaochon">
-
-                        <div class="img"><img src="https://hagiangopentour.com/upload/images/logo/trainghiem.png"
-                                alt="TRẢI NGHIỆM MỚI LẠ">
-
-                        </div>
-
-                        @if(isset($configLabels['trai-nghiem']))
-                        <div class="info">
-                            <h3>{{ $configLabels['trai-nghiem'] }}</h3>
-                            <p>{{ $configValues['trai-nghiem'] }}</p>
-                        </div>
-                        @endif
-
-                    </div>
-
-                </div>
-
-
             </div>
 
         </div>
@@ -211,7 +190,6 @@
                     <div class="text-center">
                         <h2 class="h2-title">@lang('language.highlight')</h2>
                     </div>
-
                     <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
                         @foreach($categoryWithTour->children as $cate)
                         @foreach($cate->tour as $tour)

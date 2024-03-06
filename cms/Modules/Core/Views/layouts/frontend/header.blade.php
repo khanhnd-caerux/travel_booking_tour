@@ -90,7 +90,7 @@
                     @endif
                 </div>
             </div>
-
+            @include('Core::layouts.frontend.bookNowTop')
             <div class="language hidden-xs">
                 <ul class="flex-row">
                     <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"

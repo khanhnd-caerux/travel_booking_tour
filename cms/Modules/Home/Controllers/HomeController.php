@@ -129,6 +129,9 @@ class HomeController extends Controller
             $dataContact = [
                 'phone_number' => $request->phone_number,
                 'url' => $request->url,
+                'name' => $request->name,
+                'email' => $request->email,
+                'note' => $request->note,
             ];
             $this->contact->store($dataContact);
             $message = [
@@ -168,105 +171,105 @@ class HomeController extends Controller
     {
         // try {
         //     DB::beginTransaction();
-            $data = $request->all();
-            if ($type == 'tour') {
-                $tourBooking = $this->tour->find($id);
-                $dataBooking = [
-                    'name' => $data['name'],
-                    'phone' => $data['phone'],
-                    'email' => $data['email'],
-                    'note' => $data['note']
+        $data = $request->all();
+        if ($type == 'tour') {
+            $tourBooking = $this->tour->find($id);
+            $dataBooking = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'note' => $data['note']
+            ];
+            $order = $this->orderService->store($dataBooking);
+            $dataBookingDetail = [
+                'order_id' => $order->id,
+                'tour_id' => $id,
+                'quantity' => json_encode(['nguoilon' => $data['nguoilon'], 'treem' => $data['treem'], 'sosinh' => $data['sosinh']]),
+                'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
+                'date_selected' => $data['date_selected'],
+                'total_price' => ($data['nguoilon'] * (int) str_replace(',', '', $tourBooking->price)) + ($data['treem'] * (int) str_replace(',', '', $tourBooking->price) * 0.5),
+                'status' => 0,
+            ];
+            if ($order) {
+                $this->orderDetailService->store($dataBookingDetail);
+                $message = [
+                    'type' => 'Thông báo có khách đặt Tour',
+                    'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
+                    'content' => 'Đã đặt Tour cần liên hệ gấp',
+                    'link' => route('admin.order.list'),
                 ];
-                $order = $this->orderService->store($dataBooking);
-                $dataBookingDetail = [
-                    'order_id' => $order->id,
-                    'tour_id' => $id,
-                    'quantity' => json_encode(['nguoilon' => $data['nguoilon'], 'treem' => $data['treem'], 'sosinh' => $data['sosinh']]),
-                    'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
-                    'date_selected' => $data['date_selected'],
-                    'total_price' => ($data['nguoilon'] * (int) str_replace(',', '', $tourBooking->price)) + ($data['treem'] * (int) str_replace(',', '', $tourBooking->price) * 0.5),
-                    'status' => 0,
-                ];
-                if ($order) {
-                    $this->orderDetailService->store($dataBookingDetail);
-                    $message = [
-                        'type' => 'Thông báo có khách đặt Tour',
-                        'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
-                        'content' => 'Đã đặt Tour cần liên hệ gấp',
-                        'link' => route('admin.order.list'),
-                    ];
-                    $users = $this->userService->getAll();
-                    SendEmail::dispatch($message, $users)->delay(now()->addMinute());
-                }
-                // DB::commit();
-                return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+                $users = $this->userService->getAll();
+                SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
+            // DB::commit();
+            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+        }
 
-            if ($type == 'booking_car') {
-                $carBooking = $this->car->find($id);
-                $dataBooking = [
-                    'name' => $data['name'],
-                    'phone' => $data['phone'],
-                    'email' => $data['email'],
-                    'note' => $data['note']
+        if ($type == 'booking_car') {
+            $carBooking = $this->car->find($id);
+            $dataBooking = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'note' => $data['note']
+            ];
+            $order = $this->orderService->store($dataBooking);
+            $dataBookingDetail = [
+                'order_id' => $order->id,
+                'car_id' => $id,
+                'quantity' => 0,
+                'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
+                'date_selected' => $data['date_selected'],
+                'total_price' => (int) str_replace(',', '', $carBooking->price),
+                'status' => 0,
+            ];
+            if ($order) {
+                $this->orderDetailService->store($dataBookingDetail);
+                $message = [
+                    'type' => 'Thông báo có khách đặt Xe',
+                    'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
+                    'content' => 'Đã đặt thuê xe cần liên hệ gấp',
+                    'link' => route('admin.order.list'),
                 ];
-                $order = $this->orderService->store($dataBooking);
-                $dataBookingDetail = [
-                    'order_id' => $order->id,
-                    'car_id' => $id,
-                    'quantity' => 0,
-                    'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
-                    'date_selected' => $data['date_selected'],
-                    'total_price' => (int) str_replace(',', '', $carBooking->price),
-                    'status' => 0,
-                ];
-                if ($order) {
-                    $this->orderDetailService->store($dataBookingDetail);
-                    $message = [
-                        'type' => 'Thông báo có khách đặt Xe',
-                        'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
-                        'content' => 'Đã đặt thuê xe cần liên hệ gấp',
-                        'link' => route('admin.order.list'),
-                    ];
-                    $users = $this->userService->getAll();
-                    SendEmail::dispatch($message, $users)->delay(now()->addMinute());
-                }
-                // DB::commit();
-                return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Xe chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+                $users = $this->userService->getAll();
+                SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
+            // DB::commit();
+            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Xe chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+        }
 
-            if ($type == 'booking_ticket') {
-                $ticketBooking = $this->ticket->find($id);
-                $dataBooking = [
-                    'name' => $data['name'],
-                    'phone' => $data['phone'],
-                    'email' => $data['email'],
-                    'note' => $data['note']
+        if ($type == 'booking_ticket') {
+            $ticketBooking = $this->ticket->find($id);
+            $dataBooking = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'note' => $data['note']
+            ];
+            $order = $this->orderService->store($dataBooking);
+            $dataBookingDetail = [
+                'order_id' => $order->id,
+                'ticket_id' => $id,
+                'quantity' => 0,
+                'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
+                'date_selected' => $data['date_selected'],
+                'total_price' => (($data['nguoilon'] + $data['treem']) * (int) str_replace(',', '', $ticketBooking->price)),
+                'status' => 0,
+            ];
+            if ($order) {
+                $this->orderDetailService->store($dataBookingDetail);
+                $message = [
+                    'type' => 'Thông báo có khách đặt vé xe bus',
+                    'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
+                    'content' => 'Đã đặt vé xe bus cần liên hệ gấp',
+                    'link' => route('admin.order.list'),
                 ];
-                $order = $this->orderService->store($dataBooking);
-                $dataBookingDetail = [
-                    'order_id' => $order->id,
-                    'ticket_id' => $id,
-                    'quantity' => 0,
-                    'gender' => $data['pronoun'] == "Anh" ? 0 : 1,
-                    'date_selected' => $data['date_selected'],
-                    'total_price' => (($data['nguoilon'] + $data['treem']) * (int) str_replace(',', '', $ticketBooking->price)),
-                    'status' => 0,
-                ];
-                if ($order) {
-                    $this->orderDetailService->store($dataBookingDetail);
-                    $message = [
-                        'type' => 'Thông báo có khách đặt vé xe bus',
-                        'task' => 'Khách hàng có tên: ' . $data['name'] . ' có số điện thoại ' . $data['phone'],
-                        'content' => 'Đã đặt vé xe bus cần liên hệ gấp',
-                        'link' => route('admin.order.list'),
-                    ];
-                    $users = $this->userService->getAll();
-                    SendEmail::dispatch($message, $users)->delay(now()->addMinute());
-                }
-                // DB::commit();
-                return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt vé xe Bus chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+                $users = $this->userService->getAll();
+                SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
+            // DB::commit();
+            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt vé xe Bus chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+        }
         // } catch (\Exception $exception) {
         //     DB::rollBack();
         //     Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());

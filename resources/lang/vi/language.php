@@ -19,5 +19,15 @@ return [
     'contact' => 'Liên hệ',
     'policy' => 'Chính sách bảo mật',
     'payment' => 'Hình thức thanh toán',
-    'cancel' => 'Chính sách Đặt, hủy vé'
+    'cancel' => 'Chính sách Đặt, hủy vé',
+    'labelForm' => 'Liên hệ với chúng tôi',
+    'descForm' => 'Vui lòng dành chút thời gian để liên lạc, chúng tôi sẽ liên hệ lại với bạn ngay.',
+    'nameCustomer' => 'Vui lòng nhập tên (*)',
+    'phoneCustomer' => 'Vui lòng nhập SDT (*)',
+    'emailCustomer' => 'Vui lòng nhập email (*)',
+    'pick' => 'Chọn Tour Bạn Muốn Liên Hệ? (*)',
+    'choose' => 'Chọn 1',
+    'note' => 'Lưu ý thêm',
+    'send' => 'Gửi',
+    'close' => 'Đóng'
 ];

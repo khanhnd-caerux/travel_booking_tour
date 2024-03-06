@@ -197,71 +197,9 @@
             vertical-align: -.125em;
 
         }
-
-        .fixed_custom_contact {
-
-            position: fixed;
-
-            bottom: 40px;
-
-            right: 32px;
-
-            z-index: 5;
-
-        }
-
-        .fixed_custom_contact li {
-
-            list-style: none;
-
-        }
-
-        .fixed_custom_contact li.smsssss a {
-
-            width: 44px;
-
-            height: 44px;
-
-            background: url(https://hagiangopentour.com/upload/images/icon/call.png) no-repeat;
-
-        }
-
-        .fixed_custom_contact li.chat_facebook a {
-
-            background: url(https://hagiangopentour.com/upload/images/icon/mesenger.png) no-repeat;
-
-        }
-
-        .fixed_custom_contact li.call_zalo a {
-
-            background: url(https://hagiangopentour.com/upload/images/icon/zalo.png) no-repeat;
-
-        }
-
-        .fixed_custom_contact li a {
-
-            display: block;
-
-            width: 44px;
-
-            height: 44px;
-
-            border-radius: 50%;
-
-            margin-bottom: 10px;
-
-        }
     </style>
-
-    <div class="fixed_custom_contact" style="bottom: 40px;">
-        <ul>
-            <li class="smsssss"><a href="tel:0984.650.239"></a></li>
-            <li class="chat_facebook"><a href="https://messenger.com/t/hagiangopentour/" target="_blank"></a>
-            </li>
-            <li class="call_zalo"><a href="https://zalo.me/0984650239" target="_blank"></a>
-            </li>
-        </ul>
-    </div>
+    @include('Core::layouts.frontend.bookNow')
+    @include('Core::layouts.frontend.success')
     <script src="{{asset('frontend/template/backend/js/plugins/toastr/toastr.min.js')}}"
         type="text/javascript"></script>
     <script src="{{asset('frontend/template/acore/js/core.js')}}" type="text/javascript"></script>
@@ -493,7 +431,6 @@
             }
         }
     </style>
-
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=1250600741961054&autoLogAppEvents=1"></script>

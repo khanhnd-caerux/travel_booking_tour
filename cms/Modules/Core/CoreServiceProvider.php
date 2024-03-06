@@ -37,7 +37,7 @@ class CoreServiceProvider extends CmsServiceProvider
         }
 
         view()->composer(
-            ['Core::layouts.frontend.header', 'Home::home', 'Core::layouts.frontend.footer', 'Core::layouts.frontend.sidebar'],
+            ['Core::layouts.frontend.header', 'Home::home', 'Core::layouts.frontend.footer', 'Core::layouts.frontend.sidebar', 'Core::layouts.frontend.bookNow'],
             'Cms\Modules\Core\ViewComposer'
         );
     }

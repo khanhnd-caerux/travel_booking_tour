@@ -19,5 +19,15 @@ return [
     'contact' => 'Contact',
     'policy' => 'Privacy policy',
     'payment' => 'Payment method',
-    'cancel' => 'Ticket booking and cancellation policy'
+    'cancel' => 'Ticket booking and cancellation policy',
+    'labelForm' => 'Contact us',
+    'descForm' => 'Please take a moment to get in touch, we will get back to you shortly.',
+    'nameCustomer' => 'Your Name',
+    'phoneCustomer' => 'Your Phone',
+    'emailCustomer' => 'Email Address',
+    'pick' => 'Pick Tour You Want To Contact?',
+    'choose' => 'Choose one',
+    'note' => 'Note',
+    'send' => 'Send',
+    'close' => 'Close'
 ];
