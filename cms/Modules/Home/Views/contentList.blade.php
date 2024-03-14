@@ -17,7 +17,7 @@
     </div>
 </section>
 
-<section class="product-item wow fadeInUp bgfff" style="padding: 30px 0px; visibility: visible; height: 100vh">
+<section class="product-item wow fadeInUp bgfff" style="padding: 30px 0px; visibility: visible; height: auto">
     <div class="container">
         <div class="row" id="row_mobile">
             @if ($contentList->type && $contentList->type == 'tour')
@@ -145,14 +145,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
+                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}">{{
+                                    <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}">{{
                                         $ticket->name
                                         }}</a>
                                 </h3>
@@ -175,6 +175,11 @@
                                         VND</span>
                                 </div>
                             </div>
+                            <div class="link">
+                            <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}" target="_blank" rel="noopener noreferrer">
+                                <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
+                            </a>
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -184,14 +189,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}"><img
+                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $ticket->slug]) }}">{{
+                                    <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}">{{
                                         $ticket->name
                                         }}</a>
                                 </h3>
@@ -212,6 +217,11 @@
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $ticket->price }}
                                         VND</span>
+                                </div>
+                                <div class="link">
+                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}" target="_blank" rel="noopener noreferrer">
+                                    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -224,14 +234,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
-                                
+
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{
+                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}">{{
                                         $car->name
                                         }}</a>
                                 </h3>
@@ -252,6 +262,11 @@
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $car->price }}
                                         VND</span>
+                                </div>
+                                <div class="link">
+                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">
+                                    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -263,14 +278,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}"><img
+                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $car->slug]) }}">{{
+                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}">{{
                                         $car->name
                                         }}</a>
                                 </h3>
@@ -291,6 +306,11 @@
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $car->price }}
                                         VND</span>
                                 </div>
+                                <div class="link">
+                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">
+                                        <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,4 +321,17 @@
         </div>
     </div>
 </section>
+<style>
+    .img_booknow {
+        margin: 10px auto;
+        width: 160px;
+        height: auto;
+        border-radius: 15px;
+    }
+    .link {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+</style>
 @endsection

@@ -38,10 +38,11 @@
     .contact_form {
         position: fixed;
         width: 40%;
-        left: 30%;
+        left: 50%;
         background: #f0f0f0;
         padding: 10px;
-        top: 5%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         z-index: 9999;
         border-radius: 15px;
     }
@@ -153,6 +154,14 @@
             top: 5px;
             right: 5px;
         }
+        @media only screen and (max-width: 600px) {
+  .contact_form {
+         width: 80%;
+  }
+  .hc-nav-trigger {
+    z-index: 10;
+  }
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>

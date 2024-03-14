@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-5 margin-bottom-20 col-xs-12 col-sm-5">
                 <h4 class="h4-footer">
-                    {{ Str::upper($configValues['ten-web-chinh']) }} Travel
+                    {{ Str::upper($configValues['ten-web-chinh']) }}
                 </h4>
                 <div class="bottom-address">
                     @if (isset($configLabels['van-phong']))

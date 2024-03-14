@@ -1817,10 +1817,6 @@ header .wrapper {
     transform: translateY(-50%)
 }
 
-.itemCatalogue img {
-    height: 180px !important
-}
-
 .nav > li > a:focus, .nav > li > a:hover {
     background: 0 0
 }
