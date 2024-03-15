@@ -98,12 +98,7 @@ class HomeController extends Controller
                 $tourInfos[] = $tourInfo;
             }
         }
-        if ($locale == 'en')
-        {
-            $totalMoney = number_format((($totalMoney / 24000) * 0.1), 0);
-        } else {
-            $totalMoney = number_format($totalMoney * 0.1, 0);
-        }
+        $totalMoney = number_format((($totalMoney / 24000) * 0.1), 0);
 
         return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'customerTour', 'totalMoney', 'tourInfos'));
     }

@@ -143,7 +143,55 @@
         </div>
 
     </section>
+    <section class="section wow fadeInUp" style="background: rgb(0, 147, 61); color: rgb(255, 255, 255); visibility: visible;" id="box-whyus">
 
+        <div class="container">
+
+            <div class="row text-center text-300">
+
+
+                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
+
+                    <h5 class="h5-count"><span class="count-element">999</span>
+
+                    </h5>
+                    Số lượng khách đã đặt Tour
+
+                </div>
+
+
+                <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
+
+                    <h5 class="h5-count"><span class="count-element">{{ $totalMoney }} USD</span>
+
+                    </h5>Số tiền làm từ thiện
+
+                </div>
+
+
+                    <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
+
+                        <h5 class="h5-count"><span class="count-element">10</span>
+
+                        </h5> Top Tour Hà Giang
+
+                    </div>
+
+
+                    <div class="col-md-3 col-count col-6 col-sm-3 col-xs-6">
+
+                        <h5 class="h5-count"><span class="count-element">999</span>
+
+                        </h5> Khách hàng hài lòng
+
+                    </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
     <section class="product-item bgfff wow fadeInUp">
         <div class="container">
             <div class="row">
@@ -154,17 +202,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div>
-                                <h3>Số lượng khách đã đặt Tour</h3>
-                                <p>{{ $customerTour }}</p>
-                            </div>
-                            <div>
-                                <h3>Số tiền được trích ra làm từ thiện</h3>
-                                <p>{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                         <table class="table table-sm">
                             <thead>
                                 <tr>

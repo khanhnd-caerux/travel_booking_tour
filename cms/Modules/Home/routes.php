@@ -15,7 +15,7 @@ Route::group([
             abort(404);
         }
         session()->put('locale', $locale);
-        return redirect()->back();
+        return redirect()->route('client.index');
     });
     Route::group([
         'prefix' => 'noi-dung',
