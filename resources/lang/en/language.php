@@ -29,5 +29,20 @@ return [
     'choose' => 'Choose one',
     'note' => 'Note',
     'send' => 'Send',
-    'close' => 'Close'
+    'close' => 'Close',
+    'tourCode' => 'Tour code',
+    'destinationFrom' => 'Destination from',
+    'schedule' => 'Schedule',
+    'departureTime' => 'Departure time',
+    'vehicle' => 'Vehicle',
+    'priceFrom' => 'Price from',
+    'bookNow' => 'Book now',
+    'keepContact' => 'Reserve your spot, no payment required',
+    'giveNumber' => 'Leave your phone number and we will contact you!',
+    'free' => "Free",
+    'myPhone' => 'My phone number',
+    'relatedContent' => 'Related content',
+    'charityProject' => 'Charity project',
+    'numberCustomer' => 'Number of guests who booked the Tour',
+    'theMoney' => 'The money is given to charity'
 ];

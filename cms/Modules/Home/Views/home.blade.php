@@ -149,18 +149,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <h2 class="h2-title">Dự án thiện nguyện</h2>
+                        <h2 class="h2-title">@lang('language.charityProject')</h2>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                <h3>Số lượng khách đã đặt Tour</h3>
+                                <h3>@lang('language.numberCustomer')</h3>
                                 <p>{{ $customerTour }}</p>
                             </div>
                             <div>
-                                <h3>Số tiền được trích ra làm từ thiện</h3>
+                                <h3>@lang('language.theMoney')</h3>
                                 <p>{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
                             </div>
                         </div>
@@ -257,23 +257,19 @@
                                 <ul class="ulproduct">
                                     <li>
                                         <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                        <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
+                                        <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
                                     </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
-                                            từ: </span> {{ $tour->destination_from }}
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{ $tour->destination_from }}
                                     </li>
-                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
-                                            trình: </span> {{ $tour->destination_to }}
+                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'): </span> {{ $tour->destination_to }}
                                     </li>
-                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span> {{ $tour->schedule }}
+                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span> {{ $tour->schedule }}
                                     </li>
-                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
-                                            tiện: </span> {{ $tour->vehicle }}
+                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'): </span> {{ $tour->vehicle }}
                                     </li>
                                 </ul>
-                                <div class="priceproduct"> Giá chỉ từ:
-                                    <span class="price mr-2">{{ $tour->price }} VND</span>
+                                <div class="priceproduct"> @lang('language.priceFrom'):
+                                    <span class="price mr-2">{{ $tour->price }} {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
                         </div>

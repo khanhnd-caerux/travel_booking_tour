@@ -29,5 +29,20 @@ return [
     'choose' => 'Chọn 1',
     'note' => 'Lưu ý thêm',
     'send' => 'Gửi',
-    'close' => 'Đóng'
+    'close' => 'Đóng',
+    'tourCode' => "Mã tour",
+    'destinationFrom' => 'Khởi hành từ',
+    'schedule' => 'Lịch trình',
+    'departureTime' => 'Khởi hành',
+    'vehicle' => 'Phương tiện',
+    'priceFrom' => 'Giá chỉ từ',
+    'bookNow' => 'Đặt tour ngay',
+    'keepContact' => 'Giữ chỗ, chưa cần thanh toán',
+    'giveNumber' => 'Để lại số điện thoại chúng tôi sẽ liên hệ với bạn!',
+    'free' => "Miễn phí",
+    'myPhone' => 'Số điện thoại của tôi',
+    'relatedContent' => 'Có thể bạn quan tâm',
+    'charityProject' => 'Dự án thiện nguyện',
+    'numberCustomer' => 'Số lượng khách đặt Tour',
+    'theMoney' => 'Số tiền được trích ra làm từ thiện'
 ];

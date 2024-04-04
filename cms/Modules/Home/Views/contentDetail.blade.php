@@ -194,7 +194,7 @@
             <div class="clearfix-20 visible-xs"></div>
             <div class="col-md-4 col-lg-3 col-sm-12 col-xs-12 wow fadeInRight">
                 <aside class="package-full">
-                    <p class="dp-n-tablet-small">Giá chỉ từ: </p>
+                    <p class="dp-n-tablet-small">@lang('language.priceFrom'): </p>
 
                     <p class="price-new">{{ $contentDetail->price }} {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</p>
 
@@ -212,41 +212,41 @@
                     <ul class="ulproduct">
                         <li>
                             <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                            <span class="font-semi">Mã tour: </span> {{ $contentDetail->tour_code }}
+                            <span class="font-semi">@lang('language.tourCode'): </span> {{ $contentDetail->tour_code }}
                         </li>
                         <li>
-                            <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành từ: </span> {{
+                            <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{
         $contentDetail->destination_from }}
                         </li>
                         <li>
-                            <i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch trình: </span> {{
+                            <i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'): </span> {{
         $contentDetail->destination_to }}
                         </li>
                         <li>
-                            <i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi hành: </span> {{
+                            <i class="fa fa-calendar text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span> {{
         $contentDetail->schedule }}
                         </li>
                         <li>
-                            <i class="fa fa-car text-pri"></i><span class="font-semi">Phương tiện: </span> {{
+                            <i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'): </span> {{
         $contentDetail->vehicle }}
                         </li>
                     </ul>
                     @else
                     <ul class="ulproduct">
-                        <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
+                        <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
         $contentDetail->free }} </li>
                         <li>
-                            <i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành: </span> {{
+                            <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{
         $contentDetail->destination_from }}
                         </li>
                         <li>
-                            <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả: </span> {{
+                            <i class="fa fa-map-marker text-pri"></i><span class="font-semi">@lang('language.schedule'): </span> {{
         $contentDetail->destination_to }}
                         </li>
                     </ul>
                     <div class="service-child service-child-mobile" style="padding-left: 0px; border: none">
                         <div class="item-service-left-mobile">
-                            <b>Lộ trình: </b> {{ $contentDetail->road }}
+                            <b>@lang('language.departureTime'): </b> {{ $contentDetail->road }}
                         </div>
                     </div>
                     @endif
@@ -254,30 +254,29 @@
                 <div class="mt-15">
                     <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
                         @if ($contentDetail->category->type == 'tour')
-                        <span class="main-text text-uppercase">Đặt tour ngay <i
+                        <span class="main-text text-uppercase">@lang('language.bookNow') <i
                                 class="fa fa-angle-right icon-arrow-right"></i></span>
                         @else
-                        <span class="main-text text-uppercase">Đặt xe ngay <i
+                        <span class="main-text text-uppercase">@lang('language.bookNow') <i
                                 class="fa fa-angle-right icon-arrow-right"></i></span>
                         @endif
-                        <span class="tiny-text">Giữ chỗ, chưa cần thanh toán</span>
+                        <span class="tiny-text">@lang('language.keepContact')</span>
                     </a>
                 </div>
 
 
                 <div class="visible-xs">
                     <div class="hotline-aside">
-                        <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ liên
-                            hệ với bạn!</p>
+                        <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
                         <form class="form-hotline" action="{{ route('client.contact.store') }}" id="mailsubricre"
                             method="post">
                             @csrf
                             <div class="error"></div>
                             <div class="rel">
                                 <input type="phone" name="phone_number" class="form-control phone"
-                                    placeholder="Số điện thoại của tôi" required>
+                                    placeholder="@lang('language.myPhone')" required>
                                 <input type="hidden" name="url" value="{{Request::url()}}">
-                                <button type="submit">Gửi</button>
+                                <button type="submit">@lang('language.send')</button>
                             </div>
                         </form>
 
@@ -306,22 +305,21 @@
                         <div class="mt-15">
                             <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}"
                                 class="btn btn-primary btn-lg btn-block button-booking-tour">
-                                <span class="main-text text-uppercase">Đặt tour ngay <i
+                                <span class="main-text text-uppercase">@lang('language.bookNow') <i
                                         class="fa fa-angle-right icon-arrow-right"></i></span>
-                                <span class="tiny-text">Giữ chỗ, chưa cần thanh toán</span>
+                                <span class="tiny-text">@lang('language.keepContact')</span>
                             </a>
                         </div>
                         <div class="hotline-aside">
-                            <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ
-                                liên hệ với bạn!</p>
+                            <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
                             <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
                                 @csrf
                                 <div class="error"></div>
                                 <div class="rel">
                                     <input type="phone" name="phone_number" class="form-control phone"
-                                        placeholder="Số điện thoại của tôi" required>
+                                        placeholder="@lang('language.myPhone')" required>
                                     <input type="hidden" name="url" value="{{Request::url()}}">
-                                    <button type="submit">Gửi</button>
+                                    <button type="submit">@lang('language.send')</button>
                                 </div>
                             </form>
 
@@ -334,7 +332,7 @@
                     <hr>
 
                     @if (count($tourRelated) > 0)
-                    <h3 class="cothebanquantam">Có thể bạn quan tâm</h3>
+                    <h3 class="cothebanquantam">@lang('language.relatedContent')</h3>
                     <div class="clearfix-10"></div>
 
 
@@ -361,10 +359,9 @@
                                 <ul class="ulproduct">
                                     <li>
                                         <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                        <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
+                                        <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
                                     </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành
-                                            từ: </span> {{ $tour->destination_from }}
+                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{ $tour->destination_from }}
                                     </li>
                                     <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
                                             trình: </span> {{ $tour->destination_to }}
@@ -376,8 +373,8 @@
                                             tiện: </span> {{ $tour->vehicle }}
                                     </li>
                                 </ul>
-                                <div class="priceproduct"> Giá chỉ từ:
-                                    <span class="price mr-2">{{ $tour->price }} VND</span>
+                                <div class="priceproduct"> @lang('language.priceFrom'):
+                                    <span class="price mr-2">{{ $tour->price }} {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
                         </div>
@@ -394,16 +391,15 @@
 
             <div class="col-md-4 col-lg-3 col-sm-12 col-xs-12 wow fadeInUp hidden-xs">
                 <div class="hotline-aside">
-                    <p style="color: #ef7325;width: 100%;text-align: center">Để lại số điện thoại chúng tôi sẽ liên hệ
-                        với bạn!</p>
+                    <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
                     <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
                         @csrf
                         <div class="error"></div>
                         <div class="rel">
                             <input type="phone" name="phone_number" class="form-control phone"
-                                placeholder="Số điện thoại của tôi" required>
+                                placeholder="@lang('language.myPhone')" required>
                             <input type="hidden" name="url" value="{{Request::url()}}">
-                            <button type="submit">Gửi</button>
+                            <button type="submit">@lang('language.send')</button>
                         </div>
                     </form>
                 </div>
@@ -427,27 +423,27 @@
                             <ul class="ulproduct">
                                 <li>
                                     <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                    <span class="font-semi">Mã tour: </span> {{ $tour->tour_code }}
+                                    <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
                                 </li>
-                                <li><i class="fa fa-home text-pri"></i><span class="font-semi">Khởi hành từ:
+                                <li><i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'):
                                     </span> {{ $tour->destination_from }} </li>
-                                <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch trình:
+                                <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'):
                                     </span> {{ $tour->destination_to }}</li>
-                                <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi hành:
+                                <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">@lang('language.departureTime'):
                                     </span> {{ $tour->schedule }} </li>
-                                <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương tiện:
+                                <li><i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'):
                                     </span> {{ $tour->vehicle }} </li>
 
                             </ul>
-                            <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $tour->price }}
-                                    VND</span>
+                            <div class="priceproduct"> @lang('language.priceFrom'): <span class="price mr-2">{{ $tour->price }}
+                                    {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                             </div>
                         </div>
                         <div class="clearfix-10"></div>
                         <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
-                            <span class="main-text text-uppercase">Đặt tour ngay <i
+                            <span class="main-text text-uppercase">@lang('language.bookNow') <i
                                     class="fa fa-angle-right icon-arrow-right"></i></span>
-                            <span class="tiny-text">Giữ chỗ, chưa cần thanh toán</span>
+                            <span class="tiny-text">@lang('language.keepContact')</span>
                         </a>
                     </div>
                     @endforeach

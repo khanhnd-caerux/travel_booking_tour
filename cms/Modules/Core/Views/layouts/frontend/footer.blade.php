@@ -6,9 +6,13 @@
                     {{ Str::upper($configValues['ten-web-chinh']) }}
                 </h4>
                 <div class="bottom-address">
+                    @if(session()->get('locale') == 'en')
+                    <p><i class="fa fa-map-marker"></i> Department : No. 27, Nguyen Du Street, Nguyen Trai Ward, Ha Giang City, Ha Giang Province</p>
+                    @else
                     @if (isset($configLabels['van-phong']))
                     <p><i class="fa fa-map-marker"></i> {{ $configLabels['van-phong'] }} : {{
                         $configValues['van-phong']}}</p>
+                    @endif
                     @endif
                     @if (isset($configLabels['email']))
                     <p><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ $configLabels['email'] }} : {{
@@ -97,7 +101,7 @@
         <div class="container">
             <div class="row text-center">
                 <p style="margin: 0px;font-size: 16px">Copyright 2024
-                    - HA GIANG AWESOME TOURS</p>
+                    - HA GIANG MOUNTAIN TRAVEL</p>
             </div>
         </div>
     </div>
