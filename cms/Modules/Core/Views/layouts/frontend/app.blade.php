@@ -14,25 +14,25 @@
     <link rel="alternate" href="index.html" hreflang="vi-vn" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="HA GIANG OPEN TOUR - OHG TRAVEL" />
-    <meta name="copyright" content="HA GIANG OPEN TOUR - OHG TRAVEL" />
+    <meta name="author" content="HA GIANG MOUNTAIN TRAVEL" />
+    <meta name="copyright" content="HA GIANG MOUNTAIN TRAVEL" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta http-equiv="refresh" content="1800" />
 
     <!--for Google -->
 
-    <title> DU LỊCH HÀ GIANG - TOUR HÀ GIANG - TOUR DU LỊCH HÀ GIANG</title>
+    <title>HA GIANG MOUNTAIN TRAVEL</title>
     <meta name="description" charset="UTF-8"
-        content="HÀ GIANG OPEN TOUR - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
+        content="HÀ GIANG MOUNTAIN TRAVEL - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
     <meta name="keywords"
-        content="Du lịch Hà Giang, Du lịch hè Hà Giang, Du lịch Hà Giang hè 2021, Tour Hà Giang, Tour Hè Hà Giang, Tour Hà Giang hè 2021, Tour Du Lịch Hà Giang, Tour Du Lịch Hè Hà Giang, Tour Du Lịch Hà Giang Hè 2021," />
+        content="Du lịch Hà Giang, Du lịch hè Hà Giang, Du lịch Hà Giang hè 2024, Tour Hà Giang, Tour Hè Hà Giang, Tour Hà Giang hè 2024, Tour Du Lịch Hà Giang, Tour Du Lịch Hè Hà Giang, Tour Du Lịch Hà Giang Hè 2024," />
 
     <link rel="canonical" href="index.html" />
     <meta property="og:locale" content="vi_VN" />
     <!-- for Facebook -->
     <meta property="og:title" content=" DU LỊCH HÀ GIANG - TOUR HÀ GIANG  - TOUR DU LỊCH HÀ GIANG" />
     <meta property="og:type" content="product" />
-    <meta property="og:image" content="https://hagiangopentour.com/upload/images/logo/logo-ha-giang-open-tour.jpg" />
+    <meta property="og:image" content="{{ asset('storage/logo.jpeg') }}" />
     <meta property="og:url" content="index.html" />
     <meta property="og:description"
         content="HÀ GIANG OPEN TOUR - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
@@ -44,8 +44,8 @@
     <meta name="twitter:title" content=" DU LỊCH HÀ GIANG - TOUR HÀ GIANG  - TOUR DU LỊCH HÀ GIANG" />
     <meta name="twitter:description"
         content="HÀ GIANG OPEN TOUR - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
-    <meta name="twitter:image" content="https://hagiangopentour.com/upload/images/logo/logo-ha-giang-open-tour.jpg" />
-    <link rel="icon" href="https://hagiangopentour.com/upload/images/logo/01-1-.jpg" type="image/png" sizes="30x30">
+    <meta name="twitter:image" content="{{ asset('storage/logo.jpeg') }}" />
+    <link rel="icon" href="{{ asset('storage/logo.jpeg') }}" type="image/png" sizes="30x30">
 
     <script type="text/javascript">
         var BASE_URL = 'index.html';
