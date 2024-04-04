@@ -91,7 +91,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $tour->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $tour->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $ticket->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
                             <div class="link">
@@ -216,7 +216,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $ticket->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                                 <div class="link">
                                 <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}" target="_blank" rel="noopener noreferrer">
@@ -261,7 +261,7 @@
                                 <div class="clearfix"></div>
 
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                                 <div class="link">
                                 <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">
@@ -304,7 +304,7 @@
                                 </ul>
                                 <div class="clearfix"></div>
                                 <div class="priceproduct"> Giá chỉ từ: <span class="price mr-2">{{ $car->price }}
-                                        VND</span>
+                                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                                 <div class="link">
                                     <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">

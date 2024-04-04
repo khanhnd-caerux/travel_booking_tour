@@ -29,7 +29,7 @@
                                 {{ Str::upper($configValues['ten-web-chinh']) }}
                             </div>
                             <div style="font-family: UTM-EdwardianB;color: #f67e17; font-size: 21px" ;>
-                                {{ $configValues['ten-web-phu'] }}
+                                {{ session()->get('locale') == 'en' ? 'The Social Enterprise on Tourism of Ha Giang' : 'Doanh Nghiệp Xã Hội Về Du Lịch Của Hà Giang'}}
                             </div>
                         </a>
                     </div>
@@ -66,9 +66,6 @@
                             </li>
                             @endforeach
                             @endif
-                            <li>
-                                <a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
-                            </li>
                             <li>
                                 <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
                             </li>
@@ -131,9 +128,6 @@
                         </li>
                         @endforeach
                         @endif
-                        <li>
-                        <a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
-                        </li>
                         <li>
                             <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
                         </li>

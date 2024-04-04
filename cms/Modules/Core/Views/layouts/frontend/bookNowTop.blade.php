@@ -126,7 +126,7 @@
     }
 
     @media screen and (max-width: 600px) {
-        .book_now {
+        #img_booknowTop {
             display: none;
         }
     }
