@@ -42,14 +42,10 @@
                 <div class="pull-right" style="background: #eceff0;padding: 3px 15px;width: 100%;text-align: right;">
                     <div class="pull-left">
                         <ul class="flex-row sort">
-                            <li><b>Sắp xếp theo</b></li>
-                            <li><a href="#">Giá tăng
-                                    dần</a> <i class="fa fa-long-arrow-up" aria-hidden="true"></i></li>
-                            <li><a href="#">Giá giảm
-                                    dần <i class="fa fa-long-arrow-down" aria-hidden="true"></i></a></li>
-
+                            <li><b>{{ session()->get('locale') == 'vi' ? 'Sắp xếp theo' : 'Group by' }}</b></li>
+                            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá tăng dần' : 'Price up' }}</a> <i class="fa fa-long-arrow-up" aria-hidden="true"></i></li>
+                            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá giảm dần' : 'Price down' }}<i class="fa fa-long-arrow-down" aria-hidden="true"></i></a></li>
                         </ul>
-
                     </div>
                     <div class="pagination pull-right">
                     </div>
@@ -235,15 +231,9 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
-                                        $car->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
                                         $car->destination_from }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả:
-                                        </span> {{ $car->destination_to }}
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -279,15 +269,9 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
-                                        $car->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
                                         $car->destination_from }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả:
-                                        </span> {{ $car->destination_to }}
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>

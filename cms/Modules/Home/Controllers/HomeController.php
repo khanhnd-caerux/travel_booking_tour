@@ -77,7 +77,11 @@ class HomeController extends Controller
         $galleries = $this->slider->getByType($type = 'gallery');
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
-        $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
+        if ($locale == 'vi') {
+            $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
+        } else {
+            $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
+        }
         $allOrderDetail = $this->orderDetailService->getAll();
         $customerTour = 0;
         $totalMoney = 0;
