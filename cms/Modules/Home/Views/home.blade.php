@@ -170,12 +170,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div>
-                                <h3>@lang('language.numberCustomer')</h3>
-                                <p>{{ $customerTour }}</p>
+                                <h3 style="text-transform: uppercase;">@lang('language.numberCustomer')</h3>
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $customerTour }}</p>
                             </div>
                             <div>
-                                <h3>@lang('language.theMoney')</h3>
-                                <p>{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
+                                <h3 style="text-transform: uppercase;">@lang('language.theMoney')</h3>
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">

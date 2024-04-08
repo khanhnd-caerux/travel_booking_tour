@@ -23,13 +23,13 @@
                 <label for="the-reason">@lang('language.pick')</label>
                 <select name="url" id="the-reason">
                     <option value="1">@lang('language.choose')</option>
-                    @if ($tours) @foreach ($tours as $tour)
-                    <option
-                        value="{{ config('app.url') . '/noi-dung-chi-tiet/' . $tour->slug }}"
-                    >
-                        {{ $tour->name }}
-                    </option>
-                    @endforeach @endif
+                    @if ($tours)
+                    @foreach ($tours as $tour)
+                    @if ($tour->category->locale == session()->get('locale'))
+                    <option value="{{ config('app.url') . '/noi-dung-chi-tiet/' . $tour->slug }}">{{ $tour->name }}</option>
+                    @endif
+                    @endforeach
+                    @endif
                 </select>
                 <label for="the-message">@lang('language.note')</label>
                 <textarea name="note" id="the-message"></textarea>

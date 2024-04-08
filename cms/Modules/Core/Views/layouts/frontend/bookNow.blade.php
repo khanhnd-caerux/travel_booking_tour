@@ -20,7 +20,9 @@
             <option value="1">@lang('language.choose')</option>
             @if ($tours)
             @foreach ($tours as $tour)
+            @if ($tour->category->locale == session()->get('locale'))
             <option value="{{ config('app.url') . '/noi-dung-chi-tiet/' . $tour->slug }}">{{ $tour->name }}</option>
+            @endif
             @endforeach
             @endif
         </select>
