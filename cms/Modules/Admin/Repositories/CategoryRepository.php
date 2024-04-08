@@ -50,7 +50,11 @@ class CategoryRepository extends CoreBaseRepository implements CategoryRepositor
     {
         $locale = session()->get('locale');
         return $this->category
-            ->with('children')
+            ->with([
+                'children' => function ($q) {
+                    $q->where('status', 0);
+                }
+            ])
             ->where('parent_id', 0)
             ->where('status', 0)
             ->where('locale', $locale)

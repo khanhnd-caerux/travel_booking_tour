@@ -20,10 +20,17 @@
                         <div class="img"><img style="border-radius: 50%" src="https://hagiangmountaintravel.com/storage/logo.jpeg"
                                 alt="LẮNG NGHE">
                         </div>
+                        @if (session()->get('locale') == 'vi')
                         @if(isset($configLabels['du-lich']))
                         <div class="info">
                             <h3>{{ $configLabels['du-lich'] }}</h3>
                             <p style="text-align: left;">{{ $configValues['du-lich'] }}</p>
+                        </div>
+                        @endif
+                        @else
+                        <div class="info">
+                            <h3>Travel</h3>
+                            <p style="text-align: left;">The suitable journeys are created for you.</p>
                         </div>
                         @endif
                     </div>
@@ -34,10 +41,17 @@
                                 alt="AN TÂM - TIN TƯỞNG">
 
                         </div>
+                        @if (session()->get('locale') == 'vi')
                         @if(isset($configLabels['tu-thien']))
                         <div class="info">
                             <h3>{{ $configLabels['tu-thien'] }}</h3>
                             <p style="text-align: left;">{{ $configValues['tu-thien'] }}</p>
+                        </div>
+                        @endif
+                        @else
+                        <div class="info">
+                            <h3>Charity</h3>
+                            <p style="text-align: left;">Every act of kindness is a step towards paradise.</p>
                         </div>
                         @endif
                     </div>

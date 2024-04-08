@@ -158,15 +158,9 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
-                                        $ticket->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
                                         $ticket->destination_from }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả:
-                                        </span> {{ $ticket->destination_to }}
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -202,15 +196,9 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
-                                        $ticket->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
                                         $ticket->destination_from }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-map-marker text-pri"></i><span class="font-semi">Đón trả:
-                                        </span> {{ $ticket->destination_to }}
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -247,7 +235,7 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
+                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
                                         $car->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
@@ -291,7 +279,7 @@
                                 </h3>
                                 <div class="clearfix"></div>
                                 <ul class="ulproduct">
-                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">Miễn phí: </span>{{
+                                    <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
                                         $car->free }} </li>
                                     <li>
                                         <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span>{{
