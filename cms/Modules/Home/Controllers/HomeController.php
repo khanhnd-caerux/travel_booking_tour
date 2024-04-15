@@ -229,7 +229,11 @@ class HomeController extends Controller
                 SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
             // DB::commit();
-            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            if (session()->get('locale') == 'vi') {
+                return redirect()->route('client.successBooking')->with('successBooking', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            } else {
+                return redirect()->route('client.successBooking')->with('successBooking', "Thank you for booking the tour, we will contact you soon via Email or phone number.");
+            }
         }
 
         if ($type == 'booking_car') {
@@ -262,7 +266,11 @@ class HomeController extends Controller
                 SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
             // DB::commit();
-            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt Xe chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            if (session()->get('locale') == 'vi') {
+                return redirect()->route('client.successBooking')->with('successBooking', "Cảm ơn bạn đã đặt Xe chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            } else {
+                return redirect()->route('client.successBooking')->with('successBooking', "Thank you for booking the car, we will contact you soon via Email or phone number.");
+            }
         }
 
         if ($type == 'booking_ticket') {
@@ -295,7 +303,11 @@ class HomeController extends Controller
                 SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             }
             // DB::commit();
-            return redirect()->route('client.successBooking')->with('success', "Cảm ơn bạn đã đặt vé xe Bus chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            if (session()->get('locale') == 'vi') {
+                return redirect()->route('client.successBooking')->with('successBooking', "Cảm ơn bạn đã đặt Vé chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            } else {
+                return redirect()->route('client.successBooking')->with('successBooking', "Thank you for booking the ticket, we will contact you soon via Email or phone number.");
+            }
         }
         // } catch (\Exception $exception) {
         //     DB::rollBack();

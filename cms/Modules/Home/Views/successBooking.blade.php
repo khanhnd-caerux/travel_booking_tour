@@ -28,7 +28,7 @@
                             <div class="thankyou">
                                 <div class="thank_content">
                                     <h2>@lang('language.thank')</h2>
-                                    <p>{{ Session::get('success') }}</p>
+                                    <p>{{ Session::get('successBooking') }}</p>
                                     <a href="{{ route('client.index') }}" class="text_back">@lang('language.backhomepage')</a>
                                 </div>
                             </div>

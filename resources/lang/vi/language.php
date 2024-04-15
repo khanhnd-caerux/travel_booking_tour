@@ -44,5 +44,22 @@ return [
     'relatedContent' => 'Có thể bạn quan tâm',
     'charityProject' => 'Dự án thiện nguyện',
     'numberCustomer' => 'Số lượng khách đặt Tour',
-    'theMoney' => 'Số tiền được trích ra làm từ thiện'
+    'theMoney' => 'Số tiền được trích ra làm từ thiện',
+    'contactInfor' => 'Thông tin liên hệ',
+    'adult' => 'Người lớn *',
+    'childen' => 'Trẻ em từ 8 - 11 tuổi *',
+    'baby' => 'Trẻ sơ sinh *',
+    'Mr' => 'Anh',
+    'Mrs' => 'Chị',
+    'typeName' => 'Mời anh/chị nhập họ và tên *',
+    'typeQuantity' => 'Mời anh/chị chọn số lượng',
+    'pickDate' => 'Mời anh/chị chọn ngày',
+    'emailAccept' => 'Thông tin xác nhận sẽ được gửi qua e-mail anh/chị nhập',
+    'typeEmail' => 'Mời anh/chị nhập email *',
+    'contactToPhone' => 'Đơn vị sẽ liên hệ trực tiếp với SĐT trên',
+    'typePhone' => 'Mời anh/chị nhập SĐT *',
+    'specialRequest' => 'Yêu cầu đặc biệt',
+    'exampleRequest' => 'Ví dụ: Gia đình có trẻ em, có người say xe...',
+    'continue' => 'Tiếp tục',
+    'bookFirst' => 'Đặt trước, thanh toán sau. Dễ dàng, thuận lợi, nhanh chóng'
 ];

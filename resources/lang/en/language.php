@@ -44,5 +44,22 @@ return [
     'relatedContent' => 'Related content',
     'charityProject' => 'Charity project',
     'numberCustomer' => 'Number of guests who booked the Tour',
-    'theMoney' => 'The money is given to charity'
+    'theMoney' => 'The money is given to charity',
+    'contactInfor' => 'Contact information',
+    'adult' => 'Adult *',
+    'childen' => 'Children from 8 - 11 years old *',
+    'baby' => 'Infant *',
+    'Mr' => 'Mr',
+    'Mrs' => 'Mrs',
+    'typeName' => 'Please enter your full name *',
+    'typeQuantity' => 'Please select quantity',
+    'pickDate' => 'Please choose a date',
+    'emailAccept' => 'Confirmation information will be sent to the email you provide',
+    'typeEmail' => 'Please enter your email *',
+    'contactToPhone' => 'The unit will contact directly to the provided phone number',
+    'typePhone' => 'Please enter your phone number *',
+    'specialRequest' => 'Special requests',
+    'exampleRequest' => 'Example: Family with children, motion sickness...',
+    'continue' => 'Continue',
+    'bookFirst' => 'Book now, pay later. Easy, convenient, fast'
 ];
