@@ -68,15 +68,12 @@ class HomeController extends Controller
 
     public function home(): \Illuminate\Contracts\Support\Renderable
     {
-        $locale = session()->get('locale');
-        if (!$locale) {
-            session()->put('locale', 'vi');
-        }
         $sliders = $this->slider->getByType($type = 'banner');
         $partners = $this->slider->getByType($type = 'partner');
         $galleries = $this->slider->getByType($type = 'gallery');
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
+        $locale = session()->get('locale');
         if ($locale == 'vi') {
             $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
         } else {
@@ -84,25 +81,28 @@ class HomeController extends Controller
         }
         $allOrderDetail = $this->orderDetailService->getAll();
         $customerTour = 0;
-        $totalMoney = 0;
+        $totalMoney = ($allOrderDetail->sum('total_price')) * 0.1;
         $tourInfos = [];
         foreach ($allOrderDetail as $item) {
             if ($item->tour_id) {
                 $customerTour++;
-                $totalMoney = ($totalMoney + $item->total_price) * 0.1;
                 $order = $this->orderService->find($item->order_id);
                 $tour = $this->tour->find($item->tour_id);
                 $tourInfo = collect([
                     'name' => $order->name,
                     'phone' => substr($order->phone, 0, 4) . "." . substr($order->phone, 4, 3) . ".xxx",
                     'email' => $order->email,
-                    'total_price' => $locale == 'en' ? number_format((($totalMoney / 24000) * 0.1), 0) : number_format(($totalMoney * 0.1), 0),
+                    'total_price' => $locale == 'en' ? number_format((($item->total_price / 24000) * 0.1), 0) : number_format(($item->total_price * 0.1), 0),
                     'tour_name' => $tour->name,
                 ]);
                 $tourInfos[] = $tourInfo;
             }
         }
-        $totalMoney = number_format((($totalMoney / 24000) * 0.1), 0);
+        if ($locale == 'vi') {
+            $totalMoney = number_format($totalMoney, 0);
+        } else {
+            $totalMoney = number_format(($totalMoney / 24000), 0);
+        }
 
         return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'customerTour', 'totalMoney', 'tourInfos'));
     }

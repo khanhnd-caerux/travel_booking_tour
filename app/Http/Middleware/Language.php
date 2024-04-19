@@ -17,8 +17,8 @@ class Language
      */
     public function handle(Request $request, Closure $next)
     {
-        if (session()->has('locale')) {
-            App::setLocale(session()->get('locale'));
+        if (!session()->has('locale')) {
+            session()->put('locale', 'vi');
         }
         return $next($request);
     }
