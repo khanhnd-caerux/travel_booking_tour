@@ -170,10 +170,15 @@ class HomeController extends Controller
             $users = $this->userService->getAll();
             SendEmail::dispatch($message, $users)->delay(now()->addMinute());
             DB::commit();
-            return redirect()->back()->with('success', 'Cảm ơn bạn đã gửi số điện thoại chúng tôi sẽ liên hệ sớm với bạn !');
+            if (session()->get('locale') == 'vi') {
+                return redirect()->back()->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
+            } else {
+                return redirect()->back()->with('success', "Thank you for booking the tour, we will contact you soon via Email or phone number.");
+            }
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->route('client.index');
         }
     }
 

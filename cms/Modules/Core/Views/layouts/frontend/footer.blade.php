@@ -46,11 +46,11 @@
                 </h4>
                 <div class="bottom-address">
                     <ul>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-bao-mat']) }}">@lang('language.policy')</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'privacy-policy']) }}">@lang('language.policy')</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'hinh-thuc-thanh-toan']) }}">@lang('language.payment')</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'payments-policy']) }}">@lang('language.payment')</a>
                         </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'chinh-sach-huy-dat-ve']) }}">@lang('language.cancel')</a>
+                        <li><a href="{{ route('client.postDetail', ['slug' => 'policy-book-cancel-tickets']) }}">@lang('language.cancel')</a>
                         </li>
                         <li><a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
                         </li>
@@ -64,7 +64,6 @@
                 </h4>
                 <div class="bottom-address">
                     <ul class="flex-row social">
-
                         <li class="ffb"><a href="https://www.facebook.com/hagiangopentour" target="_blank"><i
                                     class="fa fa-facebook"></i></a></li>
 

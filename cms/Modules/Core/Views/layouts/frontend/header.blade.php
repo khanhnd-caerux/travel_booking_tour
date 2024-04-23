@@ -1,19 +1,19 @@
 <header>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 visible-xs">
-                <div class="language_mobile">
-                    <ul class="flex-row " style="justify-content: center;padding-bottom: 5px">
-                        <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"
-                                    alt="vietnamese"></a>
-                        </li>
-                        <li><a href="{{ url('language/en') }}"><img
-                                    src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <!--<div class="row">-->
+        <!--    <div class="col-xs-12 visible-xs">-->
+        <!--        <div class="language_mobile">-->
+        <!--            <ul class="flex-row " style="justify-content: center;padding-bottom: 5px">-->
+        <!--                <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"-->
+        <!--                            alt="vietnamese"></a>-->
+        <!--                </li>-->
+        <!--                <li><a href="{{ url('language/en') }}"><img-->
+        <!--                            src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
         <div class="row flex-row" style="position: relative">
             <div class="header-left col-md-9 col-sm-6 col-xs-12" style="padding-right: 0px;">
                 <div class="flex-row">
@@ -67,7 +67,7 @@
                             @endforeach
                             @endif
                             <li>
-                                <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
+                                <a href="{{ route('client.postDetail', ['slug' => 'contact']) }}">@lang('language.contact')</a>
                             </li>
                         </ul>
                     </nav>
@@ -88,16 +88,16 @@
                 </div>
             </div>
             @include('Core::layouts.frontend.bookNowTop')
-            <div class="language hidden-xs">
-                <ul class="flex-row">
-                    <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"
-                                alt="vietnamese"></a> </li>
+            <!--<div class="language hidden-xs">-->
+            <!--    <ul class="flex-row">-->
+            <!--        <li><a href="{{ url('language/vi') }}"><img src="{{asset('frontend/template/backend/img/vietnam.gif')}}"-->
+            <!--                    alt="vietnamese"></a> </li>-->
 
-                    <li><a href="{{ url('language/en') }}">
-                            <img src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a> </li>
-                </ul>
+            <!--        <li><a href="{{ url('language/en') }}">-->
+            <!--                <img src="{{asset('frontend/template/backend/img/english.png')}}" alt="english"></a> </li>-->
+            <!--    </ul>-->
 
-            </div>
+            <!--</div>-->
 
         </div>
 

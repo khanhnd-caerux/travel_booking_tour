@@ -42,7 +42,7 @@
             <div class="col-md-3 col-xs-12 col-sm-3">
 
                 <h4 class="h4-footer">
-                    Bài viết mới </h4>
+                    New posts </h4>
                 <div class="box-sukiennoibat-list">
                     <ul>
                         @if($postRelated)
@@ -67,7 +67,7 @@
 
         <div class="row">
             <div class="col-md-12 col-xs-12 col-sm-12">
-                <h2 class="h2-detail">Có thể bạn quan tâm</h2>
+                <h2 class="h2-detail">Related posts</h2>
 
             </div>
             @foreach($postRelated->take(3) as $post)
