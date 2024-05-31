@@ -18,7 +18,7 @@ class Language
     public function handle(Request $request, Closure $next)
     {
         if (!session()->has('locale')) {
-            session()->put('locale', 'vi');
+            session()->put('locale', 'en');
         }
         return $next($request);
     }

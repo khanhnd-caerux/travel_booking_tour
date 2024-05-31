@@ -66,80 +66,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12 col-sm-6">
-                    <h2 class="h2-title none">@lang('language.theIdea')</h2>
-                    @if(session()->get('locale') == 'vi')
+                    <h2 class="h2-title none">10 dollars for Ha Giang</h2>
                     <div class="text-justify" id="text-justify-home">
                         <p style="text-align: justify;"><span style="font-size:16px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><a
-                                            href="index.html"><strong>Hà
-                                                Giang</strong></a>&nbsp;có công viên địa chất toàn cầu
-                                        được<strong> UNESCO</strong>&nbsp;cồng nhận&nbsp;là di sản thế giới
-                                        -&nbsp;<strong>Cao</strong> <strong>Nguyên Đá Đồng Văn</strong>. Nơi
-                                        đây nổi tiếng với&nbsp;những cung đường đẹp&nbsp;và những con
-                                        dốc,&nbsp;con&nbsp;đèo hiểm trở vì vậy đây sẽ là điểm đến lý tưởng
-                                        không thể thiếu trong hành trình của những phượt thủ. Đó là:
-                                        <strong>Cung Đường Hạnh Phúc, Đèo Mã Pí Lèng, Sông Nho Quế, Dốc Thẩm
-                                            Mã</strong>...</span></span></span></p>
-
-                        <p style="text-align: justify;"><span style="font-size:16px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;"><span
-                                        style="color:#000000;"><strong>Hà Giang</strong> có nhiều đồng bào
-                                        dân tộc sinh sống như: <strong>H'Mông, Lô Lô, Tày, Dao</strong>...
-                                        Với&nbsp;nhiều phong tục, tập quán truyền thống riêng nên tạo ra nơi
-                                        đây có nhiều nét văn hóa đa dạng&nbsp;sắc màu để các bạn có những
-                                        chuyến '' </span><a href="trai-nghiem-ngu-homestay.html"><span
-                                            style="color:#000000;"><strong>Tour Trải
-                                                Nghiêm</strong></span></a><span style="color:#000000;">
-                                        ''&nbsp; lý thú bằng ô tô hoặc bằng xe máy.</span></span></span></p>
-
-                        <p style="text-align: justify;"><span style="font-size:16px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;"><span
-                                        style="color:#000000;"><strong>Hà Giang</strong> cũng nổi tiếng với
-                                        những <strong>thửa ruộng bậc thang</strong>&nbsp;<strong>Hoàng Su
-                                            Phì</strong>, với những cánh đồng&nbsp;<strong>Hoa Tam Giác
-                                            Mạch</strong>,<strong> Hoa Đào</strong>, <strong>Hoa
-                                            Mận</strong>, <strong>Hoa Cải</strong>... Để các bạn thực hiện
-                                        những chuyến đi&nbsp;''<strong> Tour Checkin</strong> '' với những
-                                        bức ảnh tuyệt đep.</span></span></span></p>
-
-                        <p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span
-                                        style="color:#000000;">Với điều kiện đường xá&nbsp;được xây dựng mới
-                                        và được mở rộng nên việc&nbsp;đi lại nên <strong>Hà Giang</strong>
-                                        hiện nay rất thuận tiện với nhiều hãng </span><a
-                                        href="cho-thue-xe-du-lich-ha-giang.html"><span style="color:#000000;"><strong>xe
-                                                du lịch Hà
-                                                Giang</strong></span></a><span
-                                        style="color:#000000;">&nbsp;mới,&nbsp;hiện đại chạy theo nhiều
-                                        khung giờ khác nhau. Ngoài ra bạn cũng có thể đăng ký&nbsp;các
-                                        chuyến</span><strong><span style="color:#000000;"> </span><a
-                                            href="tour-ha-giang.html"><span style="color:#000000;">tour&nbsp;Hà
-                                                Giang</span></a></strong><a href="tour-ha-giang-noi-bat.html"><span
-                                            style="color:#000000;">&nbsp;</span></a><span style="color:#000000;">cũng
-                                        rất dễ dàng.Hãy đến với
-                                    </span><strong><a href="index.html"><span style="color:#000000;">Hà
-                                                Giang Open Tour</span></a></strong><span style="color:#000000;"> các bạn
-                                        sẽ có những trải nghiệm mới theo
-                                        phong cách riêng và những trải nghiệm đáng nhớ nhất ,là nhà tiên
-                                        phong mở ra những chương trình </span><a href="#"><span
-                                            style="color:#000000;">tour du
-                                            lịch Hà Giang bằng ô tô</span></a><span style="color:#000000;">
-                                        và </span><a href="tour-phuot-xe-may.html"><span style="color:#000000;">tour du
-                                            lịch Hà Giang bằng xe
-                                            máy</span></a><span style="color:#000000;">.</span></span></span></p>
-
-                        <p>&nbsp;</p>
-
+                                    style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;">
+<strong>Hà Giang</strong> has a global geopark recognized by <strong>UNESCO</strong> as a world heritage site - <strong>Dong Van Karst Plateau</strong>. <br> This place is famous for its beautiful roads and steep passes, making it an ideal destination for adventurers.<br> These include: <strong>Happiness Road, Mã Pí Lèng Pass, Nho Quế River, Thẩm Mã Slope...</strong>
+For each guest booking a tour at <strong>HaGiang Mountain Travel</strong>, they will indirectly contribute $10 to the travel company's Fund to contribute to the purpose of protecting the environment and developing life and people of <strong>Ha Giang</strong>. <br>
+Come to <strong>Ha Giang Mountain Travel</strong> to have unique experiences and unforgettable memories with our tours for you.
                     </div>
-                    @else
-                        <div class="text-justify" id="text-justify-home">
-                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><a href="index.html"><strong>Hà Giang</strong></a> has a global geopark recognized by UNESCO as a world heritage site - <strong>Dong Van Karst Plateau</strong>. This place is famous for its beautiful roads and steep passes, making it an ideal destination for adventurers. These include: <strong>Happiness Road, Mã Pí Lèng Pass, Nho Quế River, Thẩm Mã Slope</strong>...</span></span></span></p>
-                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><strong>Hà Giang</strong> is home to many ethnic groups such as: <strong>Hmong, Lolo, Tay, Dao</strong>... With various customs and traditions, this place has diverse cultural aspects, providing interesting experiences for travelers through car or motorbike tours.</span></span></span></p>
-                        <p style="text-align: justify;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;"><strong>Hà Giang</strong> is also famous for its <strong>terraced fields</strong> in <strong>Hoàng Su Phì</strong>, with fields of <strong>Buckwheat Flowers, Cherry Blossoms, Plum Blossoms, Mustard Flowers</strong>... These provide perfect spots for "Check-in Tours" with stunning photographs.</span></span></span></p>
-                        <p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#000000;">With newly constructed and expanded roads, traveling to <strong>Hà Giang</strong> is now very convenient with many modern tourist vehicles operating at various times. Additionally, you can easily book <strong>Hà Giang tours</strong>. Come to <strong>Hà Giang Open Tour</strong> for unique experiences and unforgettable memories, as pioneers offering <strong>car tours</strong> and <strong>motorbike tours</strong> in Hà Giang.</span></span></span></p>
-                        <p>&nbsp;</p>
-                        </div>
-                    @endif
-
                 </div>
                 @if (!empty($galleries))
                 <div class="col-md-6 col-xs-12 col-sm-6">

@@ -73,36 +73,29 @@ class HomeController extends Controller
         $galleries = $this->slider->getByType($type = 'gallery');
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
-        $locale = session()->get('locale');
-        if ($locale == 'vi') {
-            $categoryWithTour = $this->category->getCateWithTour($slug = 'tour-ha-giang');
-        } else {
-            $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
-        }
+        $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
         $allOrderDetail = $this->orderDetailService->getAll();
         $customerTour = 0;
         $totalMoney = ($allOrderDetail->sum('total_price')) * 0.1;
         $tourInfos = [];
         foreach ($allOrderDetail as $item) {
-            if ($item->tour_id) {
+            if ($item->tour_id && !$item->deleted_at) {
                 $customerTour++;
                 $order = $this->orderService->find($item->order_id);
                 $tour = $this->tour->find($item->tour_id);
-                $tourInfo = collect([
-                    'name' => $order->name,
-                    'phone' => substr($order->phone, 0, 4) . "." . substr($order->phone, 4, 3) . ".xxx",
-                    'email' => $order->email,
-                    'total_price' => $locale == 'en' ? number_format((($item->total_price / 24000) * 0.1), 0) : number_format(($item->total_price * 0.1), 0),
-                    'tour_name' => $tour->name,
-                ]);
+                if (!empty($tour)) {
+                    $tourInfo = collect([
+                        'name' => $order->name,
+                        'phone' => substr($order->phone, 0, 4) . "." . substr($order->phone, 4, 3) . ".xxx",
+                        'email' => $order->email,
+                        'total_price' => number_format((($item->total_price / 24000) * 0.1), 0),
+                        'tour_name' => $tour->name,
+                    ]);
+                }
                 $tourInfos[] = $tourInfo;
             }
         }
-        if ($locale == 'vi') {
-            $totalMoney = number_format($totalMoney, 0);
-        } else {
-            $totalMoney = number_format(($totalMoney / 24000), 0);
-        }
+        $totalMoney = number_format(($totalMoney / 24000), 0);
 
         return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'customerTour', 'totalMoney', 'tourInfos'));
     }
@@ -163,12 +156,12 @@ class HomeController extends Controller
             $this->contact->store($dataContact);
             $message = [
                 'type' => 'Thông báo có khách cần tư vấn',
-                'task' => 'Khách hàng để lại SĐT ' . $request->phone_number,
+                'task' => 'Khách hàng ' . $request->name . ' để lại SĐT ' . $request->phone_number . ' Email liên hệ ' . $request->email,
                 'content' => 'Liên hệ ngay',
                 'link' => route('admin.contact.list'),
             ];
             $users = $this->userService->getAll();
-            SendEmail::dispatch($message, $users)->delay(now()->addMinute());
+            SendEmail::dispatch($message, $users)->delay(5);
             DB::commit();
             if (session()->get('locale') == 'vi') {
                 return redirect()->back()->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");

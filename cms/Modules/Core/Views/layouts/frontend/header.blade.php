@@ -129,7 +129,7 @@
                         @endforeach
                         @endif
                         <li>
-                            <a href="{{ route('client.postDetail', ['slug' => 'lien-he']) }}">@lang('language.contact')</a>
+                            <a href="{{ route('client.postDetail', ['slug' => 'contact']) }}">@lang('language.contact')</a>
                         </li>
                     </ul>
                 </div>

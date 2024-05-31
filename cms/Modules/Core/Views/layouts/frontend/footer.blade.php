@@ -64,23 +64,23 @@
                 </h4>
                 <div class="bottom-address">
                     <ul class="flex-row social">
-                        <li class="ffb"><a href="https://www.facebook.com/hagiangopentour" target="_blank"><i
+                        <li class="ffb"><a href="https://www.facebook.com/hgmountaintravel" target="_blank"><i
                                     class="fa fa-facebook"></i></a></li>
 
-                        <li class="fins"><a href="Instagram.html" target="_blank"><i class="fa fa-instagram"></i></a>
-                        </li>
+                        <!--<li class="fins"><a href="instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>-->
+                        <!--</li>-->
 
-                        <li class="femail"><a href="G-Q9CCW6K72H.html" target="_blank"><i class="fa fa-envelope-o"
+                        <li class="femail"><a href="mailto:hagiangmountaintravel@gmail.com" target="_blank"><i class="fa fa-envelope-o"
                                     aria-hidden="true"></i></a>
 
                         </li>
 
-                        <li class="fphone"><a href="tel:{{$configValues['hotline'] }}}}"><i class="fa fa-phone"
+                        <li class="fphone"><a href="tel:{{$configValues['hotline'] }}"><i class="fa fa-phone"
                                     aria-hidden="true"></i></a>
                         </li>
 
-                        <li class="fyoutube"><a href="" target="_blank"><i class="fa fa-youtube-play"
-                                    aria-hidden="true"></i></a></li>
+                        <!--<li class="fyoutube"><a href="" target="_blank"><i class="fa fa-youtube-play"-->
+                        <!--            aria-hidden="true"></i></a></li>-->
                     </ul>
                     <div class="clearfix-20"></div>
                     <div class="flex-row">

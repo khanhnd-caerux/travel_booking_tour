@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header" style="display: flex; justify-content: space-between;">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hà Giang Tour xin cảm ơn</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Ha Giang Mountain Travel Thank You !</h5>
                 <button type="button" class="close hide-modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,7 +13,7 @@
                 {{ session('success') }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary hide-modal" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-secondary hide-modal" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

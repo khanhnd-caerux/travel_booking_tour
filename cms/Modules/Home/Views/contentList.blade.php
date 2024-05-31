@@ -39,17 +39,17 @@
 
                 </div>
 
-                <div class="pull-right" style="background: #eceff0;padding: 3px 15px;width: 100%;text-align: right;">
-                    <div class="pull-left">
-                        <ul class="flex-row sort">
-                            <li><b>{{ session()->get('locale') == 'vi' ? 'Sắp xếp theo' : 'Group by' }}</b></li>
-                            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá tăng dần' : 'Price up' }}</a> <i class="fa fa-long-arrow-up" aria-hidden="true"></i></li>
-                            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá giảm dần' : 'Price down' }}<i class="fa fa-long-arrow-down" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pagination pull-right">
-                    </div>
-                </div>
+                <!--<div class="pull-right" style="background: #eceff0;padding: 3px 15px;width: 100%;text-align: right;">-->
+                <!--    <div class="pull-left">-->
+                <!--        <ul class="flex-row sort">-->
+                <!--            <li><b>{{ session()->get('locale') == 'vi' ? 'Sắp xếp theo' : 'Group by' }}</b></li>-->
+                <!--            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá tăng dần' : 'Price up' }}</a> <i class="fa fa-long-arrow-up" aria-hidden="true"></i></li>-->
+                <!--            <li><a href="#">{{ session()->get('locale') == 'vi' ? 'Giá giảm dần' : 'Price down' }}<i class="fa fa-long-arrow-down" aria-hidden="true"></i></a></li>-->
+                <!--        </ul>-->
+                <!--    </div>-->
+                <!--    <div class="pagination pull-right">-->
+                <!--    </div>-->
+                <!--</div>-->
                 <div class="clearfix-20"></div>
                 <div class="row">
                     @if(count($contentList->children) > 0)
@@ -141,14 +141,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}"><img
+                                <a href="javascript:void(0)"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}">{{
+                                    <a href="javascript:void(0)">{{
                                         $ticket->name
                                         }}</a>
                                 </h3>
@@ -165,11 +165,11 @@
                                         {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
                             </div>
-                            <div class="link">
-                            <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}" target="_blank" rel="noopener noreferrer">
-                                <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
-                            </a>
-                            </div>
+                            <!--<div class="link">-->
+                            <!--<a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">-->
+                            <!--    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">-->
+                            <!--</a>-->
+                            <!--</div>-->
                         </div>
                     </div>
                     @endforeach
@@ -179,14 +179,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}"><img
+                                <a href="javascript:void(0)"><img
                                         src="{{ asset($ticket->feature_image_path) }}" alt="{{ $ticket->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}">{{
+                                    <a href="javascript:void(0)">{{
                                         $ticket->name
                                         }}</a>
                                 </h3>
@@ -202,11 +202,11 @@
                                 <div class="priceproduct"> @lang('language.priceFrom'): <span class="price mr-2">{{ $ticket->price }}
                                         {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
-                                <div class="link">
-                                <a href="{{ route('client.booking', ['type' => $ticket->category->type, 'id' => $ticket->id]) }}" target="_blank" rel="noopener noreferrer">
-                                    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
-                                </a>
-                                </div>
+                                <!--<div class="link">-->
+                                <!--<a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">-->
+                                <!--    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">-->
+                                <!--</a>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>
@@ -218,14 +218,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}"><img
+                                <a href="javascript:void(0)"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}">{{
+                                    <a href="javascript:void(0)">{{
                                         $car->name
                                         }}</a>
                                 </h3>
@@ -241,11 +241,11 @@
                                 <div class="priceproduct"> @lang('language.priceFrom'): <span class="price mr-2">{{ $car->price }}
                                         {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
-                                <div class="link">
-                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">
-                                    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
-                                </a>
-                                </div>
+                                <!--<div class="link">-->
+                                <!--<a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">-->
+                                <!--    <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">-->
+                                <!--</a>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>
@@ -256,14 +256,14 @@
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="item itemCatalogue" style="margin-bottom: 30px">
                             <div class="img">
-                                <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}"><img
+                                <a href="javascript:void(0)"><img
                                         src="{{ asset($car->feature_image_path) }}" alt="{{ $car->name }}"></a>
 
                             </div>
                             <div class="clearfix"></div>
                             <div class="info">
                                 <h3 class="h3-name">
-                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}">{{
+                                    <a href="javascript:void(0)">{{
                                         $car->name
                                         }}</a>
                                 </h3>
@@ -278,11 +278,11 @@
                                 <div class="priceproduct"> @lang('language.priceFrom'): <span class="price mr-2">{{ $car->price }}
                                         {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
                                 </div>
-                                <div class="link">
-                                    <a href="{{ route('client.booking', ['type' => $car->category->type, 'id' => $car->id]) }}" target="_blank" rel="noopener noreferrer">
-                                        <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">
-                                    </a>
-                                </div>
+                                <!--<div class="link">-->
+                                <!--    <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">-->
+                                <!--        <img class="img_booknow" src="{{ asset('frontend/book_now.png') }}" alt="Book Now">-->
+                                <!--    </a>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>

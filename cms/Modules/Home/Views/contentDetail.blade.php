@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="{{ route('client.index') }}">@lang('language.homepage')</a></li>
-                    <li class="uk-active"><a href="tour-ha-giang.html" title="TOUR HÀ GIANG">TOUR HÀ GIANG</a>
+                    <li class="uk-active"><a href="{{ route('client.contentDetail', ['slug' => $contentDetail->slug]) }}" title="TOUR HÀ GIANG">{{ $contentDetail->name }}</a>
                     </li>
                 </ul>
 
@@ -251,37 +251,37 @@
                     </div>
                     @endif
                 </div>
-                <div class="mt-15">
-                    <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
-                        @if ($contentDetail->category->type == 'tour')
-                        <span class="main-text text-uppercase">@lang('language.bookNow') <i
-                                class="fa fa-angle-right icon-arrow-right"></i></span>
-                        @else
-                        <span class="main-text text-uppercase">@lang('language.bookNow') <i
-                                class="fa fa-angle-right icon-arrow-right"></i></span>
-                        @endif
-                        <span class="tiny-text">@lang('language.keepContact')</span>
-                    </a>
-                </div>
+                <!--<div class="mt-15">-->
+                <!--    <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">-->
+                <!--        @if ($contentDetail->category->type == 'tour')-->
+                <!--        <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
+                <!--                class="fa fa-angle-right icon-arrow-right"></i></span>-->
+                <!--        @else-->
+                <!--        <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
+                <!--                class="fa fa-angle-right icon-arrow-right"></i></span>-->
+                <!--        @endif-->
+                <!--        <span class="tiny-text">@lang('language.keepContact')</span>-->
+                <!--    </a>-->
+                <!--</div>-->
 
 
-                <div class="visible-xs">
-                    <div class="hotline-aside">
-                        <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
-                        <form class="form-hotline" action="{{ route('client.contact.store') }}" id="mailsubricre"
-                            method="post">
-                            @csrf
-                            <div class="error"></div>
-                            <div class="rel">
-                                <input type="phone" name="phone_number" class="form-control phone"
-                                    placeholder="@lang('language.myPhone')" required>
-                                <input type="hidden" name="url" value="{{Request::url()}}">
-                                <button type="submit">@lang('language.send')</button>
-                            </div>
-                        </form>
+                <!--<div class="visible-xs">-->
+                <!--    <div class="hotline-aside">-->
+                <!--        <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>-->
+                <!--        <form class="form-hotline" action="{{ route('client.contact.store') }}" id="mailsubricre"-->
+                <!--            method="post">-->
+                <!--            @csrf-->
+                <!--            <div class="error"></div>-->
+                <!--            <div class="rel">-->
+                <!--                <input type="phone" name="phone_number" class="form-control phone"-->
+                <!--                    placeholder="@lang('language.myPhone')" required>-->
+                <!--                <input type="hidden" name="url" value="{{Request::url()}}">-->
+                <!--                <button type="submit">@lang('language.send')</button>-->
+                <!--            </div>-->
+                <!--        </form>-->
 
-                    </div>
-                </div>
+                <!--    </div>-->
+                <!--</div>-->
             </div>
             <style>
                 @media screen and (max-width:600px) {
@@ -302,28 +302,28 @@
                     </div>
                     <div class="clearfix-10"></div>
                     <div class="col-md-4 col-sm-4 visible-xs">
-                        <div class="mt-15">
-                            <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}"
-                                class="btn btn-primary btn-lg btn-block button-booking-tour">
-                                <span class="main-text text-uppercase">@lang('language.bookNow') <i
-                                        class="fa fa-angle-right icon-arrow-right"></i></span>
-                                <span class="tiny-text">@lang('language.keepContact')</span>
-                            </a>
-                        </div>
-                        <div class="hotline-aside">
-                            <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
-                            <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
-                                @csrf
-                                <div class="error"></div>
-                                <div class="rel">
-                                    <input type="phone" name="phone_number" class="form-control phone"
-                                        placeholder="@lang('language.myPhone')" required>
-                                    <input type="hidden" name="url" value="{{Request::url()}}">
-                                    <button type="submit">@lang('language.send')</button>
-                                </div>
-                            </form>
+                        <!--<div class="mt-15">-->
+                        <!--    <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}"-->
+                        <!--        class="btn btn-primary btn-lg btn-block button-booking-tour">-->
+                        <!--        <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
+                        <!--                class="fa fa-angle-right icon-arrow-right"></i></span>-->
+                        <!--        <span class="tiny-text">@lang('language.keepContact')</span>-->
+                        <!--    </a>-->
+                        <!--</div>-->
+                        <!--<div class="hotline-aside">-->
+                        <!--    <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>-->
+                        <!--    <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">-->
+                        <!--        @csrf-->
+                        <!--        <div class="error"></div>-->
+                        <!--        <div class="rel">-->
+                        <!--            <input type="phone" name="phone_number" class="form-control phone"-->
+                        <!--                placeholder="@lang('language.myPhone')" required>-->
+                        <!--            <input type="hidden" name="url" value="{{Request::url()}}">-->
+                        <!--            <button type="submit">@lang('language.send')</button>-->
+                        <!--        </div>-->
+                        <!--    </form>-->
 
-                        </div>
+                        <!--</div>-->
                     </div>
 
 
@@ -390,19 +390,19 @@
             </div>
 
             <div class="col-md-4 col-lg-3 col-sm-12 col-xs-12 wow fadeInUp hidden-xs">
-                <div class="hotline-aside">
-                    <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>
-                    <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">
-                        @csrf
-                        <div class="error"></div>
-                        <div class="rel">
-                            <input type="phone" name="phone_number" class="form-control phone"
-                                placeholder="@lang('language.myPhone')" required>
-                            <input type="hidden" name="url" value="{{Request::url()}}">
-                            <button type="submit">@lang('language.send')</button>
-                        </div>
-                    </form>
-                </div>
+                <!--<div class="hotline-aside">-->
+                <!--    <p style="color: #ef7325;width: 100%;text-align: center">@lang('language.giveNumber')</p>-->
+                <!--    <form class="form-hotline" action="{{ route('client.contact.store') }}" method="post">-->
+                <!--        @csrf-->
+                <!--        <div class="error"></div>-->
+                <!--        <div class="rel">-->
+                <!--            <input type="phone" name="phone_number" class="form-control phone"-->
+                <!--                placeholder="@lang('language.myPhone')" required>-->
+                <!--            <input type="hidden" name="url" value="{{Request::url()}}">-->
+                <!--            <button type="submit">@lang('language.send')</button>-->
+                <!--        </div>-->
+                <!--    </form>-->
+                <!--</div>-->
 
                 @if (count($tourRelated) > 0)
                 <div class="product-item bgfff" style="padding-top: 25px;padding-bottom: 0px">
@@ -440,11 +440,11 @@
                             </div>
                         </div>
                         <div class="clearfix-10"></div>
-                        <a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">
-                            <span class="main-text text-uppercase">@lang('language.bookNow') <i
-                                    class="fa fa-angle-right icon-arrow-right"></i></span>
-                            <span class="tiny-text">@lang('language.keepContact')</span>
-                        </a>
+                        <!--<a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">-->
+                        <!--    <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
+                        <!--            class="fa fa-angle-right icon-arrow-right"></i></span>-->
+                        <!--    <span class="tiny-text">@lang('language.keepContact')</span>-->
+                        <!--</a>-->
                     </div>
                     @endforeach
                 </div>
