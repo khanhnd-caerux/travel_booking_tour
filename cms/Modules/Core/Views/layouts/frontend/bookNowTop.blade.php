@@ -1,10 +1,5 @@
 <div class="book_now">
-    <img
-        class="img_booknow"
-        id="img_booknowTop"
-        src="{{ asset('frontend/book_now.png') }}"
-        alt="Book Now"
-    />
+    <img class="img_booknow" id="img_booknowTop" src="{{ asset('frontend/book_now.png') }}" alt="Book Now" />
 </div>
 <div class="contact_layout d-none" id="contact_layoutTop">
     <div class="contact_form d-none" id="contact_formTop">
@@ -19,16 +14,28 @@
                 <label for="the-email">@lang('language.emailCustomer')</label>
                 <input type="email" name="email" id="the-email" />
                 <label for="the-phone">@lang('language.phoneCustomer')</label>
-                <input type="tel" name="phone_number" id="the-phone" />
+                <div class="flex_phone">
+                    <select name="code_phone" id="the-phone" style="width: 50%;">
+                        <option value="+34">(+34) Viet Nam</option>
+                        @if (config('country.countries'))
+                            @foreach (config('country.countries') as $country)
+                                <option value="{{ $country["code"] }}">{{ '(' . $country['code'] . ') ' . $country['country']  }}
+                                </option>
+                            @endforeach
+                        @endif
+                    </select>
+                    <input type="tel" style="width: 50%;" name="phone_number" id="the-phone">
+                </div>
                 <label for="the-reason">@lang('language.pick')</label>
                 <select name="url" id="the-reason">
                     <option value="1">@lang('language.choose')</option>
                     @if ($tours)
-                    @foreach ($tours as $tour)
-                    @if ($tour->category->locale == session()->get('locale'))
-                    <option value="{{ config('app.url') . '/noi-dung-chi-tiet/' . $tour->slug }}">{{ $tour->name }}</option>
-                    @endif
-                    @endforeach
+                        @foreach ($tours as $tour)
+                            @if ($tour->category->locale == session()->get('locale'))
+                                <option value="{{ config('app.url') . '/noi-dung-chi-tiet/' . $tour->slug }}">{{ $tour->name }}
+                                </option>
+                            @endif
+                        @endforeach
                     @endif
                 </select>
                 <label for="the-message">@lang('language.note')</label>
@@ -42,6 +49,7 @@
     .d-none {
         display: none;
     }
+
     .contact_form {
         position: fixed;
         width: 40%;
@@ -52,6 +60,7 @@
         z-index: 9999;
         border-radius: 15px;
     }
+
     .contact_layout {
         position: fixed;
         background: #00000070;
@@ -61,14 +70,22 @@
         top: 0;
         left: 0;
     }
+
+    .flex_phone {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .contact_form h1,
     .contact_form p {
         text-align: center;
     }
+
     label {
         display: block;
         margin: 1em 0 0.2em;
     }
+
     /* single-line text, checkbox, and button */
     input,
     select,
@@ -81,16 +98,20 @@
         border: solid 1px #ccc;
         resize: vertical;
     }
+
     textarea {
         min-height: 180px;
     }
+
     select {
         color: indigo;
     }
+
     option {
         color: blue;
         background: lavenderBlush;
     }
+
     input[type="checkbox"] {
         display: inline;
         width: auto;
@@ -132,22 +153,26 @@
     }
 
     @media screen and (min-width: 600px) {
+
         /*  make the form 2 columns */
         form:after {
             content: "";
             display: block;
             clear: both;
         }
+
         .column {
             width: 100%;
             padding: 1em;
             float: left;
         }
     }
+
     .book_now {
         right: 20px;
         bottom: 100px;
     }
+
     .book_now .img_booknow {
         cursor: pointer;
         width: 180px;
@@ -155,7 +180,9 @@
         border-radius: 15px;
         animation: bounce 2s ease infinite;
     }
+
     @keyframes bounce {
+
         0%,
         20%,
         50%,
@@ -163,13 +190,16 @@
         100% {
             transform: translateY(0);
         }
+
         40% {
             transform: translateY(-20px);
         }
+
         60% {
             transform: translateY(-10px);
         }
     }
+
     .btn_close {
         padding: 10;
         border-radius: 10px;

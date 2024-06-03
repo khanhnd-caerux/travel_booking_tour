@@ -91,12 +91,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage && $activePage == 'order') active bg-gradient-primary @endif"
-                href="{{ route('admin.order.list') }}">
+            <a class="nav-link text-white @if($activePage && $activePage == 'charity') active bg-gradient-primary @endif"
+                href="{{ route('admin.charity.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">shopping_cart_checkout</i>
+                    <i class="material-icons opacity-10">personal_injury</i>
                 </div>
-                <span class="nav-link-text ms-1">Order</span>
+                <span class="nav-link-text ms-1">Từ thiện</span>
             </a>
         </li>
         <li class="nav-item">

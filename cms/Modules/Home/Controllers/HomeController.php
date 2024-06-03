@@ -4,6 +4,7 @@ namespace Cms\Modules\Home\Controllers;
 
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
+use Cms\Modules\Admin\Services\Contracts\CharityServiceContract;
 use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
@@ -23,7 +24,7 @@ use Cms\Modules\Admin\Jobs\SendEmail;
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $category, $tour, $car, $ticket, $contact, $userService;
+    protected $slider, $post, $category, $tour, $car, $ticket, $contact, $userService, $charityService;
     protected $orderService;
     protected $orderDetailService;
     /**
@@ -42,7 +43,8 @@ class HomeController extends Controller
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
         OrderDetailServiceContract $orderDetailService,
-        UserServiceContract $userService
+        UserServiceContract $userService,
+        CharityServiceContract $charityService
     ) {
         $this->slider = $slider;
         $this->post = $post;
@@ -54,6 +56,7 @@ class HomeController extends Controller
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
         $this->userService = $userService;
+        $this->charityService = $charityService;
     }
 
     /**
@@ -74,30 +77,9 @@ class HomeController extends Controller
         $postExperiences = $this->post->getPostByType($type = 'experience');
         $firstPostExperience = $this->post->getFirstPost($type = 'experience');
         $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
-        $allOrderDetail = $this->orderDetailService->getAll();
-        $customerTour = 0;
-        $totalMoney = ($allOrderDetail->sum('total_price')) * 0.1;
-        $tourInfos = [];
-        foreach ($allOrderDetail as $item) {
-            if ($item->tour_id && !$item->deleted_at) {
-                $customerTour++;
-                $order = $this->orderService->find($item->order_id);
-                $tour = $this->tour->find($item->tour_id);
-                if (!empty($tour)) {
-                    $tourInfo = collect([
-                        'name' => $order->name,
-                        'phone' => substr($order->phone, 0, 4) . "." . substr($order->phone, 4, 3) . ".xxx",
-                        'email' => $order->email,
-                        'total_price' => number_format((($item->total_price / 24000) * 0.1), 0),
-                        'tour_name' => $tour->name,
-                    ]);
-                }
-                $tourInfos[] = $tourInfo;
-            }
-        }
-        $totalMoney = number_format(($totalMoney / 24000), 0);
+        $tourInfos = $this->charityService->getAll();
 
-        return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'customerTour', 'totalMoney', 'tourInfos'));
+        return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'tourInfos'));
     }
 
     public function postDetail($slug)
@@ -147,7 +129,7 @@ class HomeController extends Controller
         try {
             DB::beginTransaction();
             $dataContact = [
-                'phone_number' => $request->phone_number,
+                'phone_number' => $request->code_phone . ' ' . $request->phone_number,
                 'url' => $request->url,
                 'name' => $request->name,
                 'email' => $request->email,
@@ -155,19 +137,17 @@ class HomeController extends Controller
             ];
             $this->contact->store($dataContact);
             $message = [
-                'type' => 'Thông báo có khách cần tư vấn',
-                'task' => 'Khách hàng ' . $request->name . ' để lại SĐT ' . $request->phone_number . ' Email liên hệ ' . $request->email,
-                'content' => 'Liên hệ ngay',
+                'customer' => $request->name,
+                'phone' => $request->code_phone . ' ' . $request->phone_number,
+                'email' => $request->email,
+                'note' => $request->note,
                 'link' => route('admin.contact.list'),
             ];
             $users = $this->userService->getAll();
-            SendEmail::dispatch($message, $users)->delay(5);
+            SendEmail::dispatch($message, $users);
             DB::commit();
-            if (session()->get('locale') == 'vi') {
-                return redirect()->back()->with('success', "Cảm ơn bạn đã đặt Tour chúng tôi sẽ liên hệ sớm với bạn qua Email hoặc SĐT");
-            } else {
-                return redirect()->back()->with('success', "Thank you for booking the tour, we will contact you soon via Email or phone number.");
-            }
+            return redirect()->back()->with('success', "Thank you for booking the tour, we will contact you soon via Email or phone number.");
+
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());

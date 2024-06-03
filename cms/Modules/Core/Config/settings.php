@@ -14,5 +14,8 @@ return [
         "khach-hang-hai-long" => "Khách hàng hài lòng",
         "van-phong" => "Văn Phòng",
         "email" => "Email",
+        "number" => "Số người từ thiện",
+        "total-money" => "Tổng tiền từ thiện",
+        "count-from" => "Số bắt đầu",
     ]
 ];

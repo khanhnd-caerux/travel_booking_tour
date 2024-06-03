@@ -105,11 +105,19 @@ Come to <strong>Ha Giang Mountain Travel</strong> to have unique experiences and
                         <div class="col-md-6">
                             <div>
                                 <h3 style="text-transform: uppercase;">@lang('language.numberCustomer')</h3>
-                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $customerTour }}</p>
+                                @if (isset($configValues['so-nguoi-tu-thien']))
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $configValues['so-nguoi-tu-thien'] }}</p>
+                                @else
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">50</p>
+                                @endif
                             </div>
                             <div>
                                 <h3 style="text-transform: uppercase;">@lang('language.theMoney')</h3>
-                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $totalMoney }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</p>
+                                @if (isset($configValues['tong-tien-tu-thien']))
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">{{ $configValues['tong-tien-tu-thien'] }} USD</p>
+                                @else
+                                <p style="font-size: 36px; text-align: center; color: orange; font-weight: bold;">1,000 USD</p>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -120,18 +128,20 @@ Come to <strong>Ha Giang Mountain Travel</strong> to have unique experiences and
                                 <th scope="col">{{ (session()->get('locale') == 'en') ? 'Name' : 'Tên khách hàng' }} </th>
                                 <th scope="col">{{ (session()->get('locale') == 'en') ? 'Phone number' : 'SDT' }}</th>
                                 <th scope="col">{{ (session()->get('locale') == 'en') ? 'Tour name' : 'Tour đã đặt' }}</th>
-                                <th scope="col">{{ (session()->get('locale') == 'en') ? 'Money' : 'Tiền' }}</th>
                                 </tr>
                             </thead>
                             @if($tourInfos)
                             <tbody>
                                 @foreach($tourInfos as $info)
                                 <tr>
-                                <th scope="row">{{ $loop->index + 1 }}</th>
-                                <td>{{ $info['name'] }}</td>
-                                <td>{{ $info['phone'] }}</td>
-                                <td>{{ $info['tour_name'] }}</td>
-                                <td>{{ $info['total_price'] }} {{ (session()->get('locale') == 'en') ? 'USD' : 'VND' }}</td>
+                                @if ($configValues['so-bat-dau'])
+                                <th scope="row">{{ (int)$configValues['so-bat-dau'] ++ }}</th>
+                                @else
+                                <th scope="row">{{ $loop + 1 }}</th>
+                                @endif
+                                <td>{{ $info->name }}</td>
+                                <td>{{ substr($info->phone, 0, 4) . "." . substr($info->phone, 4, 3) . ".xxx" }}</td>
+                                <td>{{ $info->tour->name }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -549,19 +549,58 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/order/list' => 
+      '/admin/charity/list' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.order.list',
+            '_route' => 'admin.charity.list',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/charity/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.charity.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/charity/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.charity.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -612,7 +651,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::MPEM8BketdrjKFor',
+            '_route' => 'generated::Yj1xMTuuH051Rre7',
           ),
           1 => NULL,
           2 => 
@@ -648,7 +687,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1dw776wet8zSoCAg',
+            '_route' => 'generated::bRLmwqfS5viRsfPp',
           ),
           1 => NULL,
           2 => 
@@ -838,7 +877,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|ontact/delete/([^/]++)(*:249))|s(?|etting/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331))|lider/(?|edit/([^/]++)(*:362)|update/([^/]++)(*:385)|delete/([^/]++)(*:408)))|p(?|ost/(?|edit/([^/]++)(*:442)|update/([^/]++)(*:465)|delete/([^/]++)(*:488))|assword/reset/([^/]++)(*:519))|t(?|our/(?|edit/([^/]++)(*:552)|update/([^/]++)(*:575)|delete/([^/]++)(*:598))|icket/(?|edit/([^/]++)(*:629)|update/([^/]++)(*:652)|delete/([^/]++)(*:675)))|order/(?|de(?|tail/([^/]++)(*:712)|lete/([^/]++)(*:733))|update/([^/]++)(*:757)))|/email/verify/([^/]++)/([^/]++)(*:798)|/([^/]++)(*:815)|/language/([^/]++)(*:841)|/noi\\-dung(?|/([^/]++)(*:871)|\\-chi\\-tiet/([^/]++)(*:899))|/booking/([^/]++)/([^/]++)(?|(*:937)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|harity/(?|de(?|tail/([^/]++)(*:255)|lete/([^/]++)(*:276))|update/([^/]++)(*:300))|ontact/delete/([^/]++)(*:331))|s(?|etting/(?|edit/([^/]++)(*:367)|update/([^/]++)(*:390)|delete/([^/]++)(*:413))|lider/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490)))|p(?|ost/(?|edit/([^/]++)(*:524)|update/([^/]++)(*:547)|delete/([^/]++)(*:570))|assword/reset/([^/]++)(*:601))|t(?|our/(?|edit/([^/]++)(*:634)|update/([^/]++)(*:657)|delete/([^/]++)(*:680))|icket/(?|edit/([^/]++)(*:711)|update/([^/]++)(*:734)|delete/([^/]++)(*:757))))|/email/verify/([^/]++)/([^/]++)(*:799)|/([^/]++)(*:816)|/language/([^/]++)(*:842)|/noi\\-dung(?|/([^/]++)(*:872)|\\-chi\\-tiet/([^/]++)(*:900))|/booking/([^/]++)/([^/]++)(?|(*:938)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1023,7 +1062,75 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      249 => 
+      255 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.charity.detail',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      276 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.charity.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      300 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.charity.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      331 => 
       array (
         0 => 
         array (
@@ -1046,7 +1153,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      285 => 
+      367 => 
       array (
         0 => 
         array (
@@ -1069,7 +1176,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      308 => 
+      390 => 
       array (
         0 => 
         array (
@@ -1091,7 +1198,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      331 => 
+      413 => 
       array (
         0 => 
         array (
@@ -1114,7 +1221,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      362 => 
+      444 => 
       array (
         0 => 
         array (
@@ -1137,7 +1244,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      385 => 
+      467 => 
       array (
         0 => 
         array (
@@ -1159,7 +1266,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      408 => 
+      490 => 
       array (
         0 => 
         array (
@@ -1182,7 +1289,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      442 => 
+      524 => 
       array (
         0 => 
         array (
@@ -1205,7 +1312,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      465 => 
+      547 => 
       array (
         0 => 
         array (
@@ -1227,7 +1334,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      488 => 
+      570 => 
       array (
         0 => 
         array (
@@ -1250,7 +1357,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      519 => 
+      601 => 
       array (
         0 => 
         array (
@@ -1273,7 +1380,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      552 => 
+      634 => 
       array (
         0 => 
         array (
@@ -1296,7 +1403,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      575 => 
+      657 => 
       array (
         0 => 
         array (
@@ -1318,7 +1425,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      598 => 
+      680 => 
       array (
         0 => 
         array (
@@ -1341,7 +1448,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      629 => 
+      711 => 
       array (
         0 => 
         array (
@@ -1364,7 +1471,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      652 => 
+      734 => 
       array (
         0 => 
         array (
@@ -1386,7 +1493,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      675 => 
+      757 => 
       array (
         0 => 
         array (
@@ -1409,75 +1516,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      712 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.order.detail',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      733 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.order.delete',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      757 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.order.update',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      798 => 
+      799 => 
       array (
         0 => 
         array (
@@ -1501,7 +1540,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      815 => 
+      816 => 
       array (
         0 => 
         array (
@@ -1524,13 +1563,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      841 => 
+      842 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::093ywmMaDydY0Rwe',
+            '_route' => 'generated::rAao3wUkg0yICIYb',
           ),
           1 => 
           array (
@@ -1547,7 +1586,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      871 => 
+      872 => 
       array (
         0 => 
         array (
@@ -1570,7 +1609,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      899 => 
+      900 => 
       array (
         0 => 
         array (
@@ -1593,7 +1632,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      937 => 
+      938 => 
       array (
         0 => 
         array (
@@ -3533,14 +3572,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.order.list' => 
+    'admin.charity.list' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/order/list',
+      'uri' => 'admin/charity/list',
       'action' => 
       array (
         'middleware' => 
@@ -3548,14 +3587,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
-        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@list',
         'namespace' => 'Cms\\Modules\\Admin\\Controllers',
-        'prefix' => 'admin/order',
+        'prefix' => 'admin/charity',
         'where' => 
         array (
         ),
-        'as' => 'admin.order.list',
+        'as' => 'admin.charity.list',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3571,14 +3610,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.order.detail' => 
+    'admin.charity.detail' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/order/detail/{id}',
+      'uri' => 'admin/charity/detail/{id}',
       'action' => 
       array (
         'middleware' => 
@@ -3586,14 +3625,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
-        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@detail',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@detail',
         'namespace' => 'Cms\\Modules\\Admin\\Controllers',
-        'prefix' => 'admin/order',
+        'prefix' => 'admin/charity',
         'where' => 
         array (
         ),
-        'as' => 'admin.order.detail',
+        'as' => 'admin.charity.detail',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3609,14 +3648,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.order.delete' => 
+    'admin.charity.create' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/order/delete/{id}',
+      'uri' => 'admin/charity/create',
       'action' => 
       array (
         'middleware' => 
@@ -3624,14 +3663,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
-        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@create',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@create',
         'namespace' => 'Cms\\Modules\\Admin\\Controllers',
-        'prefix' => 'admin/order',
+        'prefix' => 'admin/charity',
         'where' => 
         array (
         ),
-        'as' => 'admin.order.delete',
+        'as' => 'admin.charity.create',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3647,13 +3686,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.order.update' => 
+    'admin.charity.store' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/order/update/{id}',
+      'uri' => 'admin/charity/store',
       'action' => 
       array (
         'middleware' => 
@@ -3661,14 +3700,89 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
-        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@store',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@store',
         'namespace' => 'Cms\\Modules\\Admin\\Controllers',
-        'prefix' => 'admin/order',
+        'prefix' => 'admin/charity',
         'where' => 
         array (
         ),
-        'as' => 'admin.order.update',
+        'as' => 'admin.charity.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.charity.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/charity/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/charity',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.charity.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.charity.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/charity/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\CharityController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/charity',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.charity.update',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3798,7 +3912,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::MPEM8BketdrjKFor' => 
+    'generated::Yj1xMTuuH051Rre7' => 
     array (
       'methods' => 
       array (
@@ -3819,7 +3933,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::MPEM8BketdrjKFor',
+        'as' => 'generated::Yj1xMTuuH051Rre7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3873,7 +3987,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1dw776wet8zSoCAg' => 
+    'generated::bRLmwqfS5viRsfPp' => 
     array (
       'methods' => 
       array (
@@ -3894,7 +4008,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::1dw776wet8zSoCAg',
+        'as' => 'generated::bRLmwqfS5viRsfPp',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4309,7 +4423,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::093ywmMaDydY0Rwe' => 
+    'generated::rAao3wUkg0yICIYb' => 
     array (
       'methods' => 
       array (
@@ -4326,13 +4440,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000015214763000000002daa7999";}";s:4:"hash";s:44:"wuYedBBl5wmm9/WQG+0LmzErq4tpzeGYc/FhOrXtS/k=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000039549cc6000000004af0071b";}";s:4:"hash";s:44:"krtBWobtxX0NdY+qSwHml7rt4QHMEGyAAb7qegEF5SI=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::093ywmMaDydY0Rwe',
+        'as' => 'generated::rAao3wUkg0yICIYb',
       ),
       'fallback' => false,
       'defaults' => 

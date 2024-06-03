@@ -99,13 +99,15 @@ Route::group([
         Route::get('/delete/{id}', 'TicketController@delete')->name('admin.ticket.delete');
     });
     Route::group([
-        'prefix' => 'order',
+        'prefix' => 'charity',
         'middleware' => ['auth']
     ], function () {
-        Route::get('/list', 'OrderController@list')->name('admin.order.list');
-        Route::get('/detail/{id}', 'OrderController@detail')->name('admin.order.detail');
-        Route::get('/delete/{id}', 'OrderController@delete')->name('admin.order.delete');
-        Route::post('/update/{id}', 'OrderController@update')->name('admin.order.update');
+        Route::get('/list', 'CharityController@list')->name('admin.charity.list');
+        Route::get('/detail/{id}', 'CharityController@detail')->name('admin.charity.detail');
+        Route::get('/create', 'CharityController@create')->name('admin.charity.create');
+        Route::post('/store', 'CharityController@store')->name('admin.charity.store');
+        Route::get('/delete/{id}', 'CharityController@delete')->name('admin.charity.delete');
+        Route::post('/update/{id}', 'CharityController@update')->name('admin.charity.update');
     });
     Route::group([
         'prefix' => 'contact',

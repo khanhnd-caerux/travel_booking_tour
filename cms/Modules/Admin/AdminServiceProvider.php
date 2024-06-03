@@ -21,6 +21,7 @@ use Cms\Modules\Admin\Repositories\Contracts\TicketRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\TourImageRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\TourRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\UserRepositoryContract;
+use Cms\Modules\Admin\Repositories\Contracts\CharityRepositoryContract;
 use Cms\Modules\Admin\Repositories\OrderDetailRepository;
 use Cms\Modules\Admin\Repositories\OrderRepository;
 use Cms\Modules\Admin\Repositories\PostRepository;
@@ -31,6 +32,7 @@ use Cms\Modules\Admin\Repositories\TicketRepository;
 use Cms\Modules\Admin\Repositories\TourImageRepository;
 use Cms\Modules\Admin\Repositories\TourRepository;
 use Cms\Modules\Admin\Repositories\UserRepository;
+use Cms\Modules\Admin\Repositories\CharityRepository;
 use Cms\Modules\Admin\Services\CarImageService;
 use Cms\Modules\Admin\Services\CarService;
 use Cms\Modules\Admin\Services\CategoryService;
@@ -49,6 +51,7 @@ use Cms\Modules\Admin\Services\Contracts\TicketServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
+use Cms\Modules\Admin\Services\Contracts\CharityServiceContract;
 use Cms\Modules\Admin\Services\OrderDetailService;
 use Cms\Modules\Admin\Services\OrderService;
 use Cms\Modules\Admin\Services\PostService;
@@ -59,6 +62,7 @@ use Cms\Modules\Admin\Services\TicketService;
 use Cms\Modules\Admin\Services\TourImageService;
 use Cms\Modules\Admin\Services\TourService;
 use Cms\Modules\Admin\Services\UserService;
+use Cms\Modules\Admin\Services\CharityService;
 use Illuminate\Routing\Router;
 
 class AdminServiceProvider extends CmsServiceProvider{
@@ -97,5 +101,7 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(TicketImageServiceContract::class, TicketImageService::class);
         $this->app->bind(ContactServiceContract::class, ContactService::class);
         $this->app->bind(ContactRepositoryContract::class, ContactRepository::class);
+        $this->app->bind(CharityServiceContract::class, CharityService::class);
+        $this->app->bind(CharityRepositoryContract::class, CharityRepository::class);
     }
 }

@@ -18,13 +18,13 @@ Route::group([
         return redirect()->route('client.index');
     });
     Route::group([
-        'prefix' => 'noi-dung',
+        'prefix' => 'content',
         'middleware' => ['web']
     ], function () {
         Route::get('/{slug}', 'HomeController@contentList')->name('client.contentList');
     });
     Route::group([
-        'prefix' => 'noi-dung-chi-tiet',
+        'prefix' => 'detail-content',
         'middleware' => ['web']
     ], function () {
         Route::get('/{slug}', 'HomeController@contentDetail')->name('client.contentDetail');
