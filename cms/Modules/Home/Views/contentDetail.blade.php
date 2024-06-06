@@ -6,7 +6,9 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="{{ route('client.index') }}">@lang('language.homepage')</a></li>
-                    <li class="uk-active"><a href="{{ route('client.contentDetail', ['slug' => $contentDetail->slug]) }}" title="TOUR HÀ GIANG">{{ $contentDetail->name }}</a>
+                    <li class="uk-active"><a
+                            href="{{ route('client.contentDetail', ['slug' => $contentDetail->slug]) }}"
+                            title="TOUR HÀ GIANG">{{ $contentDetail->name }}</a>
                     </li>
                 </ul>
 
@@ -31,172 +33,127 @@
                     <div class="col-115">
                         <ul id='carousel-custom-dots' class='owl-dots list_yk'>
                             @if ($contentDetail->tourImages)
-                            @foreach($contentDetail->tourImages as $image)
-                            <li class="owl-dot">
-                                <a href="javascript:void(0)"><img class="img_yk_cm click"
-                                        src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
+                                @foreach($contentDetail->tourImages as $image)
+                                    <li class="owl-dot">
+                                        <a href="javascript:void(0)"><img class="img_yk_cm click"
+                                                src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
 
-                            </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
                             @endif
                             @if ($contentDetail->carImages)
-                            @foreach($contentDetail->carImages as $image)
-                            <li class="owl-dot">
-                                <a href="javascript:void(0)"><img class="img_yk_cm click"
-                                        src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
+                                @foreach($contentDetail->carImages as $image)
+                                    <li class="owl-dot">
+                                        <a href="javascript:void(0)"><img class="img_yk_cm click"
+                                                src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
 
-                            </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
                             @endif
                             @if ($contentDetail->ticketImages)
-                            @foreach($contentDetail->ticketImages as $image)
-                            <li class="owl-dot">
-                                <a href="javascript:void(0)"><img class="img_yk_cm click"
-                                        src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
+                                @foreach($contentDetail->ticketImages as $image)
+                                    <li class="owl-dot">
+                                        <a href="javascript:void(0)"><img class="img_yk_cm click"
+                                                src="{{ asset($image->image_path) }}" alt="{{ $contentDetail->name }}"></a>
 
-                            </li>
-                            @endforeach
+                                    </li>
+                                @endforeach
                             @endif
                         </ul>
                     </div>
                     <div class="col-t115">
                         <div id="slider-home-chitiet" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
                             @if ($contentDetail->tourImages)
-                            @foreach($contentDetail->tourImages as $image)
-                            <div class="item ">
-                                <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                        alt="{{ $contentDetail->name }}" /></a>
-                            </div>
-                            @endforeach
+                                @foreach($contentDetail->tourImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                                @endforeach
                             @endif
                             @if ($contentDetail->carImages)
-                            @foreach($contentDetail->carImages as $image)
-                            <div class="item ">
-                                <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                        alt="{{ $contentDetail->name }}" /></a>
-                            </div>
-                            @endforeach
+                                @foreach($contentDetail->carImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                                @endforeach
                             @endif
                             @if ($contentDetail->ticketImages)
-                            @foreach($contentDetail->ticketImages as $image)
-                            <div class="item ">
-                                <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                        alt="{{ $contentDetail->name }}" /></a>
-                            </div>
-                            @endforeach
+                                @foreach($contentDetail->ticketImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                                @endforeach
                             @endif
                         </div>
-
                     </div>
-
                 </div>
                 <div class="visible-xs">
                     <div id="sync1" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                    <div class="owl-stage-outer">
-            <div
-                class="owl-stage"
-                style="
-                    transition: all 0s ease 0s;
-                    width: 6555px;
-                "
-            >
                         @if ($contentDetail->tourImages)
-                        @foreach($contentDetail->tourImages as $image)
-                        <div class="owl-item cloned" style="width: 345px">
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->tourImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
                         @if ($contentDetail->ticketImages)
-                        @foreach($contentDetail->ticketImages as $image)
-                        <div class="owl-item cloned" style="width: 345px">
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->ticketImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
                         @if ($contentDetail->carImages)
-                        @foreach($contentDetail->carImages as $image)
-                        <div class="owl-item cloned" style="width: 345px">
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->carImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
-                        </div>
-                        </div>
                     </div>
                     <div class="clearfix-10"></div>
                     <div id="sync2" class="owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                    <div class="owl-stage-outer">
-            <div
-                class="owl-stage"
-                style="
-                    transform: translate3d(0px, 0px, 0px);
-                    transition: all 0s ease 0s;
-                    width: 1065px;
-                "
-            >
                         @if ($contentDetail->tourImages)
-                        @foreach($contentDetail->tourImages as $image)
-                        <div
-                    class="owl-item active current"
-                    style="width: 108.333px; margin-right: 10px"
-                >
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->tourImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
                         @if ($contentDetail->ticketImages)
-                        @foreach($contentDetail->ticketImages as $image)
-                        <div
-                    class="owl-item active current"
-                    style="width: 108.333px; margin-right: 10px"
-                >
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->ticketImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
                         @if ($contentDetail->carImages)
-                        @foreach($contentDetail->carImages as $image)
-                        <div
-                    class="owl-item active current"
-                    style="width: 108.333px; margin-right: 10px"
-                >
-                        <div class="item ">
-                            <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
-                                    alt="{{ $contentDetail->name }}" /></a>
-                        </div>
-                        </div>
-                        @endforeach
+                            @foreach($contentDetail->carImages as $image)
+                                    <div class="item ">
+                                        <a href="javascript:void(0)"><img src="{{ asset($image->image_path) }}"
+                                                alt="{{ $contentDetail->name }}" /></a>
+                                    </div>
+                            @endforeach
                         @endif
-                    </div>
-                    </div>
-                    </div>
 
-
+                    </div>
                 </div>
-
             </div>
             <div class="clearfix-20 visible-xs"></div>
             <div class="col-md-4 col-lg-3 col-sm-12 col-xs-12 wow fadeInRight">
                 <aside class="package-full">
                     <p class="dp-n-tablet-small">@lang('language.priceFrom'): </p>
 
-                    <p class="price-new">{{ $contentDetail->price }} {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</p>
+                    <p class="price-new">{{ $contentDetail->price }}
+                        {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</p>
 
                     <div class="star star-mobile">
                         <span><i class="fa fa-star"></i></span>
@@ -209,46 +166,52 @@
 
                 <div class="info-tour">
                     @if ($contentDetail->category->type == 'tour')
-                    <ul class="ulproduct">
-                        <li>
-                            <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                            <span class="font-semi">@lang('language.tourCode'): </span> {{ $contentDetail->tour_code }}
-                        </li>
-                        <li>
-                            <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{
-        $contentDetail->destination_from }}
-                        </li>
-                        <li>
-                            <i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'): </span> {{
-        $contentDetail->destination_to }}
-                        </li>
-                        <li>
-                            <i class="fa fa-calendar text-pri"></i><span class="font-semi">@lang('language.departureTime'): </span> {{
-        $contentDetail->schedule }}
-                        </li>
-                        <li>
-                            <i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'): </span> {{
-        $contentDetail->vehicle }}
-                        </li>
-                    </ul>
+                                    <ul class="ulproduct">
+                                        <li>
+                                            <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
+                                            <span class="font-semi">@lang('language.tourCode'): </span> {{ $contentDetail->tour_code }}
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-home text-pri"></i><span
+                                                class="font-semi">@lang('language.destinationFrom'): </span> {{
+                        $contentDetail->destination_from }}
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'):
+                                            </span> {{
+                        $contentDetail->destination_to }}
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-calendar text-pri"></i><span
+                                                class="font-semi">@lang('language.departureTime'): </span> {{
+                        $contentDetail->schedule }}
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'): </span>
+                                            {{
+                        $contentDetail->vehicle }}
+                                        </li>
+                                    </ul>
                     @else
-                    <ul class="ulproduct">
-                        <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
-        $contentDetail->free }} </li>
-                        <li>
-                            <i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{
-        $contentDetail->destination_from }}
-                        </li>
-                        <li>
-                            <i class="fa fa-map-marker text-pri"></i><span class="font-semi">@lang('language.schedule'): </span> {{
-        $contentDetail->destination_to }}
-                        </li>
-                    </ul>
-                    <div class="service-child service-child-mobile" style="padding-left: 0px; border: none">
-                        <div class="item-service-left-mobile">
-                            <b>@lang('language.departureTime'): </b> {{ $contentDetail->road }}
-                        </div>
-                    </div>
+                                    <ul class="ulproduct">
+                                        <li><i class="fa fa-rss text-pri"></i><span class="font-semi">@lang('language.free'): </span>{{
+                        $contentDetail->free }} </li>
+                                        <li>
+                                            <i class="fa fa-home text-pri"></i><span
+                                                class="font-semi">@lang('language.destinationFrom'): </span> {{
+                        $contentDetail->destination_from }}
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-map-marker text-pri"></i><span class="font-semi">@lang('language.schedule'):
+                                            </span> {{
+                        $contentDetail->destination_to }}
+                                        </li>
+                                    </ul>
+                                    <div class="service-child service-child-mobile" style="padding-left: 0px; border: none">
+                                        <div class="item-service-left-mobile">
+                                            <b>@lang('language.departureTime'): </b> {{ $contentDetail->road }}
+                                        </div>
+                                    </div>
                     @endif
                 </div>
                 <!--<div class="mt-15">-->
@@ -288,6 +251,7 @@
                     .menu-body-tour #gioithieu figure {
                         width: 100% !important;
                     }
+
                     .menu-body-tour #gioithieu figure table {
                         margin-left: 0 !important;
                         width: 100% !important;
@@ -332,59 +296,67 @@
                     <hr>
 
                     @if (count($tourRelated) > 0)
-                    <h3 class="cothebanquantam">@lang('language.relatedContent')</h3>
-                    <div class="clearfix-10"></div>
+                        <h3 class="cothebanquantam">@lang('language.relatedContent')</h3>
+                        <div class="clearfix-10"></div>
 
 
 
-                @if ($tourRelated)
-    <section class="wow fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
-                    @foreach($tourRelated as $tour)
-                        <div class="item">
-                            <div class="img">
-                                <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
-                                        src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
+                        @if ($tourRelated)
+                            <section class="wow fadeInUp">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="product-item-owl owl-carousel owl-theme owl-flex owl-loaded owl-drag">
+                                                @foreach($tourRelated as $tour)
+                                                    <div class="item">
+                                                        <div class="img">
+                                                            <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
+                                                                    src="{{ asset($tour->feature_image_path) }}"
+                                                                    alt="{{ $tour->name }}"></a>
 
-                            </div>
-                            <div class="info">
-                                <h3 class="h3-name">
-                                    <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">
-                                        {{ $tour->name }}
-                                    </a>
-                                </h3>
-                                <ul class="ulproduct">
-                                    <li>
-                                        <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                        <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
-                                    </li>
-                                    <li><i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'): </span> {{ $tour->destination_from }}
-                                    </li>
-                                    <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">Lịch
-                                            trình: </span> {{ $tour->destination_to }}
-                                    </li>
-                                    <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">Khởi
-                                            hành: </span> {{ $tour->schedule }}
-                                    </li>
-                                    <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
-                                            tiện: </span> {{ $tour->vehicle }}
-                                    </li>
-                                </ul>
-                                <div class="priceproduct"> @lang('language.priceFrom'):
-                                    <span class="price mr-2">{{ $tour->price }} {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
+                                                        </div>
+                                                        <div class="info">
+                                                            <h3 class="h3-name">
+                                                                <a
+                                                                    href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">
+                                                                    {{ $tour->name }}
+                                                                </a>
+                                                            </h3>
+                                                            <ul class="ulproduct">
+                                                                <li>
+                                                                    <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
+                                                                    <span class="font-semi">@lang('language.tourCode'): </span>
+                                                                    {{ $tour->tour_code }}
+                                                                </li>
+                                                                <li><i class="fa fa-home text-pri"></i><span
+                                                                        class="font-semi">@lang('language.destinationFrom'): </span>
+                                                                    {{ $tour->destination_from }}
+                                                                </li>
+                                                                <li><i class="fa fa-clock-o text-pri"></i><span
+                                                                        class="font-semi">Lịch
+                                                                        trình: </span> {{ $tour->destination_to }}
+                                                                </li>
+                                                                <li><i class="fa fa-calendar text-pri"></i><span
+                                                                        class="font-semi">Khởi
+                                                                        hành: </span> {{ $tour->schedule }}
+                                                                </li>
+                                                                <li><i class="fa fa-car text-pri"></i><span class="font-semi">Phương
+                                                                        tiện: </span> {{ $tour->vehicle }}
+                                                                </li>
+                                                            </ul>
+                                                            <div class="priceproduct"> @lang('language.priceFrom'):
+                                                                <span class="price mr-2">{{ $tour->price }}
+                                                                    {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    @endif
+                            </section>
+                        @endif
                     @endif
                 </div>
             </div>
@@ -405,52 +377,55 @@
                 <!--</div>-->
 
                 @if (count($tourRelated) > 0)
-                <div class="product-item bgfff" style="padding-top: 25px;padding-bottom: 0px">
-                    @foreach($tourRelated->take(1) as $tour)
-                    <div class="item">
-                        <div class="img">
-                            <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
-                                    src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
+                    <div class="product-item bgfff" style="padding-top: 25px;padding-bottom: 0px">
+                        @foreach($tourRelated->take(1) as $tour)
+                            <div class="item">
+                                <div class="img">
+                                    <a href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}"><img
+                                            src="{{ asset($tour->feature_image_path) }}" alt="{{ $tour->name }}"></a>
 
-                        </div>
+                                </div>
 
-                        <div class="info">
-                            <h3 class="h3-name">
-                                <a
-                                    href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">{{$tour->name}}</a>
-                            </h3>
+                                <div class="info">
+                                    <h3 class="h3-name">
+                                        <a
+                                            href="{{ route('client.contentDetail', ['slug' => $tour->slug]) }}">{{$tour->name}}</a>
+                                    </h3>
 
-                            <ul class="ulproduct">
-                                <li>
-                                    <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
-                                    <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
-                                </li>
-                                <li><i class="fa fa-home text-pri"></i><span class="font-semi">@lang('language.destinationFrom'):
-                                    </span> {{ $tour->destination_from }} </li>
-                                <li><i class="fa fa-clock-o text-pri"></i><span class="font-semi">@lang('language.schedule'):
-                                    </span> {{ $tour->destination_to }}</li>
-                                <li><i class="fa fa-calendar text-pri"></i><span class="font-semi">@lang('language.departureTime'):
-                                    </span> {{ $tour->schedule }} </li>
-                                <li><i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'):
-                                    </span> {{ $tour->vehicle }} </li>
+                                    <ul class="ulproduct">
+                                        <li>
+                                            <i class="fa fa-barcode  text-pri" aria-hidden="true"></i>
+                                            <span class="font-semi">@lang('language.tourCode'): </span> {{ $tour->tour_code }}
+                                        </li>
+                                        <li><i class="fa fa-home text-pri"></i><span
+                                                class="font-semi">@lang('language.destinationFrom'):
+                                            </span> {{ $tour->destination_from }} </li>
+                                        <li><i class="fa fa-clock-o text-pri"></i><span
+                                                class="font-semi">@lang('language.schedule'):
+                                            </span> {{ $tour->destination_to }}</li>
+                                        <li><i class="fa fa-calendar text-pri"></i><span
+                                                class="font-semi">@lang('language.departureTime'):
+                                            </span> {{ $tour->schedule }} </li>
+                                        <li><i class="fa fa-car text-pri"></i><span class="font-semi">@lang('language.vehicle'):
+                                            </span> {{ $tour->vehicle }} </li>
 
-                            </ul>
-                            <div class="priceproduct"> @lang('language.priceFrom'): <span class="price mr-2">{{ $tour->price }}
-                                    {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
+                                    </ul>
+                                    <div class="priceproduct"> @lang('language.priceFrom'): <span
+                                            class="price mr-2">{{ $tour->price }}
+                                            {{ session()->get('locale') == 'vi' ? 'VND' : 'USD' }}</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix-10"></div>
+                                <!--<a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">-->
+                                <!--    <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
+                                <!--            class="fa fa-angle-right icon-arrow-right"></i></span>-->
+                                <!--    <span class="tiny-text">@lang('language.keepContact')</span>-->
+                                <!--</a>-->
                             </div>
-                        </div>
-                        <div class="clearfix-10"></div>
-                        <!--<a href="{{ route('client.booking', ['type' => $contentDetail->category->type, 'id' => $contentDetail->id]) }}" class="btn btn-primary btn-lg btn-block button-booking-tour">-->
-                        <!--    <span class="main-text text-uppercase">@lang('language.bookNow') <i-->
-                        <!--            class="fa fa-angle-right icon-arrow-right"></i></span>-->
-                        <!--    <span class="tiny-text">@lang('language.keepContact')</span>-->
-                        <!--</a>-->
+                        @endforeach
                     </div>
-                    @endforeach
-                </div>
                 @endif
             </div>
-        </div>
         </div>
     </div>
 </section>

@@ -23,27 +23,27 @@
 
     <title>HA GIANG MOUNTAIN TRAVEL</title>
     <meta name="description" charset="UTF-8"
-        content="HÀ GIANG MOUNTAIN TRAVEL - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
+        content="HA GIANG MOUNTAIN TRAVEL - Ha Giang Tourism: Renowned not only for its stunning fields of buckwheat flowers, a journey to Ha Giang brings travelers unique and fascinating experiences. Discover the majestic beauty of this land, standing proudly at the northernmost frontier of the nation." />
     <meta name="keywords"
-        content="Du lịch Hà Giang, Du lịch hè Hà Giang, Du lịch Hà Giang hè 2024, Tour Hà Giang, Tour Hè Hà Giang, Tour Hà Giang hè 2024, Tour Du Lịch Hà Giang, Tour Du Lịch Hè Hà Giang, Tour Du Lịch Hà Giang Hè 2024," />
+        content="Ha Giang Tourism, Ha Giang Summer Tourism, Ha Giang Summer 2024 Tourism, Ha Giang Tour, Ha Giang Summer Tour, Ha Giang Summer 2024 Tour, Ha Giang Travel Tour, Ha Giang Summer Travel Tour, Ha Giang Summer 2024 Travel Tour." />
 
     <link rel="canonical" href="index.html" />
     <meta property="og:locale" content="vi_VN" />
     <!-- for Facebook -->
-    <meta property="og:title" content=" DU LỊCH HÀ GIANG - TOUR HÀ GIANG  - TOUR DU LỊCH HÀ GIANG" />
+    <meta property="og:title" content="HA GIANG TOURISM - HA GIANG TOUR - HA GIANG TRAVEL TOUR" />
     <meta property="og:type" content="product" />
     <meta property="og:image" content="{{ asset('storage/logo.jpeg') }}" />
     <meta property="og:url" content="index.html" />
     <meta property="og:description"
-        content="HÀ GIANG OPEN TOUR - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
+        content="HA GIANG MOUNTAIN TRAVEL - Ha Giang Tourism - Not only famous for its breathtaking fields of buckwheat flowers, a trip to Ha Giang offers visitors unique and exciting experiences. The majestic beauty of this land, located at the northernmost point of the country, is truly captivating." />
     <meta property="og:site_name" content="HA GIANG OPEN TOUR - OHG TRAVEL" />
     <meta property="fb:admins" content="" />
     <meta property="fb:app_id" content="1250600741961054" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content=" DU LỊCH HÀ GIANG - TOUR HÀ GIANG  - TOUR DU LỊCH HÀ GIANG" />
+    <meta name="twitter:title" content="HA GIANG TOURISM - HA GIANG TOUR - HA GIANG TRAVEL TOUR" />
     <meta name="twitter:description"
-        content="HÀ GIANG OPEN TOUR - Du lich Ha Giang - Không chỉ nổi tiếng với những cánh đồng hoa Tam Giác Mạch tuyệt đẹp, du lịch đến Hà Giang mang đến cho Quý  khách Hàng  nhiều trải nghiệm mới lạ và hết sức thú vị.  với vẻ đẹp hùng vĩ của mảnh đất án ngữ nơi địa đầu Tổ quốc" />
+        content="HA GIANG MOUNTAIN TRAVEL - Ha Giang Tourism: Renowned not only for its stunning fields of buckwheat flowers, a journey to Ha Giang brings travelers unique and fascinating experiences. Discover the majestic beauty of this land, standing proudly at the northernmost frontier of the nation." />
     <meta name="twitter:image" content="{{ asset('storage/logo.jpeg') }}" />
     <link rel="icon" href="{{ asset('storage/logo.jpeg') }}" type="image/png" sizes="30x30">
 

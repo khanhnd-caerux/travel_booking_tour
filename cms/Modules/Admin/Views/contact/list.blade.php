@@ -25,17 +25,23 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">STT</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Email</th>
                                     <th>SĐT liên hệ</th>
+                                    <th>Ghi chú</th>
                                     <th>Link trang</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($contacts as $contact)
+                                @foreach ($contacts->sortByDesc('id') as $contact)
                                 <tr style="text-align: left">
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone_number }}</td>
+                                    <td>{{ $contact->note }}</td>
                                     <td><a href="{{ $contact->url }}" target="_blank" rel="noopener noreferrer">{{ $contact->url }}</a>
                                     </td>
                                     <td>{{ $contact->updated_at }}</td>

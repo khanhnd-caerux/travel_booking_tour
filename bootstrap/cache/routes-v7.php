@@ -651,7 +651,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Yj1xMTuuH051Rre7',
+            '_route' => 'generated::8Vn8tRCmzrMsoNO8',
           ),
           1 => NULL,
           2 => 
@@ -687,7 +687,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::bRLmwqfS5viRsfPp',
+            '_route' => 'generated::u31kzvilTrBQec1w',
           ),
           1 => NULL,
           2 => 
@@ -877,7 +877,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|harity/(?|de(?|tail/([^/]++)(*:255)|lete/([^/]++)(*:276))|update/([^/]++)(*:300))|ontact/delete/([^/]++)(*:331))|s(?|etting/(?|edit/([^/]++)(*:367)|update/([^/]++)(*:390)|delete/([^/]++)(*:413))|lider/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490)))|p(?|ost/(?|edit/([^/]++)(*:524)|update/([^/]++)(*:547)|delete/([^/]++)(*:570))|assword/reset/([^/]++)(*:601))|t(?|our/(?|edit/([^/]++)(*:634)|update/([^/]++)(*:657)|delete/([^/]++)(*:680))|icket/(?|edit/([^/]++)(*:711)|update/([^/]++)(*:734)|delete/([^/]++)(*:757))))|/email/verify/([^/]++)/([^/]++)(*:799)|/([^/]++)(*:816)|/language/([^/]++)(*:842)|/noi\\-dung(?|/([^/]++)(*:872)|\\-chi\\-tiet/([^/]++)(*:900))|/booking/([^/]++)/([^/]++)(?|(*:938)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|a(?|tegory/(?|edit/([^/]++)(*:99)|update/([^/]++)(*:121)|delete/([^/]++)(*:144))|r/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|harity/(?|de(?|tail/([^/]++)(*:255)|lete/([^/]++)(*:276))|update/([^/]++)(*:300))|ontact/delete/([^/]++)(*:331))|s(?|etting/(?|edit/([^/]++)(*:367)|update/([^/]++)(*:390)|delete/([^/]++)(*:413))|lider/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490)))|p(?|ost/(?|edit/([^/]++)(*:524)|update/([^/]++)(*:547)|delete/([^/]++)(*:570))|assword/reset/([^/]++)(*:601))|t(?|our/(?|edit/([^/]++)(*:634)|update/([^/]++)(*:657)|delete/([^/]++)(*:680))|icket/(?|edit/([^/]++)(*:711)|update/([^/]++)(*:734)|delete/([^/]++)(*:757))))|/email/verify/([^/]++)/([^/]++)(*:799)|/([^/]++)(*:816)|/language/([^/]++)(*:842)|/content/([^/]++)(*:867)|/detail\\-content/([^/]++)(*:900)|/booking/([^/]++)/([^/]++)(?|(*:937)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1569,7 +1569,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::rAao3wUkg0yICIYb',
+            '_route' => 'generated::ImPBaXFydINlMFqm',
           ),
           1 => 
           array (
@@ -1586,7 +1586,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      872 => 
+      867 => 
       array (
         0 => 
         array (
@@ -1632,7 +1632,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      938 => 
+      937 => 
       array (
         0 => 
         array (
@@ -3912,7 +3912,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Yj1xMTuuH051Rre7' => 
+    'generated::8Vn8tRCmzrMsoNO8' => 
     array (
       'methods' => 
       array (
@@ -3933,7 +3933,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Yj1xMTuuH051Rre7',
+        'as' => 'generated::8Vn8tRCmzrMsoNO8',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3987,7 +3987,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::bRLmwqfS5viRsfPp' => 
+    'generated::u31kzvilTrBQec1w' => 
     array (
       'methods' => 
       array (
@@ -4008,7 +4008,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::bRLmwqfS5viRsfPp',
+        'as' => 'generated::u31kzvilTrBQec1w',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4423,7 +4423,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::rAao3wUkg0yICIYb' => 
+    'generated::ImPBaXFydINlMFqm' => 
     array (
       'methods' => 
       array (
@@ -4440,13 +4440,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000039549cc6000000004af0071b";}";s:4:"hash";s:44:"krtBWobtxX0NdY+qSwHml7rt4QHMEGyAAb7qegEF5SI=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000078f2f8e0000000002cef0a09";}";s:4:"hash";s:44:"XYSD9NBOqEXMsehTzb5J8mpXPHvFNAZSJ3uxD2O1TLY=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::rAao3wUkg0yICIYb',
+        'as' => 'generated::ImPBaXFydINlMFqm',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4469,7 +4469,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'noi-dung/{slug}',
+      'uri' => 'content/{slug}',
       'action' => 
       array (
         'middleware' => 
@@ -4480,7 +4480,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
         'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/noi-dung',
+        'prefix' => '/content',
         'where' => 
         array (
         ),
@@ -4507,7 +4507,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'noi-dung-chi-tiet/{slug}',
+      'uri' => 'detail-content/{slug}',
       'action' => 
       array (
         'middleware' => 
@@ -4518,7 +4518,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
         'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/noi-dung-chi-tiet',
+        'prefix' => '/detail-content',
         'where' => 
         array (
         ),

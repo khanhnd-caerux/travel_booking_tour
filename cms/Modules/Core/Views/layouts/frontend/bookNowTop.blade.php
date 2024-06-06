@@ -9,6 +9,7 @@
             <h1>@lang('language.labelForm')</h1>
             <p>@lang('language.descForm')</p>
             <div class="column">
+                <input type="text" name="honeypot" style="display:none;">
                 <label for="the-name">@lang('language.nameCustomer')</label>
                 <input type="text" name="name" id="the-name" />
                 <label for="the-email">@lang('language.emailCustomer')</label>
@@ -210,7 +211,6 @@
         right: 5px;
     }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $("#img_booknowTop").click(function () {
         $("#contact_formTop").toggleClass("d-none");

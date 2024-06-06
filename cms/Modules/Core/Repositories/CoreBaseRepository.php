@@ -27,7 +27,7 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
 
     public function paginate($number)
     {
-        return $this->model->paginate($number);
+        return $this->model->sortByDesc('id')->paginate($number);
     }
 
     public function find($id)

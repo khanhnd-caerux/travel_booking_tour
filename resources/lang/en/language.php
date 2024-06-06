@@ -23,7 +23,7 @@ return [
     'labelForm' => 'Contact us',
     'descForm' => 'Please take a moment to get in touch, we will get back to you shortly.',
     'nameCustomer' => 'Your Name',
-    'phoneCustomer' => 'Your Phone',
+    'phoneCustomer' => 'Your Phone - WhatsApp',
     'emailCustomer' => 'Email Address',
     'pick' => 'Pick Tour You Want To Contact?',
     'choose' => 'Choose one',

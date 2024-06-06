@@ -9,6 +9,7 @@
             <h1>@lang('language.labelForm')</h1>
             <p>@lang('language.descForm')</p>
             <div class="column">
+                <input type="text" name="honeypot" style="display:none;">
                 <label for="the-name">@lang('language.nameCustomer')</label>
                 <input type="text" name="name" id="the-name">
                 <label for="the-email">@lang('language.emailCustomer')</label>
@@ -16,7 +17,7 @@
                 <label for="the-phone">@lang('language.phoneCustomer')</label>
                 <div class="flex_phone">
                     <select name="code_phone" id="the-phone" style="width: 50%;">
-                        <option value="+34">(+34) Viet Nam</option>
+                        <option value="+84">(+84) Vietnam</option>
                         @if (config('country.countries'))
                             @foreach (config('country.countries') as $country)
                                 <option value="{{ $country["code"] }}">{{ '(' . $country['code'] . ') ' . $country['country']  }}
@@ -215,7 +216,6 @@
         }
     }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $("#img_booknow").click(function () {
         $("#contact_form").toggleClass('d-none');

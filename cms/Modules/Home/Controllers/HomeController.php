@@ -103,8 +103,10 @@ class HomeController extends Controller
     public function contentList($slug)
     {
         $contentList = $this->category->getCateWithTour($slug);
+        $tourInfos = $this->charityService->getAll();
+        $galleries = $this->slider->getByType($type = 'gallery');
 
-        return view('Home::contentList', compact('contentList'));
+        return view('Home::contentList', compact('contentList', 'tourInfos', 'galleries'));
     }
 
     public function contentDetail($slug)
@@ -126,6 +128,9 @@ class HomeController extends Controller
 
     public function sendContact(Request $request)
     {
+        if (!empty($request->input('honeypot'))) {
+            return redirect()->back()->withErrors(['error' => 'Spam detected.']);
+        }
         try {
             DB::beginTransaction();
             $dataContact = [
