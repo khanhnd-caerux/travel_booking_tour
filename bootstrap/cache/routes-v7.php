@@ -651,7 +651,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8Vn8tRCmzrMsoNO8',
+            '_route' => 'generated::YwcZwpN60P6HTWBZ',
           ),
           1 => NULL,
           2 => 
@@ -687,7 +687,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::u31kzvilTrBQec1w',
+            '_route' => 'generated::plkigcb57amLU7pI',
           ),
           1 => NULL,
           2 => 
@@ -1569,7 +1569,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ImPBaXFydINlMFqm',
+            '_route' => 'generated::KYcPFBhyEm2a4Awb',
           ),
           1 => 
           array (
@@ -3912,7 +3912,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8Vn8tRCmzrMsoNO8' => 
+    'generated::YwcZwpN60P6HTWBZ' => 
     array (
       'methods' => 
       array (
@@ -3933,7 +3933,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::8Vn8tRCmzrMsoNO8',
+        'as' => 'generated::YwcZwpN60P6HTWBZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3987,7 +3987,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::u31kzvilTrBQec1w' => 
+    'generated::plkigcb57amLU7pI' => 
     array (
       'methods' => 
       array (
@@ -4008,7 +4008,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::u31kzvilTrBQec1w',
+        'as' => 'generated::plkigcb57amLU7pI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4423,7 +4423,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ImPBaXFydINlMFqm' => 
+    'generated::KYcPFBhyEm2a4Awb' => 
     array (
       'methods' => 
       array (
@@ -4440,13 +4440,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000078f2f8e0000000002cef0a09";}";s:4:"hash";s:44:"XYSD9NBOqEXMsehTzb5J8mpXPHvFNAZSJ3uxD2O1TLY=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"0000000011a13f6c0000000040b32205";}";s:4:"hash";s:44:"ZMURXYLGHBtzguf+UycIeyj7axAeBAADdphR9ZB3NZA=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::ImPBaXFydINlMFqm',
+        'as' => 'generated::KYcPFBhyEm2a4Awb',
       ),
       'fallback' => false,
       'defaults' => 

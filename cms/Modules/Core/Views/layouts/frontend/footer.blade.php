@@ -1,106 +1,47 @@
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 margin-bottom-20 col-xs-12 col-sm-5">
-                <h4 class="h4-footer">
-                    {{ Str::upper($configValues['ten-web-chinh']) }}
-                </h4>
-                <div class="bottom-address">
-                    @if(session()->get('locale') == 'en')
-                    <p><i class="fa fa-map-marker"></i> Department : No. 27, Nguyen Du Street, Nguyen Trai Ward, Ha Giang City, Ha Giang Province</p>
-                    @else
-                    @if (isset($configLabels['van-phong']))
-                    <p><i class="fa fa-map-marker"></i> {{ $configLabels['van-phong'] }} : {{
-                        $configValues['van-phong']}}</p>
-                    @endif
-                    @endif
-                    @if (isset($configLabels['email']))
-                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ $configLabels['email'] }} : {{
-                        $configValues['email'] }}</p>
-                    @endif
-                    @if (isset($configLabels['hotline']))
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{ $configLabels['hotline'] }} : {{
-                        $configValues['hotline'] }}
-                        <br>
-                        @endif
-                        @if (isset($configLabels['giay-phep-kinh-doanh']))
-                        {{ $configLabels['giay-phep-kinh-doanh'] }} : {{ $configValues['giay-phep-kinh-doanh'] }}
-                        @endif
-                    </p>
-                </div>
-                <!-- <div style="display: flex;">
-                    <div style="border-top: 2px solid #fff;padding-top: 20px">
-                        <p>Được Ðiều hành bởi:<br />
-                            Mr. Lưu Ðình Tùng<br />
-                            (Tour operator)<br />
-                            Phone number: 0984.650.239</p>
+    <div class="bg_footer">
+        <img class="logo_back_top" alt="Background footer" src="images/config/bg_strengths_1698730971.jpg"
+            srcset="https://mamashomestay.com/images/config/bg_strengths_1698730971.jpg.webp">
+    </div>
+    <div class="top-ft cls">
+        <div class="container1170">
+            <a href="index.html" title="Mama’s Homestay - Explore Ha Giang" class="logo_footer" rel="home">
+                <img class="logo_back_top" width="263px" height="242px" src="images/config/asset-18_1698834504.svg"
+                    alt="Mama’s Homestay - Explore Ha Giang">
+            </a>
+            <div class="footer_info">
+                <p>Discover Tranquil Moments, Embrace Genuine Hospitality – Welcome to Mama's Homestay</p>
+                <div class="footer_address">
+                    <div class="address">
+                        <div class="title">
+                            Contact </div>
+                        <p class="text_add">Address: No.124, 20/8 street, Ha Giang, Vietnam</p>
+                        <p class="text_map">- See above <a href="https://maps.app.goo.gl/BKP54Si47wXMq5Wa9"
+                                target="blank" title="address">Google Map</a></p>
+                        <p class="hotline_add">Hotline Whatsapp 24/7: <a target="_blank"
+                                href="https://wa.me/+84849278787">+84849278787</a></p>
+                        <p>Email: <a href="mailto:Mamashomestayhg@gmail.com">Mamashomestayhg@gmail.com</a></p>
                     </div>
-                    <img class="img_dh" src="https://hagiangopentour.com/upload/images/logo/at.jpg"
-                        alt="ảnh giám đốc" />
-                </div> -->
-            </div>
-            <div class="clearfix-20 visible-xs"></div>
-            <div class="col-md-3 col-xs-12 col-sm-3">
-                <h4 class="h4-footer">
-                    @lang('language.activity')
-                </h4>
-                <div class="bottom-address">
-                    <ul>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'privacy-policy']) }}">@lang('language.policy')</a>
-                        </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'payments-policy']) }}">@lang('language.payment')</a>
-                        </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'policy-book-cancel-tickets']) }}">@lang('language.cancel')</a>
-                        </li>
-                        <li><a href="{{ route('client.postDetail', ['slug' => 'trai-nghiem-du-lich']) }}">@lang('language.experience')</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clearfix-20 visible-xs"></div>
-            <div class="col-md-4 col-xs-12 col-sm-4">
-                <h4 class="h4-footer">
-                    @lang('language.media')
-                </h4>
-                <div class="bottom-address">
-                    <ul class="flex-row social">
-                        <li class="ffb"><a href="https://www.facebook.com/hgmountaintravel" target="_blank"><i
-                                    class="fa fa-facebook"></i></a></li>
-
-                        <!--<li class="fins"><a href="instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>-->
-                        <!--</li>-->
-
-                        <li class="femail"><a href="mailto:hagiangmountaintravel@gmail.com" target="_blank"><i class="fa fa-envelope-o"
-                                    aria-hidden="true"></i></a>
-
-                        </li>
-
-                        <li class="fphone"><a href="tel:{{$configValues['hotline'] }}"><i class="fa fa-phone"
-                                    aria-hidden="true"></i></a>
-                        </li>
-
-                        <!--<li class="fyoutube"><a href="" target="_blank"><i class="fa fa-youtube-play"-->
-                        <!--            aria-hidden="true"></i></a></li>-->
-                    </ul>
-                    <div class="clearfix-20"></div>
-                    <div class="flex-row">
-                        <a
-                            href="https://www.dmca.com/Protection/Status.aspx?ID=3ef57e79-7251-4d1f-aeae-7198116dd997&amp;refurl=https://hagiangopentour.com/"><img
-                                src="https://hagiangopentour.com/upload/images/logo/dmca.png')}}" alt=""></a>
-
-                        <a
-                            href="http://online.gov.vn/Home/WebDetails/75962?zarsrc=30&amp;utm_source=zalo&amp;utm_medium=zalo&amp;utm_campaign=zalo&amp;AspxAutoDetectCookieSupport=1"><img
-                                src="https://hagiangopentour.com/upload/images/logo/bct.png')}}" alt=""></a>
+                    <div class="social">
+                        <div class="title">
+                            instagram
+                        </div>
+                        <div class="qr-img">
+                            <img class="logo_back_top" alt="Mama’s Homestay - Explore Ha Giang" width="151px"
+                                height="135px" src="images/config/qr_1699688675.png"
+                                srcset="https://mamashomestay.com/images/config/qr_1699688675.png.webp">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="copyright" style="margin-top: 20px">
-        <div class="container">
-            <div class="row text-center">
-                <p style="margin: 0px;font-size: 16px">Copyright 2024
-                    - HA GIANG MOUNTAIN TRAVEL</p>
+    <div class="coppy-right">
+        <div class="">
+            <div class="container coppy-right_block">
+                <div class="cr-left">
+                    <p>©2023 Allrights reserved Mama’s Tour</p>
+                </div>
             </div>
         </div>
     </div>

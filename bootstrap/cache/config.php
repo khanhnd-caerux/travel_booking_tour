@@ -12,7 +12,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:nO2W99mkn0yAei8yloDlbOHCfKqex/WelBb5F6uQ0tk=',
+    'key' => 'base64:84RcLplWTS3QHl8A+iqnngrWXud4amW+arOGS9rGJNo=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -484,8 +484,8 @@
         'host' => 'smtp.gmail.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'nguyenduykhanh827@gmail.com',
-        'password' => 'ahqehzrjycrikhgy',
+        'username' => '',
+        'password' => '',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -527,7 +527,7 @@
     ),
     'from' => 
     array (
-      'address' => 'nguyenduykhanh827@gmail.com',
+      'address' => '',
       'name' => 'Laravel',
     ),
     'markdown' => 

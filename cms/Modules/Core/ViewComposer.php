@@ -40,16 +40,16 @@ class ViewComposer
      */
     public function compose(View $view)
     {
-        $this->values = $this->settingService->getAllValue()->pluck('config_value', 'config_key')->toArray();
-        $this->labels = $this->settingService->getAllValue()->pluck('name', 'config_key')->toArray();
-        $this->categories = $this->categoryService->getCategoryParent();
-        $this->tours = $this->tourService->getAll();
+        // $this->values = $this->settingService->getAllValue()->pluck('config_value', 'config_key')->toArray();
+        // $this->labels = $this->settingService->getAllValue()->pluck('name', 'config_key')->toArray();
+        // $this->categories = $this->categoryService->getCategoryParent();
+        // $this->tours = $this->tourService->getAll();
 
-        $view->with([
-            'configValues' => $this->values,
-            'configLabels' => $this->labels,
-            'categories' => $this->categories,
-            'tours' => $this->tours,
-        ]);
+        // $view->with([
+        //     'configValues' => $this->values,
+        //     'configLabels' => $this->labels,
+        //     'categories' => $this->categories,
+        //     'tours' => $this->tours,
+        // ]);
     }
 }

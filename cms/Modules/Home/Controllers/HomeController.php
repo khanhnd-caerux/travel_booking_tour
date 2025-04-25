@@ -71,15 +71,15 @@ class HomeController extends Controller
 
     public function home(): \Illuminate\Contracts\Support\Renderable
     {
-        $sliders = $this->slider->getByType($type = 'banner');
-        $partners = $this->slider->getByType($type = 'partner');
-        $galleries = $this->slider->getByType($type = 'gallery');
-        $postExperiences = $this->post->getPostByType($type = 'experience');
-        $firstPostExperience = $this->post->getFirstPost($type = 'experience');
-        $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
-        $tourInfos = $this->charityService->getAll();
+        // $sliders = $this->slider->getByType($type = 'banner');
+        // $partners = $this->slider->getByType($type = 'partner');
+        // $galleries = $this->slider->getByType($type = 'gallery');
+        // $postExperiences = $this->post->getPostByType($type = 'experience');
+        // $firstPostExperience = $this->post->getFirstPost($type = 'experience');
+        // $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
+        // $tourInfos = $this->charityService->getAll();
 
-        return view('Home::home', compact('sliders', 'partners', 'galleries', 'postExperiences', 'firstPostExperience', 'categoryWithTour', 'tourInfos'));
+        return view('Home::home');
     }
 
     public function postDetail($slug)
