@@ -61,37 +61,10 @@
                                 fill="#ffffff"></path>
                         </g>
                     </svg>
-                    <span class="icon_c cls hide">
-                        <div class="font">VIE</div>
-                        <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffd8a9"
-                            stroke-width="1.2">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="m12 14.586 6.293-6.293a1 1 0 1 1 1.414 1.414l-6.646 6.647a1.5 1.5 0 0 1-2.122 0L4.293 9.707a1 1 0 0 1 1.414-1.414L12 14.586z"
-                                    fill="#ffd8a9"></path>
-                            </g>
-                        </svg>
-                    </span>
                     <span class="icon_c cls in_bl">
                         <div class="font">EN</div>
-                        <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffd8a9"
-                            stroke-width="1.2">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="m12 14.586 6.293-6.293a1 1 0 1 1 1.414 1.414l-6.646 6.647a1.5 1.5 0 0 1-2.122 0L4.293 9.707a1 1 0 0 1 1.414-1.414L12 14.586z"
-                                    fill="#ffd8a9"></path>
-                            </g>
-                        </svg>
                     </span>
-
                     <span class="multilanguage ">
-                        <a class="lang-item spacing_lang block" href="vi.html" title="Tiếng Việt">
-                            <span class="text_right">VIE</span>
-                        </a>
                         <a class="lang-item spacing_lang hide" href="index.html" title="English">
                             <span class="text_right">EN</span>
                         </a>
