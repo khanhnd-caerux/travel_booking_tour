@@ -1,12 +1,12 @@
 <footer>
     <div class="bg_footer">
-        <img class="logo_back_top" alt="Background footer" src="images/config/bg_strengths_1698730971.jpg"
+        <img class="logo_back_top" alt="Background footer" src="{{asset('frontend/images/config/bg_strengths_1698730971.jpg')}}"
             srcset="https://mamashomestay.com/images/config/bg_strengths_1698730971.jpg.webp">
     </div>
     <div class="top-ft cls">
         <div class="container1170">
             <a href="index.html" title="Mama’s Homestay - Explore Ha Giang" class="logo_footer" rel="home">
-                <img class="logo_back_top" width="263px" height="242px" src="images/config/asset-18_1698834504.svg"
+                <img class="logo_back_top" width="263px" height="242px" src="{{asset('frontend/images/config/asset-18_1698834504.svg')}}"
                     alt="Mama’s Homestay - Explore Ha Giang">
             </a>
             <div class="footer_info">

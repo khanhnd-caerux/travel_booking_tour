@@ -102,7 +102,7 @@
                 <div class="header-l">
                     <h1> <a href="index.html" title="Mama’s Homestay - Explore Ha Giang" class="logo" rel="home">
                             <img class="logo_back_top" width="187px" height="143px"
-                                src="images/config/asset-17_1698816647.svg" alt="Mama’s Homestay - Explore Ha Giang">
+                                src="{{asset('frontend/images/config/asset-17_1698816647.svg')}}" alt="Mama’s Homestay - Explore Ha Giang">
                         </a>
                     </h1>
                 </div>
@@ -116,43 +116,31 @@
                             <li class="level_0 sort ">
                                 <a href="introduce/index.html" class="menu_item_a tab_top_menu " title="About">
                                     About </a>
-                                <!--	LEVEL 1			-->
-                                <!--	end LEVEL 1			-->
                             </li>
 
 
                             <li class="level_0 sort ">
                                 <a href="#tour" class="menu_item_a tab_top_menu " title="Tours">
                                     Tours </a>
-                                <!--	LEVEL 1			-->
-                                <!--	end LEVEL 1			-->
                             </li>
 
 
                             <li class="level_0 sort ">
                                 <a href="homestay/index.html" class="menu_item_a tab_top_menu " title="Homestay">
                                     Homestay </a>
-                                <!--	LEVEL 1			-->
-                                <!--	end LEVEL 1			-->
                             </li>
 
 
                             <li class="level_0 sort ">
                                 <a href="news/index.html" class="menu_item_a tab_top_menu " title="News">
                                     News </a>
-                                <!--	LEVEL 1			-->
-                                <!--	end LEVEL 1			-->
                             </li>
 
 
                             <li class="level_0 sort ">
                                 <a href="contact/index.html" class="menu_item_a tab_top_menu " title="Contact">
                                     Contact </a>
-                                <!--	LEVEL 1			-->
-                                <!--	end LEVEL 1			-->
                             </li>
-
-                            <!--	CHILDREN				-->
                         </ul>
                     </div>
                     <div class="clear"></div>
