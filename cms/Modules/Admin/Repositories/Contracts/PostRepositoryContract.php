@@ -13,4 +13,6 @@ interface PostRepositoryContract extends CoreBaseRepositoryContract
     public function getPostBySlug($slug);
 
     public function getPostRelated($id, $type);
+
+    public function getAllPosts();
 }

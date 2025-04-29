@@ -23,7 +23,7 @@ class PostController extends Controller
     }
     public function list()
     {
-        $posts = $this->service->paginate(10);
+        $posts = $this->service->getAllPosts();
         return view('Admin::post.list', compact('posts'));
     }
 
@@ -41,7 +41,8 @@ class PostController extends Controller
                 'type' => $request->type,
                 'slug' => Str::slug($request->title),
                 'content' => $request->content,
-                'status' => $request->status === 'show' ? 0 : 1
+                'status' => $request->status === 'show' ? 0 : 1,
+                'description' => $request->description
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'post');
@@ -71,7 +72,8 @@ class PostController extends Controller
                 'type' => $request->type,
                 'slug' => Str::slug($request->title),
                 'content' => $request->content,
-                'status' => $request->status === 'show' ? 0 : 1
+                'status' => $request->status === 'show' ? 0 : 1,
+                'description' => $request->description
             ];
 
             $dataImage = $this->storageImageUpload($request, 'image_path', 'post');

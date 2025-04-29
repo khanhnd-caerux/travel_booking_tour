@@ -54,4 +54,11 @@ class PostRepository extends CoreBaseRepository implements PostRepositoryContrac
             ->orderBy('created_at', 'desc')
             ->get();
     }
+
+    public function getAllPosts()
+    {
+        return $this->post
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+    }
 }

@@ -52,6 +52,7 @@
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="Mama’s Homestay - Explore Ha Giang Feed" href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
+    @yield('css')
 </head>
 
 <body>

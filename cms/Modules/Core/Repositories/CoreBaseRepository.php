@@ -2,7 +2,6 @@
 
 namespace Cms\Modules\Core\Repositories;
 
-use Cms\Modules\Core\Models\User;
 use Cms\Modules\Core\Repositories\Contracts\CoreBaseRepositoryContract;
 use Illuminate\Database\Eloquent\Model;
 

@@ -73,7 +73,7 @@
             </div>
             <div class="header_menu">
                 <div class="header-l">
-                    <h1> <a href="index.html" title="Mama’s Homestay - Explore Ha Giang" class="logo" rel="home">
+                    <h1> <a href="{{route('client.index')}}" title="Mama’s Homestay - Explore Ha Giang" class="logo" rel="home">
                             <img class="logo_back_top" width="187px" height="143px"
                                 src="{{asset('frontend/images/config/asset-17_1698816647.svg')}}" alt="Mama’s Homestay - Explore Ha Giang">
                         </a>
@@ -82,13 +82,13 @@
                 <div class="top_menu">
                     <div class="dcjq-mega-menu">
                         <ul id="megamenu" class="menu mypopup cls">
-                            <li class="level_0 sort home activated"><a class="menu_item_a" href="index.html"
+                            <li class="level_0 sort home activated"><a class="menu_item_a" href="{{route('client.index')}}"
                                     title="Mama’s Homestay - Explore Ha Giang" rel="home">Home</a> </li>
 
 
                             <li class="level_0 sort ">
-                                <a href="introduce/index.html" class="menu_item_a tab_top_menu " title="About">
-                                    About </a>
+                                <a href="introduce" class="menu_item_a tab_top_menu " title="Introduce">
+                                Introduce </a>
                             </li>
 
 

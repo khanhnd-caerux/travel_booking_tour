@@ -84,20 +84,9 @@ class HomeController extends Controller
 
     public function postDetail($slug)
     {
-        if ($slug === 'trai-nghiem-du-lich') {
-            $postRelated = $this->post->getPostByType('experience');
-            return view('Home::postList', compact('postRelated'));
-        } else {
-            $postDetail = $this->post->getPostBySlug($slug);
-            if ($postDetail->type == 'experience') {
-                $postRelated = $this->post->getPostRelated($postDetail->id, ['payment', 'introduction', 'policy', 'cancel', 'contact']);
-            } else {
-                $postRelated = $this->post->getPostRelated($postDetail->id, ['experience']);
-            }
+        $postDetail = $this->post->getPostBySlug($slug);
 
-            return view('Home::postDetail', compact('postDetail', 'postRelated'));
-        }
-
+        return view('Home::postDetail', compact('postDetail'));
     }
 
     public function contentList($slug)
