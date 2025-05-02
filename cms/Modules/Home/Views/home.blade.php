@@ -69,7 +69,7 @@
                                 <h3 class="title">The majestic natural beauty eagerly awaits your discovery</h3>
                                 <div class="column_left_content description">
                                     <p>
-                                    <p>Welcome to Mama&#39;s Homestay website! Here, we extend an invitation for you to
+                                    <p>Welcome to HaGiangMountain&#39;s Homestay website! Here, we extend an invitation for you to
                                         embark on an exhilarating adventure through the picturesque countryside of
                                         Vietnam&mdash; all from the saddle of a motorbike. Our motorbike tours promise a
                                         distinctive and authentic journey, revealing the breathtaking landscapes and hidden
@@ -236,13 +236,13 @@
 
     <div class="pos4" id="oname_4">
         <div class='block_strengths strengths-_strengths strengths_0 block' id="block_id_161">
-            <div class="mama-strength-bg lazy"
+            <div class="HaGiangMountain-strength-bg lazy"
                 style="background-image: url(images/strengths/compress/z5067853279685_4d1988393c066a84d6f5bc3394a96347_1705139435.jpg.webp); display: block;">
                 <div class="container1920">
                     <div class="mama-strength">
                         <div class="mama-strength-des">
                             <div class="title">
-                                Journey to conquer but you are really single-minded because of <span>mama's tour</span>
+                                Journey to conquer but you are really single-minded because of <span>HaGiangMountain's tour</span>
                             </div>
                             <div class="content">
                                 <div class="item">
@@ -551,7 +551,7 @@
                         <div class="tour_page" id="tour">
                             <div class="title_page">
                                 <h2 class="block_title">
-                                    Mama’s Tours </h2>
+                                    HaGiangMountain’s Tours </h2>
                             </div>
                             <div class="list_tours">
                                 <div class="item_tour tour_1">
@@ -614,7 +614,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">7:00am: Have a
-                                                                        delicious breakfast at Mama&rsquo;s homestay and
+                                                                        delicious breakfast at HaGiangMountain&rsquo;s homestay and
                                                                         proceed to get ready to start discovering the
                                                                         mountainous Northern Loop. Start the loop tour.
                                                                         Destinations reach: </span></span></p>
@@ -672,7 +672,7 @@
                                                         <div class="description">
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif"><strong>Day 2:
-                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- Mama
+                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- HaGiangMountain
                                                                             house (B, L)</strong></span></span></p>
 
                                                             <p><span style="font-size:16px"><span
@@ -698,7 +698,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        Mama&rsquo;s homestay in the town of Ha Giang. Take
+                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
                                                                         a shower, pack and ready all of your backpacks and
                                                                         luggage, take the bus to other
                                                                         destination.</span></span></p>
@@ -803,7 +803,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">8:30 am &ndash;
-                                                                        10:00 am: Have a delicious breakfast at Mama&rsquo;s
+                                                                        10:00 am: Have a delicious breakfast at HaGiangMountain&rsquo;s
                                                                         homestay and proceed to get ready to</span></span>
                                                             </p>
 
@@ -897,7 +897,7 @@
                                                         <div class="description">
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif"><strong>Day 3:
-                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- Mama
+                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- HaGiangMountain
                                                                             house (B, L)</strong></span></span></p>
 
                                                             <p><span style="font-size:16px"><span
@@ -926,7 +926,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        Mama&rsquo;s homestay in the town of Ha Giang. Take
+                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
                                                                         a shower, pack and ready all of your backpacks and
                                                                         luggage, take the bus to other
                                                                         destination.</span></span></p>
@@ -1038,7 +1038,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">8:30 am &ndash;
-                                                                        10:00 am: Have a delicious breakfast at Mama&rsquo;s
+                                                                        10:00 am: Have a delicious breakfast at HaGiangMountain&rsquo;s
                                                                         homestay and proceed to get ready to</span></span>
                                                             </p>
 
@@ -1195,7 +1195,7 @@
 
                                                             <p><span style="font-size:16px"><span
                                                                         style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        Mama&rsquo;s homestay in the town of Ha Giang. Take
+                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
                                                                         a shower, pack and ready all of your backpacks and
                                                                         luggage, take the bus to other
                                                                         destination.</span></span></p>
@@ -1409,7 +1409,7 @@
                                                             <p>If you are interested in our private car tour, please send us
                                                                 your request via WhatsApp: at&nbsp;<strong>+84 84 927
                                                                     8787</strong>&nbsp;or via email:
-                                                                at&nbsp;<strong>Mamashomestayhg@gmail.com</strong> to make a
+                                                                at&nbsp;<strong>HaGiangMountainshomestayhg@gmail.com</strong> to make a
                                                                 booking. Our team will be happy to assist you with your
                                                                 request and arrange it for you.</p>
                                                         </div>
@@ -1449,7 +1449,7 @@
                         style="background-image: url(images/config/layer-56_1699697324.jpg.webp); display: block;">
                         <div class="container">
                             <div class='block_strengths strengths-_strengths strengths_0 block' id="block_id_173">
-                                <p class="block_title"><span>Mama’s Homestay is </br>the leading Homestay chain in Ha
+                                <p class="block_title"><span>HaGiangMountain’s Homestay is </br>the leading Homestay chain in Ha
                                         Giang</span></p>
                                 <div class="block_strengths_slide">
                                     <div class="item ">
@@ -1458,10 +1458,10 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to Mama&#39;s Homestay in the center - 50 beds, where modern
+                                                    <p>Welcome to HaGiangMountain&#39;s Homestay in the center - 50 beds, where modern
                                                         comfort meets traditional charm. Our homestay is thoughtfully
                                                         designed to provide a welcoming and contemporary atmosphere for our
-                                                        guests.&nbsp;Mama&rsquo;s Homestay offers one free night in the
+                                                        guests.&nbsp;HaGiangMountain&rsquo;s Homestay offers one free night in the
                                                         dormitory the day before the tour begins, and you can check in after
                                                         2 pm. Our reception is open 24/7. The free night is random and we
                                                         don&#39;t charge any fee for it. If you want a more proper place to
@@ -1484,7 +1484,7 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to Mama&#39;s House - 20&nbsp;beds.&nbsp;Mama&rsquo;s
+                                                    <p>Welcome to HaGiangMountain&#39;s House - 20&nbsp;beds.&nbsp;HaGiangMountain&rsquo;s
                                                         Homestay offers one free night in the dormitory the day before the
                                                         tour begins, and you can check in after 2 pm. Our reception is open
                                                         24/7. The free night is random and we don&#39;t charge any fee for
@@ -1516,7 +1516,7 @@
                                 </h2>
                                 <div class="block_summary no_marquee">
                                     <span>
-                                        <strong>ATTRACTIVE</strong> gifts when booking Tour Mama </span>
+                                        <strong>ATTRACTIVE</strong> gifts when booking Tour HaGiangMountain </span>
                                 </div>
                             </div>
                             <form method="post" action="#" id="buy_fast_form_default" name="buy_fast_form_default"
@@ -1585,7 +1585,7 @@
                                                 </div>
                                             </div>
                                             <div class="note">
-                                                <label for="">NOTE: Mama’s Homestay offers one free night in the DORM only
+                                                <label for="">NOTE: HaGiangMountain’s Homestay offers one free night in the DORM only
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
                                                     please contact us via WhatsApp</label>
@@ -1717,7 +1717,7 @@
                                             <div class="note">
                                                 <label for="">
                                                     <p><strong>NOTE:</strong> Discounted car rental prices <strong>only
-                                                            apply</strong> to customers <strong>booking Mama&#39;s Tour
+                                                            apply</strong> to customers <strong>booking HaGiangMountain&#39;s Tour
                                                             tours</strong></p>
                                                 </label>
                                             </div>
@@ -1731,7 +1731,7 @@
                                             <div class="gift_item">
                                                 <figure class="image">
                                                     <label for="buy_gift_1">
-                                                        <img class="lazy" alt="Ha Giang Loop T-shirt by Mama’s Tour"
+                                                        <img class="lazy" alt="Ha Giang Loop T-shirt by HaGiangMountain’s Tour"
                                                             width="200px" height="200px"
                                                             data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg"
                                                             data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg.webp">
@@ -1740,13 +1740,13 @@
                                                 <div class="content">
                                                     <input type="radio" name="buy_gift" class="buy_gift is_special" checked
                                                         id="buy_gift_1" value="1" />
-                                                    <label for="buy_gift_1">Ha Giang Loop T-shirt by Mama’s Tour</label>
+                                                    <label for="buy_gift_1">Ha Giang Loop T-shirt by HaGiangMountain’s Tour</label>
                                                 </div>
                                             </div>
                                             <div class="gift_item">
                                                 <figure class="image">
                                                     <label for="buy_gift_2">
-                                                        <img class="lazy" alt="Ha Giang Loop handbag by Mama's Tour"
+                                                        <img class="lazy" alt="Ha Giang Loop handbag by HaGiangMountain's Tour"
                                                             width="200px" height="200px"
                                                             data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg"
                                                             data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg.webp">
@@ -1755,7 +1755,7 @@
                                                 <div class="content">
                                                     <input type="radio" name="buy_gift" class="buy_gift is_special"
                                                         id="buy_gift_2" value="2" />
-                                                    <label for="buy_gift_2">Ha Giang Loop handbag by Mama's Tour</label>
+                                                    <label for="buy_gift_2">Ha Giang Loop handbag by HaGiangMountain's Tour</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1984,13 +1984,13 @@
 
                                     <div class="content " id="content-2">
                                         <div class="content2">
-                                            <p>At Mama&#39;s Homestay, we are pleased to provide complimentary luggage
+                                            <p>At HaGiangMountain&#39;s Homestay, we are pleased to provide complimentary luggage
                                                 storage for our guests. Please feel free to leave your large backpack with
                                                 us, allowing you to carry only the essentials in smaller bags during the
                                                 loop. This ensures you can fully enjoy your adventure without the burden of
                                                 heavy luggage. For any valuable items, please hand them to our receptionist
-                                                or secure them in the locker at Mama&#39;s Homestay (you will need to
-                                                provide your own lock). Mama&#39;s Homestay cannot guarantee the safety of
+                                                or secure them in the locker at HaGiangMountain&#39;s Homestay (you will need to
+                                                provide your own lock). HaGiangMountain&#39;s Homestay cannot guarantee the safety of
                                                 luggage stored at our Lugg storage.</p>
                                         </div>
                                     </div>
@@ -2012,14 +2012,14 @@
                                                 breakdowns. Another safety issue is the lack of gears in automatic bikes,
                                                 preventing them from engine braking effectively. In this post, we will learn
                                                 how to drive a semi-automatic scooter so you can be confident to do the loop
-                                                with Mama&#39;s homestay:&nbsp;<a
+                                                with HaGiangMountain&#39;s homestay:&nbsp;<a
                                                     href="how-to-drive-a-semi-automatic-scooter-effectively/index.html"><span
                                                         style="color:#f1c40f">How to drive a semi-automatic scooter
                                                         effectively (mamashomestay.com)</span></a></p>
 
-                                            <p><em><span style="color:#f39c12">Note: Mama&#39;s Homestay kindly reminds
+                                            <p><em><span style="color:#f39c12">Note: HaGiangMountain&#39;s Homestay kindly reminds
                                                         guests to have an International Driving Permit (IDP) if they plan to
-                                                        drive during their stay. Please note that Mama&#39;s Homestay is not
+                                                        drive during their stay. Please note that HaGiangMountain&#39;s Homestay is not
                                                         responsible for any penalties or issues if you are caught by the
                                                         police without a valid IDP. Drive safely and enjoy your
                                                         journey!</span></em></p>
@@ -2269,19 +2269,19 @@
                         <div class='clear'></div>
                     </div>
                     <div class='news-hot'>
-                        <a href='how-to-make-a-tour-reservation-on-mama-homestay-website/index.html'
-                            title="How to make a tour reservation on Mama Homestay website">
+                        <a href='how-to-make-a-tour-reservation-on-HaGiangMountain-homestay-website/index.html'
+                            title="How to make a tour reservation on HaGiangMountain Homestay website">
                             <figure>
-                                <img class="lazy" alt="How to make a tour reservation on Mama Homestay website"
+                                <img class="lazy" alt="How to make a tour reservation on HaGiangMountain Homestay website"
                                     width="170px" height="170px"
                                     data-src="https://mamashomestay.com/images/news/2023/12/14/small/z4725878466433_261e43d425079779013912db2bed88ec_1702527798.jpg"
                                     data-srcset="https://mamashomestay.com/images/news/2023/12/14/small/z4725878466433_261e43d425079779013912db2bed88ec_1702527798.jpg.webp">
                             </figure>
                         </a>
                         <div class="info_new">
-                            <a href='how-to-make-a-tour-reservation-on-mama-homestay-website/index.html'
-                                title="How to make a tour reservation on Mama Homestay website">How to make a tour
-                                reservation on Mama Homestay website</a>
+                            <a href='how-to-make-a-tour-reservation-on-HaGiangMountain-homestay-website/index.html'
+                                title="How to make a tour reservation on HaGiangMountain Homestay website">How to make a tour
+                                reservation on HaGiangMountain Homestay website</a>
                             <div class="infor_new_basic">
                                 <div class="datetime"><svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -2313,18 +2313,18 @@
                         <div class='clear'></div>
                     </div>
                     <div class='news-hot'>
-                        <a href='mama-s-homestay-bus-service-pick-up-location/index.html'
-                            title="Mama's homestay bus service: Pick-up location">
+                        <a href='HaGiangMountain-s-homestay-bus-service-pick-up-location/index.html'
+                            title="HaGiangMountain's homestay bus service: Pick-up location">
                             <figure>
-                                <img class="lazy" alt="Mama's homestay bus service: Pick-up location" width="170px"
+                                <img class="lazy" alt="HaGiangMountain's homestay bus service: Pick-up location" width="170px"
                                     height="170px"
                                     data-src="https://mamashomestay.com/images/news/2024/01/03/small/luxury-bus-1_1704269975.jpeg"
                                     data-srcset="https://mamashomestay.com/images/news/2024/01/03/small/luxury-bus-1_1704269975.jpeg.webp">
                             </figure>
                         </a>
                         <div class="info_new">
-                            <a href='mama-s-homestay-bus-service-pick-up-location/index.html'
-                                title="Mama's homestay bus service: Pick-up location">Mama's homestay bus service: Pick-up
+                            <a href='HaGiangMountain-s-homestay-bus-service-pick-up-location/index.html'
+                                title="HaGiangMountain's homestay bus service: Pick-up location">HaGiangMountain's homestay bus service: Pick-up
                                 location</a>
                             <div class="infor_new_basic">
                                 <div class="datetime"><svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"

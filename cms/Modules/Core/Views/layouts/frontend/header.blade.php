@@ -2,7 +2,7 @@
     <div class="header_wrapper" style="top: 0px; position: initial;">
         <div class="header container1750 cls" id="header_inner">
             <div class="site-info">
-                <a class="hotline" href="mailto:Mamashomestayhg@gmail.com" title="Email">
+                <a class="hotline" href="mailto:HaGiangMountainshomestayhg@gmail.com" title="Email">
                     <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -12,9 +12,9 @@
                                 fill="#ffffff"></path>
                         </g>
                     </svg>
-                    Mamashomestayhg@gmail.com </a>
+                    HaGiangMountainshomestayhg@gmail.com </a>
                 <div class="header_social">
-                    <a target="_blank" href="https://www.facebook.com/mamahostelhagiang" title="facebook"><svg
+                    <a target="_blank" href="https://www.facebook.com/HaGiangMountainhostelhagiang" title="facebook"><svg
                             fill="#fff" width="15px" height="15px" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" stroke="#fff">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -73,9 +73,9 @@
             </div>
             <div class="header_menu">
                 <div class="header-l">
-                    <h1> <a href="{{route('client.index')}}" title="Mama’s Homestay - Explore Ha Giang" class="logo" rel="home">
+                    <h1> <a href="{{route('client.index')}}" title="HaGiangMountain’s Homestay - Explore Ha Giang" class="logo" rel="home">
                             <img class="logo_back_top" width="187px" height="143px"
-                                src="{{asset('frontend/images/config/asset-17_1698816647.svg')}}" alt="Mama’s Homestay - Explore Ha Giang">
+                                src="{{asset('frontend/images/config/asset-17_1698816647.svg')}}" alt="HaGiangMountain’s Homestay - Explore Ha Giang">
                         </a>
                     </h1>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="dcjq-mega-menu">
                         <ul id="megamenu" class="menu mypopup cls">
                             <li class="level_0 sort home activated"><a class="menu_item_a" href="{{route('client.index')}}"
-                                    title="Mama’s Homestay - Explore Ha Giang" rel="home">Home</a> </li>
+                                    title="HaGiangMountain’s Homestay - Explore Ha Giang" rel="home">Home</a> </li>
 
 
                             <li class="level_0 sort ">
@@ -135,7 +135,7 @@
 
                     <div id="search" class="search search-contain s_close">
                         <div class="search-content">
-                            <form action="https://mamashomestay.com/search/" name="search_form" id="search_form"
+                            <form action="https://HaGiangMountainshomestay.com/search/" name="search_form" id="search_form"
                                 method="get" onsubmit="javascript: submit_form_search();return false;">
                                 <input type="text" value="" placeholder="Search ..." id="keyword" name="keyword"
                                     class="keyword input-text" autocomplete="off">

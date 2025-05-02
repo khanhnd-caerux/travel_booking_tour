@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="vi" prefix="og: http://ogp.me/ns#">
 
-<!-- Mirrored from mamashomestay.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 10:11:49 GMT -->
+<!-- Mirrored from HaGiangMountainshomestay.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 10:11:49 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head id="Head1" prefix="og: http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Cache-control" content="public">
-    <title>Mama’s Homestay - Explore Ha Giang</title>
+    <title>HaGiangMountain’s Homestay - Explore Ha Giang</title>
     <meta name="description"
-        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY MAMA HOMESTAYMama’s Homestay - Explore Ha Giang" />
-    <meta name="keywords" content="Mama’s Homestay - Explore Ha Giang" />
+        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY HaGiangMountain HOMESTAYHaGiangMountain’s Homestay - Explore Ha Giang" />
+    <meta name="keywords" content="HaGiangMountain’s Homestay - Explore Ha Giang" />
     <meta name="dc.language" content="EN" />
     <meta name="dc.source" content="index.html" />
     <meta name="dc.relation" content="index.html" />
-    <meta name="dc.title" content="Mama’s Homestay - Explore Ha Giang" />
-    <meta name="dc.keywords" content="Mama’s Homestay - Explore Ha Giang" />
-    <meta name="dc.subject" content="Mama’s Homestay - Explore Ha Giang" />
+    <meta name="dc.title" content="HaGiangMountain’s Homestay - Explore Ha Giang" />
+    <meta name="dc.keywords" content="HaGiangMountain’s Homestay - Explore Ha Giang" />
+    <meta name="dc.subject" content="HaGiangMountain’s Homestay - Explore Ha Giang" />
     <meta name="dc.description"
-        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY MAMA HOMESTAYMama’s Homestay - Explore Ha Giang" />
+        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY HaGiangMountain HOMESTAYHaGiangMountain’s Homestay - Explore Ha Giang" />
     <link rel="author" href="index.html" />
     <meta property="og:type" content="website" />
 
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="vi_EN" />
-    <meta property="og:title" content="Mama’s Homestay - Explore Ha Giang" />
+    <meta property="og:title" content="HaGiangMountain’s Homestay - Explore Ha Giang" />
     <meta property="og:url" content="index.html" />
     <meta property="og:description"
-        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY MAMA HOMESTAYMama’s Homestay - Explore Ha Giang" />
+        content="Dung Vu - Owner of “Explore Ha Giang”. HA GIANG LOOP TOUR BY HaGiangMountain HOMESTAYHaGiangMountain’s Homestay - Explore Ha Giang" />
     <meta property="fb:app_id" content="647558742055251" />
     <meta property="fb:admins" content="647558742055251" />
     <meta property="og:type" content="website" />
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#fff" />
     <meta property="og:image" content="images/config/logo_1697707579.png" />
     <meta property="og:image:width" content="600 " />
-    <meta property="og:image:alt" content="Mama’s Homestay - Explore Ha Giang">
+    <meta property="og:image:alt" content="HaGiangMountain’s Homestay - Explore Ha Giang">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
     <link rel="canonical" href="index.html">
@@ -50,7 +50,7 @@
     <meta name="geo.position" content="21;105.83" />
     <meta name="ICBM" content="21, 105.83" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
-    <link rel="alternate" type="application/rss+xml" title="Mama’s Homestay - Explore Ha Giang Feed" href="rss.html" />
+    <link rel="alternate" type="application/rss+xml" title="HaGiangMountain’s Homestay - Explore Ha Giang Feed" href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
     @yield('css')
 </head>
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="item item-show">
-                    <a title="Gmail" target="" href="mailto:Mamashomestayhg@gmail.com">
+                    <a title="Gmail" target="" href="mailto:HaGiangMountainshomestayhg@gmail.com">
                         <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img"
                             viewBox="0 0 512.00 512.00" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
