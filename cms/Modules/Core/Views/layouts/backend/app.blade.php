@@ -28,11 +28,11 @@
 
 <body class="g-sidenav-show  bg-gray-200">
     @if(Auth::user())
-    <aside
-        class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
-        id="sidenav-main">
-        @include('Core::layouts.backend.sidebar')
-    </aside>
+        <aside
+            class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+            id="sidenav-main">
+            @include('Core::layouts.backend.sidebar')
+        </aside>
     @endif
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         @if(Auth::user())

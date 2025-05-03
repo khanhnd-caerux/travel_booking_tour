@@ -3,13 +3,9 @@
 namespace Cms\Modules\Home\Controllers;
 
 use App\Http\Controllers\Controller;
-use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
-use Cms\Modules\Admin\Services\Contracts\CharityServiceContract;
 use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
-use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
-use Cms\Modules\Admin\Services\Contracts\TicketServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +20,7 @@ use Cms\Modules\Admin\Jobs\SendEmail;
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $category, $tour, $car, $ticket, $contact, $userService, $charityService;
+    protected $slider, $post, $tour, $contact, $userService;
     protected $orderService;
     protected $orderDetailService;
     /**
@@ -36,23 +32,19 @@ class HomeController extends Controller
     (
         SliderServiceContract $slider,
         PostServiceContract $post,
-        CategoryServiceContract $category,
         TourServiceContract $tour,
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
         OrderDetailServiceContract $orderDetailService,
-        UserServiceContract $userService,
-        CharityServiceContract $charityService
+        UserServiceContract $userService
     ) {
         $this->slider = $slider;
         $this->post = $post;
-        $this->category = $category;
         $this->tour = $tour;
         $this->contact = $contact;
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
         $this->userService = $userService;
-        $this->charityService = $charityService;
     }
 
     /**
@@ -67,14 +59,6 @@ class HomeController extends Controller
 
     public function home(): \Illuminate\Contracts\Support\Renderable
     {
-        // $sliders = $this->slider->getByType($type = 'banner');
-        // $partners = $this->slider->getByType($type = 'partner');
-        // $galleries = $this->slider->getByType($type = 'gallery');
-        // $postExperiences = $this->post->getPostByType($type = 'experience');
-        // $firstPostExperience = $this->post->getFirstPost($type = 'experience');
-        // $categoryWithTour = $this->category->getCateWithTour($slug = 'ha-giang-tour');
-        // $tourInfos = $this->charityService->getAll();
-
         return view('Home::home');
     }
 

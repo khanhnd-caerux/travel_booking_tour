@@ -16,19 +16,10 @@ class CreateToursTable extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');
-            $table->string('locale')->default('vi');
-            $table->string('tour_code');
-            $table->string('destination_from');
-            $table->string('destination_to');
-            $table->string('schedule');
-            $table->longText('content');
-            $table->string('feature_image_path')->nullable();
-            $table->integer('category_id');
+            $table->string('tour_includes');
+            $table->string('tour_excludes');
+            $table->string('time');
             $table->integer('status');
-            $table->string('price');
-            $table->string('vehicle');
-            $table->string('discount_percent');
             $table->timestamps();
             $table->softDeletes();
         });

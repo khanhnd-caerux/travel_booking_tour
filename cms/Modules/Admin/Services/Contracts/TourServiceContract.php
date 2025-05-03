@@ -9,4 +9,6 @@ interface TourServiceContract extends CoreBaseServiceContract
     public function findBySlug($slug);
 
     public function getTourRelated($id, $category_id);
+
+    public function getAllTour();
 }

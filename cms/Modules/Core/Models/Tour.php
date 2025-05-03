@@ -18,7 +18,11 @@ class Tour extends Model
         return $this->hasMany(TourImage::class, 'tour_id');
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class, 'category_id');
+    public function tourPrices() {
+        return $this->hasMany(TourPrice::class, 'tour_id');
+    }
+
+    public function tourDetails() {
+        return $this->hasMany(TourDetail::class, 'tour_id');
     }
 }

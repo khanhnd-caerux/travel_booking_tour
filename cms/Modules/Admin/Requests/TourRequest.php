@@ -25,17 +25,9 @@ class TourRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'tour_code' => 'required',
-            'image_path' => 'required',
-            'destination_from' => 'required',
-            'destination_to' => 'required',
-            'vehicle' => 'required',
-            'content' => 'required',
-            'price' => 'required',
-            'schedule' => 'required',
-            'feature_image_path' => 'required',
-            'category_id' => 'required',
-            'discount_percent' => 'required',
+            'tour_includes' => 'required',
+            'tour_excludes' => 'required',
+            'time' => 'required',
         ];
     }
 }

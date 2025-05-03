@@ -9,4 +9,6 @@ interface TourRepositoryContract extends CoreBaseRepositoryContract
     public function findBySlug($slug);
 
     public function getTourRelated($id, $category_id);
+
+    public function getAllTour();
 }

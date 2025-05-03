@@ -14,7 +14,6 @@ use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
 use Cms\Modules\Admin\Requests\TourPriceRequest;
-use Cms\Modules\Admin\Requests\TourUpdateRequest;
 use Cms\Modules\Admin\Requests\TourDetailRequest;
 
 class TourController extends Controller
@@ -38,7 +37,7 @@ class TourController extends Controller
     }
     public function list()
     {
-        $tours = $this->service->paginate(10);
+        $tours = $this->service->getAllTour();
         return view('Admin::tour.list', compact('tours'));
     }
 
@@ -50,90 +49,38 @@ class TourController extends Controller
 
     public function store(TourRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataTourCreate = [
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'price' => $request->price,
-                'content' => $request->content,
-                'tour_code' => $request->tour_code,
-                'category_id' => $request->category_id,
-                'destination_from' => $request->destination_from,
-                'destination_to' => $request->destination_to,
-                'status' => $request->status === "show" ? 0 : 1,
-                'schedule' => $request->schedule,
-                'vehicle' => $request->vehicle,
-                'discount_percent' => $request->discount_percent,
-            ];
-            $dataUploadFeatureImage = $this->storageImageUpload($request, 'feature_image_path', 'tour');
-            if (!empty($dataUploadFeatureImage)) {
-                $dataTourCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
-            }
-            $tour = $this->service->store($dataTourCreate);
+        $data = [
+            'name' => $request->name,
+            'tour_includes' => $request->tour_includes,
+            'tour_excludes' => $request->tour_excludes,
+            'status' => $request->status === "show" ? 0 : 1,
+            'time' => $request->time,
+        ];
 
-            if ($request->hasFile('image_path')) {
-                foreach ($request->image_path as $file_item) {
-                    $dataTourImageDetail = $this->storageImageUploadMultiple($file_item, 'tour');
-                    $tour->tourImages()->create([
-                        'image_path' => $dataTourImageDetail['file_path'],
-                    ]);
-                }
-            }
-            DB::commit();
-            return redirect()->route('admin.tour.list')->with('success', 'Create tour success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        $this->service->store($data);
+
+        return redirect()->route('admin.tour.list')->with('success', 'Create tour success!');
     }
 
-    public function update($id, TourUpdateRequest $request)
+    public function update($id, TourRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataTourCreate = [
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'price' => $request->price,
-                'content' => $request->content,
-                'tour_code' => $request->tour_code,
-                'category_id' => $request->category_id,
-                'destination_from' => $request->destination_from,
-                'destination_to' => $request->destination_to,
-                'status' => $request->status === "show" ? 0 : 1,
-                'schedule' => $request->schedule,
-                'vehicle' => $request->vehicle,
-                'discount_percent' => $request->discount_percent,
-            ];
-            $dataUploadFeatureImage = $this->storageImageUpload($request, 'feature_image_path', 'tour');
-            if (!empty($dataUploadFeatureImage)) {
-                $dataTourCreate['feature_image_path'] = $dataUploadFeatureImage['file_path'];
-            }
-            $this->service->update($id, $dataTourCreate);
+        $data = [
+            'name' => $request->name,
+            'tour_includes' => $request->tour_includes,
+            'tour_excludes' => $request->tour_excludes,
+            'status' => $request->status === "show" ? 0 : 1,
+            'time' => $request->time,
+        ];
 
-            $tourUpdated = $this->service->find($id);
-            if ($request->hasFile('image_path')) {
-                $tourUpdated->tourImages()->delete();
-                foreach ($request->image_path as $file_item) {
-                    $dataTourImageDetail = $this->storageImageUploadMultiple($file_item, 'tour');
-                    $tourUpdated->tourImages()->create([
-                        'image_path' => $dataTourImageDetail['file_path'],
-                    ]);
-                }
-            }
-            DB::commit();
-            return redirect()->route('admin.tour.list')->with('success', 'Update tour success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        $this->service->update($id, $data);
+
+        return redirect()->route('admin.tour.list')->with('success', 'Update tour success!');
     }
     public function edit($id)
     {
         $tour = $this->service->find($id);
-        $categoryList = $this->category->getAll();
-        return view('Admin::tour.edit', compact('tour', 'categoryList'));
+
+        return view('Admin::tour.edit', compact('tour'));
     }
 
     public function delete($id)

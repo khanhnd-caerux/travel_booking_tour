@@ -40,4 +40,12 @@ class TourRepository extends CoreBaseRepository implements TourRepositoryContrac
             ->get();
     }
 
+    public function getAllTour()
+    {
+        return $this->tour
+            ->where('status', 0)
+            ->orderBy('id', 'desc')
+            ->whereNull('deleted_at')
+            ->paginate(10);
+    }
 }

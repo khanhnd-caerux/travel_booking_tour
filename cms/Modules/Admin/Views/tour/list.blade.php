@@ -28,14 +28,11 @@
                                 <tr>
                                     <th class="text-center">STT</th>
                                     <th>Tên Tour</th>
-                                    <th>Hình ảnh</th>
+                                    <th>Tour bao gồm</th>
+                                    <th>Tour không bao gồm</th>
                                     <th>Trạng thái</th>
-                                    <th>Khởi hành từ</th>
-                                    <th>Lịch trình</th>
-                                    <th>Giá Tour</th>
-                                    <th>% Giảm</th>
-                                    <th>Phương tiện</th>
-                                    <th>Ngày tạo</th>
+                                    <th>Thời gian</th>
+                                    <th>Ngày cập nhật</th>
                                     <th class="text-right">Chức năng</th>
                                 </tr>
                             </thead>
@@ -44,15 +41,11 @@
                                 <tr style="text-align: left">
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
                                     <td>{{ $tour->name }}</td>
-                                    <td><img src="{{ asset($tour->feature_image_path) }}" class="img" alt="Tour Image">
-                                    </td>
+                                    <td>{{ $tour->tour_includes }}</td>
+                                    <td>{{ $tour->tour_excludes }}</td>
                                     <td><span class="badge badge-sm bg-gradient-secondary">{{ $tour->status == 0 ?
                                             'Hiển thị' : 'Ẩn' }}</span></td>
-                                    <td>{{ $tour->destination_from }}</td>
-                                    <td>{{ $tour->destination_to }}</td>
-                                    <td>{{ $tour->price }}</td>
-                                    <td>{{ $tour->discount_percent }} %</td>
-                                    <td>{{ $tour->vehicle }}</td>
+                                    <td>{{ $tour->time }}</td>
                                     <td>{{ $tour->updated_at }}</td>
                                     <td class="td-actions text-right">
                                         <a class="btn text-danger text-gradient px-3 mb-0 action_delete" href=""
