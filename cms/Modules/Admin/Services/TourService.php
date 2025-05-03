@@ -29,4 +29,9 @@ class TourService extends CoreBaseService implements TourServiceContract
     {
         return $this->repository->getAllTour();
     }
+
+    public function getTourWithInfo()
+    {
+        return $this->repository->getTourWithInfo();
+    }
 }

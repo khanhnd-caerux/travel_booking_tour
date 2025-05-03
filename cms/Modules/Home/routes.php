@@ -17,19 +17,5 @@ Route::group([
         session()->put('locale', $locale);
         return redirect()->route('client.index');
     });
-    Route::group([
-        'prefix' => 'content',
-        'middleware' => ['web']
-    ], function () {
-        Route::get('/{slug}', 'HomeController@contentList')->name('client.contentList');
-    });
-    Route::group([
-        'prefix' => 'detail-content',
-        'middleware' => ['web']
-    ], function () {
-        Route::get('/{slug}', 'HomeController@contentDetail')->name('client.contentDetail');
-    });
-    Route::get('/booking/{type}/{id}', 'HomeController@booking')->name('client.booking');
-    Route::post('/booking/{type}/{id}', 'HomeController@addToCart')->name('client.addToCart');
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
 });

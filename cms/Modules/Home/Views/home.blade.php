@@ -69,7 +69,8 @@
                                 <h3 class="title">The majestic natural beauty eagerly awaits your discovery</h3>
                                 <div class="column_left_content description">
                                     <p>
-                                    <p>Welcome to HaGiangMountain&#39;s Homestay website! Here, we extend an invitation for you to
+                                    <p>Welcome to HaGiangMountain&#39;s Homestay website! Here, we extend an invitation for
+                                        you to
                                         embark on an exhilarating adventure through the picturesque countryside of
                                         Vietnam&mdash; all from the saddle of a motorbike. Our motorbike tours promise a
                                         distinctive and authentic journey, revealing the breathtaking landscapes and hidden
@@ -242,7 +243,8 @@
                     <div class="mama-strength">
                         <div class="mama-strength-des">
                             <div class="title">
-                                Journey to conquer but you are really single-minded because of <span>HaGiangMountain's tour</span>
+                                Journey to conquer but you are really single-minded because of <span>HaGiangMountain's
+                                    tour</span>
                             </div>
                             <div class="content">
                                 <div class="item">
@@ -554,902 +556,100 @@
                                     HaGiangMountain’s Tours </h2>
                             </div>
                             <div class="list_tours">
-                                <div class="item_tour tour_1">
-                                    <figure class="map" id="map1">
-                                        <a href="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732761842.png"
-                                            data-fancybox="gallery_sc_main1" class="openfancybox image_main "
-                                            style="z-index: 0;">
-                                            <img class="lazy image_ori" alt="Ha Giang tour 2 days 1 night" width="415px"
-                                                height="340px"
-                                                data-src="https://mamashomestay.com/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732761842.png"
-                                                data-srcset="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732761842.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-hg-dv1_1732782029.png"
-                                            data-fancybox="gallery_sc_dt_0" class="openfancybox image_0 ">
-                                            <img class="lazy image active" alt="Ha Giang tour 2 days 1 night" width="415px"
-                                                height="340px" id="image_1"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-hg-dv1_1732782029.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-hg-dv1_1732782029.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-dv-hg_1732782038.png"
-                                            data-fancybox="gallery_sc_dt_1" class="openfancybox image_1 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 2 days 1 night" width="415px"
-                                                height="340px" id="image_2"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-dv-hg_1732782038.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-dv-hg_1732782038.png.webp">
-                                        </a>
-
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="day"><strong>Time</strong> 2Days / 1nights</span>
-
-                                        <div class="detail_top">
-                                            <h3 class="title_tour">Ha Giang tour 2 days 1 night</h3>
-                                            <div class="list_price">
-                                                <ul class="price_box">
-                                                    <li class="price">3.350.000<span class="unit">₫</span></li>
-                                                    <li class="name">Easyrider</li>
-                                                </ul>
+                                @foreach ($tours as $tour)
+                                    <div class="item_tour tour_{{ $loop->index + 1 }}">
+                                        <figure class="map" id="map{{ $loop->index + 1 }}">
+                                            <a href="{{ $tour->tourDetails->first()->image }}"
+                                                data-fancybox="gallery_sc_main{{ $loop->index }}"
+                                                class="openfancybox image_main " style="z-index: 0;">
+                                                <img class="lazy image_ori" alt="{{ $tour->tourDetails->first()->name }}"
+                                                    width="415px" height="340px"
+                                                    data-src="{{ $tour->tourDetails->first()->image }}"
+                                                    data-srcset="{{ $tour->tourDetails->first()->image }}">
+                                            </a>
+                                            @foreach ($tour->tourDetails as $tourDetail)
+                                                <a href="{{ $tourDetail->image }}" data-fancybox="gallery_sc_dt_{{ $loop->index }}"
+                                                    class="openfancybox image_{{ $loop->index }} ">
+                                                    <img class="lazy image @if ($loop->index == 0) active @endif"
+                                                        alt="Ha Giang tour 2 days 1 night" width="415px" height="340px"
+                                                        id="image_{{ $loop->index }}" data-src="{{ $tourDetail->image }}"
+                                                        data-srcset="{{ $tourDetail->image }}">
+                                                </a>
+                                            @endforeach
+                                        </figure>
+                                        <div class="detail">
+                                            <span class="day"><strong>Time</strong> {{ $tour->time }}</span>
+                                            <div class="detail_top">
+                                                <h3 class="title_tour">{{ $tour->name }}</h3>
+                                                <div class="list_price">
+                                                    @foreach ($tour->tourPrices as $tourPrice)
+                                                        <ul class="price_box">
+                                                            <li class="price">
+                                                                {{ number_format($tourPrice->price, 0, ',', '.') }}<span
+                                                                    class="unit">₫</span>
+                                                            </li>
+                                                            <li class="name">{{ $tourPrice->description }}</li>
+                                                        </ul>
+                                                    @endforeach
+                                                </div>
                                             </div>
+                                            <div class="detail_bottom cls detail_1" id="detail_tour_{{ $loop->index + 1 }}">
+                                                <div class="list_dates">
+                                                    <input type="hidden" value="2" id="count_date_{{ $loop->index + 1 }}">
+                                                    <span class="pick">Pick up at:</span>
+                                                    @foreach ($tour->tourDetails as $tourDetail)
+                                                        <div class="item_date active active_current"
+                                                            id="item_date_{{ $loop->index }}" data-id="{{ $loop->index + 1 }}">
+                                                            <div class="line">
+                                                                <span class="l"></span>
+                                                                <span class="if">{{ $tourDetail->name }}</span>
+                                                            </div>
+                                                            <div class="text">
+                                                                <div class="title">
+                                                                    {{ $tourDetail->name }}
+                                                                </div>
+                                                                <div class="description">
+                                                                    <p><span style="font-size:16px"><span
+                                                                                style="font-family:Georgia,serif"><strong>
+                                                                                    {{ $tourDetail->description }}
+                                                                                </strong></span></span></p>
 
-                                        </div>
-                                        <div class="detail_bottom cls detail_1" id="detail_tour_1">
-                                            <div class="list_dates">
-                                                <input type="hidden" value="2" id="count_date_1">
-                                                <span class="pick">Pick up at:</span>
-                                                <div class="item_date active active_current" id="item_date_0" data-id="1">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 1: HA GIANG - DONG VAN</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 1: HA GIANG - DONG VAN </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 1:
-                                                                            Dong Van &ndash; Tam Son - Nam Dam - Yen Minh -
-                                                                            Lung Cu- Dong Van (B, L, D, Dong Van
-                                                                            Homestay)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">7:00am: Have a
-                                                                        delicious breakfast at HaGiangMountain&rsquo;s homestay and
-                                                                        proceed to get ready to start discovering the
-                                                                        mountainous Northern Loop. Start the loop tour.
-                                                                        Destinations reach: </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Dong Van Karst
-                                                                        Plateau viewpoint</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Heaven
-                                                                        gate</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Short hiking to
-                                                                        visit Angel couple Hill </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Nam Dam village
-                                                                        for lunch</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Pine Tree
-                                                                        Forest.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cam
-                                                                        Village</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Stunning
-                                                                        viewpoint </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cu Flag
-                                                                        Tower </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Guest house in
-                                                                        Dong Van (dinner, overnight)</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Old Quarters of
-                                                                        Dong Van.</span></span></p>
+                                                                    {!! $tourDetail->content !!}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
-                                                <div class="item_date " id="item_date_1" data-id="2">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 2: DONG VAN - HA GIANG</span>
-                                                    </div>
-                                                    <div class="text">
+                                                <div class="info_tour cls">
+                                                    <div class="include">
                                                         <div class="title">
-                                                            DAY 2: DONG VAN - HA GIANG </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 2:
-                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- HaGiangMountain
-                                                                            house (B, L)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">7:00 am: Have
-                                                                        breakfast. Continue the loop tour. Destinations
-                                                                        reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Ma Pi Leng
-                                                                        Pass</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Short hiking
-                                                                        Died Cliff Viewpoint</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Meo Vac, Ta Lung
-                                                                        and Mau Due Villages.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Tam
-                                                                        Village</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
-                                                                        a shower, pack and ready all of your backpacks and
-                                                                        luggage, take the bus to other
-                                                                        destination.</span></span></p>
-                                                        </div>
+                                                            Tour includes: </div>
+                                                        <span>{{ $tour->tour_includes }}</span>
+                                                    </div>
+                                                    <div class="not_include">
+                                                        <div class="title">
+                                                            Tour excludes: </div>
+                                                        <span>{{ $tour->tour_excludes }}</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="info_tour cls">
-                                                <div class="include">
-                                                    <div class="title">
-                                                        Tour includes: </div>
-                                                    <span>Meals, bunk beds, gasoline fee, ticket entrance fees, motorbike
-                                                        and insurance for motorbike.</span>
+                                                <div class="button_box cls">
+                                                    <span class="button_book" data-id="1">
+                                                        BOOK NOW </span>
                                                 </div>
-                                                <div class="not_include">
-                                                    <div class="title">
-                                                        Tour excludes: </div>
-                                                    <span>Beverage, transportation FROM and TO Ha Giang, private room, tip
-                                                        for rider, NO travel insurance, travel permit for Ha Giang route:
-                                                        250.000VND</span>
-                                                </div>
-                                            </div>
-                                            <div class="button_box cls">
-                                                <span class="button_book" data-id="1">
-                                                    BOOK NOW </span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item_tour tour_2">
-                                    <figure class="map" id="map1">
-                                        <a href="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768574.png"
-                                            data-fancybox="gallery_sc_main2" class="openfancybox image_main "
-                                            style="z-index: 0;">
-                                            <img class="lazy image_ori" alt="Ha Giang tour 3 days 2 nights" width="415px"
-                                                height="340px"
-                                                data-src="https://mamashomestay.com/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768574.png"
-                                                data-srcset="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768574.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-hg-ym_1732782345.png"
-                                            data-fancybox="gallery_sc_dt_0" class="openfancybox image_0 ">
-                                            <img class="lazy image active" alt="Ha Giang tour 3 days 2 nights" width="415px"
-                                                height="340px" id="image_3"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-hg-ym_1732782345.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-hg-ym_1732782345.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-ym-dv_1732782246.png"
-                                            data-fancybox="gallery_sc_dt_1" class="openfancybox image_1 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 3 days 2 nights" width="415px"
-                                                height="340px" id="image_4"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-ym-dv_1732782246.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-ym-dv_1732782246.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-dv-hg_1732782266.png"
-                                            data-fancybox="gallery_sc_dt_2" class="openfancybox image_2 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 3 days 2 nights" width="415px"
-                                                height="340px" id="image_6"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-dv-hg_1732782266.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-dv-hg_1732782266.png.webp">
-                                        </a>
-
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="day"><strong>Time</strong> 3Days / 2nights</span>
-
-                                        <div class="detail_top">
-                                            <h3 class="title_tour">Ha Giang tour 3 days 2 nights</h3>
-                                            <div class="list_price">
-                                                <ul class="price_box">
-                                                    <li class="price">2.950.000<span class="unit">₫</span></li>
-                                                    <li class="name">Ride by yourself</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">2.199.000<span class="unit">₫</span></li>
-                                                    <li class="name">Seat behind your friend</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">4.050.000<span class="unit">₫</span></li>
-                                                    <li class="name">Easyrider</li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                        <div class="detail_bottom cls detail_2" id="detail_tour_2">
-                                            <div class="list_dates">
-                                                <input type="hidden" value="3" id="count_date_2">
-                                                <span class="pick">Pick up at:</span>
-                                                <div class="item_date active active_current" id="item_date_0" data-id="3">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 1: HA GIANG - YEN MINH</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 1: HA GIANG - YEN MINH </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 1:
-                                                                            Dong Van &ndash; Tam Son- Nam Dam-Yen Minh (B,
-                                                                            L, D, Yen Minh Homestay)</strong></span></span>
-                                                            </p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:30 am &ndash;
-                                                                        10:00 am: Have a delicious breakfast at HaGiangMountain&rsquo;s
-                                                                        homestay and proceed to get ready to</span></span>
-                                                            </p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">start discovering
-                                                                        the mountainous Northern Loop.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">10:30 am: start
-                                                                        the loop tour. Destinations reach: </span></span>
-                                                            </p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Dong Van Karst
-                                                                        Plateau viewpoint</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Heaven
-                                                                        gate</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Short hiking to
-                                                                        visit Angel couple Hill </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Nam Dam village
-                                                                        for lunch</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Pine Tree
-                                                                        Forest.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Yen Minh
-                                                                        Homestay (dinner, overnight)</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_date " id="item_date_1" data-id="4">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 2: YEN MINH - DONG VAN</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 2: YEN MINH - DONG VAN </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 2: Yen
-                                                                            Minh- Lung Tam- Lung Cu- Dong Van (B, L, D, Dong
-                                                                            Van Homestay)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:00 am: Have
-                                                                        breakfast. </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">9:00 am: Continue
-                                                                        the loop tour. Destinations reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cam
-                                                                        Village</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Stunning
-                                                                        viewpoint </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cu Flag
-                                                                        Tower </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Guest house in
-                                                                        Dong Van (dinner, overnight)</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Old Quarters of
-                                                                        Dong Van.</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_date " id="item_date_2" data-id="6">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 3: DONG VAN - HA GIANG</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 3: DONG VAN - HA GIANG </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 3:
-                                                                            Dong Van- Ma Pi Leng- Mau Tam- Mau Due- HaGiangMountain
-                                                                            house (B, L)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:00 am: Have
-                                                                        breakfast. </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">9:00 am: Continue
-                                                                        the loop tour. Destinations reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Ma Pi Leng
-                                                                        Pass</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Short hiking
-                                                                        Died Cliff Viewpoint</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Meo Vac, Ta Lung
-                                                                        and Mau Due Villages.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Tam Village
-                                                                    </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
-                                                                        a shower, pack and ready all of your backpacks and
-                                                                        luggage, take the bus to other
-                                                                        destination.</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="info_tour cls">
-                                                <div class="include">
-                                                    <div class="title">
-                                                        Tour includes: </div>
-                                                    <span>Meals, bunk beds, gastroline fee, ticket entrance fees, motorbike
-                                                        and insurance for motorbike
-                                                    </span>
-                                                </div>
-                                                <div class="not_include">
-                                                    <div class="title">
-                                                        Tour excludes: </div>
-                                                    <span>Beverage, transportation FROM and TO Ha Giang, private room, tip
-                                                        for rider, NO travel insurance, travel permit for Ha Giang route:
-                                                        250.000VND</span>
-                                                </div>
-                                            </div>
-                                            <div class="button_box cls">
-                                                <span class="button_book" data-id="2">
-                                                    BOOK NOW </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item_tour tour_3">
-                                    <figure class="map" id="map1">
-                                        <a href="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768621.png"
-                                            data-fancybox="gallery_sc_main3" class="openfancybox image_main "
-                                            style="z-index: 0;">
-                                            <img class="lazy image_ori" alt="Ha Giang tour 4 days 3 nights" width="415px"
-                                                height="340px"
-                                                data-src="https://mamashomestay.com/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768621.png"
-                                                data-srcset="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732768621.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-map-hg-ym_1732782305.png"
-                                            data-fancybox="gallery_sc_dt_0" class="openfancybox image_0 ">
-                                            <img class="lazy image active" alt="Ha Giang tour 4 days 3 nights" width="415px"
-                                                height="340px" id="image_7"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-map-hg-ym_1732782305.png"
-                                                data-srcset="frontend/images/tours/compress/bg-map-hg-ym_1732782305.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/map-ym-dv_1735265051.png"
-                                            data-fancybox="gallery_sc_dt_1" class="openfancybox image_1 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 4 days 3 nights" width="415px"
-                                                height="340px" id="image_8"
-                                                data-src="https://mamashomestay.com/images/tours/compress/map-ym-dv_1735265051.png"
-                                                data-srcset="frontend/images/tours/compress/map-ym-dv_1735265051.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-mapdv-dg166_1732769210.png"
-                                            data-fancybox="gallery_sc_dt_2" class="openfancybox image_2 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 4 days 3 nights" width="415px"
-                                                height="340px" id="image_9"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-mapdv-dg166_1732769210.png"
-                                                data-srcset="frontend/images/tours/compress/bg-mapdv-dg166_1732769210.png.webp">
-                                        </a>
-                                        <a href="frontend/images/tours/compress/bg-mapdg-hg_1735198712.png"
-                                            data-fancybox="gallery_sc_dt_3" class="openfancybox image_3 hide">
-                                            <img class="lazy image " alt="Ha Giang tour 4 days 3 nights" width="415px"
-                                                height="340px" id="image_10"
-                                                data-src="https://mamashomestay.com/images/tours/compress/bg-mapdg-hg_1735198712.png"
-                                                data-srcset="frontend/images/tours/compress/bg-mapdg-hg_1735198712.png.webp">
-                                        </a>
-
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="day"><strong>Time</strong> 4Days / 3nights</span>
-
-                                        <div class="detail_top">
-                                            <h3 class="title_tour">Ha Giang tour 4 days 3 nights</h3>
-                                            <div class="list_price">
-                                                <ul class="price_box">
-                                                    <li class="price">3.750.000<span class="unit">₫</span></li>
-                                                    <li class="name">Ride by yourself</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">2.999.000<span class="unit">₫</span></li>
-                                                    <li class="name">Seat behind your friend</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">4.990.000<span class="unit">₫</span></li>
-                                                    <li class="name">Easyrider</li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                        <div class="detail_bottom cls detail_3" id="detail_tour_3">
-                                            <div class="list_dates">
-                                                <input type="hidden" value="4" id="count_date_3">
-                                                <span class="pick">Pick up at:</span>
-                                                <div class="item_date active active_current" id="item_date_0" data-id="7">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 1: HA GIANG - YEN MINH</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 1: HA GIANG - YEN MINH </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 1:
-                                                                            Dong Van- Tam Son- Nam Dam- Yen Minh (B-L-D-
-                                                                            homestay at Yen Minh)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:30 am &ndash;
-                                                                        10:00 am: Have a delicious breakfast at HaGiangMountain&rsquo;s
-                                                                        homestay and proceed to get ready to</span></span>
-                                                            </p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">start discovering
-                                                                        the mountainous Northern Loop.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">10:30 am: start
-                                                                        the loop tour. Destinations reach: </span></span>
-                                                            </p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Dong Van Karst
-                                                                        Plateau viewpoint</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Heaven
-                                                                        gate</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Short hiking to
-                                                                        visit Angel couple Hill</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Nam Dam village
-                                                                        where we will have lunch with a local
-                                                                        family.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Take a rest the
-                                                                        bike and take a short stroll up the hillside to the
-                                                                        Pine Tree Forest.</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Final stop: Yen
-                                                                        Minh Homestay (Dinner, overnight)</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_date " id="item_date_1" data-id="8">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 2: YEN MINH - DONG VAN</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 2: YEN MINH - DONG VAN </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 2: Yen
-                                                                            Minh- Lung Tam- Lung Cu Flag- Dong Van (B-L-D,
-                                                                            homestay at Dong Van)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:00 am: Have
-                                                                        breakfast. </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">9:00 am: Continue
-                                                                        the loop tour. Destinations reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cam
-                                                                        Village</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Stunning
-                                                                        viewpoint </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Lung Cu Flag
-                                                                        Tower</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Final stop:
-                                                                        Guest house in Dong Van (Dinner,
-                                                                        overnight)</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Old Quarters of
-                                                                        Dong Van.</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_date " id="item_date_2" data-id="9">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 3: DONG VAN - DU GIA</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 3: DONG VAN - DU GIA </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif"><strong>Day 3:
-                                                                            Dong Van- Ma Pi Leng - Meo Vac- Mau Due (B-L-D,
-                                                                            The Hill Homestay)</strong></span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:00 am: Have
-                                                                        breakfast. </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">9:00 am: Continue
-                                                                        the loop tour. Destinations reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Ma Pi Leng
-                                                                        Pass</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Meo Vac, Ta Lung
-                                                                        and Mau Due Villages</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Nho
-                                                                        Que&nbsp;River</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Having lunch at
-                                                                        Mau Due</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Du Gia village
-                                                                        (Dinner, overtime at the homestay)</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_date " id="item_date_3" data-id="10">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">DAY 4: DU GIA - HA GIANG</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            DAY 4: DU GIA - HA GIANG </div>
-                                                        <div class="description">
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">8:00 am: Have
-                                                                        breakfast. </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">9:00 am: Continue
-                                                                        the loop tour. Destinations reach:</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- Du Gia waterfall
-                                                                    </span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">- A quick stop at
-                                                                        Lung Tam Village</span></span></p>
-
-                                                            <p><span style="font-size:16px"><span
-                                                                        style="font-family:Georgia,serif">5:00 pm: Return to
-                                                                        HaGiangMountain&rsquo;s homestay in the town of Ha Giang. Take
-                                                                        a shower, pack and ready all of your backpacks and
-                                                                        luggage, take the bus to other
-                                                                        destination.</span></span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="info_tour cls">
-                                                <div class="include">
-                                                    <div class="title">
-                                                        Tour includes: </div>
-                                                    <span>Meals, bunk beds, gastroline fee, ticket entrance fees, motorbike
-                                                        and insurance for motorbike
-                                                    </span>
-                                                </div>
-                                                <div class="not_include">
-                                                    <div class="title">
-                                                        Tour excludes: </div>
-                                                    <span>Beverage, transportation FROM and TO Ha Giang, private room, tip
-                                                        for rider, NO travel insurance, travel permit for Ha Giang route:
-                                                        250.000VND</span>
-                                                </div>
-                                            </div>
-                                            <div class="button_box cls">
-                                                <span class="button_book" data-id="3">
-                                                    BOOK NOW </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item_tour tour_4">
-                                    <figure class="map" id="map1">
-                                        <a href="frontend/images/tours/2025/03/07/compress/bgmap_1741344013.png"
-                                            data-fancybox="gallery_sc_main4" class="openfancybox image_main "
-                                            style="z-index: 0;">
-                                            <img class="lazy image_ori" alt="Ha Giang - Cao Bang tour 6 days 5 nights"
-                                                width="415px" height="340px"
-                                                data-src="https://mamashomestay.com/images/tours/2025/03/07/compress/bgmap_1741344013.png"
-                                                data-srcset="frontend/images/tours/2025/03/07/compress/bgmap_1741344013.png.webp">
-                                        </a>
-
-                                    </figure>
-                                    <div class="detail">
-                                        <span class="day"><strong>Time</strong> 6Days / 5nights</span>
-
-                                        <div class="detail_top">
-                                            <h3 class="title_tour">Ha Giang - Cao Bang tour 6 days 5 nights</h3>
-                                            <div class="list_price">
-                                                <ul class="price_box">
-                                                    <li class="price">9.950.000<span class="unit">₫</span></li>
-                                                    <li class="name">Ride by yourself (request)</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">9.499.000<span class="unit">₫</span></li>
-                                                    <li class="name">Seat behind your friend (request)</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">11.980.000<span class="unit">₫</span></li>
-                                                    <li class="name">Easyrider</li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                        <div class="detail_bottom cls detail_4" id="detail_tour_4">
-                                            <div class="list_dates">
-                                                <input type="hidden" value="1" id="count_date_4">
-                                                <span class="pick">Pick up at:</span>
-                                                <div class="item_date active active_current" id="item_date_0" data-id="12">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">Ha Giang Cao Bang 6d5n</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            Ha Giang Cao Bang 6d5n </div>
-                                                        <div class="description">
-                                                            <p>Tour schedule 6 days 5 nights<br />
-                                                                H&agrave; Giang City- Đ&ocirc;ng Văn Town -Meo Vac Town-
-                                                                B&aring;o Lạc Town- Cao Bang (Bản Giốc Waterfall) - Bắc Kan
-                                                                (Ba Bể<br />
-                                                                Lake)</p>
-
-                                                            <p>Day_01: H&agrave; Giang City - Đ&ocirc;ng Văn Town:<br />
-                                                                08:00: Pick up at the office in H&agrave; Giang city.<br />
-                                                                We start the tour and stop at some check-in points: Bac Sum
-                                                                pass, Quản Bạ Heaven gate, Quan Bạ Twin<br />
-                                                                mountains,..<br />
-                                                                12:00: Have lunch at Quan Ba Town.<br />
-                                                                13:00: Keep traveling and stop at some check-in points:
-                                                                H&#39;mong traditional weaving village at L&ugrave;ng
-                                                                T&aacute;m village<br />
-                                                                (Qu&acirc;n Bạ Town)., H&#39;mong&#39;s Mansion, go straight
-                                                                to Đồng V&auml;n Town<br />
-                                                                18:00: sleep and have dinner at Đồng V&auml;n Town.</p>
-
-                                                            <p>Day_02: Đ&ocirc;ng Văn Town - M&egrave;o Vac Town:<br />
-                                                                07:00: Have breakfast and ready to go.<br />
-                                                                08:00: Go to visit: Lũng C&uacute; Flag Tower, The North
-                                                                Point.<br />
-                                                                11:00: Stop at M&atilde; Pi L&egrave;ng Pass.<br />
-                                                                12:00: Have lunch at M&egrave;o Vac Town<br />
-                                                                14:00: Go to visit the Nho Quế River and do the boat
-                                                                trip.<br />
-                                                                18:00: Sleep and have dinner at Dechia Campsite.</p>
-
-                                                            <p>Day_03: M&egrave;o Vac Town - Bao Lac Town:<br />
-                                                                07:00: Have breakfast and ready to go.<br />
-                                                                08:00: start the journey to B&aacute;o Lạc Town, Cao Bảng
-                                                                Province. We will travel to the Khau Cốc Tr&agrave; pass
-                                                                (15th floor<br />
-                                                                pass and one of the most dangerous pas in Việt Nam).<br />
-                                                                12:00: Have lunch.<br />
-                                                                18:00: Sleep and have dinner at B&aacute;o Lạc Town.</p>
-
-                                                            <p>Pay_04: Ngườm Ngao cave - Thang Hen lake - The God&#39;s Eye
-                                                                mountain/- Khuổi Ky stone village.<br />
-                                                                07:00: Have breakfast and ready to go.<br />
-                                                                08:00: Travel to Ngườm Ngao cave.<br />
-                                                                12:00: Have lunch<br />
-                                                                14:00: Travel to Thang Hen Lake and the God&#39;s Eye
-                                                                mountain, Khuổi Ky stone village.<br />
-                                                                18:00:Sleep and have dinner at the town.</p>
-
-                                                            <p>Day_05:Bản Giốc waterfall - Lenin stream - P&aacute;c
-                                                                B&oacute; cave<br />
-                                                                07:00: Have breakfast and ready to go.<br />
-                                                                08:00: Travel to Bản Giốc waterfall.<br />
-                                                                12:00: Have lunch.<br />
-                                                                14:00: Travel to Lenin stream - P&aacute;c B&oacute;
-                                                                cave.<br />
-                                                                18:00: Sleep and have dinner at the town.</p>
-
-                                                            <p>Day 06 Ba Bế lake - Cao Bang city.<br />
-                                                                07:00: Have breakfast and ready to go.<br />
-                                                                08:00: Travel to Ba Bế Lake.<br />
-                                                                12:00: Have lunch.<br />
-                                                                14:00: Back to Cao Bằng city.<br />
-                                                                17:00: Arrive at Ha Giang&nbsp;city.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="info_tour cls">
-                                                <div class="include">
-                                                    <div class="title">
-                                                        Tour includes: </div>
-                                                    <span>Meals, bunk beds, gastroline fee, ticket entrance fees, motorbike
-                                                        and insurance for motorbike
-                                                    </span>
-                                                </div>
-                                                <div class="not_include">
-                                                    <div class="title">
-                                                        Tour excludes: </div>
-                                                    <span>Beverage, transportation FROM and TO Ha Giang, private room, tip
-                                                        for rider, NO travel insurance, travel permit for Ha Giang route:
-                                                        250.000VND</span>
-                                                </div>
-                                            </div>
-                                            <div class="button_box cls">
-                                                <span class="button_book" data-id="4">
-                                                    BOOK NOW </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item_tour tour_5">
-                                    <figure class="map" id="map1">
-                                        <a href="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732770174.png"
-                                            data-fancybox="gallery_sc_main5" class="openfancybox image_main "
-                                            style="z-index: 0;">
-                                            <img class="lazy image_ori" alt="PRIVATE CAR TOUR (request) " width="415px"
-                                                height="340px"
-                                                data-src="https://mamashomestay.com/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732770174.png"
-                                                data-srcset="frontend/images/tours/2024/11/28/compress/bg-map11_967c8876_1703727166_1732770174.png.webp">
-                                        </a>
-
-                                    </figure>
-                                    <div class="detail">
-
-                                        <div class="detail_top">
-                                            <h3 class="title_tour">PRIVATE CAR TOUR (request) </h3>
-                                            <div class="list_price">
-                                                <ul class="price_box">
-                                                    <li class="price">5.495.000<span class="unit">₫</span></li>
-                                                    <li class="name">2D1N</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">6.195.000<span class="unit">₫</span></li>
-                                                    <li class="name">3D2N</li>
-                                                </ul>
-                                                <ul class="price_box">
-                                                    <li class="price">7.495.000<span class="unit">₫</span></li>
-                                                    <li class="name">4D3N</li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                        <div class="detail_bottom cls detail_5" id="detail_tour_5">
-                                            <div class="list_dates">
-                                                <input type="hidden" value="1" id="count_date_5">
-                                                <span class="pick">Pick up at:</span>
-                                                <div class="item_date active active_current" id="item_date_0" data-id="11">
-                                                    <div class="line">
-                                                        <span class="l"></span>
-                                                        <span class="if">PRIVATE CAR TOUR (request)</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="title">
-                                                            PRIVATE CAR TOUR (request) </div>
-                                                        <div class="description">
-                                                            <p>If you are interested in our private car tour, please send us
-                                                                your request via WhatsApp: at&nbsp;<strong>+84 84 927
-                                                                    8787</strong>&nbsp;or via email:
-                                                                at&nbsp;<strong>HaGiangMountainshomestayhg@gmail.com</strong> to make a
-                                                                booking. Our team will be happy to assist you with your
-                                                                request and arrange it for you.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="info_tour cls">
-                                                <div class="include">
-                                                    <div class="title">
-                                                        Tour includes: </div>
-                                                    <span>Car rental fee, gasoline, 1 local experienced driver</span>
-                                                </div>
-                                                <div class="not_include">
-                                                    <div class="title">
-                                                        Tour excludes: </div>
-                                                    <span>Meals, sightseeing tickets, and accommodation (dorm, private
-                                                        room), private transfer TO/FROM Ha Giang, NO travel insurance, tip
-                                                        for rider, travel permit for Ha Giang route: 250.000VND.
-                                                        Lunar New Year 2025 surcharge: 500.000VND/person from 10/1/2025 -
-                                                        15/</span>
-                                                </div>
-                                            </div>
-                                            <div class="button_box cls">
-                                                <span class="button_book" data-id="5">
-                                                    BOOK NOW </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
-
-
                     </div>
 
                     <div class="tour_pos1 lazy"
                         style="background-image: url(images/config/layer-56_1699697324.jpg.webp); display: block;">
                         <div class="container">
                             <div class='block_strengths strengths-_strengths strengths_0 block' id="block_id_173">
-                                <p class="block_title"><span>HaGiangMountain’s Homestay is </br>the leading Homestay chain in Ha
+                                <p class="block_title"><span>HaGiangMountain’s Homestay is </br>the leading Homestay chain
+                                        in Ha
                                         Giang</span></p>
                                 <div class="block_strengths_slide">
                                     <div class="item ">
@@ -1458,10 +658,12 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to HaGiangMountain&#39;s Homestay in the center - 50 beds, where modern
+                                                    <p>Welcome to HaGiangMountain&#39;s Homestay in the center - 50 beds,
+                                                        where modern
                                                         comfort meets traditional charm. Our homestay is thoughtfully
                                                         designed to provide a welcoming and contemporary atmosphere for our
-                                                        guests.&nbsp;HaGiangMountain&rsquo;s Homestay offers one free night in the
+                                                        guests.&nbsp;HaGiangMountain&rsquo;s Homestay offers one free night
+                                                        in the
                                                         dormitory the day before the tour begins, and you can check in after
                                                         2 pm. Our reception is open 24/7. The free night is random and we
                                                         don&#39;t charge any fee for it. If you want a more proper place to
@@ -1484,7 +686,8 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to HaGiangMountain&#39;s House - 20&nbsp;beds.&nbsp;HaGiangMountain&rsquo;s
+                                                    <p>Welcome to HaGiangMountain&#39;s House -
+                                                        20&nbsp;beds.&nbsp;HaGiangMountain&rsquo;s
                                                         Homestay offers one free night in the dormitory the day before the
                                                         tour begins, and you can check in after 2 pm. Our reception is open
                                                         24/7. The free night is random and we don&#39;t charge any fee for
@@ -1585,7 +788,8 @@
                                                 </div>
                                             </div>
                                             <div class="note">
-                                                <label for="">NOTE: HaGiangMountain’s Homestay offers one free night in the DORM only
+                                                <label for="">NOTE: HaGiangMountain’s Homestay offers one free night in the
+                                                    DORM only
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
                                                     please contact us via WhatsApp</label>
@@ -1717,7 +921,8 @@
                                             <div class="note">
                                                 <label for="">
                                                     <p><strong>NOTE:</strong> Discounted car rental prices <strong>only
-                                                            apply</strong> to customers <strong>booking HaGiangMountain&#39;s Tour
+                                                            apply</strong> to customers <strong>booking
+                                                            HaGiangMountain&#39;s Tour
                                                             tours</strong></p>
                                                 </label>
                                             </div>
@@ -1731,7 +936,8 @@
                                             <div class="gift_item">
                                                 <figure class="image">
                                                     <label for="buy_gift_1">
-                                                        <img class="lazy" alt="Ha Giang Loop T-shirt by HaGiangMountain’s Tour"
+                                                        <img class="lazy"
+                                                            alt="Ha Giang Loop T-shirt by HaGiangMountain’s Tour"
                                                             width="200px" height="200px"
                                                             data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg"
                                                             data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg.webp">
@@ -1740,13 +946,15 @@
                                                 <div class="content">
                                                     <input type="radio" name="buy_gift" class="buy_gift is_special" checked
                                                         id="buy_gift_1" value="1" />
-                                                    <label for="buy_gift_1">Ha Giang Loop T-shirt by HaGiangMountain’s Tour</label>
+                                                    <label for="buy_gift_1">Ha Giang Loop T-shirt by HaGiangMountain’s
+                                                        Tour</label>
                                                 </div>
                                             </div>
                                             <div class="gift_item">
                                                 <figure class="image">
                                                     <label for="buy_gift_2">
-                                                        <img class="lazy" alt="Ha Giang Loop handbag by HaGiangMountain's Tour"
+                                                        <img class="lazy"
+                                                            alt="Ha Giang Loop handbag by HaGiangMountain's Tour"
                                                             width="200px" height="200px"
                                                             data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg"
                                                             data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg.webp">
@@ -1755,7 +963,8 @@
                                                 <div class="content">
                                                     <input type="radio" name="buy_gift" class="buy_gift is_special"
                                                         id="buy_gift_2" value="2" />
-                                                    <label for="buy_gift_2">Ha Giang Loop handbag by HaGiangMountain's Tour</label>
+                                                    <label for="buy_gift_2">Ha Giang Loop handbag by HaGiangMountain's
+                                                        Tour</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1832,9 +1041,9 @@
                                         </table>
                                         <table class="form_price_tour">
                                             <!-- <tr>
-                    <th width="50%"></th>
-                    <th width="50%">4%</th>
-                </tr> -->
+                                                                <th width="50%"></th>
+                                                                <th width="50%">4%</th>
+                                                            </tr> -->
                                             <tr>
                                                 <th width="50%">Voucher code</th>
                                                 <th width="50%" class="th_voucher">
@@ -1984,13 +1193,16 @@
 
                                     <div class="content " id="content-2">
                                         <div class="content2">
-                                            <p>At HaGiangMountain&#39;s Homestay, we are pleased to provide complimentary luggage
+                                            <p>At HaGiangMountain&#39;s Homestay, we are pleased to provide complimentary
+                                                luggage
                                                 storage for our guests. Please feel free to leave your large backpack with
                                                 us, allowing you to carry only the essentials in smaller bags during the
                                                 loop. This ensures you can fully enjoy your adventure without the burden of
                                                 heavy luggage. For any valuable items, please hand them to our receptionist
-                                                or secure them in the locker at HaGiangMountain&#39;s Homestay (you will need to
-                                                provide your own lock). HaGiangMountain&#39;s Homestay cannot guarantee the safety of
+                                                or secure them in the locker at HaGiangMountain&#39;s Homestay (you will
+                                                need to
+                                                provide your own lock). HaGiangMountain&#39;s Homestay cannot guarantee the
+                                                safety of
                                                 luggage stored at our Lugg storage.</p>
                                         </div>
                                     </div>
@@ -2017,9 +1229,11 @@
                                                         style="color:#f1c40f">How to drive a semi-automatic scooter
                                                         effectively (mamashomestay.com)</span></a></p>
 
-                                            <p><em><span style="color:#f39c12">Note: HaGiangMountain&#39;s Homestay kindly reminds
+                                            <p><em><span style="color:#f39c12">Note: HaGiangMountain&#39;s Homestay kindly
+                                                        reminds
                                                         guests to have an International Driving Permit (IDP) if they plan to
-                                                        drive during their stay. Please note that HaGiangMountain&#39;s Homestay is not
+                                                        drive during their stay. Please note that HaGiangMountain&#39;s
+                                                        Homestay is not
                                                         responsible for any penalties or issues if you are caught by the
                                                         police without a valid IDP. Drive safely and enjoy your
                                                         journey!</span></em></p>
@@ -2280,7 +1494,8 @@
                         </a>
                         <div class="info_new">
                             <a href='how-to-make-a-tour-reservation-on-HaGiangMountain-homestay-website/index.html'
-                                title="How to make a tour reservation on HaGiangMountain Homestay website">How to make a tour
+                                title="How to make a tour reservation on HaGiangMountain Homestay website">How to make a
+                                tour
                                 reservation on HaGiangMountain Homestay website</a>
                             <div class="infor_new_basic">
                                 <div class="datetime"><svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"
@@ -2316,15 +1531,16 @@
                         <a href='HaGiangMountain-s-homestay-bus-service-pick-up-location/index.html'
                             title="HaGiangMountain's homestay bus service: Pick-up location">
                             <figure>
-                                <img class="lazy" alt="HaGiangMountain's homestay bus service: Pick-up location" width="170px"
-                                    height="170px"
+                                <img class="lazy" alt="HaGiangMountain's homestay bus service: Pick-up location"
+                                    width="170px" height="170px"
                                     data-src="https://mamashomestay.com/images/news/2024/01/03/small/luxury-bus-1_1704269975.jpeg"
                                     data-srcset="https://mamashomestay.com/images/news/2024/01/03/small/luxury-bus-1_1704269975.jpeg.webp">
                             </figure>
                         </a>
                         <div class="info_new">
                             <a href='HaGiangMountain-s-homestay-bus-service-pick-up-location/index.html'
-                                title="HaGiangMountain's homestay bus service: Pick-up location">HaGiangMountain's homestay bus service: Pick-up
+                                title="HaGiangMountain's homestay bus service: Pick-up location">HaGiangMountain's homestay
+                                bus service: Pick-up
                                 location</a>
                             <div class="infor_new_basic">
                                 <div class="datetime"><svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"

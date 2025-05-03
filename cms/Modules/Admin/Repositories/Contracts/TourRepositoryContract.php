@@ -11,4 +11,6 @@ interface TourRepositoryContract extends CoreBaseRepositoryContract
     public function getTourRelated($id, $category_id);
 
     public function getAllTour();
+
+    public function getTourWithInfo();
 }

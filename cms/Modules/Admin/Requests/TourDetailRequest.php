@@ -28,7 +28,6 @@ class TourDetailRequest extends FormRequest
             'name' => 'required',
             'tour_id' => 'required',
             'content' => 'required',
-            'image' => 'required',
         ];
     }
 }

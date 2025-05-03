@@ -592,7 +592,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Fjm2Hj8Pw0wCqHxb',
+            '_route' => 'generated::96IhenyOM08QeUFc',
           ),
           1 => NULL,
           2 => 
@@ -628,7 +628,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::KGi4LDhlYwtOAawY',
+            '_route' => 'generated::OV9jamUqFivdxGeN',
           ),
           1 => NULL,
           2 => 
@@ -818,7 +818,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|ategory/(?|edit/([^/]++)(*:96)|update/([^/]++)(*:118)|delete/([^/]++)(*:141))|ontact/delete/([^/]++)(*:172))|s(?|etting/(?|edit/([^/]++)(*:208)|update/([^/]++)(*:231)|delete/([^/]++)(*:254))|lider/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331)))|p(?|ost/(?|edit/([^/]++)(*:365)|update/([^/]++)(*:388)|delete/([^/]++)(*:411))|assword/reset/([^/]++)(*:442))|tour(?|/(?|edit/([^/]++)(*:475)|update/([^/]++)(*:498)|delete/([^/]++)(*:521))|\\-(?|detail/(?|edit/([^/]++)(*:558)|update/([^/]++)(*:581)|delete/([^/]++)(*:604))|price/(?|edit/([^/]++)(*:635)|update/([^/]++)(*:658)|delete/([^/]++)(*:681)))))|/email/verify/([^/]++)/([^/]++)(*:724)|/([^/]++)(*:741)|/language/([^/]++)(*:767)|/content/([^/]++)(*:792)|/detail\\-content/([^/]++)(*:825)|/booking/([^/]++)/([^/]++)(?|(*:862)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|c(?|ategory/(?|edit/([^/]++)(*:96)|update/([^/]++)(*:118)|delete/([^/]++)(*:141))|ontact/delete/([^/]++)(*:172))|s(?|etting/(?|edit/([^/]++)(*:208)|update/([^/]++)(*:231)|delete/([^/]++)(*:254))|lider/(?|edit/([^/]++)(*:285)|update/([^/]++)(*:308)|delete/([^/]++)(*:331)))|p(?|ost/(?|edit/([^/]++)(*:365)|update/([^/]++)(*:388)|delete/([^/]++)(*:411))|assword/reset/([^/]++)(*:442))|tour(?|/(?|edit/([^/]++)(*:475)|update/([^/]++)(*:498)|delete/([^/]++)(*:521))|\\-(?|detail/(?|edit/([^/]++)(*:558)|update/([^/]++)(*:581)|delete/([^/]++)(*:604))|price/(?|edit/([^/]++)(*:635)|update/([^/]++)(*:658)|delete/([^/]++)(*:681)))))|/email/verify/([^/]++)/([^/]++)(*:724)|/([^/]++)(*:741)|/language/([^/]++)(*:767))/?$}sDu',
     ),
     3 => 
     array (
@@ -1442,7 +1442,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qdav3Gsa35KeLqYR',
+            '_route' => 'generated::UFanLS7zrfZ334Ct',
           ),
           1 => 
           array (
@@ -1458,97 +1458,7 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-      ),
-      792 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'client.contentList',
-          ),
-          1 => 
-          array (
-            0 => 'slug',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      825 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'client.contentDetail',
-          ),
-          1 => 
-          array (
-            0 => 'slug',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      862 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'client.booking',
-          ),
-          1 => 
-          array (
-            0 => 'type',
-            1 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
         1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'client.addToCart',
-          ),
-          1 => 
-          array (
-            0 => 'type',
-            1 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        2 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -3559,7 +3469,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Fjm2Hj8Pw0wCqHxb' => 
+    'generated::96IhenyOM08QeUFc' => 
     array (
       'methods' => 
       array (
@@ -3580,7 +3490,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Fjm2Hj8Pw0wCqHxb',
+        'as' => 'generated::96IhenyOM08QeUFc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3634,7 +3544,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::KGi4LDhlYwtOAawY' => 
+    'generated::OV9jamUqFivdxGeN' => 
     array (
       'methods' => 
       array (
@@ -3655,7 +3565,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::KGi4LDhlYwtOAawY',
+        'as' => 'generated::OV9jamUqFivdxGeN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4070,7 +3980,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::qdav3Gsa35KeLqYR' => 
+    'generated::UFanLS7zrfZ334Ct' => 
     array (
       'methods' => 
       array (
@@ -4087,156 +3997,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000004f7636c2000000001093bd29";}";s:4:"hash";s:44:"flGOq+LBGyhymSiwFMio42ETweJg1NFbkLrMRZ9xOJo=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000004fb962ab00000000180cdf55";}";s:4:"hash";s:44:"ZHfGKhnTvIs/9C+ajhJ3jvGv8vwN4Rdfpkd056TEdo0=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::qdav3Gsa35KeLqYR',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'client.contentList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'content/{slug}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'web',
-        ),
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentList',
-        'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/content',
-        'where' => 
-        array (
-        ),
-        'as' => 'client.contentList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'client.contentDetail' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'detail-content/{slug}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'web',
-        ),
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contentDetail',
-        'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '/detail-content',
-        'where' => 
-        array (
-        ),
-        'as' => 'client.contentDetail',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'client.booking' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'booking/{type}/{id}',
-      'action' => 
-      array (
-        'middleware' => 'web',
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@booking',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@booking',
-        'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'client.booking',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'client.addToCart' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'booking/{type}/{id}',
-      'action' => 
-      array (
-        'middleware' => 'web',
-        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@addToCart',
-        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@addToCart',
-        'namespace' => 'Cms\\Modules\\Home\\Controllers',
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'client.addToCart',
+        'as' => 'generated::UFanLS7zrfZ334Ct',
       ),
       'fallback' => false,
       'defaults' => 
