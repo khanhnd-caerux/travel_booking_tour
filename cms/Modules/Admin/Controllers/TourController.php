@@ -3,6 +3,8 @@
 namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
+use Cms\Modules\Admin\Services\Contracts\TourDetailServiceContract;
+use Cms\Modules\Admin\Services\Contracts\TourPriceServiceContract;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -11,6 +13,7 @@ use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
+use Cms\Modules\Admin\Requests\TourPriceRequest;
 use Cms\Modules\Admin\Requests\TourUpdateRequest;
 
 class TourController extends Controller
@@ -19,11 +22,18 @@ class TourController extends Controller
 
     use StorageImageTrait;
 
-    public function __construct(TourServiceContract $service, TourImageServiceContract $image, CategoryServiceContract $category)
-    {
+    public function __construct(
+        TourServiceContract $service,
+        TourImageServiceContract $image,
+        CategoryServiceContract $category,
+        TourPriceServiceContract $tourPrice,
+        TourDetailServiceContract $tourDetail
+    ) {
         $this->service = $service;
         $this->image = $image;
         $this->category = $category;
+        $this->tourPrice = $tourPrice;
+        $this->tourDetail = $tourDetail;
     }
     public function list()
     {
@@ -139,5 +149,66 @@ class TourController extends Controller
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
         }
+    }
+
+    public function list_price()
+    {
+        $tourPrices = $this->tourPrice->getAllTourPrice(10);
+
+        return view('Admin::tour-price.list', compact('tourPrices'));
+    }
+
+    public function create_price()
+    {
+        $tours = $this->service->getAll();
+        return view('Admin::tour-price.create', compact('tours'));
+    }
+
+    public function store_price(TourPriceRequest $request)
+    {
+        $data = [
+            'description' => $request->description,
+            'price' => $request->price,
+            'tour_id' => $request->tour_id
+        ];
+        $this->tourPrice->store($data);
+
+        return redirect()->route('admin.tour_price.list')->with('success', 'Create tour price success!');
+    }
+
+    public function delete_price($id)
+    {
+        try {
+            DB::beginTransaction();
+            $this->tourPrice->delete($id);
+            DB::commit();
+            return response()->json([
+                'code' => 200,
+                'message' => 'success'
+            ], 200);
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+        }
+    }
+
+    public function edit_price($id)
+    {
+        $tourPrice = $this->tourPrice->find($id);
+        $tours = $this->service->getAll();
+
+        return view('Admin::tour-price.edit', compact('tourPrice', 'tours'));
+    }
+
+    public function update_price($id, TourPriceRequest $request)
+    {
+        $data = [
+            'description' => $request->description,
+            'price' => $request->price,
+            'tour_id' => $request->tour_id
+        ];
+        $this->tourPrice->update($id, $data);
+
+        return redirect()->route('admin.tour_price.list')->with('success', 'Update tour success!');
     }
 }

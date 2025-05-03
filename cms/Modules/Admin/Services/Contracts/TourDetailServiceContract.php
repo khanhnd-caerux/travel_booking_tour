@@ -4,6 +4,6 @@ namespace Cms\Modules\Admin\Services\Contracts;
 
 use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
 
-interface TicketImageServiceContract extends CoreBaseServiceContract
+interface TourDetailServiceContract extends CoreBaseServiceContract
 {
 }

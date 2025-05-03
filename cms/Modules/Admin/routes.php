@@ -77,37 +77,26 @@ Route::group([
         Route::get('/delete/{id}', 'TourController@delete')->name('admin.tour.delete');
     });
     Route::group([
-        'prefix' => 'car',
+        'prefix' => 'tour-detail',
         'middleware' => ['auth']
     ], function () {
-        Route::get('/list', 'CarController@list')->name('admin.car.list');
-        Route::get('/create', 'CarController@create')->name('admin.car.create');
-        Route::get('/edit/{id}', 'CarController@edit')->name('admin.car.edit');
-        Route::post('/update/{id}', 'CarController@update')->name('admin.car.update');
-        Route::post('/store', 'CarController@store')->name('admin.car.store');
-        Route::get('/delete/{id}', 'CarController@delete')->name('admin.car.delete');
+        Route::get('/list', 'TourController@list_detail')->name('admin.tour_detail.list');
+        Route::get('/create', 'TourController@create_detail')->name('admin.tour_detail.create');
+        Route::get('/edit/{id}', 'TourController@edit_detail')->name('admin.tour_detail.edit');
+        Route::post('/update/{id}', 'TourController@update_detail')->name('admin.tour_detail.update');
+        Route::post('/store', 'TourController@store_detail')->name('admin.tour_detail.store');
+        Route::get('/delete/{id}', 'TourController@delete_detail')->name('admin.tour_detail.delete');
     });
     Route::group([
-        'prefix' => 'ticket',
+        'prefix' => 'tour-price',
         'middleware' => ['auth']
     ], function () {
-        Route::get('/list', 'TicketController@list')->name('admin.ticket.list');
-        Route::get('/create', 'TicketController@create')->name('admin.ticket.create');
-        Route::get('/edit/{id}', 'TicketController@edit')->name('admin.ticket.edit');
-        Route::post('/update/{id}', 'TicketController@update')->name('admin.ticket.update');
-        Route::post('/store', 'TicketController@store')->name('admin.ticket.store');
-        Route::get('/delete/{id}', 'TicketController@delete')->name('admin.ticket.delete');
-    });
-    Route::group([
-        'prefix' => 'charity',
-        'middleware' => ['auth']
-    ], function () {
-        Route::get('/list', 'CharityController@list')->name('admin.charity.list');
-        Route::get('/detail/{id}', 'CharityController@detail')->name('admin.charity.detail');
-        Route::get('/create', 'CharityController@create')->name('admin.charity.create');
-        Route::post('/store', 'CharityController@store')->name('admin.charity.store');
-        Route::get('/delete/{id}', 'CharityController@delete')->name('admin.charity.delete');
-        Route::post('/update/{id}', 'CharityController@update')->name('admin.charity.update');
+        Route::get('/list', 'TourController@list_price')->name('admin.tour_price.list');
+        Route::get('/create', 'TourController@create_price')->name('admin.tour_price.create');
+        Route::get('/edit/{id}', 'TourController@edit_price')->name('admin.tour_price.edit');
+        Route::post('/update/{id}', 'TourController@update_price')->name('admin.tour_price.update');
+        Route::post('/store', 'TourController@store_price')->name('admin.tour_price.store');
+        Route::get('/delete/{id}', 'TourController@delete_price')->name('admin.tour_price.delete');
     });
     Route::group([
         'prefix' => 'contact',

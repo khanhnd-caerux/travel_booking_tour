@@ -64,21 +64,21 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage && $activePage == 'car') active bg-gradient-primary @endif"
-                href="{{ route('admin.car.list') }}">
+            <a class="nav-link text-white @if($activePage && $activePage == 'tour-detail') active bg-gradient-primary @endif"
+                href="{{ route('admin.tour_detail.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">directions_car</i>
+                    <i class="material-icons opacity-10">tour</i>
                 </div>
-                <span class="nav-link-text ms-1">Thuê xe</span>
+                <span class="nav-link-text ms-1">Tour chi tiết</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white @if($activePage && $activePage == 'ticket') active bg-gradient-primary @endif"
-                href="{{ route('admin.ticket.list') }}">
+            <a class="nav-link text-white @if($activePage && $activePage == 'tour-price') active bg-gradient-primary @endif"
+                href="{{ route('admin.tour_price.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">confirmation_number</i>
+                    <i class="material-icons opacity-10">tour</i>
                 </div>
-                <span class="nav-link-text ms-1">Vé xe</span>
+                <span class="nav-link-text ms-1">Giá Tour</span>
             </a>
         </li>
         <li class="nav-item">
@@ -88,15 +88,6 @@
                     <i class="material-icons opacity-10">post_add</i>
                 </div>
                 <span class="nav-link-text ms-1">Bài viết</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white @if($activePage && $activePage == 'charity') active bg-gradient-primary @endif"
-                href="{{ route('admin.charity.list') }}">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">personal_injury</i>
-                </div>
-                <span class="nav-link-text ms-1">Từ thiện</span>
             </a>
         </li>
         <li class="nav-item">

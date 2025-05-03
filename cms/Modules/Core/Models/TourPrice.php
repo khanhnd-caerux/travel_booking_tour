@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Project extends Model
+class TourPrice extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = "projects";
+    protected $table = "tour_prices";
+    protected $fillable = [
+        'price',
+        'description',
+        'tour_id',
+    ];
 }

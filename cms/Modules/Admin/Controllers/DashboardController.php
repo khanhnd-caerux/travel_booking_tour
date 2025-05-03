@@ -3,8 +3,6 @@
 namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
-use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
-use Cms\Modules\Admin\Services\Contracts\TicketServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 
 class DashboardController extends Controller
@@ -13,20 +11,14 @@ class DashboardController extends Controller
 
     public function __construct
     (
-        TourServiceContract $tour,
-        TicketServiceContract $ticket,
-        CarServiceContract $car
+        TourServiceContract $tour
     ) {
         $this->tour = $tour;
-        $this->car = $car;
-        $this->ticket = $ticket;
     }
     public function dashboard()
     {
         $tourNumber = $this->tour->getAll()->count();
-        $carNumber = $this->car->getAll()->count();
-        $ticketNumber = $this->ticket->getAll()->count();
 
-        return view('Admin::dashboard', compact('tourNumber', 'carNumber', 'ticketNumber'));
+        return view('Admin::dashboard', compact('tourNumber'));
     }
 }

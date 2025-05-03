@@ -38,8 +38,6 @@ class HomeController extends Controller
         PostServiceContract $post,
         CategoryServiceContract $category,
         TourServiceContract $tour,
-        CarServiceContract $car,
-        TicketServiceContract $ticket,
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
         OrderDetailServiceContract $orderDetailService,
@@ -50,8 +48,6 @@ class HomeController extends Controller
         $this->post = $post;
         $this->category = $category;
         $this->tour = $tour;
-        $this->car = $car;
-        $this->ticket = $ticket;
         $this->contact = $contact;
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;

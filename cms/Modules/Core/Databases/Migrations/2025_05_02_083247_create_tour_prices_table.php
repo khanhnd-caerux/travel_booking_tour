@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCarImagesTable extends Migration
+class CreateTourPriceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateCarImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('car_images', function (Blueprint $table) {
+        Schema::create('tour_prices', function (Blueprint $table) {
             $table->id();
-            $table->string('image_path')->nullable();
-            $table->integer('car_id');
+            $table->integer('tour_id');
+            $table->string('description');
+            $table->float('price');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ class CreateCarImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_images');
+        Schema::dropIfExists('tour_prices');
     }
 }
