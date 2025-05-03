@@ -6,4 +6,5 @@ use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
 
 interface TourDetailServiceContract extends CoreBaseServiceContract
 {
+    public function getAllTourDetail($number);
 }

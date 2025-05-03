@@ -15,4 +15,8 @@ class TourDetailService extends CoreBaseService implements TourDetailServiceCont
         $this->repository = $repository;
     }
 
+    public function getAllTourDetail($number)
+    {
+        return $this->repository->getAllTourDetail($number);
+    }
 }

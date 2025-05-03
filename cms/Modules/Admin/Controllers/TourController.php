@@ -15,6 +15,7 @@ use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
 use Cms\Modules\Admin\Requests\TourPriceRequest;
 use Cms\Modules\Admin\Requests\TourUpdateRequest;
+use Cms\Modules\Admin\Requests\TourDetailRequest;
 
 class TourController extends Controller
 {
@@ -178,18 +179,12 @@ class TourController extends Controller
 
     public function delete_price($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->tourPrice->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        $this->tourPrice->delete($id);
+
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], 200);
     }
 
     public function edit_price($id)
@@ -210,5 +205,78 @@ class TourController extends Controller
         $this->tourPrice->update($id, $data);
 
         return redirect()->route('admin.tour_price.list')->with('success', 'Update tour success!');
+    }
+
+    public function list_detail()
+    {
+        $tourDetails = $this->tourDetail->getAllTourDetail(10);
+
+        return view('Admin::tour-detail.list', compact('tourDetails'));
+    }
+
+    public function create_detail()
+    {
+        $tours = $this->service->getAll();
+        return view('Admin::tour-detail.create', compact('tours'));
+    }
+
+    public function store_detail(TourDetailRequest $request)
+    {
+        $data = [
+            'content' => $request->content,
+            'description' => $request->description,
+            'name' => $request->name,
+            'tour_id' => $request->tour_id,
+        ];
+
+        $dataImage = $this->storageImageUpload($request, 'image', 'tour-detail');
+
+        if (!empty($dataImage)) {
+            $data['image'] = $dataImage['file_path'];
+        }
+
+        $this->tourDetail->store($data);
+
+        return redirect()->route('admin.tour_detail.list')->with('success', 'Create tour detail success!');
+    }
+
+    public function delete_detail($id)
+    {
+        $this->tourDetail->delete($id);
+
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], 200);
+    }
+
+    public function edit_detail($id)
+    {
+        $tourDetail = $this->tourDetail->find($id);
+        $tours = $this->service->getAll();
+
+        return view('Admin::tour-detail.edit', compact('tourDetail', 'tours'));
+    }
+
+    public function update_detail($id, TourDetailRequest $request)
+    {
+        $data = [
+            'content' => $request->content,
+            'description' => $request->description,
+            'name' => $request->name,
+            'tour_id' => $request->tour_id,
+        ];
+
+        if ($request->image) {
+            $dataImage = $this->storageImageUpload($request, 'image', 'tour-detail');
+
+            if (!empty($dataImage)) {
+                $data['image'] = $dataImage['file_path'];
+            }
+        }
+
+        $this->tourDetail->update($id, $data);
+
+        return redirect()->route('admin.tour_detail.list')->with('success', 'Update tour detail success!');
     }
 }

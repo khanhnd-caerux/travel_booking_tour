@@ -16,6 +16,14 @@ class TourDetailRepository extends CoreBaseRepository implements TourDetailRepos
         $this->tourDetail = $tourDetail;
     }
 
+    public function getAllTourDetail($number)
+    {
+        return $this->tourDetail
+            ->where('deleted_at', null)
+            ->orderBy('created_at', 'desc')
+            ->paginate($number);
+    }
+
     public function deleteBeforeUpdate($id)
     {
         return $this->tourDetail
