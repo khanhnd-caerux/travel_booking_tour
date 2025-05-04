@@ -50,7 +50,8 @@
     <meta name="geo.position" content="21;105.83" />
     <meta name="ICBM" content="21, 105.83" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
-    <link rel="alternate" type="application/rss+xml" title="HaGiangMountain’s Homestay - Explore Ha Giang Feed" href="rss.html" />
+    <link rel="alternate" type="application/rss+xml" title="HaGiangMountain’s Homestay - Explore Ha Giang Feed"
+        href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
     @yield('css')
 </head>
@@ -171,16 +172,7 @@
         </div>
     </div>
     <script async='async' language="javascript" type="text/javascript"
-        src="{{asset('frontend/cache/js/1339e18ad29b457616a4a343f51780b91520.js?20250419171143')}}">
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-26NZ4VBNQ2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-26NZ4VBNQ2');
-    </script>
+        src="{{asset('frontend/cache/js/1339e18ad29b457616a4a343f51780b91520.js?20250419171143')}}"></script>
 </body>
 
 </html>

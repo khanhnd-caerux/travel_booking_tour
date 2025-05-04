@@ -592,7 +592,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::96IhenyOM08QeUFc',
+            '_route' => 'generated::YuYS13JN0CZWOODc',
           ),
           1 => NULL,
           2 => 
@@ -628,7 +628,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::OV9jamUqFivdxGeN',
+            '_route' => 'generated::fwSV586zz9ESzpDr',
           ),
           1 => NULL,
           2 => 
@@ -788,6 +788,26 @@ app('router')->setCompiledRoutes(
           2 => 
           array (
             'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/contact/contact-form' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'client.contact',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
           ),
           3 => NULL,
           4 => false,
@@ -1442,7 +1462,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UFanLS7zrfZ334Ct',
+            '_route' => 'generated::lIxkhYpafxM9YKRd',
           ),
           1 => 
           array (
@@ -3469,7 +3489,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::96IhenyOM08QeUFc' => 
+    'generated::YuYS13JN0CZWOODc' => 
     array (
       'methods' => 
       array (
@@ -3490,7 +3510,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::96IhenyOM08QeUFc',
+        'as' => 'generated::YuYS13JN0CZWOODc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3544,7 +3564,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::OV9jamUqFivdxGeN' => 
+    'generated::fwSV586zz9ESzpDr' => 
     array (
       'methods' => 
       array (
@@ -3565,7 +3585,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::OV9jamUqFivdxGeN',
+        'as' => 'generated::fwSV586zz9ESzpDr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3980,7 +4000,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::UFanLS7zrfZ334Ct' => 
+    'generated::lIxkhYpafxM9YKRd' => 
     array (
       'methods' => 
       array (
@@ -3997,13 +4017,47 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000004fb962ab00000000180cdf55";}";s:4:"hash";s:44:"ZHfGKhnTvIs/9C+ajhJ3jvGv8vwN4Rdfpkd056TEdo0=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000001bd757eb00000000236ea554";}";s:4:"hash";s:44:"O66IDrxDQ/OWKMDFi4jN5vlXREim7zLtjaBhO/A84MM=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::UFanLS7zrfZ334Ct',
+        'as' => 'generated::lIxkhYpafxM9YKRd',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'client.contact' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contact/contact-form',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contactPage',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@contactPage',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'client.contact',
       ),
       'fallback' => false,
       'defaults' => 

@@ -14,4 +14,9 @@ class ContactService extends CoreBaseService implements ContactServiceContract
     {
         $this->repository = $repository;
     }
+
+    public function getAllContact($number)
+    {
+        return $this->repository->getAllContact($number);
+    }
 }

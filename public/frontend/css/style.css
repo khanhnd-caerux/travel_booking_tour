@@ -12442,7 +12442,6 @@ body.compensate-for-scrollbar {
 }
 @media screen and (min-width: 1440px) {
     .bg-discover {
-        min-height: 85.938vw;
         border-radius: 0 0 13.021vw 0;
     }
 }

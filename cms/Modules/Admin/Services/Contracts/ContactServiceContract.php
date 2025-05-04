@@ -6,5 +6,5 @@ use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
 
 interface ContactServiceContract extends CoreBaseServiceContract
 {
-
+    public function getAllContact($number);
 }

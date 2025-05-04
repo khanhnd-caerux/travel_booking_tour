@@ -54,10 +54,10 @@ class TourRepository extends CoreBaseRepository implements TourRepositoryContrac
         return $this->tour
             ->with([
                 'tourPrices' => function ($query) {
-                    $query->whereNull('deleted_at');
+                    $query->whereNull('deleted_at')->orderBy('id', 'asc');
                 },
                 'tourDetails' => function ($query) {
-                    $query->whereNull('deleted_at');
+                    $query->whereNull('deleted_at')->orderBy('id', 'asc');
                 }
             ])
             ->where('status', 0)

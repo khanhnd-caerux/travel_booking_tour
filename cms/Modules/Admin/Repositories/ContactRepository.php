@@ -15,4 +15,12 @@ class ContactRepository extends CoreBaseRepository implements ContactRepositoryC
         parent::__construct($contact);
         $this->contact = $contact;
     }
+
+    public function getAllContact($number)
+    {
+        return $this->contact
+            ->whereNull('deleted_at')
+            ->orderBy('id', 'desc')
+            ->paginate($number);
+    }
 }

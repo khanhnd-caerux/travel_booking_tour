@@ -29,7 +29,7 @@
                                     <th>Email</th>
                                     <th>SĐT liên hệ</th>
                                     <th>Ghi chú</th>
-                                    <th>Link trang</th>
+                                    <th>Địa chỉ </th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Chức năng</th>
                                 </tr>
@@ -38,12 +38,11 @@
                                 @foreach ($contacts->sortByDesc('id') as $contact)
                                 <tr style="text-align: left">
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
-                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->full_name }}</td>
                                     <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->phone_number }}</td>
+                                    <td>{{ $contact->whats_app }}</td>
                                     <td>{{ $contact->note }}</td>
-                                    <td><a href="{{ $contact->url }}" target="_blank" rel="noopener noreferrer">{{ $contact->url }}</a>
-                                    </td>
+                                    <td>{{ $contact->country }}</td>
                                     <td>{{ $contact->updated_at }}</td>
                                     <td class="td-actions text-right">
                                         <a class="btn text-danger text-gradient px-3 mb-0 action_delete" href=""

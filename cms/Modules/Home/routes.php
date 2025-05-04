@@ -17,5 +17,6 @@ Route::group([
         session()->put('locale', $locale);
         return redirect()->route('client.index');
     });
+    Route::get('/contact/contact-form', 'HomeController@contactPage')->name('client.contact');
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
 });

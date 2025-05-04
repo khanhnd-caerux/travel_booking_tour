@@ -10,8 +10,6 @@ use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Session;
-use Carbon\Carbon;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
@@ -71,38 +69,32 @@ class HomeController extends Controller
         return view('Home::postDetail', compact('postDetail'));
     }
 
+    public function contactPage()
+    {
+        return view('Home::contact');
+    }
+
     public function sendContact(Request $request)
     {
-        if (!empty($request->input('honeypot'))) {
-            return redirect()->back()->withErrors(['error' => 'Spam detected.']);
-        }
-        try {
-            DB::beginTransaction();
-            $dataContact = [
-                'phone_number' => $request->code_phone . ' ' . $request->phone_number,
-                'url' => $request->url,
-                'name' => $request->name,
-                'email' => $request->email,
-                'note' => $request->note,
-            ];
-            $this->contact->store($dataContact);
-            $message = [
-                'customer' => $request->name,
-                'phone' => $request->code_phone . ' ' . $request->phone_number,
-                'email' => $request->email,
-                'note' => $request->note,
-                'link' => route('admin.contact.list'),
-            ];
-            $users = $this->userService->getAll();
-            SendEmail::dispatch($message, $users);
-            DB::commit();
-            return redirect()->back()->with('success', "Thank you for booking the tour, we will contact you soon via Email or phone number.");
+        $dataContact = [
+            'whats_app' => $request->contact_phone,
+            'full_name' => $request->contact_name,
+            'country' => $request->contact_address,
+            'email' => $request->contact_email,
+            'note' => $request->message,
+        ];
+        $this->contact->store($dataContact);
+        $message = [
+            'customer' => $request->name,
+            'phone' => $request->whats_app,
+            'email' => $request->email,
+            'note' => $request->message,
+            'link' => route('admin.contact.list'),
+        ];
+        $users = $this->userService->getAll();
+        SendEmail::dispatch($message, $users);
 
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->route('client.index');
-        }
+        return redirect()->route('client.contact');
     }
 
     public function successBooking()

@@ -23,7 +23,8 @@ class ContactController extends Controller
     }
     public function list()
     {
-        $contacts = $this->service->paginate(10);
+        $contacts = $this->service->getAllContact(10);
+
         return view('Admin::contact.list', compact('contacts'));
     }
 

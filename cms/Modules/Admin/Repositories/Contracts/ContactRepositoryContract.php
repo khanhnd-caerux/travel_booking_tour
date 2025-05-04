@@ -6,5 +6,5 @@ use Cms\Modules\Core\Repositories\Contracts\CoreBaseRepositoryContract;
 
 interface ContactRepositoryContract extends CoreBaseRepositoryContract
 {
-
+    public function getAllContact($number);
 }

@@ -105,49 +105,12 @@
 
 
                             <li class="level_0 sort ">
-                                <a href="news/index.html" class="menu_item_a tab_top_menu " title="News">
-                                    News </a>
-                            </li>
-
-
-                            <li class="level_0 sort ">
-                                <a href="contact/index.html" class="menu_item_a tab_top_menu " title="Contact">
+                                <a href="{{ route('client.contact') }}" class="menu_item_a tab_top_menu " title="Contact">
                                     Contact </a>
                             </li>
                         </ul>
                     </div>
                     <div class="clear"></div>
-                </div>
-                <div class="search_home">
-                    <button type="submit" class="button_a" title="Search">
-                        <svg width="119px" height="119px" viewBox="0 0 24.00 24.00" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z"
-                                    stroke="#fff" stroke-width="2.352" stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </g>
-                        </svg>
-                    </button>
-
-                    <div id="search" class="search search-contain s_close">
-                        <div class="search-content">
-                            <form action="https://HaGiangMountainshomestay.com/search/" name="search_form" id="search_form"
-                                method="get" onsubmit="javascript: submit_form_search();return false;">
-                                <input type="text" value="" placeholder="Search ..." id="keyword" name="keyword"
-                                    class="keyword input-text" autocomplete="off">
-                                <button type="submit" class="button-search button_s" title="Search">
-                                    Search </button>
-                                <input type="hidden" name="module" value="news">
-                                <input type="hidden" name="module" id="link_search" value="search/keyword/index.html">
-                                <input type="hidden" name="view" value="search">
-                                <input type="hidden" name="Itemid" value="10">
-                            </form>
-                        </div>
-                    </div>
                 </div>
                 <div class="sb-toggle-left navbar-left menu_show" id="click_menu_mobile_code">
                     <div class="all-navicon-line menu_show">
