@@ -5,7 +5,6 @@ namespace Cms\Modules\Core;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Cms\Modules\Admin\Services\Contracts\SettingServiceContract;
-use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 
 class ViewComposer
@@ -24,11 +23,9 @@ class ViewComposer
     public function __construct
     (
         SettingServiceContract $settingService,
-        CategoryServiceContract $categoryService,
         TourServiceContract $tourService
     ) {
         $this->settingService = $settingService;
-        $this->categoryService = $categoryService;
         $this->tourService = $tourService;
     }
 

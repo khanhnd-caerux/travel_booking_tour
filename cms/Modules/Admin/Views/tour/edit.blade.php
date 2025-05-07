@@ -81,6 +81,20 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <label for="">Tour Type</label>
+                                        @foreach(config('type.moto_types') as $id => $label)
+                                            <div>
+                                                <label>
+                                                    <input type="checkbox" name="moto_types[]" value="{{ $id }}"
+                                                        {{ in_array($id, json_decode($tour->moto_types)) ? 'checked' : '' }}>
+                                                    {{ $label }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                                 <div class="mt-3">
                                     <input type="submit" class="btn btn-success" value="Thêm mới">
                                 </div>

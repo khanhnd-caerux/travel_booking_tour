@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
-use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
 use Cms\Modules\Admin\Requests\TourPriceRequest;
 use Cms\Modules\Admin\Requests\TourDetailRequest;
@@ -25,13 +24,11 @@ class TourController extends Controller
     public function __construct(
         TourServiceContract $service,
         TourImageServiceContract $image,
-        CategoryServiceContract $category,
         TourPriceServiceContract $tourPrice,
         TourDetailServiceContract $tourDetail
     ) {
         $this->service = $service;
         $this->image = $image;
-        $this->category = $category;
         $this->tourPrice = $tourPrice;
         $this->tourDetail = $tourDetail;
     }
@@ -43,8 +40,7 @@ class TourController extends Controller
 
     public function create()
     {
-        $categoryList = $this->category->getAllCategory();
-        return view('Admin::tour.create', compact('categoryList'));
+        return view('Admin::tour.create');
     }
 
     public function store(TourRequest $request)
@@ -55,6 +51,7 @@ class TourController extends Controller
             'tour_excludes' => $request->tour_excludes,
             'status' => $request->status === "show" ? 0 : 1,
             'time' => $request->time,
+            'moto_types' => json_encode($request->moto_types),
         ];
 
         $this->service->store($data);
@@ -70,6 +67,7 @@ class TourController extends Controller
             'tour_excludes' => $request->tour_excludes,
             'status' => $request->status === "show" ? 0 : 1,
             'time' => $request->time,
+            'moto_types' => json_encode($request->moto_types)
         ];
 
         $this->service->update($id, $data);

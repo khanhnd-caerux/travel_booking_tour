@@ -3,9 +3,7 @@
 namespace Cms\Modules\Admin;
 
 use Cms\CmsServiceProvider;
-use Cms\Modules\Admin\Repositories\CategoryRepository;
 use Cms\Modules\Admin\Repositories\ContactRepository;
-use Cms\Modules\Admin\Repositories\Contracts\CategoryRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\ContactRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\OrderDetailRepositoryContract;
 use Cms\Modules\Admin\Repositories\Contracts\OrderRepositoryContract;
@@ -23,9 +21,7 @@ use Cms\Modules\Admin\Repositories\SliderRepository;
 use Cms\Modules\Admin\Repositories\TourImageRepository;
 use Cms\Modules\Admin\Repositories\TourRepository;
 use Cms\Modules\Admin\Repositories\UserRepository;
-use Cms\Modules\Admin\Services\CategoryService;
 use Cms\Modules\Admin\Services\ContactService;
-use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
@@ -63,8 +59,6 @@ class AdminServiceProvider extends CmsServiceProvider{
     {
         $this->app->bind(UserServiceContract::class, UserService::class);
         $this->app->bind(UserRepositoryContract::class, UserRepository::class);
-        $this->app->bind(CategoryRepositoryContract::class, CategoryRepository::class);
-        $this->app->bind(CategoryServiceContract::class, CategoryService::class);
         $this->app->bind(SettingServiceContract::class, SettingService::class);
         $this->app->bind(SettingRepositoryContract::class, SettingRepository::class);
         $this->app->bind(SliderRepositoryContract::class, SliderRepository::class);
