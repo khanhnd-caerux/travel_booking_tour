@@ -9,7 +9,6 @@ use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
@@ -101,4 +100,54 @@ class HomeController extends Controller
     {
         return view('Home::successBooking');
     }
+
+    public function getPricesTour(Request $request)
+    {
+        $id = $request->input('id');
+        $date = $request->input('date');
+        $type = $request->input('type');
+
+        $prices = DB::table('tour_prices')
+            ->where('tour_id', $id)
+            ->get();
+
+        $tour = DB::table('tours')
+            ->where('id', $id)
+            ->first();
+
+        $data = $prices->map(function ($item) use ($tour) {
+            return [
+                'id' => $item->id,
+                'name' => $tour->name,
+                'price' => $item->price,
+            ];
+        });
+
+        return response()->json($data);
+    }
+
+    public function countPricesTour(Request $request)
+    {
+        $id = $request->input('id');
+        $price = DB::table('tour_prices')
+            ->join('tours', 'tour_prices.tour_id', '=', 'tours.id')
+            ->select(
+                'tour_prices.price',
+                'tour_prices.description',
+                'tours.name'
+            )
+            ->where('tour_prices.id', $id)
+            ->first();
+
+        if (!$price) {
+            return response()->json(['error' => 'Không tìm thấy dữ liệu'], 404);
+        }
+
+        return response()->json([
+            'price' => $price->price,
+            'name' => $price->description,
+            'title' => $price->name
+        ]);
+    }
+
 }

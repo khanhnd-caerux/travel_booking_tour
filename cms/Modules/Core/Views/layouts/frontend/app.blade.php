@@ -38,7 +38,7 @@
     <meta property="og:image:width" content="600 " />
     <meta property="og:image:alt" content="HaGiangMountain’s Homestay - Explore Ha Giang">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="index.html">
     <meta content="INDEX,FOLLOW" name="robots" />
     <meta name="googlebot" content="index,follow" />
@@ -172,7 +172,7 @@
         </div>
     </div>
     <script async='async' language="javascript" type="text/javascript"
-        src="{{asset('frontend/cache/js/1339e18ad29b457616a4a343f51780b91520.js?20250419171143')}}"></script>
+        src="{{asset('frontend/cache/js/app.js')}}"></script>
 </body>
 
 </html>

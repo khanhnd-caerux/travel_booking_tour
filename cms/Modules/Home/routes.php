@@ -19,4 +19,6 @@ Route::group([
     });
     Route::get('/contact/contact-form', 'HomeController@contactPage')->name('client.contact');
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
+    Route::post('/ajax-get-prices-tour', 'HomeController@getPricesTour');
+    Route::post('/ajax-count-prices-tour', 'HomeController@countPricesTour');
 });

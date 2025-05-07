@@ -362,16 +362,10 @@
                                                 <div class="mbl_txt">
                                                     <select name="buy_tour" id="buy_tour" class="txtinput buy_tour">
                                                         <option value="" style="display: none">TOUR</option>
-                                                        <option id="buy_tour_1" value="1" data-day="2">Ha Giang tour 2 days
-                                                            1 night</option>
-                                                        <option id="buy_tour_2" value="2" data-day="3">Ha Giang tour 3 days
-                                                            2 nights</option>
-                                                        <option id="buy_tour_3" value="3" data-day="4">Ha Giang tour 4 days
-                                                            3 nights</option>
-                                                        <option id="buy_tour_4" value="4" data-day="6">Ha Giang - Cao Bang
-                                                            tour 6 days 5 nights</option>
-                                                        <option id="buy_tour_5" value="5" data-day="0">PRIVATE CAR TOUR
-                                                            (request) </option>
+                                                        @foreach ($tours as $tour)
+                                                            <option id="buy_tour_{{ $tour->id }}" value="{{ $tour->id }}"
+                                                                data-day="2">{{$tour->name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="mbl_txt">
@@ -671,9 +665,9 @@
                                         </table>
                                         <table class="form_price_tour">
                                             <!-- <tr>
-                                                                            <th width="50%"></th>
-                                                                            <th width="50%">4%</th>
-                                                                        </tr> -->
+                                                                                    <th width="50%"></th>
+                                                                                    <th width="50%">4%</th>
+                                                                                </tr> -->
                                             <tr>
                                                 <th width="50%">Voucher code</th>
                                                 <th width="50%" class="th_voucher">
