@@ -268,8 +268,8 @@ var jump = function (e) {
         {
             scrollTop: $(target).offset().top
         }, 1000, function () {
-        location.hash = target;
-    });
+            location.hash = target;
+        });
 }
 
 // $('html, body').hide();
@@ -2673,7 +2673,6 @@ $(document).ready(function () {
             $('#buy_tour option#buy_tour_' + id_tour).prop('selected', true);
             // Cuộn màn hình đến vị trí form
             $('html, body').animate({ scrollTop: $('#buy_fast_form_default').offset().top - ($(window).height() / 4) }, 1000);
-            ajax_get_prices_tour(id_tour, $('#datepicker3').val());
         })
     });
 
@@ -2705,7 +2704,6 @@ $(document).ready(function () {
 
 
         var selectedDataMoto = $('#buy_type').find('option:selected').attr('data-moto');
-        console.log(selectedDataMoto)
         if (selectedDataMoto == 1) {
             $('#rule-drive').removeClass('hide');
         } else {
@@ -2864,7 +2862,7 @@ $(document).ready(function () {
             if ($(this).is(':checked')) {
                 $('#moto_checkbox').prop('checked', true);
                 var id_moto = $('input[name=buy_moto]:checked').val();
-                ajax_get_prices_moto(id_moto);
+                get_prices_moto(id_moto);
             }
         } else {
             var note_moto = $('#note_moto').val();
@@ -2884,7 +2882,7 @@ $(document).ready(function () {
             } else {
                 $('.buy_moto:first').prop('checked', true);
                 var id_moto = $('input[name=buy_moto]:checked').val();
-                ajax_get_prices_moto(id_moto);
+                get_prices_moto(id_moto);
             }
         } else {
             var note_moto = $('#note_moto').val();
@@ -2927,17 +2925,27 @@ $(document).ready(function () {
     //Click book gift
 })
 if ($('#buy_tour').val().length > 0) {
-    ajax_get_prices_tour($('#buy_tour').val(), $('#datepicker3').val(), $('#buy_type').val());
+    ajax_get_prices_tour($('#buy_tour').val());
 }
+
+$('input[name="buy_room"]').change(function () {
+    var price_value = $(this).data('price');
+    var price = new Intl.NumberFormat('vi-VN', {}).format(price_value) + '₫';
+    var name = $(this).data('name')
+    count_total_price(price_value * $('#total_person').val(), 0);
+    var str = `<th width="70%">Buy room: ${name}</th>
+            <th width="30%">`+ price + `</th>`;
+    $('#price_room').append(str); // Thêm vào thẻ có id="price_room"
+});
 
 $('#datepicker3').change(function () {
     if ($('#datepicker3').val() != "" && $('#datepicker3').val() != "undefined") {
-        ajax_get_prices_tour($('#buy_tour').val(), $('#datepicker3').val(), $('#buy_type').val());
+        ajax_get_prices_tour($('#buy_tour').val());
     }
 
 })
 // Ajax get prices tour
-function ajax_get_prices_tour(id_tour, date, id_type) {
+function ajax_get_prices_tour(id_tour) {
     $.ajax({
         url: '/ajax-get-prices-tour',
         headers: {
@@ -2946,20 +2954,21 @@ function ajax_get_prices_tour(id_tour, date, id_type) {
         type: 'post',
         dataType: 'json',
         data: {
-            id: id_tour,
-            date: date,
-            type: id_type
+            id: id_tour
         },
         success: function (data) {
             $("#buy_type").empty();
             for (i = 0; i < data.length; i++) {
                 var item = data[i];
+                var moto = 0;
+                if (item['description'] === 'Ride by yourself') {
+                    var moto = 1;
+                }
                 var prices = item['price'] != '' ? ' + ' + new Intl.NumberFormat('vi-VN', {}).format(item['price']) + '₫' : '';
-                var select = 'selected';
                 ajax_count_prices_tour(item['id']);
-                // var str = `
-                // <option value="${item['id']}" data-name="${item['name']}" data-price="${item['price']}" ` + select + ` data-moto="${item['is_moto']}" >${item['name']} ${prices}</option>`;
-                // $("#buy_type").append(str);
+                var str = `
+                <option value="${item['id']}" data-moto="${moto}" data-name="${item['name']}" data-price="${item['price']}">${item['description']} ${prices}</option>`;
+                $("#buy_type").append(str);
             }
         }
     });
@@ -3133,24 +3142,19 @@ function ajax_get_bus_return(id_return) {
     });
 }
 // Ajax get prices moto
-function ajax_get_prices_moto(id_moto) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_moto&raw=1&id=' + id_moto,
-        type: 'post',
-        dataType: 'json',
-        success: function (data) {
-            $("#price_moto").html("");
-            var text_moto = $('#text_moto').val();
-            var day = $('#buy_tour').find("option:selected").attr("data-day");
-            var price_moto = parseInt(data['prices']) * parseInt(day);
-            var price = new Intl.NumberFormat('vi-VN', {}).format(price_moto) + '₫';
-            var str = `<th width="70%">` + text_moto + `: ${data['title']}</th>
+function get_prices_moto(id_moto) {
+    $("#price_moto").html("");
+    var text_moto = $('#text_moto').val();
+    var moto = $('#buy_moto_' + id_moto).data('price');
+    var title = $('#buy_moto_' + id_moto).data('title');
+    var day = $('#buy_tour').find("option:selected").attr("data-day");
+    var price_moto = parseInt(moto) * parseInt(day);
+    var price = new Intl.NumberFormat('vi-VN', {}).format(price_moto) + '₫';
+    var str = `<th width="70%">` + text_moto + `: ${title}</th>
             <th width="30%">`+ price + `</th>`;
-            $("#price_moto").html(str);
-            count_total_price(parseInt(price_moto) * $('#total_person').val(), $('#price_moto_total').val() * $('#total_person').val());
-            $('#price_moto_total').val(parseInt(price_moto));
-        }
-    });
+    $("#price_moto").html(str);
+    count_total_price(parseInt(price_moto) * $('#total_person').val(), $('#price_moto_total').val() * $('#total_person').val());
+    $('#price_moto_total').val(parseInt(price_moto));
 }
 
 // Ajax get prices gift

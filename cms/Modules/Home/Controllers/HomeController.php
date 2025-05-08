@@ -104,8 +104,6 @@ class HomeController extends Controller
     public function getPricesTour(Request $request)
     {
         $id = $request->input('id');
-        $date = $request->input('date');
-        $type = $request->input('type');
 
         $prices = DB::table('tour_prices')
             ->where('tour_id', $id)
@@ -120,6 +118,7 @@ class HomeController extends Controller
                 'id' => $item->id,
                 'name' => $tour->name,
                 'price' => $item->price,
+                'description' => $item->description
             ];
         });
 

@@ -364,7 +364,7 @@
                                                         <option value="" style="display: none">TOUR</option>
                                                         @foreach ($tours as $tour)
                                                             <option id="buy_tour_{{ $tour->id }}" value="{{ $tour->id }}"
-                                                                data-day="2">{{$tour->name}}</option>
+                                                                data-day="{{ substr($tour->time, 0, 1) }}">{{$tour->name}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -393,20 +393,20 @@
                                             <div class="mbl_grid">
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_1" class="buy_room"
-                                                        value="1" />
+                                                        value="1" data-price="0" data-name="Dorm"/>
                                                     <label for="buy_room_1">Dorm -
                                                         <span>(No fees)</span>
                                                     </label>
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_2" class="buy_room"
-                                                        value="2" />
+                                                        value="2" data-price="375000" data-name="Private room (1-2pp)"/>
                                                     <label for="buy_room_2">Private room (1-2pp) -
                                                         <span>375.000₫</span>/night </label>
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_3" class="buy_room"
-                                                        value="3" />
+                                                        value="3" data-price="550000" data-name="Family room (3-4pp)"/>
                                                     <label for="buy_room_3">Family room (3-4pp) -
                                                         <span>550.000₫</span>/night </label>
                                                 </div>
@@ -417,70 +417,6 @@
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
                                                     please contact us via WhatsApp</label>
-                                            </div>
-                                        </div>
-                                        <div class="mbl book_bus">
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="bus_checkbox" class="txt_checkbox"
-                                                    name="bus_checkbox" value="1">
-                                                <label for="bus_checkbox"><span>BUS SERVICE</span></label>
-
-                                            </div>
-                                            <div class="note" style="margin-bottom: 20px;">
-                                                <label>NOTE: The bus request might change due to the availability each day.
-                                                    When you request it, we will confirm back via email</label>
-                                            </div>
-                                            <div class="mbl_flex book_departure">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" id="departure_checkbox" class="txt_checkbox"
-                                                        name="departure_checkbox" value="1">
-                                                    <label for="departure_checkbox"><span>Choose a starting
-                                                            point</span></label>
-                                                </div>
-                                                <select name="buy_location_departure" id="buy_location_departure"
-                                                    class="txtinput buy_location">
-                                                    <option value="" style="display: none">Starting point</option>
-                                                    <option value="3" selected>HANOI </option>
-                                                    <option value="2">SAPA </option>
-                                                    <option value="1">HA LONG</option>
-                                                    <option value="4">NINH BINH </option>
-                                                    <option value="5">CAT BA </option>
-                                                </select>
-                                                <div class="mbl_txt">
-                                                    <input type="text" class="txtinput datepicker" autocomplete="off"
-                                                        placeholder="Departure date" class="" id="datepicker"
-                                                        name="departure_time" class="" />
-                                                </div>
-                                            </div>
-                                            <div class="list_bus_departure">
-                                                <div class="mbl_grid">
-                                                </div>
-                                            </div>
-                                            <div class="mbl_flex book_return">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" id="return_checkbox" class="txt_checkbox"
-                                                        name="return_checkbox" value="1">
-                                                    <label for="return_checkbox"><span>Choose the return destination</span>
-                                                    </label>
-                                                </div>
-                                                <select name="buy_location_return" id="buy_location_return"
-                                                    class="txtinput buy_location">
-                                                    <option value="" style="display: none">Destination</option>
-                                                    <option value="3" selected>HANOI </option>
-                                                    <option value="2">SAPA </option>
-                                                    <option value="1">HA LONG</option>
-                                                    <option value="4">NINH BINH </option>
-                                                    <option value="5">CAT BA </option>
-                                                </select>
-                                                <div class="mbl_txt">
-                                                    <input type="text" class="txtinput datepicker" autocomplete="off"
-                                                        placeholder="Return date" id="datepicker2" name="return_time"
-                                                        class="" />
-                                                </div>
-                                            </div>
-                                            <div class="list_bus_return">
-                                                <div class="mbl_grid">
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="mbl book_moto">
@@ -501,7 +437,7 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_1"
-                                                            value="1" />
+                                                            value="1" data-price="0" data-title="Honda 110cc - Semi automatic" />
                                                         <label for="buy_moto_1">Honda 110cc - Semi automatic</label>
                                                         <div class="price">0<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
@@ -518,7 +454,7 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_2"
-                                                            value="2" />
+                                                            value="2" data-price="400000" data-title="Winner X 2023 - Full Manual 150cc" />
                                                         <label for="buy_moto_2">Winner X 2023 - Full Manual 150cc</label>
                                                         <div class="price">400.000<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
@@ -535,7 +471,7 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_3"
-                                                            value="3" />
+                                                            value="3" data-price="650000" data-title="Dirt bike - Manual 150cc" />
                                                         <label for="buy_moto_3">Dirt bike - Manual 150cc</label>
                                                         <div class="price">650.000<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
