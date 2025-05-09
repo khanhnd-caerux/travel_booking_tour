@@ -149,4 +149,39 @@ class HomeController extends Controller
         ]);
     }
 
+    public function confirmOrder(Request $request)
+    {
+        session()->put('cart', $request->all());
+        $cart = session()->get('cart');
+
+        return view('Home::confirm', compact('cart'));
+    }
+
+    public function saveOrder(Request $request)
+    {
+        $dataOrder = [
+            'tour_id' => $request->tour_id,
+            'whats_app' => $request->contact_phone,
+            'full_name' => $request->contact_name,
+            'country' => $request->contact_address,
+            'email' => $request->contact_email,
+            'note' => $request->message,
+            'status' => 0,
+            'total' => $request->total_price
+        ];
+
+        $order = $this->orderService->store($dataOrder);
+        if ($order) {
+            $dataOrderDetail = [
+                'order_id' => $order->id,
+                'date_selected' => $request->date_selected,
+                'html_data' => $request->html_data
+            ];
+            $this->orderDetailService->store($dataOrderDetail);
+        }
+        session()->remove('cart');
+
+
+        return redirect()->route('client.index');
+    }
 }

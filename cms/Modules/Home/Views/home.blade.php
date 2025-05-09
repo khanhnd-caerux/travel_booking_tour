@@ -352,8 +352,9 @@
                                         <strong>ATTRACTIVE</strong> gifts when booking Tour HaGiangMountain </span>
                                 </div>
                             </div>
-                            <form method="post" action="#" id="buy_fast_form_default" name="buy_fast_form_default"
-                                class="cls" onsubmit="javascript: return submit_form_buy();">
+                            <form method="post" action="{{ route('client.confirmOrder') }}" id="buy_fast_form_default" name="buy_fast_form_default"
+                                class="cls">
+                                @csrf
                                 <div class="form-content form-tour">
                                     <div class="buy_fast_table" width="100%">
                                         <div class="mbl book_tour">
@@ -569,8 +570,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-content">
-
+                                <div class="form-content" id="data_html">
                                     <div class="table_content cls">
                                         <table class="table_price">
                                             <tr class="title_table">
@@ -609,54 +609,22 @@
                                         </table>
                                     </div>
                                 </div>
-
-
-
                                 <!-- Total People -->
                                 <input type="hidden" name="total_person" id="total_person" value="1">
-
                                 <!-- Price Tour -->
                                 <input type="hidden" name="price_type_total" id="price_type_total" value="0">
-                                <!-- Chiều đi -->
-                                <input type="hidden" name="price_departure_total" id="price_departure_total" value="0">
-                                <input type="hidden" name="price_bus_departure_total" id="price_bus_departure_total"
-                                    value="0">
-                                <!-- Chiều về -->
-                                <input type="hidden" name="price_return_total" id="price_return_total" value="0">
-                                <input type="hidden" name="price_bus_return_total" id="price_bus_return_total" value="0">
                                 <!-- Homestay -->
                                 <input type="hidden" name="price_room_total" id="price_room_total" value="0">
                                 <!-- motobike -->
                                 <input type="hidden" name="price_moto_total" id="price_moto_total" value="0">
                                 <!-- Total price -->
-                                <input type="hidden" name="total_before_voucher" id="total_before_voucher" value="0">
-                                <input type="hidden" name="price_voucher_total" id="price_voucher_total" value="0">
-
                                 <input type="hidden" name="sum_price_tour" id="sum_price_tour" value="0">
                                 <input type="hidden" name="surcharge_price_tour" id="surcharge_price_tour" value="0">
                                 <input type="hidden" name="total_price_all" id="total_price_all" value="0">
-
-                                <input type="hidden" name='module' value="products" />
-                                <input type="hidden" name='view' value="cart" />
-
-                                <input type="hidden" name='price_send_h' id="price_send_h" value="0" />
-                                <input type="hidden" name='code_card_send_h' id="code_card_send_h" value="0" />
-                                <input type="hidden" name='type_down_h' id="type_down_h" value="0" />
-
-
                                 <input type="hidden" name='task' value="confirm_order" id='task_buyer_form' />
-                                <input type="hidden" name='is_vnpay' value="0" id='is_vnpay' />
-
-                                <input type="hidden" name='bank_code' value="0" id='bank_code_ip' />
-                                <input type="hidden" name='code_sale' value="" id="code-sale" />
-                                <input type="hidden" name='vpc_ItaBank_one_pay' value="" id="vpc_ItaBank_one_pay" />
-                                <input type="hidden" name='vpc_ItaFeeAmount_one_pay' value=""
-                                    id="vpc_ItaFeeAmount_one_pay" />
-                                <input type="hidden" name='vpc_ItaTime_one_pay' value="" id="vpc_ItaTime_one_pay" />
-                                <input type="hidden" name='vpc_CardList_one_pay' value="" id="vpc_CardList_one_pay" />
-
+                                <input type="hidden" name="html_data" id="html_data">
                                 <div class="btn_form">
-                                    <button class="button-buy-fast button">
+                                    <button class="button-buy-fast button" id="button-confirm-submit">
                                         Continue payment </button>
                                 </div>
                             </form>

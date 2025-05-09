@@ -8,6 +8,8 @@ Route::group([
     'middleware' => 'web',
 ], function () {
     Route::get('/', 'HomeController@home')->name('client.index');
+    Route::post('/confirm-order', 'HomeController@confirmOrder')->name('client.confirmOrder');
+    Route::post('/save-order', 'HomeController@saveOrder')->name('client.saveOrder');
     Route::post('/send-contact', 'HomeController@sendContact')->name('client.contact.store');
     Route::get('/{slug}', 'HomeController@postDetail')->name('client.postDetail');
     Route::get('language/{locale}', function ($locale) {

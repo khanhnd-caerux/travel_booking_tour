@@ -12,16 +12,5 @@ class OrderDetail extends Model
     use SoftDeletes;
 
     protected $table = 'order_details';
-
-    protected $fillable = [
-        'order_id',
-        'tour_id',
-        'car_id',
-        'ticket_id',
-        'quantity',
-        'gender',
-        'status',
-        'date_selected',
-        'total_price',
-    ];
+    protected $guarded = [];
 }

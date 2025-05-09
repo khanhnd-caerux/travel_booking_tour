@@ -3077,6 +3077,16 @@ function ajax_get_prices_return(id_return) {
     });
 }
 
+$('#buy_fast_form_default').on('change', function(e) {
+    var data = getFullTableHTML();
+    $('#html_data').val(JSON.stringify(data));
+});
+
+function getFullTableHTML() {
+    var table = $('#data_html');
+    return table.length ? table.prop('outerHTML') : '';
+}
+
 // Ajax get prices bus
 function ajax_get_prices_bus_departure(id_bus_departure) {
     $.ajax({

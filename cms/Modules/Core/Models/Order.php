@@ -13,13 +13,7 @@ class Order extends Model
 
     protected $table = 'orders';
 
-    protected $fillable = [
-        'name',
-        'email',
-        'note',
-        'phone',
-        'status'
-    ];
+    protected $guarded = [];
 
     public function orderDetail()
     {
