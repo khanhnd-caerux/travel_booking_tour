@@ -1,5 +1,7 @@
 @extends('Core::layouts.backend.app', ['activePage' => __('post') , 'titlePage' => __('Cập nhật bài viết')])
-
+@section('js')
+<script src="{{ asset('/backend/assets/js/ckeditor.js') }}"></script>
+@endsection
 @section('content')
 @php
 $posts = [

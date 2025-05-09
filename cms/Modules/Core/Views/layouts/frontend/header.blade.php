@@ -98,10 +98,10 @@
                             </li>
 
 
-                            <li class="level_0 sort ">
+                            <!-- <li class="level_0 sort ">
                                 <a href="homestay/index.html" class="menu_item_a tab_top_menu " title="Homestay">
                                     Homestay </a>
-                            </li>
+                            </li> -->
 
 
                             <li class="level_0 sort ">

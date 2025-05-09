@@ -1,4 +1,7 @@
 @extends('Core::layouts.backend.app', ['activePage' => __('tour-detail') , 'titlePage' => __('Tạo mới chi tiết Tour')])
+@section('js')
+<script src="{{ asset('/backend/assets/js/ckeditor.js') }}"></script>
+@endsection
 @section('content')
 <div class="container-fluid py-4">
     <div class="row">
