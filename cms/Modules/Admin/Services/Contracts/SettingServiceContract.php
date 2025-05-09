@@ -7,4 +7,5 @@ use Cms\Modules\Core\Services\Contracts\CoreBaseServiceContract;
 interface SettingServiceContract extends CoreBaseServiceContract
 {
     public function getAllValue();
+    public function getListAll();
 }

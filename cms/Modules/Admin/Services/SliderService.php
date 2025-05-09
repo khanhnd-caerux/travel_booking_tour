@@ -19,4 +19,9 @@ class SliderService extends CoreBaseService implements SliderServiceContract
     {
         return $this->repository->getByType($type);
     }
+
+    public function getListAll()
+    {
+        return $this->repository->getListAll();
+    }
 }

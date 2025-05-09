@@ -118,6 +118,9 @@ body {
     background: #fff;
     line-height: 1.5;
 }
+a {
+    text-decoration: none !important;
+}
 @media screen and (min-width: 1440px) {
     body {
         font: 0.833vw/1.198vw Montserrat, Helvetica, Arial, "DejaVu Sans",

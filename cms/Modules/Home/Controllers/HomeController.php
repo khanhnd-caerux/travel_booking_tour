@@ -179,9 +179,20 @@ class HomeController extends Controller
             ];
             $this->orderDetailService->store($dataOrderDetail);
         }
+
+        $message = [
+            'customer' => $request->contact_name,
+            'phone' => $request->contact_phone,
+            'email' => $request->contact_email,
+            'note' => $request->message,
+            'link' => route('admin.contact.list'),
+        ];
+        $users = $this->userService->getAll();
+        SendEmail::dispatch($message, $users);
+
         session()->remove('cart');
 
 
-        return redirect()->route('client.index');
+        return redirect()->route('client.index')->with('success', true);
     }
 }

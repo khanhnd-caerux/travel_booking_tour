@@ -352,9 +352,9 @@
                                         <strong>ATTRACTIVE</strong> gifts when booking Tour HaGiangMountain </span>
                                 </div>
                             </div>
-                            <form method="post" action="{{ route('client.confirmOrder') }}" id="buy_fast_form_default" name="buy_fast_form_default"
-                                class="cls">
-                                @csrf
+                            <form method="post" action="{{ route('client.confirmOrder') }}" id="buy_fast_form_default"
+                                name="buy_fast_form_default" class="cls">
+                                @csrf()
                                 <div class="form-content form-tour">
                                     <div class="buy_fast_table" width="100%">
                                         <div class="mbl book_tour">
@@ -365,7 +365,8 @@
                                                         <option value="" style="display: none">TOUR</option>
                                                         @foreach ($tours as $tour)
                                                             <option id="buy_tour_{{ $tour->id }}" value="{{ $tour->id }}"
-                                                                data-day="{{ substr($tour->time, 0, 1) }}">{{$tour->name}}</option>
+                                                                data-day="{{ substr($tour->time, 0, 1) }}">{{$tour->name}}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -394,20 +395,20 @@
                                             <div class="mbl_grid">
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_1" class="buy_room"
-                                                        value="1" data-price="0" data-name="Dorm"/>
+                                                        value="1" data-price="0" data-name="Dorm" />
                                                     <label for="buy_room_1">Dorm -
                                                         <span>(No fees)</span>
                                                     </label>
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_2" class="buy_room"
-                                                        value="2" data-price="375000" data-name="Private room (1-2pp)"/>
+                                                        value="2" data-price="375000" data-name="Private room (1-2pp)" />
                                                     <label for="buy_room_2">Private room (1-2pp) -
                                                         <span>375.000₫</span>/night </label>
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_3" class="buy_room"
-                                                        value="3" data-price="550000" data-name="Family room (3-4pp)"/>
+                                                        value="3" data-price="550000" data-name="Family room (3-4pp)" />
                                                     <label for="buy_room_3">Family room (3-4pp) -
                                                         <span>550.000₫</span>/night </label>
                                                 </div>
@@ -438,7 +439,8 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_1"
-                                                            value="1" data-price="0" data-title="Honda 110cc - Semi automatic" />
+                                                            value="1" data-price="0"
+                                                            data-title="Honda 110cc - Semi automatic" />
                                                         <label for="buy_moto_1">Honda 110cc - Semi automatic</label>
                                                         <div class="price">0<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
@@ -455,7 +457,8 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_2"
-                                                            value="2" data-price="400000" data-title="Winner X 2023 - Full Manual 150cc" />
+                                                            value="2" data-price="400000"
+                                                            data-title="Winner X 2023 - Full Manual 150cc" />
                                                         <label for="buy_moto_2">Winner X 2023 - Full Manual 150cc</label>
                                                         <div class="price">400.000<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
@@ -472,7 +475,8 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_3"
-                                                            value="3" data-price="650000" data-title="Dirt bike - Manual 150cc" />
+                                                            value="3" data-price="650000"
+                                                            data-title="Dirt bike - Manual 150cc" />
                                                         <label for="buy_moto_3">Dirt bike - Manual 150cc</label>
                                                         <div class="price">650.000<span class="unit">₫</span><span
                                                                 class="day">/day</span></div>
@@ -941,4 +945,7 @@
             </div>
         </div>
     </div>
+    @if(session('success') === true)
+        @include('Home::success')
+    @endif
 @endsection

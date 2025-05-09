@@ -20,4 +20,11 @@ class SliderRepository extends CoreBaseRepository implements SliderRepositoryCon
     {
         return $this->slider->where('type', $type)->get();
     }
+
+    public function getListAll()
+    {
+        return $this->slider
+            ->whereNull('deleted_at')
+            ->paginate(10);
+    }
 }

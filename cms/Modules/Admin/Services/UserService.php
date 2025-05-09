@@ -15,4 +15,8 @@ class UserService extends CoreBaseService implements UserServiceContract
         $this->repository = $repository;
     }
 
+    public function getListAll()
+    {
+        return $this->repository->getListAll();
+    }
 }

@@ -9,9 +9,16 @@ use Cms\Modules\Core\Repositories\CoreBaseRepository;
 class UserRepository extends CoreBaseRepository implements UserRepositoryContract
 {
     protected $user;
-    
-    public function __construct()
+
+    public function __construct(User $user)
     {
-        parent::__construct(new User);
+        parent::__construct($user);
+        $this->user = $user;
+    }
+
+    public function getListAll()
+    {
+        return $this->user
+            ->paginate(10);
     }
 }

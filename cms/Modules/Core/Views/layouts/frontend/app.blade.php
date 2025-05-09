@@ -53,6 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="HaGiangMountain’s Homestay - Explore Ha Giang Feed"
         href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @yield('css')
 </head>
 

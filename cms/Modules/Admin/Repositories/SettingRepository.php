@@ -20,4 +20,11 @@ class SettingRepository extends CoreBaseRepository implements SettingRepositoryC
     {
         return $this->setting->where('deleted_at', null)->get();
     }
+
+    public function getListAll()
+    {
+        return $this->setting
+            ->whereNull('deleted_at')
+            ->paginate(10);
+    }
 }

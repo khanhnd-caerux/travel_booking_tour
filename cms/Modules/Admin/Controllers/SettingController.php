@@ -20,7 +20,8 @@ class SettingController extends Controller
     }
     public function list()
     {
-        $settings = $this->service->paginate(10);
+        $settings = $this->service->getListAll();
+        
         return view('Admin::setting.list', compact('settings'));
     }
 

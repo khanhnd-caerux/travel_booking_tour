@@ -17,7 +17,7 @@ class UserController extends Controller
     }
 
     public function list(){
-        $users = $this->service->paginate(10);
+        $users = $this->service->getListAll();
         return view('Admin::user.list', [
             'users' => $users
         ]);

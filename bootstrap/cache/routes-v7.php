@@ -510,6 +510,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/order/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/login' => 
       array (
         0 => 
@@ -533,7 +553,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9HiG9chNvQirwGX5',
+            '_route' => 'generated::PAiCtAZHz0jm1z1g',
           ),
           1 => NULL,
           2 => 
@@ -569,7 +589,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eq5idmwAmue1saFk',
+            '_route' => 'generated::WHecdC37A3ZO1e7e',
           ),
           1 => NULL,
           2 => 
@@ -817,7 +837,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|s(?|etting/(?|edit/([^/]++)(*:95)|update/([^/]++)(*:117)|delete/([^/]++)(*:140))|lider/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|p(?|ost/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|assword/reset/([^/]++)(*:328))|tour(?|/(?|edit/([^/]++)(*:361)|update/([^/]++)(*:384)|delete/([^/]++)(*:407))|\\-(?|detail/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490))|price/(?|edit/([^/]++)(*:521)|update/([^/]++)(*:544)|delete/([^/]++)(*:567))))|contact/delete/([^/]++)(*:601))|/email/verify/([^/]++)/([^/]++)(*:641)|/([^/]++)(*:658)|/language/([^/]++)(*:684)|/ajax\\-(?|get\\-prices\\-tour(*:719)|count\\-prices\\-tour(*:746)))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|s(?|etting/(?|edit/([^/]++)(*:95)|update/([^/]++)(*:117)|delete/([^/]++)(*:140))|lider/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|p(?|ost/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|assword/reset/([^/]++)(*:328))|tour(?|/(?|edit/([^/]++)(*:361)|update/([^/]++)(*:384)|delete/([^/]++)(*:407))|\\-(?|detail/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490))|price/(?|edit/([^/]++)(*:521)|update/([^/]++)(*:544)|delete/([^/]++)(*:567))))|contact/delete/([^/]++)(*:601)|order/(?|de(?|tail/([^/]++)(*:636)|lete/([^/]++)(*:657))|update/([^/]++)(*:681)))|/email/verify/([^/]++)/([^/]++)(*:722)|/([^/]++)(*:739)|/language/([^/]++)(*:765)|/ajax\\-(?|get\\-prices\\-tour(*:800)|count\\-prices\\-tour(*:827)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1320,7 +1340,75 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      641 => 
+      636 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.detail',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      657 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      681 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.order.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      722 => 
       array (
         0 => 
         array (
@@ -1344,7 +1432,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      658 => 
+      739 => 
       array (
         0 => 
         array (
@@ -1367,13 +1455,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      684 => 
+      765 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::7jcwlqfbpZjIQOFn',
+            '_route' => 'generated::qFnN6HREtsc5w47t',
           ),
           1 => 
           array (
@@ -1390,13 +1478,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      719 => 
+      800 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::JbzLMMkzbMy4gJLy',
+            '_route' => 'generated::yfwrxygWJGZ1MSLG',
           ),
           1 => 
           array (
@@ -1411,13 +1499,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      746 => 
+      827 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::j9YBNPQLjt2CRRHm',
+            '_route' => 'generated::Bhbikphrhm2jGbeh',
           ),
           1 => 
           array (
@@ -3178,6 +3266,157 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.order.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@list',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.detail' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/detail/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@detail',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.detail',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/order/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@update',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.order.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/order/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
+        'controller' => 'Cms\\Modules\\Admin\\Controllers\\OrderController@delete',
+        'namespace' => 'Cms\\Modules\\Admin\\Controllers',
+        'prefix' => 'admin/order',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.order.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'login' => 
     array (
       'methods' => 
@@ -3216,7 +3455,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9HiG9chNvQirwGX5' => 
+    'generated::PAiCtAZHz0jm1z1g' => 
     array (
       'methods' => 
       array (
@@ -3237,7 +3476,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::9HiG9chNvQirwGX5',
+        'as' => 'generated::PAiCtAZHz0jm1z1g',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3291,7 +3530,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eq5idmwAmue1saFk' => 
+    'generated::WHecdC37A3ZO1e7e' => 
     array (
       'methods' => 
       array (
@@ -3312,7 +3551,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::eq5idmwAmue1saFk',
+        'as' => 'generated::WHecdC37A3ZO1e7e',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3793,7 +4032,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::7jcwlqfbpZjIQOFn' => 
+    'generated::qFnN6HREtsc5w47t' => 
     array (
       'methods' => 
       array (
@@ -3810,13 +4049,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000007b00b0100000000025d51e9d";}";s:4:"hash";s:44:"r1qAqWLT6IcSkW1FrzNdt7qIRZ76tV+SFfC5EQ6imzw=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000001c012faa00000000299183ca";}";s:4:"hash";s:44:"XgkpcUQZEFeFybnN41xxyPt6Q0pcRed0NniyB+SeC/8=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::7jcwlqfbpZjIQOFn',
+        'as' => 'generated::qFnN6HREtsc5w47t',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3900,7 +4139,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::JbzLMMkzbMy4gJLy' => 
+    'generated::yfwrxygWJGZ1MSLG' => 
     array (
       'methods' => 
       array (
@@ -3917,7 +4156,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::JbzLMMkzbMy4gJLy',
+        'as' => 'generated::yfwrxygWJGZ1MSLG',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3933,7 +4172,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::j9YBNPQLjt2CRRHm' => 
+    'generated::Bhbikphrhm2jGbeh' => 
     array (
       'methods' => 
       array (
@@ -3950,7 +4189,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::j9YBNPQLjt2CRRHm',
+        'as' => 'generated::Bhbikphrhm2jGbeh',
       ),
       'fallback' => false,
       'defaults' => 

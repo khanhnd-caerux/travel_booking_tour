@@ -37,7 +37,7 @@ class OrderController extends Controller
 
     public function update($id)
     {
-        $order = $this->orderDetailService->update($id, ['status' => 1]);
+        $order = $this->orderService->update($id, ['status' => 1]);
 
         return redirect()->route('admin.order.list')->with('success', 'Hoàn thành xác nhận đơn hàng!');
     }

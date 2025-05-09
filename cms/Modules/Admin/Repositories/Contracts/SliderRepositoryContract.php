@@ -6,4 +6,6 @@ use Cms\Modules\Core\Repositories\Contracts\CoreBaseRepositoryContract;
 
 interface SliderRepositoryContract extends CoreBaseRepositoryContract {
     public function getByType($type);
+
+    public function getListAll();
 }

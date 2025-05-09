@@ -94,4 +94,13 @@ Route::group([
         Route::get('/list', 'ContactController@list')->name('admin.contact.list');
         Route::get('/delete/{id}', 'ContactController@delete')->name('admin.contact.delete');
     });
+    Route::group([
+        'prefix' => 'order',
+        'middleware' => ['auth']
+    ], function () {
+        Route::get('/list', 'OrderController@list')->name('admin.order.list');
+        Route::get('/detail/{id}', 'OrderController@detail')->name('admin.order.detail');
+        Route::post('/update/{id}', 'OrderController@update')->name('admin.order.update');
+        Route::get('/delete/{id}', 'OrderController@delete')->name('admin.order.delete');
+    });
 });

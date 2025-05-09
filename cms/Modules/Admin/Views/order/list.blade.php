@@ -28,6 +28,7 @@
                                     <th>Tên khách hàng</th>
                                     <th>Số điện thoại</th>
                                     <th>Email</th>
+                                    <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Chức năng</th>
@@ -37,11 +38,12 @@
                                 @foreach ($orders as $order)
                                 <tr style="text-align: left">
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
-                                    <td>{{ $order->name }}</td>
-                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->full_name }}</td>
+                                    <td>{{ $order->whats_app }}</td>
                                     <td>{{ $order->email }}</td>
-                                    <td><span class="badge badge-sm {{ $order->orderDetail[0]->status == 0 ?
-                                    'bg-gradient-secondary' : 'bg-gradient-primary' }}">{{ $order->orderDetail[0]->status == 0 ?
+                                    <td>{{ number_format($order->total, 0) }} VND</td>
+                                    <td><span class="badge badge-sm {{ $order->status == 0 ?
+                                    'bg-gradient-secondary' : 'bg-gradient-primary' }}">{{ $order->status == 0 ?
                                     'Chưa xác nhận' : 'Đã xác nhận' }}</span></td>
                                     <td>{{ $order->updated_at }}</td>
                                     <td class="td-actions text-right">
