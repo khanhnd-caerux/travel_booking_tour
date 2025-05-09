@@ -600,19 +600,6 @@
 
                                         </table>
                                         <table class="form_price_tour">
-                                            <!-- <tr>
-                                                                                    <th width="50%"></th>
-                                                                                    <th width="50%">4%</th>
-                                                                                </tr> -->
-                                            <tr>
-                                                <th width="50%">Voucher code</th>
-                                                <th width="50%" class="th_voucher">
-                                                    <input type="text" name="voucher" id="voucher"><span
-                                                        id="apply_vou">Apply</span>
-                                                </th>
-                                            </tr>
-                                            <tr id="price_voucher">
-                                            </tr>
                                             <tr>
                                                 <th width="50%" class="price_text">Final fee</th>
                                                 <th id="total_price_tour" class="price_text" width="50%">
