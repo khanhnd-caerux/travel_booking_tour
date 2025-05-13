@@ -107,13 +107,15 @@ class HomeController extends Controller
 
         $prices = DB::table('tour_prices')
             ->where('tour_id', $id)
-            ->get();
+            ->orderBy('id', 'asc')
+            ->get()
+            ->toArray();
 
         $tour = DB::table('tours')
             ->where('id', $id)
             ->first();
 
-        $data = $prices->map(function ($item) use ($tour) {
+        $data = collect($prices)->map(function ($item) use ($tour) {
             return [
                 'id' => $item->id,
                 'name' => $tour->name,

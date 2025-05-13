@@ -2680,7 +2680,7 @@ $(document).ready(function () {
     //Click select tour
     $('#buy_tour').change(function () {
         var id_tour = $(this).val();
-        ajax_get_prices_tour(id_tour, $('#datepicker3').val());
+        ajax_get_prices_tour(id_tour);
         $('.buy_moto').prop('checked', false);
         $('#moto_checkbox').prop('checked', false);
         $("#price_moto").html('');
@@ -2694,6 +2694,7 @@ $(document).ready(function () {
     //Click select type
     $('#buy_type').change(function () {
         var id_type = $(this).val();
+        console.log("----", id_type);
         ajax_count_prices_tour(id_type);
         $('.buy_moto').prop('checked', false);
         $('#moto_checkbox').prop('checked', false);
@@ -2893,40 +2894,37 @@ $(document).ready(function () {
     //Click book moto
 
     //Click book gift
-    $('.buy_gift').click(function () {
-        // if ($(this).hasClass('is_special')) {
-        // if($("#tour_checkbox").prop("checked") == false){
-        //     alert("Quà chỉ dành cho những ai đăng kí FREE Walking Tour độc quyền, Hãy đăng kí để nhận ưu đãi");
-        //     return false;
-        // }else{
-        var id_gift = $('input[name=buy_gift]:checked').val();
-        ajax_get_prices_gift(id_gift);
-        //}
-        // }else{
-        //     var id_gift = $('input[name=buy_gift]:checked').val();
-        //     ajax_get_prices_gift(id_gift);
-        // }
-    });
-    if ($('input[name=buy_gift]:checked').val().length > 0) {
-        ajax_get_prices_gift($('input[name=buy_gift]:checked').val());
-    }
-    $('#tour_checkbox').click(function () {
-        if (!$(this).is(':checked')) {
-            $('.is_normal:first').prop('checked', true);
-            var id_gift = $('input[name=buy_gift]:checked').val();
-            ajax_get_prices_gift(id_gift);
-        } else {
-            $('.is_special:first').prop('checked', true);
-            var id_gift = $('input[name=buy_gift]:checked').val();
-            ajax_get_prices_gift(id_gift);
+    // $('.buy_gift').click(function () {
+    //     // if ($(this).hasClass('is_special')) {
+    //     // if($("#tour_checkbox").prop("checked") == false){
+    //     //     alert("Quà chỉ dành cho những ai đăng kí FREE Walking Tour độc quyền, Hãy đăng kí để nhận ưu đãi");
+    //     //     return false;
+    //     // }else{
+    //     var id_gift = $('input[name=buy_gift]:checked').val();
+    //     ajax_get_prices_gift(id_gift);
+    //     //}
+    //     // }else{
+    //     //     var id_gift = $('input[name=buy_gift]:checked').val();
+    //     //     ajax_get_prices_gift(id_gift);
+    //     // }
+    // });
+    // if ($('input[name=buy_gift]:checked').val().length > 0) {
+    //     ajax_get_prices_gift($('input[name=buy_gift]:checked').val());
+    // }
+    // $('#tour_checkbox').click(function () {
+    //     if (!$(this).is(':checked')) {
+    //         $('.is_normal:first').prop('checked', true);
+    //         var id_gift = $('input[name=buy_gift]:checked').val();
+    //         ajax_get_prices_gift(id_gift);
+    //     } else {
+    //         $('.is_special:first').prop('checked', true);
+    //         var id_gift = $('input[name=buy_gift]:checked').val();
+    //         ajax_get_prices_gift(id_gift);
 
-        }
-    });
+    //     }
+    // });
     //Click book gift
 })
-if ($('#buy_tour').val().length > 0) {
-    ajax_get_prices_tour($('#buy_tour').val());
-}
 
 $('input[name="buy_room"]').change(function () {
     var price_value = $(this).data('price');
@@ -2938,12 +2936,6 @@ $('input[name="buy_room"]').change(function () {
     $('#price_room').append(str); // Thêm vào thẻ có id="price_room"
 });
 
-$('#datepicker3').change(function () {
-    if ($('#datepicker3').val() != "" && $('#datepicker3').val() != "undefined") {
-        ajax_get_prices_tour($('#buy_tour').val());
-    }
-
-})
 // Ajax get prices tour
 function ajax_get_prices_tour(id_tour) {
     $.ajax({
@@ -2965,7 +2957,9 @@ function ajax_get_prices_tour(id_tour) {
                     var moto = 1;
                 }
                 var prices = item['price'] != '' ? ' + ' + new Intl.NumberFormat('vi-VN', {}).format(item['price']) + '₫' : '';
-                ajax_count_prices_tour(item['id']);
+                if (i === 0) {
+                    ajax_count_prices_tour(item['id']);
+                }
                 var str = `
                 <option value="${item['id']}" data-moto="${moto}" data-name="${item['name']}" data-price="${item['price']}">${item['description']} ${prices}</option>`;
                 $("#buy_type").append(str);
@@ -2976,6 +2970,7 @@ function ajax_get_prices_tour(id_tour) {
 
 // Ajax get prices tour
 function ajax_count_prices_tour(id_type) {
+    console.log('--t4sysdf---', id_type);
     $.ajax({
         url: '/ajax-count-prices-tour',
         type: 'post',
@@ -3077,7 +3072,7 @@ function ajax_get_prices_return(id_return) {
     });
 }
 
-$('#buy_fast_form_default').on('change', function(e) {
+$('#buy_fast_form_default').on('change', function (e) {
     var data = getFullTableHTML();
     $('#html_data').val(JSON.stringify(data));
 });

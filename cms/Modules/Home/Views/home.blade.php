@@ -494,47 +494,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-content form-gift">
-                                    <div class="mbl book_gift">
-                                        <span class="title_mbl">GIFTS OF SELECTION WHEN BOOKING A TOUR</span>
-                                        <div class="mbl_grid">
-                                            <div class="gift_item">
-                                                <figure class="image">
-                                                    <label for="buy_gift_1">
-                                                        <img class="lazy"
-                                                            alt="Ha Giang Loop T-shirt by HaGiangMountain’s Tour"
-                                                            width="200px" height="200px"
-                                                            data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg"
-                                                            data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong_1698030085.jpg.webp">
-                                                    </label>
-                                                </figure>
-                                                <div class="content">
-                                                    <input type="radio" name="buy_gift" class="buy_gift is_special" checked
-                                                        id="buy_gift_1" value="1" />
-                                                    <label for="buy_gift_1">Ha Giang Loop T-shirt by HaGiangMountain’s
-                                                        Tour</label>
-                                                </div>
-                                            </div>
-                                            <div class="gift_item">
-                                                <figure class="image">
-                                                    <label for="buy_gift_2">
-                                                        <img class="lazy"
-                                                            alt="Ha Giang Loop handbag by HaGiangMountain's Tour"
-                                                            width="200px" height="200px"
-                                                            data-src="https://mamashomestay.com/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg"
-                                                            data-srcset="frontend/images/gifts/2023/10/23/resized/tai-xuong-1-_1698030123.jpg.webp">
-                                                    </label>
-                                                </figure>
-                                                <div class="content">
-                                                    <input type="radio" name="buy_gift" class="buy_gift is_special"
-                                                        id="buy_gift_2" value="2" />
-                                                    <label for="buy_gift_2">Ha Giang Loop handbag by HaGiangMountain's
-                                                        Tour</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-content form-info">
                                     <div class="mbl">
                                         <div class="mbl_flex mbl_person">
