@@ -75,7 +75,7 @@
                 <div class="header-l">
                     <h1> <a href="{{route('client.index')}}" title="HaGiangMountain’s Homestay - Explore Ha Giang" class="logo" rel="home">
                             <img class="logo_back_top" width="187px" height="143px"
-                                src="{{asset('frontend/images/config/asset-17_1698816647.svg')}}" alt="HaGiangMountain’s Homestay - Explore Ha Giang">
+                                src="{{asset('frontend/images/config/asset-17_1698816647.jpeg')}}" alt="HaGiangMountain’s Homestay - Explore Ha Giang">
                         </a>
                     </h1>
                 </div>
@@ -93,7 +93,7 @@
 
 
                             <li class="level_0 sort ">
-                                <a href="#tour" class="menu_item_a tab_top_menu " title="Tours">
+                                <a href="{{ route('client.index') }}/#tour" class="menu_item_a tab_top_menu " title="Tours">
                                     Tours </a>
                             </li>
 
@@ -119,7 +119,7 @@
                         <div class="navicon-line navicon-line-3"></div>
                     </div>
                 </div>
-                <a class="book-btn" href="index.html#tour" title="Booking">Booking</a>
+                <a class="book-btn" href="#tour" title="Booking">Booking</a>
             </div>
         </div>
     </div>

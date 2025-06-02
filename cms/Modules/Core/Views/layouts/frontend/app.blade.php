@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="LinenHaGiang’s Homestay - Explore Ha Giang Feed"
         href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     @yield('css')
 </head>
 
@@ -136,7 +136,7 @@
 
 
                 <div class="item item-show">
-                    <a title="Hotline" target="_blank" href="https://wa.me/+84849278787">
+                    <a title="Hotline" target="_blank" href="https://wa.me/+84397223444">
                         <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp"
                             role="img" viewBox="0 0 512 512" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

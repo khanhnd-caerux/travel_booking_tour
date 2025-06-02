@@ -31,7 +31,7 @@
 
                                 <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope"
                                     itemtype="http://schema.org/ListItem">
-                                    <a title='HaGiangMountain’s Homestay - Explore Ha Giang' href="../index.html" itemprop="item">
+                                    <a title='LinenHaGiang’s Homestay - Explore Ha Giang' href="../index.html" itemprop="item">
                                         <span itemprop="name">Home</span>
                                         <meta content="1" itemprop="position">
                                     </a>

@@ -69,7 +69,7 @@
                                 <h3 class="title">The majestic natural beauty eagerly awaits your discovery</h3>
                                 <div class="column_left_content description">
                                     <p>
-                                    <p>Welcome to HaGiangMountain&#39;s Homestay website! Here, we extend an invitation for
+                                    <p>Welcome to LinenHaGiang&#39;s Homestay website! Here, we extend an invitation for
                                         you to
                                         embark on an exhilarating adventure through the picturesque countryside of
                                         Vietnam&mdash; all from the saddle of a motorbike. Our motorbike tours promise a
@@ -104,7 +104,7 @@
                     Ha Giang Tripadvisor</div>
                 <div class="tripadvisor-image-list">
                     <div class="item">
-                        <a href="frontend/images/albums/compress/z4725878466433_261e43d425079779013912db2bed88ec_1701100938.jpg"
+                        <a href="tour-images/3.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 5">
@@ -114,7 +114,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="frontend/images/albums/compress/z4622114753248_f10f9f25eada4b375745e377e35df59e_1701100960.jpg"
+                        <a href="tour-images/4.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 4">
@@ -124,7 +124,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="frontend/images/albums/compress/z4622176898928_edb04c20c62edf4465030552b69f62a9_1701100981.jpg"
+                        <a href="tour-images/45.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 3">
@@ -134,7 +134,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="frontend/images/albums/compress/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1701101003.jpg"
+                        <a href="tour-images/43.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 2">
@@ -144,7 +144,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="frontend/images/albums/compress/z4645322525490_82dbc8ecab98eec61e22f7f87ddeb94c_1701101027.jpg"
+                        <a href="tour-images/47.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 1">
@@ -154,13 +154,13 @@
                         </a>
                     </div>
                     <a href="https://www.tripadvisor.com.vn/Attraction_Review-g4200402-d26586865-Reviews-Ha_Giang_Loop_Tour_by_Mama_s_Homestay-Dong_Van_Ha_Giang_Province.html"
-                        title="tripadvisor" class="item link-tripadvisor">
-                        <img class="social-travel-logo lazy" alt="social travel logo" width="146px" height="32px"
-                            data-src="https://mamashomestay.com/images/config/travel-logo_1698378308.png"
-                            data-srcset="https://mamashomestay.com/images/config/travel-logo_1698378308.png.webp"> <img
-                            class="logo_bg lazy" alt="social travel logo" width="216px" height="46px"
-                            data-src="https://mamashomestay.com/images/config/logo_bg_white_1698307038.png"
-                            data-srcset="https://mamashomestay.com/images/config/logo_bg_white_1698307038.png.webp">
+                        title="tripadvisor" class="item link-tripadvisor" style="opacity: 0.5; background-image: url('https://linenhagiang.com/frontend/images/config/asset-17_1698816647.jpeg');">
+                        <!--<img class="social-travel-logo lazy" alt="social travel logo" width="146px" height="32px"-->
+                        <!--    data-src="frontend/images/config/asset-17_1698816647.jpeg"-->
+                        <!--    data-srcset="frontend/images/config/asset-17_1698816647.jpeg"> <img-->
+                        <!--    class="logo_bg lazy" alt="social travel logo" width="216px" height="46px"-->
+                        <!--    data-src="frontend/images/config/asset-17_1698816647.jpeg"-->
+                        <!--    data-srcset="frontend/images/config/asset-17_1698816647.jpeg">-->
                         <span>See more<br> on Tripadvisor</span>
                     </a>
                 </div>
@@ -183,7 +183,7 @@
                         <div class="tour_page" id="tour">
                             <div class="title_page">
                                 <h2 class="block_title">
-                                    HaGiangMountain’s Tours </h2>
+                                    LinenHaGiang’s Tours </h2>
                             </div>
                             <div class="list_tours">
                                 @foreach ($tours as $tour)
@@ -269,7 +269,7 @@
                         style="background-image: url(images/config/layer-56_1699697324.jpg.webp); display: block;">
                         <div class="container">
                             <div class='block_strengths strengths-_strengths strengths_0 block' id="block_id_173">
-                                <p class="block_title"><span>HaGiangMountain’s Homestay is </br>the leading Homestay chain
+                                <p class="block_title"><span>LinenHaGiang’s Homestay is </br>the leading Homestay chain
                                         in Ha
                                         Giang</span></p>
                                 <div class="block_strengths_slide">
@@ -279,11 +279,11 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to HaGiangMountain&#39;s Homestay in the center - 50 beds,
+                                                    <p>Welcome to LinenHaGiang&#39;s Homestay in the center - 50 beds,
                                                         where modern
                                                         comfort meets traditional charm. Our homestay is thoughtfully
                                                         designed to provide a welcoming and contemporary atmosphere for our
-                                                        guests.&nbsp;HaGiangMountain&rsquo;s Homestay offers one free night
+                                                        guests.&nbsp;LinenHaGiang&rsquo;s Homestay offers one free night
                                                         in the
                                                         dormitory the day before the tour begins, and you can check in after
                                                         2 pm. Our reception is open 24/7. The free night is random and we
@@ -307,8 +307,8 @@
                                                 <h3 class="title">
                                                     Comfortable and modern design </h3>
                                                 <span class="summary description">
-                                                    <p>Welcome to HaGiangMountain&#39;s House -
-                                                        20&nbsp;beds.&nbsp;HaGiangMountain&rsquo;s
+                                                    <p>Welcome to LinenHaGiang&#39;s House -
+                                                        20&nbsp;beds.&nbsp;LinenHaGiang&rsquo;s
                                                         Homestay offers one free night in the dormitory the day before the
                                                         tour begins, and you can check in after 2 pm. Our reception is open
                                                         24/7. The free night is random and we don&#39;t charge any fee for
@@ -340,7 +340,7 @@
                                 </h2>
                                 <div class="block_summary no_marquee">
                                     <span>
-                                        <strong>ATTRACTIVE</strong> gifts when booking Tour HaGiangMountain </span>
+                                        <strong>ATTRACTIVE</strong> gifts when booking Tour LinenHaGiang </span>
                                 </div>
                             </div>
                             <form method="post" action="{{ route('client.confirmOrder') }}" id="buy_fast_form_default"
@@ -405,7 +405,7 @@
                                                 </div>
                                             </div>
                                             <div class="note">
-                                                <label for="">NOTE: HaGiangMountain’s Homestay offers one free night in the
+                                                <label for="">NOTE: LinenHaGiang’s Homestay offers one free night in the
                                                     DORM only
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
@@ -478,7 +478,7 @@
                                                 <label for="">
                                                     <p><strong>NOTE:</strong> Discounted car rental prices <strong>only
                                                             apply</strong> to customers <strong>booking
-                                                            HaGiangMountain&#39;s Tour
+                                                            LinenHaGiang&#39;s Tour
                                                             tours</strong></p>
                                                 </label>
                                             </div>
@@ -657,15 +657,15 @@
 
                                     <div class="content " id="content-2">
                                         <div class="content2">
-                                            <p>At HaGiangMountain&#39;s Homestay, we are pleased to provide complimentary
+                                            <p>At LinenHaGiang&#39;s Homestay, we are pleased to provide complimentary
                                                 luggage
                                                 storage for our guests. Please feel free to leave your large backpack with
                                                 us, allowing you to carry only the essentials in smaller bags during the
                                                 loop. This ensures you can fully enjoy your adventure without the burden of
                                                 heavy luggage. For any valuable items, please hand them to our receptionist
-                                                or secure them in the locker at HaGiangMountain&#39;s Homestay (you will
+                                                or secure them in the locker at LinenHaGiang&#39;s Homestay (you will
                                                 need to
-                                                provide your own lock). HaGiangMountain&#39;s Homestay cannot guarantee the
+                                                provide your own lock). LinenHaGiang&#39;s Homestay cannot guarantee the
                                                 safety of
                                                 luggage stored at our Lugg storage.</p>
                                         </div>
@@ -688,15 +688,15 @@
                                                 breakdowns. Another safety issue is the lack of gears in automatic bikes,
                                                 preventing them from engine braking effectively. In this post, we will learn
                                                 how to drive a semi-automatic scooter so you can be confident to do the loop
-                                                with HaGiangMountain&#39;s homestay:&nbsp;<a
+                                                with LinenHaGiang&#39;s homestay:&nbsp;<a
                                                     href="how-to-drive-a-semi-automatic-scooter-effectively/index.html"><span
                                                         style="color:#f1c40f">How to drive a semi-automatic scooter
                                                         effectively (mamashomestay.com)</span></a></p>
 
-                                            <p><em><span style="color:#f39c12">Note: HaGiangMountain&#39;s Homestay kindly
+                                            <p><em><span style="color:#f39c12">Note: LinenHaGiang&#39;s Homestay kindly
                                                         reminds
                                                         guests to have an International Driving Permit (IDP) if they plan to
-                                                        drive during their stay. Please note that HaGiangMountain&#39;s
+                                                        drive during their stay. Please note that LinenHaGiang&#39;s
                                                         Homestay is not
                                                         responsible for any penalties or issues if you are caught by the
                                                         police without a valid IDP. Drive safely and enjoy your

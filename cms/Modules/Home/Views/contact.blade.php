@@ -20,7 +20,7 @@
 
                                 <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope"
                                     itemtype="http://schema.org/ListItem">
-                                    <a title='HaGiangMountain’s Homestay - Explore Ha Giang' href="../index.html"
+                                    <a title='LinenHaGiang’s Homestay - Explore Ha Giang' href="../index.html"
                                         itemprop="item">
                                         <span itemprop="name">Home</span>
                                         <meta content="1" itemprop="position">
@@ -39,7 +39,7 @@
 
                 <div class="contact">
                     <div class="contact_title container">
-                        <h1 class="block_title">Contact HaGiangMountain Tour</h1>
+                        <h1 class="block_title">Contact LinenHaGiang Tour</h1>
                     </div>
                     <div class="container">
                         <div class="row top cls">
@@ -108,18 +108,18 @@
 
                                         <div class="item">
                                             <div class="name ctn">
-                                                <a href="javascript:void(0)" title="HaGiangMountain's Tour Ha Giang"
+                                                <a href="javascript:void(0)" title="LinenHaGiang's Tour Ha Giang"
                                                     class="click_me" data-id="1">
-                                                    HaGiangMountain's Tour Ha Giang </a>
+                                                    LinenHaGiang's Tour Ha Giang </a>
                                             </div>
                                             <div class="address ctn">
                                                 <span>Address:</span> No.124, 20/8 street, Ha Giang, Vietnam
                                             </div>
                                             <div class="email ctn">
-                                                <span>Email:</span> HaGiangMountainshomestayhg@gmail.com
+                                                <span>Email:</span> LinenHaGiangshomestayhg@gmail.com
                                             </div>
                                             <div class="website ctn">
-                                                <span>Website:</span> https://HaGiangMountainshomestay.com/
+                                                <span>Website:</span> https://LinenHaGiangshomestay.com/
                                             </div>
                                             <div class="phone ctn">
                                                 <div class="phone-icon"><svg fill="#fac686" version="1.1" id="Capa_1"
@@ -138,7 +138,7 @@
                                                         </g>
                                                     </svg></div>
                                                 <div class="phone-title">Hotline Whatsapp 24/7:</div>
-                                                <div><span>+84849278787</span></div>
+                                                <div><span>+84397223444</span></div>
                                             </div>
                                         </div>
                                     </div>
