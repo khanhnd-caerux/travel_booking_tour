@@ -5,8 +5,8 @@
 
             <div class="item ">
                 <img alt="HA GIANG" width="1920px" height="1080px"
-                    src="frontend/images/slideshow/2023/11/07/compress/rectangle-17_1699359950.jpg"
-                    srcset="frontend/images/slideshow/2023/11/07/compress/rectangle-17_1699359950.jpg.webp">
+                    src="tour-images/27.jpg"
+                    srcset="tour-images/27.jpg">
                 <div class="item_content">
                     <div class="item_content_block">
                         <h2>HA GIANG</h2>
@@ -19,8 +19,8 @@
 
             <div class="item hide">
                 <img class="owl-lazy" alt="HA GIANG" width="1920px" height="1080px"
-                    data-src="https://mamashomestay.com/images/slideshow/2024/08/21/compress/untitled-2_1724206565.jpg"
-                    data-srcset="frontend/images/slideshow/2024/08/21/compress/untitled-2_1724206565.jpg.webp">
+                    data-src="tour-images/44.jpg"
+                    data-srcset="tour-images/44.jpg">
                 <div class="item_content">
                     <div class="item_content_block">
                         <h2>HA GIANG</h2>
@@ -41,26 +41,26 @@
                             <div class="image image-0">
                                 <img class="lazy" alt="The majestic natural beauty eagerly awaits your discovery"
                                     width="613px" height="454px"
-                                    data-src="https://mamashomestay.com/images/introduce/resized/dis_tour4_1699346018.jpg"
-                                    data-srcset="frontend/images/introduce/resized/dis_tour4_1699346018.jpg.webp">
+                                    data-src="tour-images/2.jpg"
+                                    data-srcset="tour-images/2.jpg">
                             </div>
                             <div class="image image-1">
                                 <img class="lazy" alt="The majestic natural beauty eagerly awaits your discovery"
                                     width="613px" height="454px"
-                                    data-src="https://mamashomestay.com/images/introduce/resized/dis_tour3_1699346015.jpg"
-                                    data-srcset="frontend/images/introduce/resized/dis_tour3_1699346015.jpg.webp">
+                                    data-src="tour-images/29.jpg"
+                                    data-srcset="tour-images/29.jpg">
                             </div>
                             <div class="image image-2">
                                 <img class="lazy" alt="The majestic natural beauty eagerly awaits your discovery"
                                     width="613px" height="454px"
-                                    data-src="https://mamashomestay.com/images/introduce/resized/980-songlung2_1699348959.jpg"
-                                    data-srcset="frontend/images/introduce/resized/980-songlung2_1699348959.jpg.webp">
+                                    data-src="tour-images/7.jpg"
+                                    data-srcset="tour-images/7.jpg">
                             </div>
                             <div class="image image-3">
                                 <img class="lazy" alt="The majestic natural beauty eagerly awaits your discovery"
                                     width="613px" height="454px"
-                                    data-src="https://mamashomestay.com/images/introduce/resized/du-lich-ha-giang-5_1699348959.jpg"
-                                    data-srcset="frontend/images/introduce/resized/du-lich-ha-giang-5_1699348959.jpg.webp">
+                                    data-src="tour-images/9.jpg"
+                                    data-srcset="tour-images/9.jpg">
                             </div>
 
                         </div>
@@ -78,7 +78,7 @@
                                     </p>
                                 </div>
                                 <div class="btn-discover">
-                                    <a href="index.html#tour" class="btn-book">Discover Tour</a>
+                                    <a href="#tour" class="btn-book">Discover Tour</a>
                                 </div>
                             </div>
                             <div class="bg-discover"></div>
@@ -109,8 +109,8 @@
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 5">
                             <img class="lazy" alt="Hà Giang Tripadvisor image 5" width="220px" height="220px"
-                                data-src="https://mamashomestay.com/images/albums/resized2/z4725878466433_261e43d425079779013912db2bed88ec_1701100938.jpg"
-                                data-srcset="https://mamashomestay.com/images/albums/resized2/z4725878466433_261e43d425079779013912db2bed88ec_1701100938.jpg.webp">
+                                data-src="tour-images/3.jpg"
+                                data-srcset="tour-images/3.jpg">
                         </a>
                     </div>
                     <div class="item">
@@ -119,8 +119,8 @@
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 4">
                             <img class="lazy" alt="Hà Giang Tripadvisor image 4" width="220px" height="220px"
-                                data-src="https://mamashomestay.com/images/albums/resized2/z4622114753248_f10f9f25eada4b375745e377e35df59e_1701100960.jpg"
-                                data-srcset="https://mamashomestay.com/images/albums/resized2/z4622114753248_f10f9f25eada4b375745e377e35df59e_1701100960.jpg.webp">
+                                data-src="tour-images/4.jpg"
+                                data-srcset="tour-images/4.jpg">
                         </a>
                     </div>
                     <div class="item">
@@ -129,8 +129,8 @@
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 3">
                             <img class="lazy" alt="Hà Giang Tripadvisor image 3" width="220px" height="220px"
-                                data-src="https://mamashomestay.com/images/albums/resized2/z4622176898928_edb04c20c62edf4465030552b69f62a9_1701100981.jpg"
-                                data-srcset="https://mamashomestay.com/images/albums/resized2/z4622176898928_edb04c20c62edf4465030552b69f62a9_1701100981.jpg.webp">
+                                data-src="tour-images/45.jpg"
+                                data-srcset="tour-images/45.jpg">
                         </a>
                     </div>
                     <div class="item">
@@ -139,8 +139,8 @@
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 2">
                             <img class="lazy" alt="Hà Giang Tripadvisor image 2" width="220px" height="220px"
-                                data-src="https://mamashomestay.com/images/albums/resized2/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1701101003.jpg"
-                                data-srcset="https://mamashomestay.com/images/albums/resized2/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1701101003.jpg.webp">
+                                data-src="tour-images/43.jpg"
+                                data-srcset="tour-images/43.jpg">
                         </a>
                     </div>
                     <div class="item">
@@ -149,8 +149,8 @@
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
                             rel="image_large1" title="Hà Giang Tripadvisor image 1">
                             <img class="lazy" alt="Hà Giang Tripadvisor image 1" width="220px" height="220px"
-                                data-src="https://mamashomestay.com/images/albums/resized2/z4645322525490_82dbc8ecab98eec61e22f7f87ddeb94c_1701101027.jpg"
-                                data-srcset="https://mamashomestay.com/images/albums/resized2/z4645322525490_82dbc8ecab98eec61e22f7f87ddeb94c_1701101027.jpg.webp">
+                                data-src="tour-images/47.jpg"
+                                data-srcset="tour-images/47.jpg">
                         </a>
                     </div>
                     <a href="https://www.tripadvisor.com.vn/Attraction_Review-g4200402-d26586865-Reviews-Ha_Giang_Loop_Tour_by_Mama_s_Homestay-Dong_Van_Ha_Giang_Province.html"
@@ -197,15 +197,6 @@
                                                     data-src="{{ $tour->tourDetails->first()->image }}"
                                                     data-srcset="{{ $tour->tourDetails->first()->image }}">
                                             </a>
-                                            @foreach ($tour->tourDetails as $tourDetail)
-                                                <a href="{{ $tourDetail->image }}" data-fancybox="gallery_sc_dt_{{ $loop->index }}"
-                                                    class="openfancybox image_{{ $loop->index }} ">
-                                                    <img class="lazy image @if ($loop->index == 0) active @endif"
-                                                        alt="Ha Giang tour 2 days 1 night" width="415px" height="340px"
-                                                        id="image_{{ $loop->index }}" data-src="{{ $tourDetail->image }}"
-                                                        data-srcset="{{ $tourDetail->image }}">
-                                                </a>
-                                            @endforeach
                                         </figure>
                                         <div class="detail">
                                             <span class="day"><strong>Time</strong> {{ $tour->time }}</span>
@@ -858,44 +849,44 @@
                         <div class="grid_pdutab">
                             <div class="pdutab_content pdutab_content_1">
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1705141343.jpg">
+                                    data-src="tour-images/10.jpg">
                                     <img class="lazy" alt="hà giang 3" width="370px" height="370px"
-                                        data-src="https://mamashomestay.com/images/albums/large/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1705141343.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/large/z4622176189599_b571ba52ba5e5398d34f8ba81aed55f7_1705141343.jpg.webp">
+                                        data-src="tour-images/10.jpg"
+                                        data-srcset="tour-images/10.jpg">
                                 </div>
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/z5067853323855_545a25557b1e177aaa58123fda2bc8ce_1705140971.jpg">
+                                    data-src="tour-images/35.jpg">
                                     <img class="lazy" alt="ha_giang_1" width="370px" height="570px"
-                                        data-src="https://mamashomestay.com/images/albums/resized/z5067853323855_545a25557b1e177aaa58123fda2bc8ce_1705140971.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/resized/z5067853323855_545a25557b1e177aaa58123fda2bc8ce_1705140971.jpg.webp">
+                                        data-src="tour-images/35.jpg"
+                                        data-srcset="tour-images/35.jpg">
                                 </div>
                             </div>
                             <div class="pdutab_content pdutab_content_2">
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/z5067853261864_7ee3c92d8815835e3bf1bf53e6942f3f_1705140993.jpg">
+                                    data-src="tour-images/37.jpg">
                                     <img class="lazy" alt="Photo 6" width="370px" height="370px"
-                                        data-src="https://mamashomestay.com/images/albums/resized/z5067853261864_7ee3c92d8815835e3bf1bf53e6942f3f_1705140993.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/resized/z5067853261864_7ee3c92d8815835e3bf1bf53e6942f3f_1705140993.jpg.webp">
+                                        data-src="tour-images/37.jpg"
+                                        data-srcset="tour-images/37.jpg">
                                 </div>
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/z4977513818257_702dfb7614f3bc437ce5120333e73c50_1705141035.jpg">
+                                    data-src="tour-images/42.jpg">
                                     <img class="lazy" alt="Photo 5" width="370px" height="570px"
-                                        data-src="https://mamashomestay.com/images/albums/large/z4977513818257_702dfb7614f3bc437ce5120333e73c50_1705141035.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/large/z4977513818257_702dfb7614f3bc437ce5120333e73c50_1705141035.jpg.webp">
+                                        data-src="tour-images/42.jpg"
+                                        data-srcset="tour-images/42.jpg">
                                 </div>
                             </div>
                             <div class="pdutab_content pdutab_content_3">
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/dio09140-jpg_1705141066.jpg">
+                                    data-src="tour-images/12.jpg">
                                     <img class="lazy" alt="Photo 4" width="370px" height="570px"
-                                        data-src="https://mamashomestay.com/images/albums/large/dio09140-jpg_1705141066.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/large/dio09140-jpg_1705141066.jpg.webp">
+                                        data-src="tour-images/12.jpg"
+                                        data-srcset="tour-images/12.jpg">
                                 </div>
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
-                                    data-src="https://mamashomestay.com/images/albums/original/z5067853362576_af2b54bda0e8be592cb2f476c9c40285_1705141106.jpg">
+                                    data-src="tour-images/17.jpg">
                                     <img class="lazy" alt="Photo 3" width="370px" height="370px"
-                                        data-src="https://mamashomestay.com/images/albums/resized/z5067853362576_af2b54bda0e8be592cb2f476c9c40285_1705141106.jpg"
-                                        data-srcset="https://mamashomestay.com/images/albums/resized/z5067853362576_af2b54bda0e8be592cb2f476c9c40285_1705141106.jpg.webp">
+                                        data-src="tour-images/17.jpg"
+                                        data-srcset="tour-images/17.jpg">
                                 </div>
                             </div>
                         </div>
