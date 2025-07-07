@@ -197,4 +197,17 @@ class HomeController extends Controller
 
         return redirect()->route('client.index')->with('success', true);
     }
+
+    public function getBusCheckbox(Request $request)
+    {
+        $departmentId = $request->input('department_id');
+        $direction = $request->input('direction');
+
+        $buses = DB::table('buses')
+                    ->where('department_id', $departmentId)
+                    ->where('direction', $direction)
+                    ->get();
+
+        return response()->json($buses);
+    }
 }

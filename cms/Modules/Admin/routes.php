@@ -22,6 +22,15 @@ Route::group([
         Route::delete('/delete', 'UserController@delete')->name('admin.user.delete');
     });
     Route::group([
+        'prefix' => 'bus',
+        'middleware' => ['auth']
+    ], function () {
+        Route::get('/create', 'BusController@create')->name('admin.bus.create');
+        Route::get('/list', 'BusController@list')->name('admin.bus.list');
+        Route::post('/store', 'BusController@store')->name('admin.bus.store');
+        Route::delete('/delete', 'BusController@delete')->name('admin.bus.delete');
+    });
+    Route::group([
         'prefix' => 'setting',
         'middleware' => ['auth']
     ], function () {

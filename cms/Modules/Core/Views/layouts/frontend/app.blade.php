@@ -8,7 +8,7 @@
 <head id="Head1" prefix="og: http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Cache-control" content="public">
-    <title>LinenHaGiang Homestay - Explore Ha Giang</title>
+    <title>Linen HaGiang Tour - Explore Ha Giang</title>
     <meta name="description"
         content="Hieu Dang - Owner of “Explore Ha Giang”. Linen Ha Giang BY LinenHaGiang HOMESTAY LinenHaGiang’s Homestay - Explore Ha Giang" />
     <meta name="keywords" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
@@ -43,7 +43,7 @@
     <meta content="INDEX,FOLLOW" name="robots" />
     <meta name="googlebot" content="index,follow" />
 
-    <link type='image/x-icon' href='favicon.ico' rel='icon' />
+    <link type='image/x-icon' href='https://linenhagiang.com/frontend/images/config/asset-17_1698816647.jpeg' rel='icon' />
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta name="geo.placename" content="H&agrave; Nội" />
     <meta name="geo.region" content="VN-HN" />
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="LinenHaGiang’s Homestay - Explore Ha Giang Feed"
         href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
     @yield('css')
 </head>
 
@@ -88,15 +88,13 @@
         </div>
         <ul class="menu scroll_bar">
             <span class="label" id="menu_">Menu</span>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='About' href='introduce/index.html'>About</a>
+            <li class='group_class_menu group_id_menu_27 level_0'><a title='Home' href='{{ route('client.index') }}'>Home</a>
             </li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Tours' href='index.html#tour'>Tours</a></li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Homestay'
-                    href='homestay/index.html'>Homestay</a></li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='News' href='news/index.html'>News</a></li>
+            <li class='group_class_menu group_id_menu_27 level_0'><a title='Introduce' href='introduce'>Introduce</a></li>
+            <li class='group_class_menu group_id_menu_27 level_0'><a title='Tours' href='{{ route('client.index') }}/#tour'>Tours</a></li>
             <li class='group_class_menu group_id_menu_27 level_0'><a title='Contact'
-                    href='contact/index.html'>Contact</a></li>
-            <li class='level_1 '><a style='color: red' href='index.html#tour'>Book Now</a></li>
+                    href='{{ route('client.contact') }}'>Contact</a></li>
+            <li class='level_1 '><a style='color: red' href='{{ route('client.index') }}/#tour'>Book Now</a></li>
         </ul>
     </div>
 
@@ -104,33 +102,38 @@
         <div class='onlinesupport_list_row'>
             <div class="gid-row">
                 <div class="item item_zalo item-show">
-                    <a rel="nofollow" title="Hỗ trợ instagram" target='_blank'
-                        href="https://www.instagram.com/hagiangloop/">
-                        <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="Instagram" role="img"
-                            viewBox="0 0 512 512" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <rect width="512" height="512" rx="15%" id="b"></rect>
-                                <use fill="url(#a)" xlink:href="#b"></use>
-                                <use fill="url(#c)" xlink:href="#b"></use>
-                                <radialGradient id="a" cx=".4" cy="1" r="1">
-                                    <stop offset=".1" stop-color="#fd5"></stop>
-                                    <stop offset=".5" stop-color="#ff543e"></stop>
-                                    <stop offset="1" stop-color="#c837ab"></stop>
-                                </radialGradient>
-                                <linearGradient id="c" x2=".2" y2="1">
-                                    <stop offset=".1" stop-color="#3771c8"></stop>
-                                    <stop offset=".5" stop-color="#60f" stop-opacity="0"></stop>
-                                </linearGradient>
-                                <g fill="none" stroke="#ffffff" stroke-width="30">
-                                    <rect width="308" height="308" x="102" y="102" rx="81"></rect>
-                                    <circle cx="256" cy="256" r="72"></circle>
-                                    <circle cx="347" cy="165" r="6"></circle>
-                                </g>
-                            </g>
+                    <a rel="nofollow" title="Hỗ trợ Facebook" target='_blank'
+                        href="https://www.facebook.com/Linenhagiangtour1">
+                        <!--<svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg"-->
+                        <!--    xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="Instagram" role="img"-->
+                        <!--    viewBox="0 0 512 512" fill="#000000">-->
+                        <!--    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>-->
+                        <!--    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>-->
+                        <!--    <g id="SVGRepo_iconCarrier">-->
+                        <!--        <rect width="512" height="512" rx="15%" id="b"></rect>-->
+                        <!--        <use fill="url(#a)" xlink:href="#b"></use>-->
+                        <!--        <use fill="url(#c)" xlink:href="#b"></use>-->
+                        <!--        <radialGradient id="a" cx=".4" cy="1" r="1">-->
+                        <!--            <stop offset=".1" stop-color="#fd5"></stop>-->
+                        <!--            <stop offset=".5" stop-color="#ff543e"></stop>-->
+                        <!--            <stop offset="1" stop-color="#c837ab"></stop>-->
+                        <!--        </radialGradient>-->
+                        <!--        <linearGradient id="c" x2=".2" y2="1">-->
+                        <!--            <stop offset=".1" stop-color="#3771c8"></stop>-->
+                        <!--            <stop offset=".5" stop-color="#60f" stop-opacity="0"></stop>-->
+                        <!--        </linearGradient>-->
+                        <!--        <g fill="none" stroke="#ffffff" stroke-width="30">-->
+                        <!--            <rect width="308" height="308" x="102" y="102" rx="81"></rect>-->
+                        <!--            <circle cx="256" cy="256" r="72"></circle>-->
+                        <!--            <circle cx="347" cy="165" r="6"></circle>-->
+                        <!--        </g>-->
+                        <!--    </g>-->
+                        <!--</svg>-->
+                        <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="44" height="44" rx="7" fill="#1877F2"/>
+                          <path d="M27.5 14h-2.8c-1.3 0-1.7.6-1.7 1.6v2.4h4.4l-.6 4.2h-3.8v10.8h-4.5V22.2h-3.3v-4.2h3.3v-3.1c0-3.3 2-5.2 5-5.2h3.2v4.3z" fill="white"/>
                         </svg>
+
                     </a>
                 </div>
 
@@ -154,7 +157,7 @@
                 </div>
 
                 <div class="item item-show">
-                    <a title="Gmail" target="" href="mailto:LinenHaGiangshomestayhg@gmail.com">
+                    <a title="Gmail" target="" href="mailto:linenhagiang@gmail.com">
                         <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img"
                             viewBox="0 0 512.00 512.00" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

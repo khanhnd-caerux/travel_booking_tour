@@ -58,7 +58,7 @@
             <a class="nav-link text-white @if($activePage && $activePage == 'tour-detail') active bg-gradient-primary @endif"
                 href="{{ route('admin.tour_detail.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">tour</i>
+                    <i class="material-icons opacity-10">card_travel</i>
                 </div>
                 <span class="nav-link-text ms-1">Tour chi tiết</span>
             </a>
@@ -67,7 +67,7 @@
             <a class="nav-link text-white @if($activePage && $activePage == 'tour-price') active bg-gradient-primary @endif"
                 href="{{ route('admin.tour_price.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">tour</i>
+                    <i class="material-icons opacity-10">attach_money</i>
                 </div>
                 <span class="nav-link-text ms-1">Giá Tour</span>
             </a>
@@ -85,7 +85,7 @@
             <a class="nav-link text-white @if($activePage && $activePage == 'contact') active bg-gradient-primary @endif"
                 href="{{ route('admin.contact.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">call</i>
+                    <i class="material-icons opacity-10">3p</i>
                 </div>
                 <span class="nav-link-text ms-1">Liên hệ</span>
             </a>
@@ -94,9 +94,18 @@
             <a class="nav-link text-white @if($activePage && $activePage == 'order') active bg-gradient-primary @endif"
                 href="{{ route('admin.order.list') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">call</i>
+                    <i class="material-icons opacity-10">shopping_cart</i>
                 </div>
                 <span class="nav-link-text ms-1">Order</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white @if($activePage && $activePage == 'bus') active bg-gradient-primary @endif"
+                href="{{ route('admin.bus.list') }}">
+                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="material-icons opacity-10">directions_bus</i>
+                </div>
+                <span class="nav-link-text ms-1">Bus</span>
             </a>
         </li>
     </ul>

@@ -2746,9 +2746,8 @@ $(document).ready(function () {
             $('#bus_checkbox').prop('checked', true);
             var id_departure = $('#buy_location_departure').val();
             if (id_departure) {
-                ajax_get_bus_departure(id_departure);
+                ajax_get_bus_departure('departure_checkbox');
                 ajax_get_prices_departure(id_departure);
-
             }
             $('.list_bus_departure').addClass('show_book');
             $('.list_bus_departure').slideToggle();
@@ -2774,7 +2773,7 @@ $(document).ready(function () {
             $('#bus_checkbox').prop('checked', true);
             var id_return = $('#buy_location_return').val();
             if (id_return) {
-                ajax_get_bus_return(id_return);
+                ajax_get_bus_departure('return_checkbox');
                 ajax_get_prices_return(id_return);
             }
             $('.list_bus_return').addClass('show_book');
@@ -2826,7 +2825,7 @@ $(document).ready(function () {
         var id_departure = $(this).val();
         if ($('#departure_checkbox').is(':checked')) {
             ajax_get_prices_departure(id_departure);
-            ajax_get_bus_departure(id_departure);
+            ajax_get_bus_departure('departure_checkbox');
             buy_bus_departure(0);
         }
     });
@@ -2835,7 +2834,7 @@ $(document).ready(function () {
         var id_return = $(this).val();
         if ($('#return_checkbox').is(':checked')) {
             ajax_get_prices_return(id_return);
-            ajax_get_bus_return(id_return);
+            ajax_get_bus_departure('return_checkbox');
             buy_bus_return(0);
         }
     });
@@ -2968,6 +2967,66 @@ function ajax_get_prices_tour(id_tour) {
     });
 }
 
+// Ajax get bus departure
+function ajax_get_bus_departure(checkboxName) {
+    let direction = $(`input[name="${checkboxName}"]:checked`).val();
+    let departmentId = (checkboxName === 'return_checkbox')
+        ? $('#buy_location_return').val()
+        : $('#buy_location_departure').val();
+
+    let containerClass = (checkboxName === 'return_checkbox')
+        ? '.list_bus_return'
+        : '.list_bus_departure';
+
+    $.ajax({
+        url: '/ajax-get-bus',
+        type: 'post',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+        data: {
+            department_id: departmentId,
+            direction: direction
+        },
+        success: function (response) {
+            $(containerClass).find('.mbl_grid').empty();
+
+            if (response.length === 0) {
+                $(containerClass).find('.mbl_grid').append('<li>No data return.</li>');
+            } else {
+                response.forEach(function (bus) {
+                    let id = bus.id;
+                    let name = bus.name || '';
+                    let time = bus.time || [];
+                    let price = bus.price || 0;
+                    let image_path = bus.image_path || '';
+
+                    $(containerClass).find('.mbl_grid').append(
+                        `<label class="serice_item" for="buy_bus_departure_${id}" onclick="buy_bus_departure(${id}, ['${time.join("','")}'])">
+                            <figure class="image">
+                                <img src="${image_path}" alt="${name}">
+                            </figure>
+                            <div class="content">
+                                <input checked type="radio" name="buy_bus_departure" class="buy_bus_departure"
+                                       onclick="buy_bus_departure(${id}, ['${time.join("','")}'])"
+                                       id="buy_bus_departure_${id}" value="${id}" data-time="'${time[0]}'">
+                                ${name}
+                                <div class="price"><span>₫</span> ${price.toLocaleString('vi-VN')}</div>
+                            </div>
+                        </label>`
+                    );
+                });
+            }
+        },
+        error: function (xhr) {
+            console.error('Lỗi API:', xhr.responseText);
+            $(containerClass).html('<li>Lỗi khi tải dữ liệu.</li>');
+        }
+    });
+}
+
+
 // Ajax get prices tour
 function ajax_count_prices_tour(id_type) {
     console.log('--t4sysdf---', id_type);
@@ -3018,23 +3077,6 @@ function ajax_get_prices_room(id_room) {
 }
 
 
-// Ajax get bus departure
-function ajax_get_bus_departure(id_departure) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_bus_departure&raw=1&id=' + id_departure,
-        type: 'post',
-        cache: false,
-        success: function (html) {
-            $(".list_bus_departure .mbl_grid").html('');
-            $(".list_bus_departure .mbl_grid").html(html);
-            var id_bus_departure = $('input[name=buy_bus_departure]:checked').val();
-            console.log(id_bus_departure);
-            if (id_bus_departure) {
-                ajax_get_prices_bus_departure(id_bus_departure);
-            }
-        }
-    });
-}
 // Ajax get prices departure
 function ajax_get_prices_departure(id_departure) {
     $.ajax({

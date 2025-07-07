@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="mbl book_bus">
+            <div class="checkbox">
+                <input
+                    type="checkbox"
+                    id="bus_checkbox"
+                    class="txt_checkbox"
+                    name="bus_checkbox"
+                    value="1"
+                />
+                <label for="bus_checkbox"><span>BUS SERVICE</span></label>
+            </div>
+            <div class="note" style="margin-bottom: 20px">
+                <label
+                    >NOTE: The bus request might change due to the availability
+                    each day. When you request it, we will confirm back via
+                    email</label
+                >
+            </div>
+            <div class="mbl_flex book_departure">
+                <div class="checkbox">
+                    <input
+                        type="checkbox"
+                        id="departure_checkbox"
+                        class="txt_checkbox"
+                        name="departure_checkbox"
+                        value="1"
+                    />
+                    <label for="departure_checkbox"
+                        ><span>Choose a starting point</span></label
+                    >
+                </div>
+                <select
+                    name="buy_location_departure"
+                    id="buy_location_departure"
+                    class="txtinput buy_location"
+                >
+                    <option value="" style="display: none">
+                        Starting point
+                    </option>
+                    <option value="3" selected>HANOI</option>
+                    <option value="2">SAPA</option>
+                    <option value="1">HA LONG</option>
+                    <option value="4">NINH BINH</option>
+                    <option value="5">CAT BA</option>
+                </select>
+                <div class="mbl_txt">
+                    <input
+                        type="text"
+                        class="txtinput datepicker"
+                        autocomplete="off"
+                        placeholder="Departure date"
+                        class=""
+                        id="datepicker"
+                        name="departure_time"
+                        class=""
+                    />
+                </div>
+            </div>
+            <div class="list_bus_departure">
+                <div class="mbl_grid"></div>
+            </div>
+            <div class="mbl_flex book_return">
+                <div class="checkbox">
+                    <input
+                        type="checkbox"
+                        id="return_checkbox"
+                        class="txt_checkbox"
+                        name="return_checkbox"
+                        value="1"
+                    />
+                    <label for="return_checkbox"
+                        ><span>Choose the return destination</span>
+                    </label>
+                </div>
+                <select
+                    name="buy_location_return"
+                    id="buy_location_return"
+                    class="txtinput buy_location"
+                >
+                    <option value="" style="display: none">Destination</option>
+                    <option value="3" selected>HANOI</option>
+                    <option value="2">SAPA</option>
+                    <option value="1">HA LONG</option>
+                    <option value="4">NINH BINH</option>
+                    <option value="5">CAT BA</option>
+                </select>
+                <div class="mbl_txt">
+                    <input
+                        type="text"
+                        class="txtinput datepicker"
+                        autocomplete="off"
+                        placeholder="Return date"
+                        id="datepicker2"
+                        name="return_time"
+                        class=""
+                    />
+                </div>
+            </div>
+            <div class="list_bus_return">
+                <div class="mbl_grid"></div>
+            </div>
+        </div>
+    </body>
+</html>

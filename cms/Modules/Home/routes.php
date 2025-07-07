@@ -12,6 +12,7 @@ Route::group([
     Route::post('/save-order', 'HomeController@saveOrder')->name('client.saveOrder');
     Route::post('/send-contact', 'HomeController@sendContact')->name('client.contact.store');
     Route::get('/{slug}', 'HomeController@postDetail')->name('client.postDetail');
+    Route::post('/ajax-get-bus', 'HomeController@getBusCheckbox')->name('client.busCheckbox');
     Route::get('language/{locale}', function ($locale) {
         if (!in_array($locale, ['vi', 'en'])) {
             abort(404);
