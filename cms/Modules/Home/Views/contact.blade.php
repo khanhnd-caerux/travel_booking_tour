@@ -56,35 +56,47 @@
                                                             placeholder="First and last name *" value="" name="contact_name"
                                                             id="contact_name" class="txtinput" />
                                                     </div>
-
+                                                    @error('contact_name')
+                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                                 <div class="mbl ctn_input">
                                                     <div class="input_txt">
                                                         <input type="tel" maxlength="255" placeholder="Whatsapp *" value=""
                                                             name="contact_phone" id="contact_phone" class="txtinput" />
                                                     </div>
+                                                    @error('contact_phone')
+                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                                 <div class="mbl ctn_input">
-
                                                     <div class="input_txt">
                                                         <input type="text" maxlength="255" placeholder="Email *" value=""
                                                             name="contact_email" id="contact_email" class="txtinput" />
                                                     </div>
+                                                    @error('contact_email')
+                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                                 <div class="mbl ctn_input">
                                                     <div class="input_txt">
                                                         <input type="text" maxlength="255" placeholder="Country *" value=""
                                                             name="contact_address" id="contact_address" class="txtinput" />
                                                     </div>
+                                                    @error('contact_address')
+                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
                                             <div class="mbl ctn_mess">
-
                                                 <div class="input_txt textarea_txt">
                                                     <textarea placeholder="Message *" rows="8" cols="20" name='message'
                                                         id='message'></textarea>
                                                 </div>
+                                                @error('message')
+                                                <div class="alert alert-danger text-white">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                         </div>

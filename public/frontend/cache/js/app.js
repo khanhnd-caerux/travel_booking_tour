@@ -2745,13 +2745,16 @@ $(document).ready(function () {
         if ($(this).is(':checked')) {
             $('#bus_checkbox').prop('checked', true);
             var id_departure = $('#buy_location_departure').val();
-            if (id_departure) {
-                ajax_get_bus_departure('departure_checkbox');
-                ajax_get_prices_departure(id_departure);
-            }
+            // Delay lấy radio checked 1 chút
             $('.list_bus_departure').addClass('show_book');
             $('.list_bus_departure').slideToggle();
-
+            if (id_departure) {
+                ajax_get_bus_location('departure_checkbox');
+            }
+            setTimeout(function () {
+                var id_bus_departure = $('input[name=buy_bus_departure]:checked').val();
+                buy_bus_departure(id_bus_departure);
+            }, 1000);
         } else {
             $('.list_bus_departure').removeClass('show_book');
             $('.list_bus_departure').slideToggle();
@@ -2773,11 +2776,14 @@ $(document).ready(function () {
             $('#bus_checkbox').prop('checked', true);
             var id_return = $('#buy_location_return').val();
             if (id_return) {
-                ajax_get_bus_departure('return_checkbox');
-                ajax_get_prices_return(id_return);
+                ajax_get_bus_location('return_checkbox');
             }
             $('.list_bus_return').addClass('show_book');
             $('.list_bus_return').slideToggle();
+            setTimeout(function () {
+                var id_bus_return = $('input[name=buy_bus_return]:checked').val();
+                buy_bus_return(id_bus_return);
+            }, 1000);
         } else {
             $('.list_bus_return').removeClass('show_book');
             $('.list_bus_return').slideToggle();
@@ -2823,19 +2829,19 @@ $(document).ready(function () {
 
     $('#buy_location_departure').change(function () {
         var id_departure = $(this).val();
+        var id_bus_departure = $('input[name=buy_bus_departure]:checked').val();
         if ($('#departure_checkbox').is(':checked')) {
-            ajax_get_prices_departure(id_departure);
-            ajax_get_bus_departure('departure_checkbox');
-            buy_bus_departure(0);
+            ajax_get_bus_location('departure_checkbox');
+            buy_bus_departure(id_bus_departure);
         }
     });
 
     $('#buy_location_return').change(function () {
         var id_return = $(this).val();
+        var id_bus_return = $('input[name=buy_bus_return]:checked').val();
         if ($('#return_checkbox').is(':checked')) {
-            ajax_get_prices_return(id_return);
-            ajax_get_bus_departure('return_checkbox');
-            buy_bus_return(0);
+            ajax_get_bus_location('return_checkbox');
+            buy_bus_return(id_bus_return);
         }
     });
 
@@ -2926,8 +2932,9 @@ $(document).ready(function () {
 })
 
 $('input[name="buy_room"]').change(function () {
+    $('#price_room').empty();
     var price_value = $(this).data('price');
-    var price = new Intl.NumberFormat('vi-VN', {}).format(price_value) + '₫';
+    var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_value);
     var name = $(this).data('name')
     count_total_price(price_value * $('#total_person').val(), 0);
     var str = `<th width="70%">Buy room: ${name}</th>
@@ -2955,7 +2962,7 @@ function ajax_get_prices_tour(id_tour) {
                 if (item['description'] === 'Ride by yourself') {
                     var moto = 1;
                 }
-                var prices = item['price'] != '' ? ' + ' + new Intl.NumberFormat('vi-VN', {}).format(item['price']) + '₫' : '';
+                var prices = item['price'] != '' ? ' + ' + '$' + new Intl.NumberFormat('vi-VN', {}).format(item['price']) : '';
                 if (i === 0) {
                     ajax_count_prices_tour(item['id']);
                 }
@@ -2967,8 +2974,22 @@ function ajax_get_prices_tour(id_tour) {
     });
 }
 
+$('input[name="departure_time"]').on('change', function () {
+    var time = $(this).val();
+    var str = `<th width="70%">Departure time: <b>`+ time + `</b></th>
+    <th width="30%"></th>`;
+    $("#departure_time").html(str);
+});
+
+$('input[name="return_time"]').on('change', function () {
+    var time = $(this).val();
+    var str = `<th width="70%">Return time: <b>`+ time + `</b></th>
+    <th width="30%"></th>`;
+    $("#return_time").html(str);
+});
+
 // Ajax get bus departure
-function ajax_get_bus_departure(checkboxName) {
+function ajax_get_bus_location(checkboxName) {
     let direction = $(`input[name="${checkboxName}"]:checked`).val();
     let departmentId = (checkboxName === 'return_checkbox')
         ? $('#buy_location_return').val()
@@ -2977,6 +2998,10 @@ function ajax_get_bus_departure(checkboxName) {
     let containerClass = (checkboxName === 'return_checkbox')
         ? '.list_bus_return'
         : '.list_bus_departure';
+
+    let className = (checkboxName === 'return_checkbox')
+        ? 'return'
+        : 'departure';
 
     $.ajax({
         url: '/ajax-get-bus',
@@ -3003,16 +3028,16 @@ function ajax_get_bus_departure(checkboxName) {
                     let image_path = bus.image_path || '';
 
                     $(containerClass).find('.mbl_grid').append(
-                        `<label class="serice_item" for="buy_bus_departure_${id}" onclick="buy_bus_departure(${id}, ['${time.join("','")}'])">
+                        `<label class="serice_item" for="buy_bus_${className}_${id}" onclick="buy_bus_${className}(${id}, ['${time.join("','")}'])">
                             <figure class="image">
                                 <img src="${image_path}" alt="${name}">
                             </figure>
                             <div class="content">
-                                <input checked type="radio" name="buy_bus_departure" class="buy_bus_departure"
-                                       onclick="buy_bus_departure(${id}, ['${time.join("','")}'])"
-                                       id="buy_bus_departure_${id}" value="${id}" data-time="'${time[0]}'">
+                                <input checked type="radio" name="buy_bus_${className}" class="buy_bus_${className}"
+                                       onclick="buy_bus_${className}(${id}, ['${time.join("','")}'])"
+                                       id="buy_bus_${className}_${id}" value="${id}" data-time="'${time[0]}'">
                                 ${name}
-                                <div class="price"><span>₫</span> ${price.toLocaleString('vi-VN')}</div>
+                                <div class="price"><span>$</span> ${price.toLocaleString('vi-VN')}</div>
                             </div>
                         </label>`
                     );
@@ -3029,7 +3054,6 @@ function ajax_get_bus_departure(checkboxName) {
 
 // Ajax get prices tour
 function ajax_count_prices_tour(id_type) {
-    console.log('--t4sysdf---', id_type);
     $.ajax({
         url: '/ajax-count-prices-tour',
         type: 'post',
@@ -3042,7 +3066,7 @@ function ajax_count_prices_tour(id_type) {
         },
         success: function (data) {
             $("#price_tour").html("");
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['price']) + '₫';
+            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(data['price']);
             var str = `<th width="70%">Tour: ${data['title']} - ${data['name']}</th>
             <th width="30%">`+ price + `</th>`;
             $("#price_tour").html(str);
@@ -3066,7 +3090,7 @@ function ajax_get_prices_room(id_room) {
                 day = 2;
             }
             var price_home = parseInt(data['prices_tour']) * (parseInt(day) - 1);
-            var price = new Intl.NumberFormat('vi-VN', {}).format(price_home) + '₫';
+            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_home);
             var str = `<th width="70%">Homestays: ${data['title']}</th>
             <th width="30%">`+ price + `</th>`;
             $("#price_room").html(str);
@@ -3076,43 +3100,6 @@ function ajax_get_prices_room(id_room) {
     });
 }
 
-
-// Ajax get prices departure
-function ajax_get_prices_departure(id_departure) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_departure&raw=1&id=' + id_departure,
-        type: 'post',
-        dataType: 'json',
-        success: function (data) {
-            $("#price_departure").html("");
-            var text_departure = $('#text_departure').val();
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['prices']) + '₫';
-            var str = `<th width="70%">` + text_departure + `: ${data['name']}</th>
-            <th width="30%">`+ price + `</th>`;
-            $("#price_departure").html(str);
-            count_total_price(data['prices'] * $('#total_person').val(), $('#price_departure_total').val() * $('#total_person').val());
-            $('#price_departure_total').val(data['prices']);
-        }
-    });
-}
-// Ajax get prices departure
-function ajax_get_prices_return(id_return) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_departure&raw=1&id=' + id_return,
-        type: 'post',
-        dataType: 'json',
-        success: function (data) {
-            $("#price_return").html("");
-            var text_return = $('#text_return').val();
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['prices']) + '₫';
-            var str = `<th width="70%">` + text_return + `: ${data['name']}</th>
-            <th width="30%">`+ price + `</th>`;
-            $("#price_return").html(str);
-            count_total_price(data['prices'] * $('#total_person').val(), $('#price_return_total').val() * $('#total_person').val());
-            $('#price_return_total').val(data['prices']);
-        }
-    });
-}
 
 $('#buy_fast_form_default').on('change', function (e) {
     var data = getFullTableHTML();
@@ -3127,17 +3114,23 @@ function getFullTableHTML() {
 // Ajax get prices bus
 function ajax_get_prices_bus_departure(id_bus_departure) {
     $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_bus&raw=1&id=' + id_bus_departure,
+        url: '/ajax-get-prices-bus-departure',
         type: 'post',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         dataType: 'json',
+        data: {
+            id: id_bus_departure
+        },
         success: function (data) {
             $("#price_bus_departure").html("");
             var text_bus_departure = $('#text_bus_departure').val();
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['prices']) + '₫';
-            var str = `<th width="70%">` + text_bus_departure + `: ${data['title']}</th>
+            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(data['price']);
+            var str = `<th width="70%">` + text_bus_departure + `: ${data['name']}</th>
             <th width="30%">`+ price + `</th>`;
             $("#price_bus_departure").append(str);
-            count_total_price(data['prices'] * $('#total_person').val(), $('#price_bus_departure_total').val() * $('#total_person').val());
+            count_total_price(data['price'] * $('#total_person').val(), $('#price_bus_departure_total').val() * $('#total_person').val());
             $('#price_bus_departure_total').val(data['prices']);
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -3150,18 +3143,24 @@ function ajax_get_prices_bus_departure(id_bus_departure) {
 
 function ajax_get_prices_bus_return(id_bus_return) {
     $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_bus&raw=1&id=' + id_bus_return,
+        url: '/ajax-get-prices-bus-return',
         type: 'post',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         dataType: 'json',
+        data: {
+            id: id_bus_return
+        },
         success: function (data) {
             $("#price_bus_return").html("");
             var text_bus_return = $('#text_bus_return').val();
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['prices']) + '₫';
-            var str = `<th width="70%">` + text_bus_return + `: ${data['title']}</th>
+            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(data['price']);
+            var str = `<th width="70%">` + text_bus_return + `: ${data['name']}</th>
             <th width="30%">`+ price + `</th>`;
             $("#price_bus_return").html(str);
-            count_total_price(data['prices'] * $('#total_person').val(), $('#price_bus_return_total').val() * $('#total_person').val());
-            $('#price_bus_return_total').val(data['prices']);
+            count_total_price(data['price'] * $('#total_person').val(), $('#price_bus_return_total').val() * $('#total_person').val());
+            $('#price_bus_return_total').val(data['price']);
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             $("#price_bus_return").html("");
@@ -3171,23 +3170,6 @@ function ajax_get_prices_bus_return(id_bus_return) {
     });
 }
 
-
-// Ajax get bus departure
-function ajax_get_bus_return(id_return) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_bus_return&raw=1&id=' + id_return,
-        type: 'post',
-        cache: false,
-        success: function (data) {
-            $(".list_bus_return .mbl_grid").html("");
-            $(".list_bus_return .mbl_grid").html(data);
-            var id_bus_return = $('input[name=buy_bus_return]:checked').val();
-            if (id_bus_return) {
-                ajax_get_prices_bus_return(id_bus_return);
-            }
-        }
-    });
-}
 // Ajax get prices moto
 function get_prices_moto(id_moto) {
     $("#price_moto").html("");
@@ -3196,7 +3178,7 @@ function get_prices_moto(id_moto) {
     var title = $('#buy_moto_' + id_moto).data('title');
     var day = $('#buy_tour').find("option:selected").attr("data-day");
     var price_moto = parseInt(moto) * parseInt(day);
-    var price = new Intl.NumberFormat('vi-VN', {}).format(price_moto) + '₫';
+    var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_moto);
     var str = `<th width="70%">` + text_moto + `: ${title}</th>
             <th width="30%">`+ price + `</th>`;
     $("#price_moto").html(str);
@@ -3213,7 +3195,7 @@ function ajax_get_prices_gift(id_gift) {
         success: function (data) {
             $("#price_gift").html("");
             var text_gift = $('#text_gift').val();
-            var price = new Intl.NumberFormat('vi-VN', {}).format(data['prices']) + '₫';
+            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(data['prices']);
             var str = `<th width="70%">` + text_gift + `: ${data['title']}</th>
             <th width="30%">`+ price + `</th>`;
             $("#price_gift").html(str);
@@ -3230,9 +3212,9 @@ function count_total_price(price, price_minus) {
 
     $('#sum_price_tour').val(total_after);
     if ($('#price_voucher_total').val() > 0) {
-        var total_after_fomat = new Intl.NumberFormat('vi-VN', {}).format(Number($('#sum_price_tour').val()) + Number($('#price_voucher_total').val())) + '₫';
+        var total_after_fomat = '$' + new Intl.NumberFormat('vi-VN', {}).format(Number($('#sum_price_tour').val()) + Number($('#price_voucher_total').val()));
     } else {
-        var total_after_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after) + '₫';
+        var total_after_fomat = '$' + new Intl.NumberFormat('vi-VN', {}).format(total_after);
     }
 
     var str = `<th width="70%">` + text_total + `</th>
@@ -3243,7 +3225,7 @@ function count_total_price(price, price_minus) {
     var total_after_surcharge = Number(total_after);
 
     var total_after_surcharge = Number(total_after_surcharge);
-    var total_after_surcharge_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after_surcharge) + '₫';
+    var total_after_surcharge_fomat = '$' + new Intl.NumberFormat('vi-VN', {}).format(total_after_surcharge);
     $("#total_price_tour").html(total_after_surcharge_fomat);
     $("#surcharge_price_tour").val(surcharge_price_tour);
     $("#total_price_all").val(total_after_surcharge);
@@ -3255,12 +3237,12 @@ function count_total_price_after_voucher(price, price_minus) {
     var total_after = Number(sum_price_tour) - Number(price_minus) + Number(price);
 
     $('#sum_price_tour').val(total_after);
-    var total_after_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after) + '₫';
+    var total_after_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after);
     // var surcharge_price_tour = (Number(total_after)*4/100);
     // var total_after_surcharge = Number(surcharge_price_tour) + Number(total_after);
     var total_after_surcharge = Number(total_after);
     var total_after_surcharge = Number(total_after_surcharge);
-    var total_after_surcharge_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after_surcharge) + '₫';
+    var total_after_surcharge_fomat = new Intl.NumberFormat('vi-VN', {}).format(total_after_surcharge);
     $("#total_price_tour").html(total_after_surcharge_fomat);
     $("#surcharge_price_tour").val(surcharge_price_tour);
     $("#total_price_all").val(total_after_surcharge);

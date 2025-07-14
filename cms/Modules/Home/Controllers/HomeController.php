@@ -13,6 +13,7 @@ use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
 use Cms\Modules\Admin\Jobs\SendEmail;
+use Cms\Modules\Home\Requests\ContactRequest;
 
 class HomeController extends Controller
 {
@@ -73,7 +74,7 @@ class HomeController extends Controller
         return view('Home::contact');
     }
 
-    public function sendContact(Request $request)
+    public function sendContact(ContactRequest $request)
     {
         $dataContact = [
             'whats_app' => $request->contact_phone,
@@ -209,5 +210,27 @@ class HomeController extends Controller
                     ->get();
 
         return response()->json($buses);
+    }
+
+    public function getPricesBusDeparture(Request $request)
+    {
+        $id = $request->input('id');
+
+        $busDeparture = DB::table('buses')
+                            ->where('id', $id)
+                            ->first();
+
+        return response()->json($busDeparture);
+    }
+
+    public function getPricesBusReturn(Request $request)
+    {
+        $id = $request->input('id');
+
+        $busReturn = DB::table('buses')
+                            ->where('id', $id)
+                            ->first();
+
+        return response()->json($busReturn);
     }
 }

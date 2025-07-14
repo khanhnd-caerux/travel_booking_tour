@@ -5013,7 +5013,7 @@ footer .tags a {
 }
 .tour_page .list_tours .item_tour .detail_top .price_box .price .unit {
     font-size: 22px;
-    position: absolute;
+    margin-right: 2px;
     font-weight: 600;
 }
 @media screen and (min-width: 1440px) {
@@ -9422,8 +9422,7 @@ body.compensate-for-scrollbar {
     .unit {
     margin-bottom: 0px;
     display: inline-block;
-    font-size: 14px;
-    position: absolute;
+    font-size: 24px;
     font-weight: 600;
     width: auto;
 }
@@ -9598,8 +9597,7 @@ body.compensate-for-scrollbar {
     .unit {
     margin-bottom: 0px;
     display: inline-block;
-    font-size: 14px;
-    position: absolute;
+    font-size: 24px;
     font-weight: 600;
     width: auto;
 }
@@ -9613,7 +9611,7 @@ body.compensate-for-scrollbar {
         .content
         .price
         .unit {
-        font-size: 0.729vw;
+        font-size: 24px;
     }
 }
 .tour_form

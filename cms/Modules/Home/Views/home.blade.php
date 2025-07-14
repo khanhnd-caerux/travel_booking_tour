@@ -206,8 +206,7 @@
                                                     @foreach ($tour->tourPrices as $tourPrice)
                                                         <ul class="price_box">
                                                             <li class="price">
-                                                                {{ number_format($tourPrice->price, 0, ',', '.') }}<span
-                                                                    class="unit">₫</span>
+                                                                <span class="unit">$</span>{{ number_format($tourPrice->price, 0, ',', '.') }}
                                                             </li>
                                                             <li class="name">{{ $tourPrice->description }}</li>
                                                         </ul>
@@ -393,15 +392,15 @@
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_2" class="buy_room"
-                                                        value="2" data-price="375000" data-name="Private room (1-2pp)" />
+                                                        value="2" data-price="15" data-name="Private room (1-2pp)" />
                                                     <label for="buy_room_2">Private room (1-2pp) -
-                                                        <span>375.000₫</span>/night </label>
+                                                        <span>$ 15</span>/night </label>
                                                 </div>
                                                 <div class="room_item">
                                                     <input type="radio" name="buy_room" id="buy_room_3" class="buy_room"
-                                                        value="3" data-price="550000" data-name="Family room (3-4pp)" />
+                                                        value="3" data-price="21" data-name="Family room (3-4pp)" />
                                                     <label for="buy_room_3">Family room (3-4pp) -
-                                                        <span>550.000₫</span>/night </label>
+                                                        <span>$ 21</span>/night </label>
                                                 </div>
                                             </div>
                                             <div class="note">
@@ -535,7 +534,7 @@
                                                             value="1" data-price="0"
                                                             data-title="Honda 110cc - Semi automatic" />
                                                         <label for="buy_moto_1">Honda 110cc - Semi automatic</label>
-                                                        <div class="price">0<span class="unit">₫</span><span
+                                                        <div class="price"><span class="unit">$</span> 0<span
                                                                 class="day">/day</span></div>
                                                     </div>
                                                 </div>
@@ -550,10 +549,10 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_2"
-                                                            value="2" data-price="400000"
+                                                            value="2" data-price="16"
                                                             data-title="Winner X 2023 - Full Manual 150cc" />
                                                         <label for="buy_moto_2">Winner X 2023 - Full Manual 150cc</label>
-                                                        <div class="price">400.000<span class="unit">₫</span><span
+                                                        <div class="price"><span class="unit">$</span> 16<span
                                                                 class="day">/day</span></div>
                                                     </div>
                                                 </div>
@@ -568,10 +567,10 @@
                                                     </figure>
                                                     <div class="content">
                                                         <input type="radio" class="buy_moto" name="buy_moto" id="buy_moto_3"
-                                                            value="3" data-price="650000"
+                                                            value="3" data-price="25"
                                                             data-title="Dirt bike - Manual 150cc" />
                                                         <label for="buy_moto_3">Dirt bike - Manual 150cc</label>
-                                                        <div class="price">650.000<span class="unit">₫</span><span
+                                                        <div class="price"><span class="unit">$</span> 25<span
                                                                 class="day">/day</span></div>
                                                     </div>
                                                 </div>
@@ -649,6 +648,10 @@
                                             </tr>
                                             <tr class="content_table" id="price_gift">
                                             </tr>
+                                            <tr class="content_table" id="departure_time">
+                                            </tr>
+                                            <tr class="content_table" id="return_time">
+                                            </tr>
                                             <tr class="price_table" id="person_total">
                                             </tr>
                                             <tr class="price_table" id="price_total">
@@ -659,12 +662,14 @@
                                             <tr>
                                                 <th width="50%" class="price_text">Final fee</th>
                                                 <th id="total_price_tour" class="price_text" width="50%">
-                                                    0đ
+                                                    $0
                                                 </th>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
+                                <input type="hidden" name="price_bus_departure_total" id="price_bus_departure_total" value="0">
+                                <input type="hidden" name="price_bus_return_total" id="price_bus_return_total" value="0">
                                 <!-- Total People -->
                                 <input type="hidden" name="total_person" id="total_person" value="1">
                                 <!-- Price Tour -->

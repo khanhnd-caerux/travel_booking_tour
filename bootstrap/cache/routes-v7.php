@@ -631,7 +631,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::T0LoGbQ3BMBwn3YG',
+            '_route' => 'generated::BArABPeEcwbd4Lwh',
           ),
           1 => NULL,
           2 => 
@@ -667,7 +667,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::XlmYrPD6kZlsj1KP',
+            '_route' => 'generated::CXuQsVJYYrbdKy06',
           ),
           1 => NULL,
           2 => 
@@ -915,7 +915,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|s(?|etting/(?|edit/([^/]++)(*:95)|update/([^/]++)(*:117)|delete/([^/]++)(*:140))|lider/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|p(?|ost/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|assword/reset/([^/]++)(*:328))|tour(?|/(?|edit/([^/]++)(*:361)|update/([^/]++)(*:384)|delete/([^/]++)(*:407))|\\-(?|detail/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490))|price/(?|edit/([^/]++)(*:521)|update/([^/]++)(*:544)|delete/([^/]++)(*:567))))|contact/delete/([^/]++)(*:601)|order/(?|de(?|tail/([^/]++)(*:636)|lete/([^/]++)(*:657))|update/([^/]++)(*:681)))|/email/verify/([^/]++)/([^/]++)(*:722)|/([^/]++)(*:739)|/ajax\\-(?|get\\-(?|bus(*:768)|prices\\-tour(*:788))|count\\-prices\\-tour(*:816))|/language/([^/]++)(*:843))/?$}sDu',
+      0 => '{^(?|/admin/(?|user/(?|edit/([^/]++)(*:38)|update/([^/]++)(*:60))|s(?|etting/(?|edit/([^/]++)(*:95)|update/([^/]++)(*:117)|delete/([^/]++)(*:140))|lider/(?|edit/([^/]++)(*:171)|update/([^/]++)(*:194)|delete/([^/]++)(*:217)))|p(?|ost/(?|edit/([^/]++)(*:251)|update/([^/]++)(*:274)|delete/([^/]++)(*:297))|assword/reset/([^/]++)(*:328))|tour(?|/(?|edit/([^/]++)(*:361)|update/([^/]++)(*:384)|delete/([^/]++)(*:407))|\\-(?|detail/(?|edit/([^/]++)(*:444)|update/([^/]++)(*:467)|delete/([^/]++)(*:490))|price/(?|edit/([^/]++)(*:521)|update/([^/]++)(*:544)|delete/([^/]++)(*:567))))|contact/delete/([^/]++)(*:601)|order/(?|de(?|tail/([^/]++)(*:636)|lete/([^/]++)(*:657))|update/([^/]++)(*:681)))|/email/verify/([^/]++)/([^/]++)(*:722)|/([^/]++)(*:739)|/ajax\\-(?|get\\-(?|bus(*:768)|prices\\-(?|tour(*:791)|bus\\-(?|departure(*:816)|return(*:830))))|count\\-prices\\-tour(*:860))|/language/([^/]++)(*:887))/?$}sDu',
     ),
     3 => 
     array (
@@ -1554,13 +1554,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      788 => 
+      791 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::MCpRbexJrndzgAbA',
+            '_route' => 'generated::ycRJhjTAM9klZGK2',
           ),
           1 => 
           array (
@@ -1581,7 +1581,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LcRlyBmc2DJHEjeV',
+            '_route' => 'generated::OZRPa9Njt7zyCrWq',
           ),
           1 => 
           array (
@@ -1596,13 +1596,55 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      843 => 
+      830 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::lO9PWlCo4ZfzkrOy',
+            '_route' => 'generated::RlGO4YqksMhNOUmu',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      860 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::8Ojh43HZtVu4kiJ2',
+          ),
+          1 => 
+          array (
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      887 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::xDW8BLeE6tbZnV7B',
           ),
           1 => 
           array (
@@ -3704,7 +3746,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::T0LoGbQ3BMBwn3YG' => 
+    'generated::BArABPeEcwbd4Lwh' => 
     array (
       'methods' => 
       array (
@@ -3725,7 +3767,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::T0LoGbQ3BMBwn3YG',
+        'as' => 'generated::BArABPeEcwbd4Lwh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3779,7 +3821,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::XlmYrPD6kZlsj1KP' => 
+    'generated::CXuQsVJYYrbdKy06' => 
     array (
       'methods' => 
       array (
@@ -3800,7 +3842,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::XlmYrPD6kZlsj1KP',
+        'as' => 'generated::CXuQsVJYYrbdKy06',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4314,7 +4356,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lO9PWlCo4ZfzkrOy' => 
+    'generated::xDW8BLeE6tbZnV7B' => 
     array (
       'methods' => 
       array (
@@ -4331,13 +4373,13 @@ app('router')->setCompiledRoutes(
         }
         \\session()->put(\'locale\', $locale);
         return \\redirect()->route(\'client.index\');
-    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000741ba35d0000000073426ed5";}";s:4:"hash";s:44:"YgYUjunjJHLf05jAPXUkQhQKP/8JrvK62WcTHVoDkvk=";}}',
+    }";s:5:"scope";s:34:"Illuminate\\Support\\ServiceProvider";s:4:"this";N;s:4:"self";s:32:"000000004108b42c0000000014d599f5";}";s:4:"hash";s:44:"wWb+6ucf5sKJCeN6jngPzAHkeJJtPh1utUfl3oNCXas=";}}',
         'namespace' => 'Cms\\Modules\\Home\\Controllers',
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::lO9PWlCo4ZfzkrOy',
+        'as' => 'generated::xDW8BLeE6tbZnV7B',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4421,7 +4463,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::MCpRbexJrndzgAbA' => 
+    'generated::ycRJhjTAM9klZGK2' => 
     array (
       'methods' => 
       array (
@@ -4438,7 +4480,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::MCpRbexJrndzgAbA',
+        'as' => 'generated::ycRJhjTAM9klZGK2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4454,7 +4496,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LcRlyBmc2DJHEjeV' => 
+    'generated::8Ojh43HZtVu4kiJ2' => 
     array (
       'methods' => 
       array (
@@ -4471,7 +4513,73 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LcRlyBmc2DJHEjeV',
+        'as' => 'generated::8Ojh43HZtVu4kiJ2',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::OZRPa9Njt7zyCrWq' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'ajax-get-prices-bus-departure',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@getPricesBusDeparture',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@getPricesBusDeparture',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::OZRPa9Njt7zyCrWq',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::RlGO4YqksMhNOUmu' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'ajax-get-prices-bus-return',
+      'action' => 
+      array (
+        'middleware' => 'web',
+        'uses' => 'Cms\\Modules\\Home\\Controllers\\HomeController@getPricesBusReturn',
+        'controller' => 'Cms\\Modules\\Home\\Controllers\\HomeController@getPricesBusReturn',
+        'namespace' => 'Cms\\Modules\\Home\\Controllers',
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::RlGO4YqksMhNOUmu',
       ),
       'fallback' => false,
       'defaults' => 

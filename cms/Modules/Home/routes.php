@@ -24,4 +24,6 @@ Route::group([
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
     Route::post('/ajax-get-prices-tour', 'HomeController@getPricesTour');
     Route::post('/ajax-count-prices-tour', 'HomeController@countPricesTour');
+    Route::post('/ajax-get-prices-bus-departure', 'HomeController@getPricesBusDeparture');
+    Route::post('/ajax-get-prices-bus-return', 'HomeController@getPricesBusReturn');
 });
