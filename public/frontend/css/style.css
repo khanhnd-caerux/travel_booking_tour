@@ -4807,9 +4807,10 @@ footer .tags a {
 .tour_page .list_tours .item_tour #map2 {
     overflow: hidden;
     position: relative;
-    display: none;
-    max-width: 250px;
-    margin: 0px auto 20px;
+    width: 30%;
+}
+.logo_back_top {
+    border-radius: 50%;
 }
 @media screen and (max-width: 768px) {
     .tour_page .list_tours .item_tour #map2 {
