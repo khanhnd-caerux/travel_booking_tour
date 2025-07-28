@@ -87,7 +87,7 @@
 
 
                             <li class="level_0 sort ">
-                                <a href="introduce" class="menu_item_a tab_top_menu " title="Introduce">
+                                <a href="/post/introduce" class="menu_item_a tab_top_menu " title="Introduce">
                                 Introduce </a>
                             </li>
 

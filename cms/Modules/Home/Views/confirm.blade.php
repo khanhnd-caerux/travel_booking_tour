@@ -53,7 +53,12 @@
                         <div class="row top cls">
                             <div class="row_form">
                                 <div class="right_row itm">
-                                    <form method="post" action="{{ route('client.saveOrder') }}" name="contact"
+                                    @if(session('error'))
+                                        <script>
+                                            alert("{{ session('error') }}");
+                                        </script>
+                                    @endif
+                                    <form method="POST" action="{{ route('client.saveOrder') }}" name="contact"
                                         id="form_contact" class="form ct_form">
                                         @csrf()
                                         {!! json_decode($cart['html_data']) !!}

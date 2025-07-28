@@ -484,8 +484,8 @@
         'host' => 'smtp.gmail.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => '',
-        'password' => '',
+        'username' => 'linenhagiang@gmail.com',
+        'password' => 'irjmiabiuunzloct',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -527,7 +527,7 @@
     ),
     'from' => 
     array (
-      'address' => '',
+      'address' => 'linenhagiang@gmail.com',
       'name' => 'Laravel',
     ),
     'markdown' => 
