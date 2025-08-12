@@ -346,7 +346,7 @@
                                                     please contact us via WhatsApp</label>
                                             </div>
                                         </div>
-                                        <div class="mbl book_bus">
+                                        <!-- <div class="mbl book_bus">
                                             <div class="checkbox">
                                                 <input
                                                     type="checkbox"
@@ -447,7 +447,7 @@
                                             <div class="list_bus_return">
                                                 <div class="mbl_grid"></div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="mbl book_moto">
                                             <div class="checkbox">
                                                 <input type="checkbox" id="moto_checkbox" class="txt_checkbox"

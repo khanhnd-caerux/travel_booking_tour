@@ -85,16 +85,16 @@ class HomeController extends Controller
         ];
         $this->contact->store($dataContact);
         $message = [
-            'customer' => $request->name,
-            'phone' => $request->whats_app,
-            'email' => $request->email,
+            'customer' => $request->contact_name,
+            'phone' => $request->contact_phone,
+            'email' => $request->contact_email,
             'note' => $request->message,
             'link' => route('admin.contact.list'),
         ];
-        $users = $this->userService->getAll();
-        SendEmail::dispatch($message, $users);
+        // $users = $this->userService->getAll();
+        // SendEmail::dispatch($message, $users);
 
-        return redirect()->route('client.contact');
+        return redirect()->route('client.index')->with('success', true);
     }
 
     public function successBooking()
@@ -190,8 +190,8 @@ class HomeController extends Controller
             'note' => $request->message,
             'link' => route('admin.contact.list'),
         ];
-        $users = $this->userService->getAll();
-        SendEmail::dispatch($message, $users);
+        // $users = $this->userService->getAll();
+        // SendEmail::dispatch($message, $users);
 
         session()->remove('cart');
 

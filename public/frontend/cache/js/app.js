@@ -2694,7 +2694,6 @@ $(document).ready(function () {
     //Click select type
     $('#buy_type').change(function () {
         var id_type = $(this).val();
-        console.log("----", id_type);
         ajax_count_prices_tour(id_type);
         $('.buy_moto').prop('checked', false);
         $('#moto_checkbox').prop('checked', false);
@@ -2931,16 +2930,17 @@ $(document).ready(function () {
     //Click book gift
 })
 
-$('input[name="buy_room"]').change(function () {
-    $('#price_room').empty();
-    var price_value = $(this).data('price');
-    var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_value);
-    var name = $(this).data('name')
-    count_total_price(price_value * $('#total_person').val(), 0);
-    var str = `<th width="70%">Buy room: ${name}</th>
-            <th width="30%">`+ price + `</th>`;
-    $('#price_room').append(str); // Thêm vào thẻ có id="price_room"
-});
+// $('input[name="buy_room"]').change(function () {
+//     console.log("----afsafas");
+//     $('#price_room').empty();
+//     var price_value = $(this).data('price');
+//     var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_value);
+//     var name = $(this).data('name')
+//     count_total_price(price_value * $('#total_person').val(), 0);
+//     var str = `<th width="70%">Buy room: ${name}</th>
+//             <th width="30%">`+ price + `</th>`;
+//     $('#price_room').append(str); // Thêm vào thẻ có id="price_room"
+// });
 
 // Ajax get prices tour
 function ajax_get_prices_tour(id_tour) {
@@ -2976,14 +2976,14 @@ function ajax_get_prices_tour(id_tour) {
 
 $('input[name="departure_time"]').on('change', function () {
     var time = $(this).val();
-    var str = `<th width="70%">Departure time: <b>`+ time + `</b></th>
+    var str = `<th width="70%">Departure time: <b>` + time + `</b></th>
     <th width="30%"></th>`;
     $("#departure_time").html(str);
 });
 
 $('input[name="return_time"]').on('change', function () {
     var time = $(this).val();
-    var str = `<th width="70%">Return time: <b>`+ time + `</b></th>
+    var str = `<th width="70%">Return time: <b>` + time + `</b></th>
     <th width="30%"></th>`;
     $("#return_time").html(str);
 });
@@ -3079,25 +3079,34 @@ function ajax_count_prices_tour(id_type) {
 
 // Ajax get prices tour
 function ajax_get_prices_room(id_room) {
-    $.ajax({
-        url: '/index.php?module=home&view=home&task=ajax_get_prices_room&raw=1&id=' + id_room,
-        type: 'post',
-        dataType: 'json',
-        success: function (data) {
-            $("#price_room").html("");
-            var day = $('#buy_tour').find("option:selected").attr("data-day");
-            if (!day || day <= 1) {
-                day = 2;
-            }
-            var price_home = parseInt(data['prices_tour']) * (parseInt(day) - 1);
-            var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_home);
-            var str = `<th width="70%">Homestays: ${data['title']}</th>
-            <th width="30%">`+ price + `</th>`;
-            $("#price_room").html(str);
-            count_total_price(parseInt(price_home), $('#price_room_total').val());
-            $('#price_room_total').val(parseInt(price_home));
-        }
-    });
+
+    // Tìm checkbox theo id và lấy giá trị (giá tour được đặt ở thuộc tính value)
+    var checkbox = $('#buy_room_' + id_room);
+    var prices_tour = parseInt(checkbox.data('price'));  // giả sử value là giá trị số (giá)
+    var title = checkbox.attr('data-title');     // giả sử bạn có attribute để lấy tên phòng
+    // console.log(id_room, prices_tour);
+    //              2       15
+    // Tìm số ngày từ option được chọn trong #buy_tour
+    var day = $('#buy_tour').find("option:selected").attr("data-day");
+    if (!day || day <= 1) {
+        day = 2;
+    }
+
+    // console.log("---day---",day)
+
+    // Tính tổng giá
+    var price_home = prices_tour * (parseInt(day) - 1);
+    var price = '$' + new Intl.NumberFormat('vi-VN', {}).format(price_home);
+
+    // Hiển thị thông tin phòng và giá
+    var str = `<th width="70%">Homestays: ${title}</th>
+               <th width="30%">` + price + `</th>`;
+    $("#price_room").html(str);
+    // console.log("----price_home----", parseInt(price_home))
+    // console.log("----price_room_total----", $('#price_room_total').val())
+    // Cập nhật tổng giá
+    count_total_price(parseInt(price_home), $('#price_room_total').val());
+    $('#price_room_total').val(parseInt(price_home));
 }
 
 
@@ -3216,12 +3225,12 @@ function count_total_price(price, price_minus) {
     } else {
         var total_after_fomat = '$' + new Intl.NumberFormat('vi-VN', {}).format(total_after);
     }
-
+    // console.log(total_after, "=", sum_price_tour, "-", price_minus, "+", price);
     var str = `<th width="70%">` + text_total + `</th>
     <th width="30%">`+ total_after_fomat + `</th>`;
     $("#price_total").html(str);
-    // var surcharge_price_tour = (Number(total_after)*4/100);
-    // var total_after_surcharge = Number(surcharge_price_tour) + Number(total_after);
+    var surcharge_price_tour = (Number(total_after) * 4 / 100);
+    var total_after_surcharge = Number(surcharge_price_tour) + Number(total_after);
     var total_after_surcharge = Number(total_after);
 
     var total_after_surcharge = Number(total_after_surcharge);
