@@ -11,8 +11,7 @@ Route::group([
     Route::post('/confirm-order', 'HomeController@confirmOrder')->name('client.confirmOrder');
     Route::post('/save-order', 'HomeController@saveOrder')->name('client.saveOrder');
     Route::post('/send-contact', 'HomeController@sendContact')->name('client.contact.store');
-    Route::get('/post/{slug}', 'HomeController@postDetail')->name('client.postDetail');
-    Route::post('/ajax-get-bus', 'HomeController@getBusCheckbox')->name('client.busCheckbox');
+    Route::get('/{slug}', 'HomeController@postDetail')->name('client.postDetail');
     Route::get('language/{locale}', function ($locale) {
         if (!in_array($locale, ['vi', 'en'])) {
             abort(404);
@@ -24,6 +23,4 @@ Route::group([
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
     Route::post('/ajax-get-prices-tour', 'HomeController@getPricesTour');
     Route::post('/ajax-count-prices-tour', 'HomeController@countPricesTour');
-    Route::post('/ajax-get-prices-bus-departure', 'HomeController@getPricesBusDeparture');
-    Route::post('/ajax-get-prices-bus-return', 'HomeController@getPricesBusReturn');
 });

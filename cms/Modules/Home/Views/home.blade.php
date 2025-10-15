@@ -5,13 +5,13 @@
 
             <div class="item ">
                 <img alt="HA GIANG" width="1920px" height="1080px"
-                    src="tour-images/27.jpg"
-                    srcset="tour-images/27.jpg">
+                    src="tour-images/49.jpg"
+                    srcset="tour-images/49.jpg">
                 <div class="item_content">
                     <div class="item_content_block">
-                        <h2>HA GIANG</h2>
+                        <h2>HA GIANG LOOP</h2>
                         <div class="summary">
-                            The destination for those </br>who like to <span>conquer</span> </div>
+                            <!--The destination for those </br>who like to <span>conquer</span> </div>-->
                     </div>
                 </div>
 
@@ -66,15 +66,12 @@
                         </div>
                         <div class="discover-tour-des">
                             <div class="discover-tour-content">
-                                <h3 class="title">The majestic natural beauty eagerly awaits your discovery</h3>
+                                <h3 class="title">"Each trip, a seed of love - 10$ spreads value to Ha Giang!" 💚🌿</h3>
                                 <div class="column_left_content description">
                                     <p>
-                                    <p>Welcome to LinenHaGiang&#39;s Homestay website! Here, we extend an invitation for
-                                        you to
-                                        embark on an exhilarating adventure through the picturesque countryside of
-                                        Vietnam&mdash; all from the saddle of a motorbike. Our motorbike tours promise a
-                                        distinctive and authentic journey, revealing the breathtaking landscapes and hidden
-                                        gems of this captivating country.</p>
+                                    <p>Ha Giang, with its breathtaking landscapes and rich culture, is more than just a destination - it’s a journey into the heart of Vietnam’s highlands. Beyond the stunning mountains and winding roads, the ethnic communities here live a life of resilience, facing daily challenges in education, healthcare, and basic necessities.</p>
+                                    <p>That’s why, for every tour booked, we dedicate 10 USD to a community-driven charity program. This ensures that your adventure through Ha Giang leaves not only beautiful memories but also a meaningful impact.</p>
+                                    <p>Join us. Travel with purpose. Leave more than footprints. Take home more than memories.</p>
                                     </p>
                                 </div>
                                 <div class="btn-discover">
@@ -153,8 +150,8 @@
                                 data-srcset="tour-images/47.jpg">
                         </a>
                     </div>
-                    <a href="https://www.tripadvisor.com.vn/Attraction_Review-g4200402-d26586865-Reviews-Ha_Giang_Loop_Tour_by_Mama_s_Homestay-Dong_Van_Ha_Giang_Province.html"
-                        title="tripadvisor" class="item link-tripadvisor" style="opacity: 0.5; background-image: url('https://linenhagiang.com/frontend/images/config/asset-17_1698816647.jpeg');">
+                    <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g1544599-d25451485-Reviews-Ha_Giang_Loop_Tour_Guide-Ha_Giang_Ha_Giang_Province.html"
+                        title="tripadvisor" class="item link-tripadvisor" style="opacity: 0.5; background-image: url('https://linenbackpacker.com/frontend/images/config/asset-17_1698816647.jpeg');">
                         <!--<img class="social-travel-logo lazy" alt="social travel logo" width="146px" height="32px"-->
                         <!--    data-src="frontend/images/config/asset-17_1698816647.jpeg"-->
                         <!--    data-srcset="frontend/images/config/asset-17_1698816647.jpeg"> <img-->
@@ -183,10 +180,16 @@
                         <div class="tour_page" id="tour">
                             <div class="title_page">
                                 <h2 class="block_title">
-                                    LinenHaGiang’s Tours </h2>
+                                    Ha Giang Loops </h2>
                             </div>
                             <div class="list_tours">
                                 @foreach ($tours as $tour)
+                                    @if ($tour->id == '31')
+                                    <div class="title_page" id="sapa-tour">
+                                        <h2 class="block_title">
+                                            Sapa Trekking </h2>
+                                    </div>
+                                    @endif
                                     <div class="item_tour tour_{{ $loop->index + 1 }}">
                                         <figure class="map" id="map{{ $loop->index + 1 }}">
                                             <a href="{{ $tour->tourDetails->first()->image }}"
@@ -263,7 +266,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="tour_form">
                         <div class="container">
                             <div class="title_page">
@@ -274,7 +276,7 @@
                                 </h2>
                                 <div class="block_summary no_marquee">
                                     <span>
-                                        <strong>ATTRACTIVE</strong> gifts when booking Tour LinenHaGiang </span>
+                                        <strong>ATTRACTIVE</strong> gifts when booking Tour LinenBackpacker </span>
                                 </div>
                             </div>
                             <form method="post" action="{{ route('client.confirmOrder') }}" id="buy_fast_form_default"
@@ -339,115 +341,13 @@
                                                 </div>
                                             </div>
                                             <div class="note">
-                                                <label for="">NOTE: LinenHaGiang’s Homestay offers one free night in the
+                                                <label for="">NOTE: LinenBackpacker’s Homestay offers one free night in the
                                                     DORM only
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
                                                     please contact us via WhatsApp</label>
                                             </div>
                                         </div>
-                                        <!-- <div class="mbl book_bus">
-                                            <div class="checkbox">
-                                                <input
-                                                    type="checkbox"
-                                                    id="bus_checkbox"
-                                                    class="txt_checkbox"
-                                                    name="bus_checkbox"
-                                                    value="1"
-                                                />
-                                                <label for="bus_checkbox"><span>BUS SERVICE</span></label>
-                                            </div>
-                                            <div class="note" style="margin-bottom: 20px">
-                                                <label
-                                                    >NOTE: The bus request might change due to the availability
-                                                    each day. When you request it, we will confirm back via
-                                                    email</label
-                                                >
-                                            </div>
-                                            <div class="mbl_flex book_departure">
-                                                <div class="checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="departure_checkbox"
-                                                        class="txt_checkbox"
-                                                        name="departure_checkbox"
-                                                        value="1"
-                                                    />
-                                                    <label for="departure_checkbox"
-                                                        ><span>Choose a starting point</span></label
-                                                    >
-                                                </div>
-                                                <select
-                                                    name="buy_location_departure"
-                                                    id="buy_location_departure"
-                                                    class="txtinput buy_location"
-                                                >
-                                                    <option value="" style="display: none">
-                                                        Starting point
-                                                    </option>
-                                                    <option value="3" selected>HANOI</option>
-                                                    <option value="2">SAPA</option>
-                                                    <option value="1">HA LONG</option>
-                                                    <option value="4">NINH BINH</option>
-                                                    <option value="5">CAT BA</option>
-                                                </select>
-                                                <div class="mbl_txt">
-                                                    <input
-                                                        type="text"
-                                                        class="txtinput datepicker"
-                                                        autocomplete="off"
-                                                        placeholder="Departure date"
-                                                        class=""
-                                                        id="datepicker"
-                                                        name="departure_time"
-                                                        class=""
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div class="list_bus_departure">
-                                                <div class="mbl_grid"></div>
-                                            </div>
-                                            <div class="mbl_flex book_return">
-                                                <div class="checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        id="return_checkbox"
-                                                        class="txt_checkbox"
-                                                        name="return_checkbox"
-                                                        value="2"
-                                                    />
-                                                    <label for="return_checkbox"
-                                                        ><span>Choose the return destination</span>
-                                                    </label>
-                                                </div>
-                                                <select
-                                                    name="buy_location_return"
-                                                    id="buy_location_return"
-                                                    class="txtinput buy_location"
-                                                >
-                                                    <option value="" style="display: none">Destination</option>
-                                                    <option value="3" selected>HANOI</option>
-                                                    <option value="2">SAPA</option>
-                                                    <option value="1">HA LONG</option>
-                                                    <option value="4">NINH BINH</option>
-                                                    <option value="5">CAT BA</option>
-                                                </select>
-                                                <div class="mbl_txt">
-                                                    <input
-                                                        type="text"
-                                                        class="txtinput datepicker"
-                                                        autocomplete="off"
-                                                        placeholder="Return date"
-                                                        id="datepicker2"
-                                                        name="return_time"
-                                                        class=""
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div class="list_bus_return">
-                                                <div class="mbl_grid"></div>
-                                            </div>
-                                        </div> -->
                                         <div class="mbl book_moto">
                                             <div class="checkbox">
                                                 <input type="checkbox" id="moto_checkbox" class="txt_checkbox"
@@ -514,7 +414,7 @@
                                                 <label for="">
                                                     <p><strong>NOTE:</strong> Discounted car rental prices <strong>only
                                                             apply</strong> to customers <strong>booking
-                                                            LinenHaGiang&#39;s Tour
+                                                            LinenBackpacker&#39;s Tour
                                                             tours</strong></p>
                                                 </label>
                                             </div>
@@ -621,14 +521,12 @@
                                 <input type="hidden" name="html_data" id="html_data">
                                 <div class="btn_form">
                                     <button class="button-buy-fast button" id="button-confirm-submit">
-                                        Continue payment </button>
+                                        Continue booking </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
-
 
                 <input type="hidden" id="text_name" value="Fullname">
                 <input type="hidden" id="text_more"
@@ -667,218 +565,218 @@
     </div>
     <!-- end.Content -->
 
-    <div class="pos11" id="oname_11">
-        <div class="container1170">
-            <div class='block_aq aq-_aq_list aq_0 block' id="block_id_171">
-                <p class="block_title"><span>Frequently Asked Questions (FAQs)</span></p>
-                <div class="" id="about">
-                    <div class="aq-block1">
-                        <div class='aq-block-body1'>
-                            <div class="aq_left">
-                                <div class="item_1 bg-active">
-                                    <div class="question_1  minus ">
+    <!--<div class="pos11" id="oname_11">-->
+    <!--    <div class="container1170">-->
+    <!--        <div class='block_aq aq-_aq_list aq_0 block' id="block_id_171">-->
+    <!--            <p class="block_title"><span>Frequently Asked Questions (FAQs)</span></p>-->
+    <!--            <div class="" id="about">-->
+    <!--                <div class="aq-block1">-->
+    <!--                    <div class='aq-block-body1'>-->
+    <!--                        <div class="aq_left">-->
+    <!--                            <div class="item_1 bg-active">-->
+    <!--                                <div class="question_1  minus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Can I pay by card?</span>
-                                    </div>
+    <!--                                    <span class="title">Can I pay by card?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content bg-active" id="content-1">
-                                        <div class="content2">
-                                            <p>You can pay Cash or Credit card ( extra 3,5% bank fee)&nbsp;/ ONLINE ( extra
-                                                4% bank fee )</p>
-                                        </div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content bg-active" id="content-1">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>You can pay Cash or Credit card ( extra 3,5% bank fee)&nbsp;/ ONLINE ( extra-->
+    <!--                                            4% bank fee )</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
-
-                                        <!-- <a href="" >  </a> -->
-                                        <span class="title">Can I bring my suitcase or big backpack?</span>
-                                    </div>
-
-                                    <div class="content " id="content-2">
-                                        <div class="content2">
-                                            <p>At LinenHaGiang&#39;s Homestay, we are pleased to provide complimentary
-                                                luggage
-                                                storage for our guests. Please feel free to leave your large backpack with
-                                                us, allowing you to carry only the essentials in smaller bags during the
-                                                loop. This ensures you can fully enjoy your adventure without the burden of
-                                                heavy luggage. For any valuable items, please hand them to our receptionist
-                                                or secure them in the locker at LinenHaGiang&#39;s Homestay (you will
-                                                need to
-                                                provide your own lock). LinenHaGiang&#39;s Homestay cannot guarantee the
-                                                safety of
-                                                luggage stored at our Lugg storage.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Do you have scooter/automatic bike?</span>
-                                    </div>
+    <!--                                    <span class="title">Can I bring my suitcase or big backpack?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-3">
-                                        <div class="content2">
-                                            <p>In the hilly terrain of Ha Giang, using an automatic bike is less safe and
-                                                environmentally friendly than opting for a semi-automatic or manual bike.
-                                                The roads here are full of ups and downs, making it challenging for
-                                                automatic bikes to handle the uneven surfaces, often resulting in
-                                                breakdowns. Another safety issue is the lack of gears in automatic bikes,
-                                                preventing them from engine braking effectively. In this post, we will learn
-                                                how to drive a semi-automatic scooter so you can be confident to do the loop
-                                                with LinenHaGiang&#39;s homestay:&nbsp;<a
-                                                    href="how-to-drive-a-semi-automatic-scooter-effectively/index.html"><span
-                                                        style="color:#f1c40f">How to drive a semi-automatic scooter
-                                                        effectively (mamashomestay.com)</span></a></p>
+    <!--                                <div class="content " id="content-2">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>At LinenBackpacker&#39;s Homestay, we are pleased to provide complimentary-->
+    <!--                                            luggage-->
+    <!--                                            storage for our guests. Please feel free to leave your large backpack with-->
+    <!--                                            us, allowing you to carry only the essentials in smaller bags during the-->
+    <!--                                            loop. This ensures you can fully enjoy your adventure without the burden of-->
+    <!--                                            heavy luggage. For any valuable items, please hand them to our receptionist-->
+    <!--                                            or secure them in the locker at LinenBackpacker&#39;s Homestay (you will-->
+    <!--                                            need to-->
+    <!--                                            provide your own lock). LinenBackpacker&#39;s Homestay cannot guarantee the-->
+    <!--                                            safety of-->
+    <!--                                            luggage stored at our Lugg storage.</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                            <p><em><span style="color:#f39c12">Note: LinenHaGiang&#39;s Homestay kindly
-                                                        reminds
-                                                        guests to have an International Driving Permit (IDP) if they plan to
-                                                        drive during their stay. Please note that LinenHaGiang&#39;s
-                                                        Homestay is not
-                                                        responsible for any penalties or issues if you are caught by the
-                                                        police without a valid IDP. Drive safely and enjoy your
-                                                        journey!</span></em></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">What should I bring during the loop?</span>
-                                    </div>
+    <!--                                    <span class="title">Do you have scooter/automatic bike?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-4">
-                                        <div class="content2">
-                                            <p>- Comfy clothes and shoes for riding<br />
-                                                - Towel (optional cuz our homestay has towel)<br />
-                                                - Sunglasses<br />
-                                                - Wallet and money (from 500.000VND - 1.500.000VND)<br />
-                                                - Swimming suits<br />
-                                                - Mosquitoes spray<br />
-                                                - Sunscream<br />
-                                                - Bottle of water (to refill water at each homestay)<br />
-                                                - First-aid kit</p>
-                                        </div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content " id="content-3">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>In the hilly terrain of Ha Giang, using an automatic bike is less safe and-->
+    <!--                                            environmentally friendly than opting for a semi-automatic or manual bike.-->
+    <!--                                            The roads here are full of ups and downs, making it challenging for-->
+    <!--                                            automatic bikes to handle the uneven surfaces, often resulting in-->
+    <!--                                            breakdowns. Another safety issue is the lack of gears in automatic bikes,-->
+    <!--                                            preventing them from engine braking effectively. In this post, we will learn-->
+    <!--                                            how to drive a semi-automatic scooter so you can be confident to do the loop-->
+    <!--                                            with LinenBackpacker&#39;s homestay:&nbsp;<a-->
+    <!--                                                href="how-to-drive-a-semi-automatic-scooter-effectively/index.html"><span-->
+    <!--                                                    style="color:#f1c40f">How to drive a semi-automatic scooter-->
+    <!--                                                    effectively (mamashomestay.com)</span></a></p>-->
 
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                                        <p><em><span style="color:#f39c12">Note: LinenBackpacker&#39;s Homestay kindly-->
+    <!--                                                    reminds-->
+    <!--                                                    guests to have an International Driving Permit (IDP) if they plan to-->
+    <!--                                                    drive during their stay. Please note that LinenBackpacker&#39;s-->
+    <!--                                                    Homestay is not-->
+    <!--                                                    responsible for any penalties or issues if you are caught by the-->
+    <!--                                                    police without a valid IDP. Drive safely and enjoy your-->
+    <!--                                                    journey!</span></em></p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                        <!-- <a href="" >  </a> -->
-                                        <span class="title">Do you have Vegan/Vegetarian meals option?</span>
-                                    </div>
-
-                                    <div class="content " id="content-5">
-                                        <div class="content2">
-                                            <p>Yes, we do arrange. You should note on your booking or let us know so we can
-                                                arrange alternative meals and take care you better during the loop.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Which tour cost will I have to pay if I bring my own
-                                            bike?</span>
-                                    </div>
+    <!--                                    <span class="title">What should I bring during the loop?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-6">
-                                        <div class="content2">
-                                            <p>You will pay for OPTION: &quot;RIDE BY YOURSELF&quot;&nbsp;</p>
-                                        </div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content " id="content-4">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>- Comfy clothes and shoes for riding<br />-->
+    <!--                                            - Towel (optional cuz our homestay has towel)<br />-->
+    <!--                                            - Sunglasses<br />-->
+    <!--                                            - Wallet and money (from 500.000VND - 1.500.000VND)<br />-->
+    <!--                                            - Swimming suits<br />-->
+    <!--                                            - Mosquitoes spray<br />-->
+    <!--                                            - Sunscream<br />-->
+    <!--                                            - Bottle of water (to refill water at each homestay)<br />-->
+    <!--                                            - First-aid kit</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
-
-                                        <!-- <a href="" >  </a> -->
-                                        <span class="title">Can I change from 3 days to 4 days during the tour?</span>
-                                    </div>
-
-                                    <div class="content " id="content-7">
-                                        <div class="content2">
-                                            <p>Yes, you can. When you decide to make a change, please send us the request
-                                                via WhatsApp or email. We will then send you the online payment link to
-                                                process your request and arrange everything for you.</p>
-
-                                            <p>- Easy rider 1-day extension after the tour starts: 1.300.000VND/person<br />
-                                                - Ride by yourself or Seat behind your friend&nbsp;1-day extension after the
-                                                tour starts: 1.000.000VND/person</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Can I change into EASY RIDER during the tour?</span>
-                                    </div>
+    <!--                                    <span class="title">Do you have Vegan/Vegetarian meals option?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-8">
-                                        <div class="content2">
-                                            <p>Yes, you can.&nbsp;An extra&nbsp;fee will be charged:
-                                                <strong>700.000VND/day/1 easy-rider x n day</strong> (easy rider salary,
-                                                food, gasoline, and accommodation) + <strong>350.000VND to transfer the
-                                                    motorbike back</strong> to Ha Giang City.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content " id="content-5">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>Yes, we do arrange. You should note on your booking or let us know so we can-->
+    <!--                                            arrange alternative meals and take care you better during the loop.</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Do I have to tip the easy rider?</span>
-                                    </div>
+    <!--                                    <span class="title">Which tour cost will I have to pay if I bring my own-->
+    <!--                                        bike?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-9">
-                                        <div class="content2">
-                                            <p>You can tip or not tip our drivers as you wish. Because, we already pay our
-                                                drivers a salary of 300,000 VND per day, in addition to providing their
-                                                meals and accommodations, so that they can comfortably serve you throughout
-                                                the journey in the most complete and best way. The information spread by
-                                                some drivers about our company paying low wages or not paying drivers is
-                                                untrue. If he provides good service, you can tip or not tip, as the drivers
-                                                are not lacking in salary, and our company supports them very well.</p>
-                                        </div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content " id="content-6">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>You will pay for OPTION: &quot;RIDE BY YOURSELF&quot;&nbsp;</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-                                <div class="item_1 ">
-                                    <div class="question_1  plus ">
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
 
                                         <!-- <a href="" >  </a> -->
-                                        <span class="title">Do I have to reserve a dorm before the loop start ?</span>
-                                    </div>
+    <!--                                    <span class="title">Can I change from 3 days to 4 days during the tour?</span>-->
+    <!--                                </div>-->
 
-                                    <div class="content " id="content-10">
-                                        <div class="content2">No need to book the bed separately. Once your Ha Giang loop
-                                            tour reservation is confirmed, your bed in the dorm is automatically reserved at
-                                            the same time.</div>
-                                    </div>
-                                </div>
+    <!--                                <div class="content " id="content-7">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>Yes, you can. When you decide to make a change, please send us the request-->
+    <!--                                            via WhatsApp or email. We will then send you the online payment link to-->
+    <!--                                            process your request and arrange everything for you.</p>-->
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!--                                        <p>- Easy rider 1-day extension after the tour starts: 1.300.000VND/person<br />-->
+    <!--                                            - Ride by yourself or Seat behind your friend&nbsp;1-day extension after the-->
+    <!--                                            tour starts: 1.000.000VND/person</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
 
-    </div>
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
+
+                                        <!-- <a href="" >  </a> -->
+    <!--                                    <span class="title">Can I change into EASY RIDER during the tour?</span>-->
+    <!--                                </div>-->
+
+    <!--                                <div class="content " id="content-8">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>Yes, you can.&nbsp;An extra&nbsp;fee will be charged:-->
+    <!--                                            <strong>700.000VND/day/1 easy-rider x n day</strong> (easy rider salary,-->
+    <!--                                            food, gasoline, and accommodation) + <strong>350.000VND to transfer the-->
+    <!--                                                motorbike back</strong> to Ha Giang City.-->
+    <!--                                        </p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
+
+                                        <!-- <a href="" >  </a> -->
+    <!--                                    <span class="title">Do I have to tip the easy rider?</span>-->
+    <!--                                </div>-->
+
+    <!--                                <div class="content " id="content-9">-->
+    <!--                                    <div class="content2">-->
+    <!--                                        <p>You can tip or not tip our drivers as you wish. Because, we already pay our-->
+    <!--                                            drivers a salary of 300,000 VND per day, in addition to providing their-->
+    <!--                                            meals and accommodations, so that they can comfortably serve you throughout-->
+    <!--                                            the journey in the most complete and best way. The information spread by-->
+    <!--                                            some drivers about our company paying low wages or not paying drivers is-->
+    <!--                                            untrue. If he provides good service, you can tip or not tip, as the drivers-->
+    <!--                                            are not lacking in salary, and our company supports them very well.</p>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+
+    <!--                            <div class="item_1 ">-->
+    <!--                                <div class="question_1  plus ">-->
+
+                                        <!-- <a href="" >  </a> -->
+    <!--                                    <span class="title">Do I have to reserve a dorm before the loop start ?</span>-->
+    <!--                                </div>-->
+
+    <!--                                <div class="content " id="content-10">-->
+    <!--                                    <div class="content2">No need to book the bed separately. Once your Ha Giang loop-->
+    <!--                                        tour reservation is confirmed, your bed in the dorm is automatically reserved at-->
+    <!--                                        the same time.</div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--</div>-->
 
     <div class="pos10 lazy" style="background-image: url(images/config/layer-56_1699697324.jpg.webp); display: block;">
         <div class="container1170">

@@ -28,7 +28,7 @@
 
                                 <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope"
                                     itemtype="http://schema.org/ListItem">
-                                    <a title='LinenHaGiang’s Homestay - Explore Ha Giang' href="../index.html"
+                                    <a title='LinenBackpacker’s Homestay - Explore Ha Giang' href="../index.html"
                                         itemprop="item">
                                         <span itemprop="name">Home</span>
                                         <meta content="1" itemprop="position">
@@ -58,7 +58,7 @@
                                             alert("{{ session('error') }}");
                                         </script>
                                     @endif
-                                    <form method="POST" action="{{ route('client.saveOrder') }}" name="contact"
+                                    <form method="post" action="{{ route('client.saveOrder') }}" name="contact"
                                         id="form_contact" class="form ct_form">
                                         @csrf()
                                         {!! json_decode($cart['html_data']) !!}
@@ -125,18 +125,18 @@
                                     <div class="grid_icon">
                                         <div class="item">
                                             <div class="name ctn">
-                                                <a href="javascript:void(0)" title="LinenHaGiang's Tour Ha Giang"
+                                                <a href="javascript:void(0)" title="LinenBackpacker's Tour Ha Giang"
                                                     class="click_me" data-id="1">
-                                                    LinenHaGiang's Tour Ha Giang </a>
+                                                    LinenTour's Ha Giang </a>
                                             </div>
                                             <div class="address ctn">
-                                                <span>Address:</span> No.124, 20/8 street, Ha Giang, Vietnam
+                                                <span>Address:</span> No.403, Nguyen Van Linh street, Ha Giang, Vietnam
                                             </div>
                                             <div class="email ctn">
-                                                <span>Email:</span> LinenHaGiangshomestayhg@gmail.com
+                                                <span>Email:</span> linenbackpacker@gmail.com
                                             </div>
                                             <div class="website ctn">
-                                                <span>Website:</span> https://LinenHaGiangshomestay.com/
+                                                <span>Website:</span> https://linenbackpacker.com/
                                             </div>
                                             <div class="phone ctn">
                                                 <div class="phone-icon"><svg fill="#fac686" version="1.1" id="Capa_1"
@@ -155,7 +155,7 @@
                                                         </g>
                                                     </svg></div>
                                                 <div class="phone-title">Hotline Whatsapp 24/7:</div>
-                                                <div><span>+84397223444</span></div>
+                                                <div><span>+84 38 4825348</span></div>
                                             </div>
                                         </div>
                                     </div>

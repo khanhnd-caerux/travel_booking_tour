@@ -30,6 +30,7 @@ class OrderRepository extends CoreBaseRepository implements OrderRepositoryContr
         return $this->order
             ->with('orderDetail')
             ->whereNull('deleted_at')
+            ->orderBy('id', 'desc')
             ->paginate($number);
     }
 }

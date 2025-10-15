@@ -20,7 +20,7 @@
 
                                 <li class="breadcrumb__item" itemprop="itemListElement" itemscope="itemscope"
                                     itemtype="http://schema.org/ListItem">
-                                    <a title='LinenHaGiang’s Homestay - Explore Ha Giang' href="../index.html"
+                                    <a title='HaGiangMountain’s Homestay - Explore Ha Giang' href="../index.html"
                                         itemprop="item">
                                         <span itemprop="name">Home</span>
                                         <meta content="1" itemprop="position">
@@ -39,7 +39,7 @@
 
                 <div class="contact">
                     <div class="contact_title container">
-                        <h1 class="block_title">Contact LinenHaGiang Tour</h1>
+                        <h1 class="block_title">Contact LinenBackpacker Tour</h1>
                     </div>
                     <div class="container">
                         <div class="row top cls">
@@ -56,47 +56,35 @@
                                                             placeholder="First and last name *" value="" name="contact_name"
                                                             id="contact_name" class="txtinput" />
                                                     </div>
-                                                    @error('contact_name')
-                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
-                                                    @enderror
+
                                                 </div>
                                                 <div class="mbl ctn_input">
                                                     <div class="input_txt">
                                                         <input type="tel" maxlength="255" placeholder="Whatsapp *" value=""
                                                             name="contact_phone" id="contact_phone" class="txtinput" />
                                                     </div>
-                                                    @error('contact_phone')
-                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
-                                                    @enderror
                                                 </div>
                                                 <div class="mbl ctn_input">
+
                                                     <div class="input_txt">
                                                         <input type="text" maxlength="255" placeholder="Email *" value=""
                                                             name="contact_email" id="contact_email" class="txtinput" />
                                                     </div>
-                                                    @error('contact_email')
-                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
-                                                    @enderror
                                                 </div>
                                                 <div class="mbl ctn_input">
                                                     <div class="input_txt">
                                                         <input type="text" maxlength="255" placeholder="Country *" value=""
                                                             name="contact_address" id="contact_address" class="txtinput" />
                                                     </div>
-                                                    @error('contact_address')
-                                                    <div class="alert alert-danger text-white">{{ $message }}</div>
-                                                    @enderror
                                                 </div>
                                             </div>
 
                                             <div class="mbl ctn_mess">
+
                                                 <div class="input_txt textarea_txt">
                                                     <textarea placeholder="Message *" rows="8" cols="20" name='message'
                                                         id='message'></textarea>
                                                 </div>
-                                                @error('message')
-                                                <div class="alert alert-danger text-white">{{ $message }}</div>
-                                                @enderror
                                             </div>
 
                                         </div>
@@ -120,18 +108,18 @@
 
                                         <div class="item">
                                             <div class="name ctn">
-                                                <a href="javascript:void(0)" title="LinenHaGiang's Tour Ha Giang"
+                                                <a href="javascript:void(0)" title="LinenBackpacker's Tour Ha Giang"
                                                     class="click_me" data-id="1">
-                                                    LinenHaGiang's Tour Ha Giang </a>
+                                                    LinenBackpacker's Tour Ha Giang </a>
                                             </div>
                                             <div class="address ctn">
-                                                <span>Address:</span> No.124, 20/8 street, Ha Giang, Vietnam
+                                                <span>Address:</span> No.403, Nguyen Van Linh street, Ha Giang, Vietnam
                                             </div>
                                             <div class="email ctn">
-                                                <span>Email:</span> LinenHaGiangshomestayhg@gmail.com
+                                                <span>Email:</span> linenbackpacker@gmail.com
                                             </div>
                                             <div class="website ctn">
-                                                <span>Website:</span> https://LinenHaGiangshomestay.com/
+                                                <span>Website:</span> https://linenbackpacker.com/
                                             </div>
                                             <div class="phone ctn">
                                                 <div class="phone-icon"><svg fill="#fac686" version="1.1" id="Capa_1"
@@ -150,7 +138,7 @@
                                                         </g>
                                                     </svg></div>
                                                 <div class="phone-title">Hotline Whatsapp 24/7:</div>
-                                                <div><span>+84397223444</span></div>
+                                                <div><span>+84 38 4825348</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -162,10 +150,7 @@
                     <div class="list_regions">
                         <div class="container1920">
                             <div class="iframe_form">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3678.1156521911535!2d104.97587582504626!3d22.798178124665395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zdGjDtG4gQ-G6p3UgTeG7hSwgcGjGsOG7nW5nIFBoxrDGoW5nIFRoaeG7h24sIFRow6BuaCBwaOG7kSBIw6AgR2lhbmcsIHThu4luaCBIw6AgR2lhbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700034821480!5m2!1svi!2s"
-                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.8487826028595!2d105.00008007522938!3d22.845083479298523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cc78247a70c94d%3A0xedf3c7b6baf59bd!2zNDAzIE5ndXnhu4VuIFbEg24gTGluaCwgUC4gUXVhbmcgVHJ1bmcsIEjDoCBHaWFuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1750761383626!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>

@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="vi" prefix="og: http://ogp.me/ns#">
 
-<!-- Mirrored from LinenHaGiangshomestay.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 10:11:49 GMT -->
+<!-- Mirrored from LinenBackpackershomestay.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 10:11:49 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head id="Head1" prefix="og: http://ogp.me/ns# fb:http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Cache-control" content="public">
-    <title>Linen HaGiang Tour - Explore Ha Giang</title>
+    <title>Linen Backpacker Tour - Ha Giang Loop</title>
     <meta name="description"
-        content="Hieu Dang - Owner of “Explore Ha Giang”. Linen Ha Giang BY LinenHaGiang HOMESTAY LinenHaGiang’s Homestay - Explore Ha Giang" />
-    <meta name="keywords" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
+        content="Phuc Hoang - Owner of “Linen Backpacker”. Ha Giang Loop BY LinenBackpacker" />
+    <meta name="keywords" content="LinenBackpacker’s Homestay - Ha Giang Loop" />
     <meta name="dc.language" content="EN" />
     <meta name="dc.source" content="index.html" />
     <meta name="dc.relation" content="index.html" />
-    <meta name="dc.title" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
-    <meta name="dc.keywords" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
-    <meta name="dc.subject" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
+    <meta name="dc.title" content="LinenBackpacker’s Homestay - Ha Giang Loop" />
+    <meta name="dc.keywords" content="LinenBackpacker’s Homestay - Ha Giang Loop" />
+    <meta name="dc.subject" content="LinenBackpacker’s Homestay - Ha Giang Loop" />
     <meta name="dc.description"
-        content="Hieu Dang - Owner of “Explore Ha Giang”. Linen Ha Giang BY LinenHaGiang HOMESTAYLinenHaGiang’s Homestay - Explore Ha Giang" />
+        content="Phuc Hoang - Owner of “Linen Backpacker”. Ha Giang Loop BY LinenBackpacker HOMESTAYLinenBackpacker’s Homestay - Linen Backpacker" />
     <link rel="author" href="index.html" />
     <meta property="og:type" content="website" />
 
     <meta property="og:site_name" content="">
     <meta property="og:locale" content="vi_EN" />
-    <meta property="og:title" content="LinenHaGiang’s Homestay - Explore Ha Giang" />
+    <meta property="og:title" content="LinenBackpacker’s Homestay - Linen Backpacker" />
     <meta property="og:url" content="index.html" />
     <meta property="og:description"
-        content="Hieu Dang - Owner of “Explore Ha Giang”. Linen Ha Giang BY LinenHaGiang HOMESTAYLinenHaGiang’s Homestay - Explore Ha Giang" />
+        content="Phuc Hoang - Owner of “Linen Backpacker”. Ha Giang Loop BY LinenBackpacker HOMESTAYLinenBackpacker’s Homestay - Linen Backpacker" />
     <meta property="fb:app_id" content="647558742055251" />
     <meta property="fb:admins" content="647558742055251" />
     <meta property="og:type" content="website" />
     <!-- <link rel="manifest" href='' /> -->
     <meta name="theme-color" content="#fff" />
-    <meta property="og:image" content="https://linenhagiang.com/frontend/images/config/asset-17_1698816647.jpeg" />
+    <meta property="og:image" content="https://linenbackpacker.com/frontend/images/config/asset-17_1698816647.jpeg" />
     <meta property="og:image:width" content="600 " />
-    <meta property="og:image:alt" content="LinenHaGiang’s Homestay - Explore Ha Giang">
+    <meta property="og:image:alt" content="LinenBackpacker’s Homestay - Linen Backpacker">
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="index.html">
     <meta content="INDEX,FOLLOW" name="robots" />
     <meta name="googlebot" content="index,follow" />
 
-    <link type='image/x-icon' href='https://linenhagiang.com/frontend/images/config/asset-17_1698816647.jpeg' rel='icon' />
+    <link type='image/x-icon' href='https://linenbackpacker.com/frontend/images/config/asset-17_1698816647.jpeg' rel='icon' />
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta name="geo.placename" content="H&agrave; Nội" />
     <meta name="geo.region" content="VN-HN" />
     <meta name="geo.position" content="21;105.83" />
     <meta name="ICBM" content="21, 105.83" />
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
-    <link rel="alternate" type="application/rss+xml" title="LinenHaGiang’s Homestay - Explore Ha Giang Feed"
+    <link rel="alternate" type="application/rss+xml" title="LinenBackpacker’s Homestay - Linen Backpacker Feed"
         href="rss.html" />
     <meta name="google-site-verification" content="wbGxdRaMeMm69UxvryuTouLeXhZeiwc2FQYQI6C3kVM" />
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
@@ -81,29 +81,12 @@
     </div>
     <input type="hidden" id="Itid" name="Itid" value="1">
 
-    <div class="megamenu_mb ">
-        <div class="close_all">
-            <div class="navicon-line"></div>
-            <div class="navicon-line"></div>
-        </div>
-        <ul class="menu scroll_bar">
-            <span class="label" id="menu_">Menu</span>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Home' href='{{ route('client.index') }}'>Home</a>
-            </li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Introduce' href='introduce'>Introduce</a></li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Tours' href='{{ route('client.index') }}/#tour'>Tours</a></li>
-            <li class='group_class_menu group_id_menu_27 level_0'><a title='Contact'
-                    href='{{ route('client.contact') }}'>Contact</a></li>
-            <li class='level_1 '><a style='color: red' href='{{ route('client.index') }}/#tour'>Book Now</a></li>
-        </ul>
-    </div>
-
     <div class="right_support_online">
         <div class='onlinesupport_list_row'>
             <div class="gid-row">
                 <div class="item item_zalo item-show">
                     <a rel="nofollow" title="Hỗ trợ Facebook" target='_blank'
-                        href="https://www.facebook.com/Linenhagiangtour1">
+                        href="https://www.facebook.com/linenbackpackertour1">
                         <!--<svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg"-->
                         <!--    xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="Instagram" role="img"-->
                         <!--    viewBox="0 0 512 512" fill="#000000">-->
@@ -139,7 +122,7 @@
 
 
                 <div class="item item-show">
-                    <a title="Hotline" target="_blank" href="https://wa.me/+84397223444">
+                    <a title="Hotline" target="_blank" href="https://wa.me/+84 38 4825348">
                         <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp"
                             role="img" viewBox="0 0 512 512" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -157,7 +140,7 @@
                 </div>
 
                 <div class="item item-show">
-                    <a title="Gmail" target="" href="mailto:linenhagiang@gmail.com">
+                    <a title="Gmail" target="" href="mailto:linenbackpacker@gmail.com">
                         <svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img"
                             viewBox="0 0 512.00 512.00" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

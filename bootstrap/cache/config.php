@@ -1,5 +1,5 @@
 <?php return array (
-  'app' => 
+  'app' =>
   array (
     'name' => 'Laravel',
     'env' => 'local',
@@ -14,7 +14,7 @@
     'faker_locale' => 'en_US',
     'key' => 'base64:84RcLplWTS3QHl8A+iqnngrWXud4amW+arOGS9rGJNo=',
     'cipher' => 'AES-256-CBC',
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Illuminate\\Auth\\AuthServiceProvider',
       1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
@@ -45,7 +45,7 @@
       26 => 'Cms\\CmsServiceProvider',
       27 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
-    'aliases' => 
+    'aliases' =>
     array (
       'App' => 'Illuminate\\Support\\Facades\\App',
       'Arr' => 'Illuminate\\Support\\Arr',
@@ -87,32 +87,32 @@
       'View' => 'Illuminate\\Support\\Facades\\View',
     ),
   ),
-  'auth' => 
+  'auth' =>
   array (
-    'defaults' => 
+    'defaults' =>
     array (
       'guard' => 'web',
       'passwords' => 'users',
     ),
-    'guards' => 
+    'guards' =>
     array (
-      'web' => 
+      'web' =>
       array (
         'driver' => 'session',
         'provider' => 'users',
       ),
     ),
-    'providers' => 
+    'providers' =>
     array (
-      'users' => 
+      'users' =>
       array (
         'driver' => 'eloquent',
         'model' => 'Cms\\Modules\\Core\\Models\\User',
       ),
     ),
-    'passwords' => 
+    'passwords' =>
     array (
-      'users' => 
+      'users' =>
       array (
         'provider' => 'users',
         'table' => 'password_resets',
@@ -122,84 +122,84 @@
     ),
     'password_timeout' => 10800,
   ),
-  'broadcasting' => 
+  'broadcasting' =>
   array (
     'default' => 'log',
-    'connections' => 
+    'connections' =>
     array (
-      'pusher' => 
+      'pusher' =>
       array (
         'driver' => 'pusher',
         'key' => '',
         'secret' => '',
         'app_id' => '',
-        'options' => 
+        'options' =>
         array (
           'cluster' => 'mt1',
           'useTLS' => true,
         ),
       ),
-      'ably' => 
+      'ably' =>
       array (
         'driver' => 'ably',
         'key' => NULL,
       ),
-      'redis' => 
+      'redis' =>
       array (
         'driver' => 'redis',
         'connection' => 'default',
       ),
-      'log' => 
+      'log' =>
       array (
         'driver' => 'log',
       ),
-      'null' => 
+      'null' =>
       array (
         'driver' => 'null',
       ),
     ),
   ),
-  'cache' => 
+  'cache' =>
   array (
     'default' => 'array',
-    'stores' => 
+    'stores' =>
     array (
-      'apc' => 
+      'apc' =>
       array (
         'driver' => 'apc',
       ),
-      'array' => 
+      'array' =>
       array (
         'driver' => 'array',
         'serialize' => false,
       ),
-      'database' => 
+      'database' =>
       array (
         'driver' => 'database',
         'table' => 'cache',
         'connection' => NULL,
         'lock_connection' => NULL,
       ),
-      'file' => 
+      'file' =>
       array (
         'driver' => 'file',
         'path' => '/home/projects/travel_booking_tour/storage/framework/cache/data',
       ),
-      'memcached' => 
+      'memcached' =>
       array (
         'driver' => 'memcached',
         'persistent_id' => NULL,
-        'sasl' => 
+        'sasl' =>
         array (
           0 => NULL,
           1 => NULL,
         ),
-        'options' => 
+        'options' =>
         array (
         ),
-        'servers' => 
+        'servers' =>
         array (
-          0 => 
+          0 =>
           array (
             'host' => '127.0.0.1',
             'port' => 11211,
@@ -207,13 +207,13 @@
           ),
         ),
       ),
-      'redis' => 
+      'redis' =>
       array (
         'driver' => 'redis',
         'connection' => 'cache',
         'lock_connection' => 'default',
       ),
-      'dynamodb' => 
+      'dynamodb' =>
       array (
         'driver' => 'dynamodb',
         'key' => '',
@@ -222,47 +222,47 @@
         'table' => 'cache',
         'endpoint' => NULL,
       ),
-      'octane' => 
+      'octane' =>
       array (
         'driver' => 'octane',
       ),
     ),
     'prefix' => 'laravel_cache',
   ),
-  'cors' => 
+  'cors' =>
   array (
-    'paths' => 
+    'paths' =>
     array (
       0 => 'api/*',
       1 => 'sanctum/csrf-cookie',
     ),
-    'allowed_methods' => 
+    'allowed_methods' =>
     array (
       0 => '*',
     ),
-    'allowed_origins' => 
+    'allowed_origins' =>
     array (
       0 => '*',
     ),
-    'allowed_origins_patterns' => 
+    'allowed_origins_patterns' =>
     array (
     ),
-    'allowed_headers' => 
+    'allowed_headers' =>
     array (
       0 => '*',
     ),
-    'exposed_headers' => 
+    'exposed_headers' =>
     array (
     ),
     'max_age' => 0,
     'supports_credentials' => false,
   ),
-  'database' => 
+  'database' =>
   array (
     'default' => 'mysql',
-    'connections' => 
+    'connections' =>
     array (
-      'sqlite' => 
+      'sqlite' =>
       array (
         'driver' => 'sqlite',
         'url' => NULL,
@@ -270,7 +270,7 @@
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
-      'mysql' => 
+      'mysql' =>
       array (
         'driver' => 'mysql',
         'url' => NULL,
@@ -286,11 +286,11 @@
         'prefix_indexes' => true,
         'strict' => true,
         'engine' => NULL,
-        'options' => 
+        'options' =>
         array (
         ),
       ),
-      'pgsql' => 
+      'pgsql' =>
       array (
         'driver' => 'pgsql',
         'url' => NULL,
@@ -305,7 +305,7 @@
         'schema' => 'public',
         'sslmode' => 'prefer',
       ),
-      'sqlsrv' => 
+      'sqlsrv' =>
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
@@ -320,15 +320,15 @@
       ),
     ),
     'migrations' => 'migrations',
-    'redis' => 
+    'redis' =>
     array (
       'client' => 'phpredis',
-      'options' => 
+      'options' =>
       array (
         'cluster' => 'redis',
         'prefix' => 'laravel_database_',
       ),
-      'default' => 
+      'default' =>
       array (
         'url' => NULL,
         'host' => '127.0.0.1',
@@ -336,7 +336,7 @@
         'port' => '6379',
         'database' => '0',
       ),
-      'cache' => 
+      'cache' =>
       array (
         'url' => NULL,
         'host' => '127.0.0.1',
@@ -346,24 +346,24 @@
       ),
     ),
   ),
-  'filesystems' => 
+  'filesystems' =>
   array (
     'default' => 'local',
-    'disks' => 
+    'disks' =>
     array (
-      'local' => 
+      'local' =>
       array (
         'driver' => 'local',
         'root' => '/home/projects/travel_booking_tour/storage/app',
       ),
-      'public' => 
+      'public' =>
       array (
         'driver' => 'local',
         'root' => '/home/projects/travel_booking_tour/public/storage',
         'url' => 'http://travel.local.com',
         'visibility' => 'public',
       ),
-      's3' => 
+      's3' =>
       array (
         'driver' => 's3',
         'key' => '',
@@ -375,54 +375,54 @@
         'use_path_style_endpoint' => false,
       ),
     ),
-    'links' => 
+    'links' =>
     array (
       '/home/projects/travel_booking_tour/public/storage' => '/home/projects/travel_booking_tour/storage/app/public',
     ),
   ),
-  'hashing' => 
+  'hashing' =>
   array (
     'driver' => 'bcrypt',
-    'bcrypt' => 
+    'bcrypt' =>
     array (
       'rounds' => 10,
     ),
-    'argon' => 
+    'argon' =>
     array (
       'memory' => 1024,
       'threads' => 2,
       'time' => 2,
     ),
   ),
-  'logging' => 
+  'logging' =>
   array (
     'default' => 'stack',
     'deprecations' => NULL,
-    'channels' => 
+    'channels' =>
     array (
-      'stack' => 
+      'stack' =>
       array (
         'driver' => 'stack',
-        'channels' => 
+        'channels' =>
         array (
           0 => 'single',
         ),
         'ignore_exceptions' => false,
       ),
-      'single' => 
+      'single' =>
       array (
         'driver' => 'single',
         'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
         'level' => 'debug',
       ),
-      'daily' => 
+      'daily' =>
       array (
         'driver' => 'daily',
         'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
-      'slack' => 
+      'slack' =>
       array (
         'driver' => 'slack',
         'url' => NULL,
@@ -430,123 +430,123 @@
         'emoji' => ':boom:',
         'level' => 'debug',
       ),
-      'papertrail' => 
+      'papertrail' =>
       array (
         'driver' => 'monolog',
         'level' => 'debug',
         'handler' => 'Monolog\\Handler\\SyslogUdpHandler',
-        'handler_with' => 
+        'handler_with' =>
         array (
           'host' => NULL,
           'port' => NULL,
         ),
       ),
-      'stderr' => 
+      'stderr' =>
       array (
         'driver' => 'monolog',
         'level' => 'debug',
         'handler' => 'Monolog\\Handler\\StreamHandler',
         'formatter' => NULL,
-        'with' => 
+        'with' =>
         array (
           'stream' => 'php://stderr',
         ),
       ),
-      'syslog' => 
+      'syslog' =>
       array (
         'driver' => 'syslog',
         'level' => 'debug',
       ),
-      'errorlog' => 
+      'errorlog' =>
       array (
         'driver' => 'errorlog',
         'level' => 'debug',
       ),
-      'null' => 
+      'null' =>
       array (
         'driver' => 'monolog',
         'handler' => 'Monolog\\Handler\\NullHandler',
       ),
-      'emergency' => 
+      'emergency' =>
       array (
         'path' => '/home/projects/travel_booking_tour/storage/logs/laravel.log',
       ),
     ),
   ),
-  'mail' => 
+  'mail' =>
   array (
     'default' => 'smtp',
-    'mailers' => 
+    'mailers' =>
     array (
-      'smtp' => 
+      'smtp' =>
       array (
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
         'port' => '587',
         'encryption' => 'tls',
-        'username' => 'linenhagiang@gmail.com',
+        'username' => 'linenbackpacker@gmail.com',
         'password' => 'irjmiabiuunzloct',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
-      'ses' => 
+      'ses' =>
       array (
         'transport' => 'ses',
       ),
-      'mailgun' => 
+      'mailgun' =>
       array (
         'transport' => 'mailgun',
       ),
-      'postmark' => 
+      'postmark' =>
       array (
         'transport' => 'postmark',
       ),
-      'sendmail' => 
+      'sendmail' =>
       array (
         'transport' => 'sendmail',
         'path' => '/usr/sbin/sendmail -bs',
       ),
-      'log' => 
+      'log' =>
       array (
         'transport' => 'log',
         'channel' => NULL,
       ),
-      'array' => 
+      'array' =>
       array (
         'transport' => 'array',
       ),
-      'failover' => 
+      'failover' =>
       array (
         'transport' => 'failover',
-        'mailers' => 
+        'mailers' =>
         array (
           0 => 'smtp',
           1 => 'log',
         ),
       ),
     ),
-    'from' => 
+    'from' =>
     array (
-      'address' => 'linenhagiang@gmail.com',
+      'address' => 'linenbackpacker@gmail.com',
       'name' => 'Laravel',
     ),
-    'markdown' => 
+    'markdown' =>
     array (
       'theme' => 'default',
-      'paths' => 
+      'paths' =>
       array (
         0 => '/home/projects/travel_booking_tour/resources/views/vendor/mail',
       ),
     ),
   ),
-  'permission' => 
+  'permission' =>
   array (
-    'models' => 
+    'models' =>
     array (
       'permission' => 'Spatie\\Permission\\Models\\Permission',
       'role' => 'Spatie\\Permission\\Models\\Role',
     ),
-    'table_names' => 
+    'table_names' =>
     array (
       'roles' => 'roles',
       'permissions' => 'permissions',
@@ -554,7 +554,7 @@
       'model_has_roles' => 'model_has_roles',
       'role_has_permissions' => 'role_has_permissions',
     ),
-    'column_names' => 
+    'column_names' =>
     array (
       'role_pivot_key' => NULL,
       'permission_pivot_key' => NULL,
@@ -566,9 +566,9 @@
     'display_permission_in_exception' => false,
     'display_role_in_exception' => false,
     'enable_wildcard_permission' => false,
-    'cache' => 
+    'cache' =>
     array (
-      'expiration_time' => 
+      'expiration_time' =>
       DateInterval::__set_state(array(
          'y' => 0,
          'm' => 0,
@@ -591,16 +591,16 @@
       'store' => 'default',
     ),
   ),
-  'queue' => 
+  'queue' =>
   array (
     'default' => 'sync',
-    'connections' => 
+    'connections' =>
     array (
-      'sync' => 
+      'sync' =>
       array (
         'driver' => 'sync',
       ),
-      'database' => 
+      'database' =>
       array (
         'driver' => 'database',
         'table' => 'jobs',
@@ -608,7 +608,7 @@
         'retry_after' => 90,
         'after_commit' => false,
       ),
-      'beanstalkd' => 
+      'beanstalkd' =>
       array (
         'driver' => 'beanstalkd',
         'host' => 'localhost',
@@ -617,7 +617,7 @@
         'block_for' => 0,
         'after_commit' => false,
       ),
-      'sqs' => 
+      'sqs' =>
       array (
         'driver' => 'sqs',
         'key' => '',
@@ -628,7 +628,7 @@
         'region' => 'us-east-1',
         'after_commit' => false,
       ),
-      'redis' => 
+      'redis' =>
       array (
         'driver' => 'redis',
         'connection' => 'default',
@@ -638,16 +638,16 @@
         'after_commit' => false,
       ),
     ),
-    'failed' => 
+    'failed' =>
     array (
       'driver' => 'database-uuids',
       'database' => 'mysql',
       'table' => 'failed_jobs',
     ),
   ),
-  'sanctum' => 
+  'sanctum' =>
   array (
-    'stateful' => 
+    'stateful' =>
     array (
       0 => 'localhost',
       1 => 'localhost:3000',
@@ -656,37 +656,37 @@
       4 => '::1',
       5 => 'travel.local.com',
     ),
-    'guard' => 
+    'guard' =>
     array (
       0 => 'web',
     ),
     'expiration' => NULL,
-    'middleware' => 
+    'middleware' =>
     array (
       'verify_csrf_token' => 'App\\Http\\Middleware\\VerifyCsrfToken',
       'encrypt_cookies' => 'App\\Http\\Middleware\\EncryptCookies',
     ),
   ),
-  'services' => 
+  'services' =>
   array (
-    'mailgun' => 
+    'mailgun' =>
     array (
       'domain' => NULL,
       'secret' => NULL,
       'endpoint' => 'api.mailgun.net',
     ),
-    'postmark' => 
+    'postmark' =>
     array (
       'token' => NULL,
     ),
-    'ses' => 
+    'ses' =>
     array (
       'key' => '',
       'secret' => '',
       'region' => 'us-east-1',
     ),
   ),
-  'session' => 
+  'session' =>
   array (
     'driver' => 'file',
     'lifetime' => '120',
@@ -696,7 +696,7 @@
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
-    'lottery' => 
+    'lottery' =>
     array (
       0 => 2,
       1 => 100,
@@ -708,18 +708,18 @@
     'http_only' => true,
     'same_site' => 'lax',
   ),
-  'view' => 
+  'view' =>
   array (
-    'paths' => 
+    'paths' =>
     array (
       0 => '/home/projects/travel_booking_tour/resources/views',
     ),
     'compiled' => '/home/projects/travel_booking_tour/storage/framework/views',
   ),
-  'flare' => 
+  'flare' =>
   array (
     'key' => NULL,
-    'reporting' => 
+    'reporting' =>
     array (
       'anonymize_ips' => true,
       'collect_git_information' => false,
@@ -730,24 +730,24 @@
       'grouping_type' => NULL,
       'report_logs' => true,
       'maximum_number_of_collected_logs' => 200,
-      'censor_request_body_fields' => 
+      'censor_request_body_fields' =>
       array (
         0 => 'password',
       ),
     ),
     'send_logs_as_events' => true,
-    'censor_request_body_fields' => 
+    'censor_request_body_fields' =>
     array (
       0 => 'password',
     ),
   ),
-  'ignition' => 
+  'ignition' =>
   array (
     'editor' => 'phpstorm',
     'theme' => 'light',
     'enable_share_button' => true,
     'register_commands' => false,
-    'ignored_solution_providers' => 
+    'ignored_solution_providers' =>
     array (
       0 => 'Facade\\Ignition\\SolutionProviders\\MissingPackageSolutionProvider',
     ),
@@ -756,1194 +756,1194 @@
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
   ),
-  'categories' => 
+  'categories' =>
   array (
-    'categories' => 
+    'categories' =>
     array (
       'tour' => 'Đặt Tour',
       'booking_car' => 'Cho thuê xe',
       'booking_ticket' => 'Đặt vé xe',
     ),
   ),
-  'country' => 
+  'country' =>
   array (
-    'countries' => 
+    'countries' =>
     array (
-      0 => 
+      0 =>
       array (
         'code' => '+93',
         'country' => 'Afghanistan',
       ),
-      1 => 
+      1 =>
       array (
         'code' => '+355',
         'country' => 'Albania',
       ),
-      2 => 
+      2 =>
       array (
         'code' => '+213',
         'country' => 'Algeria',
       ),
-      3 => 
+      3 =>
       array (
         'code' => '+376',
         'country' => 'Andorra',
       ),
-      4 => 
+      4 =>
       array (
         'code' => '+244',
         'country' => 'Angola',
       ),
-      5 => 
+      5 =>
       array (
         'code' => '+1-268',
         'country' => 'Antigua and Barbuda',
       ),
-      6 => 
+      6 =>
       array (
         'code' => '+54',
         'country' => 'Argentina',
       ),
-      7 => 
+      7 =>
       array (
         'code' => '+374',
         'country' => 'Armenia',
       ),
-      8 => 
+      8 =>
       array (
         'code' => '+297',
         'country' => 'Aruba',
       ),
-      9 => 
+      9 =>
       array (
         'code' => '+61',
         'country' => 'Australia',
       ),
-      10 => 
+      10 =>
       array (
         'code' => '+43',
         'country' => 'Austria',
       ),
-      11 => 
+      11 =>
       array (
         'code' => '+994',
         'country' => 'Azerbaijan',
       ),
-      12 => 
+      12 =>
       array (
         'code' => '+1-242',
         'country' => 'Bahamas',
       ),
-      13 => 
+      13 =>
       array (
         'code' => '+973',
         'country' => 'Bahrain',
       ),
-      14 => 
+      14 =>
       array (
         'code' => '+880',
         'country' => 'Bangladesh',
       ),
-      15 => 
+      15 =>
       array (
         'code' => '+1-246',
         'country' => 'Barbados',
       ),
-      16 => 
+      16 =>
       array (
         'code' => '+375',
         'country' => 'Belarus',
       ),
-      17 => 
+      17 =>
       array (
         'code' => '+32',
         'country' => 'Belgium',
       ),
-      18 => 
+      18 =>
       array (
         'code' => '+501',
         'country' => 'Belize',
       ),
-      19 => 
+      19 =>
       array (
         'code' => '+229',
         'country' => 'Benin',
       ),
-      20 => 
+      20 =>
       array (
         'code' => '+1-441',
         'country' => 'Bermuda',
       ),
-      21 => 
+      21 =>
       array (
         'code' => '+975',
         'country' => 'Bhutan',
       ),
-      22 => 
+      22 =>
       array (
         'code' => '+591',
         'country' => 'Bolivia',
       ),
-      23 => 
+      23 =>
       array (
         'code' => '+387',
         'country' => 'Bosnia and Herzegovina',
       ),
-      24 => 
+      24 =>
       array (
         'code' => '+267',
         'country' => 'Botswana',
       ),
-      25 => 
+      25 =>
       array (
         'code' => '+55',
         'country' => 'Brazil',
       ),
-      26 => 
+      26 =>
       array (
         'code' => '+246',
         'country' => 'British Indian Ocean Territory',
       ),
-      27 => 
+      27 =>
       array (
         'code' => '+1-284',
         'country' => 'British Virgin Islands',
       ),
-      28 => 
+      28 =>
       array (
         'code' => '+673',
         'country' => 'Brunei',
       ),
-      29 => 
+      29 =>
       array (
         'code' => '+359',
         'country' => 'Bulgaria',
       ),
-      30 => 
+      30 =>
       array (
         'code' => '+226',
         'country' => 'Burkina Faso',
       ),
-      31 => 
+      31 =>
       array (
         'code' => '+257',
         'country' => 'Burundi',
       ),
-      32 => 
+      32 =>
       array (
         'code' => '+855',
         'country' => 'Cambodia',
       ),
-      33 => 
+      33 =>
       array (
         'code' => '+237',
         'country' => 'Cameroon',
       ),
-      34 => 
+      34 =>
       array (
         'code' => '+1',
         'country' => 'Canada',
       ),
-      35 => 
+      35 =>
       array (
         'code' => '+238',
         'country' => 'Cape Verde',
       ),
-      36 => 
+      36 =>
       array (
         'code' => '+1-345',
         'country' => 'Cayman Islands',
       ),
-      37 => 
+      37 =>
       array (
         'code' => '+236',
         'country' => 'Central African Republic',
       ),
-      38 => 
+      38 =>
       array (
         'code' => '+235',
         'country' => 'Chad',
       ),
-      39 => 
+      39 =>
       array (
         'code' => '+56',
         'country' => 'Chile',
       ),
-      40 => 
+      40 =>
       array (
         'code' => '+86',
         'country' => 'China',
       ),
-      41 => 
+      41 =>
       array (
         'code' => '+61',
         'country' => 'Christmas Island',
       ),
-      42 => 
+      42 =>
       array (
         'code' => '+61',
         'country' => 'Cocos Islands',
       ),
-      43 => 
+      43 =>
       array (
         'code' => '+57',
         'country' => 'Colombia',
       ),
-      44 => 
+      44 =>
       array (
         'code' => '+269',
         'country' => 'Comoros',
       ),
-      45 => 
+      45 =>
       array (
         'code' => '+682',
         'country' => 'Cook Islands',
       ),
-      46 => 
+      46 =>
       array (
         'code' => '+506',
         'country' => 'Costa Rica',
       ),
-      47 => 
+      47 =>
       array (
         'code' => '+385',
         'country' => 'Croatia',
       ),
-      48 => 
+      48 =>
       array (
         'code' => '+53',
         'country' => 'Cuba',
       ),
-      49 => 
+      49 =>
       array (
         'code' => '+599',
         'country' => 'Curacao',
       ),
-      50 => 
+      50 =>
       array (
         'code' => '+357',
         'country' => 'Cyprus',
       ),
-      51 => 
+      51 =>
       array (
         'code' => '+420',
         'country' => 'Czech Republic',
       ),
-      52 => 
+      52 =>
       array (
         'code' => '+243',
         'country' => 'Democratic Republic of the Congo',
       ),
-      53 => 
+      53 =>
       array (
         'code' => '+45',
         'country' => 'Denmark',
       ),
-      54 => 
+      54 =>
       array (
         'code' => '+253',
         'country' => 'Djibouti',
       ),
-      55 => 
+      55 =>
       array (
         'code' => '+1-767',
         'country' => 'Dominica',
       ),
-      56 => 
+      56 =>
       array (
         'code' => '+1-809',
         'country' => 'Dominican Republic',
       ),
-      57 => 
+      57 =>
       array (
         'code' => '+670',
         'country' => 'East Timor',
       ),
-      58 => 
+      58 =>
       array (
         'code' => '+593',
         'country' => 'Ecuador',
       ),
-      59 => 
+      59 =>
       array (
         'code' => '+20',
         'country' => 'Egypt',
       ),
-      60 => 
+      60 =>
       array (
         'code' => '+503',
         'country' => 'El Salvador',
       ),
-      61 => 
+      61 =>
       array (
         'code' => '+240',
         'country' => 'Equatorial Guinea',
       ),
-      62 => 
+      62 =>
       array (
         'code' => '+291',
         'country' => 'Eritrea',
       ),
-      63 => 
+      63 =>
       array (
         'code' => '+372',
         'country' => 'Estonia',
       ),
-      64 => 
+      64 =>
       array (
         'code' => '+251',
         'country' => 'Ethiopia',
       ),
-      65 => 
+      65 =>
       array (
         'code' => '+500',
         'country' => 'Falkland Islands',
       ),
-      66 => 
+      66 =>
       array (
         'code' => '+298',
         'country' => 'Faroe Islands',
       ),
-      67 => 
+      67 =>
       array (
         'code' => '+679',
         'country' => 'Fiji',
       ),
-      68 => 
+      68 =>
       array (
         'code' => '+358',
         'country' => 'Finland',
       ),
-      69 => 
+      69 =>
       array (
         'code' => '+33',
         'country' => 'France',
       ),
-      70 => 
+      70 =>
       array (
         'code' => '+689',
         'country' => 'French Polynesia',
       ),
-      71 => 
+      71 =>
       array (
         'code' => '+241',
         'country' => 'Gabon',
       ),
-      72 => 
+      72 =>
       array (
         'code' => '+220',
         'country' => 'Gambia',
       ),
-      73 => 
+      73 =>
       array (
         'code' => '+995',
         'country' => 'Georgia',
       ),
-      74 => 
+      74 =>
       array (
         'code' => '+49',
         'country' => 'Germany',
       ),
-      75 => 
+      75 =>
       array (
         'code' => '+233',
         'country' => 'Ghana',
       ),
-      76 => 
+      76 =>
       array (
         'code' => '+350',
         'country' => 'Gibraltar',
       ),
-      77 => 
+      77 =>
       array (
         'code' => '+30',
         'country' => 'Greece',
       ),
-      78 => 
+      78 =>
       array (
         'code' => '+299',
         'country' => 'Greenland',
       ),
-      79 => 
+      79 =>
       array (
         'code' => '+1-473',
         'country' => 'Grenada',
       ),
-      80 => 
+      80 =>
       array (
         'code' => '+1-671',
         'country' => 'Guam',
       ),
-      81 => 
+      81 =>
       array (
         'code' => '+502',
         'country' => 'Guatemala',
       ),
-      82 => 
+      82 =>
       array (
         'code' => '+224',
         'country' => 'Guinea',
       ),
-      83 => 
+      83 =>
       array (
         'code' => '+245',
         'country' => 'Guinea-Bissau',
       ),
-      84 => 
+      84 =>
       array (
         'code' => '+592',
         'country' => 'Guyana',
       ),
-      85 => 
+      85 =>
       array (
         'code' => '+509',
         'country' => 'Haiti',
       ),
-      86 => 
+      86 =>
       array (
         'code' => '+504',
         'country' => 'Honduras',
       ),
-      87 => 
+      87 =>
       array (
         'code' => '+852',
         'country' => 'Hong Kong',
       ),
-      88 => 
+      88 =>
       array (
         'code' => '+36',
         'country' => 'Hungary',
       ),
-      89 => 
+      89 =>
       array (
         'code' => '+354',
         'country' => 'Iceland',
       ),
-      90 => 
+      90 =>
       array (
         'code' => '+91',
         'country' => 'India',
       ),
-      91 => 
+      91 =>
       array (
         'code' => '+62',
         'country' => 'Indonesia',
       ),
-      92 => 
+      92 =>
       array (
         'code' => '+98',
         'country' => 'Iran',
       ),
-      93 => 
+      93 =>
       array (
         'code' => '+964',
         'country' => 'Iraq',
       ),
-      94 => 
+      94 =>
       array (
         'code' => '+353',
         'country' => 'Ireland',
       ),
-      95 => 
+      95 =>
       array (
         'code' => '+44-1624',
         'country' => 'Isle of Man',
       ),
-      96 => 
+      96 =>
       array (
         'code' => '+972',
         'country' => 'Israel',
       ),
-      97 => 
+      97 =>
       array (
         'code' => '+39',
         'country' => 'Italy',
       ),
-      98 => 
+      98 =>
       array (
         'code' => '+225',
         'country' => 'Ivory Coast',
       ),
-      99 => 
+      99 =>
       array (
         'code' => '+1-876',
         'country' => 'Jamaica',
       ),
-      100 => 
+      100 =>
       array (
         'code' => '+81',
         'country' => 'Japan',
       ),
-      101 => 
+      101 =>
       array (
         'code' => '+962',
         'country' => 'Jordan',
       ),
-      102 => 
+      102 =>
       array (
         'code' => '+7',
         'country' => 'Kazakhstan',
       ),
-      103 => 
+      103 =>
       array (
         'code' => '+254',
         'country' => 'Kenya',
       ),
-      104 => 
+      104 =>
       array (
         'code' => '+686',
         'country' => 'Kiribati',
       ),
-      105 => 
+      105 =>
       array (
         'code' => '+383',
         'country' => 'Kosovo',
       ),
-      106 => 
+      106 =>
       array (
         'code' => '+965',
         'country' => 'Kuwait',
       ),
-      107 => 
+      107 =>
       array (
         'code' => '+996',
         'country' => 'Kyrgyzstan',
       ),
-      108 => 
+      108 =>
       array (
         'code' => '+856',
         'country' => 'Laos',
       ),
-      109 => 
+      109 =>
       array (
         'code' => '+371',
         'country' => 'Latvia',
       ),
-      110 => 
+      110 =>
       array (
         'code' => '+961',
         'country' => 'Lebanon',
       ),
-      111 => 
+      111 =>
       array (
         'code' => '+266',
         'country' => 'Lesotho',
       ),
-      112 => 
+      112 =>
       array (
         'code' => '+231',
         'country' => 'Liberia',
       ),
-      113 => 
+      113 =>
       array (
         'code' => '+218',
         'country' => 'Libya',
       ),
-      114 => 
+      114 =>
       array (
         'code' => '+423',
         'country' => 'Liechtenstein',
       ),
-      115 => 
+      115 =>
       array (
         'code' => '+370',
         'country' => 'Lithuania',
       ),
-      116 => 
+      116 =>
       array (
         'code' => '+352',
         'country' => 'Luxembourg',
       ),
-      117 => 
+      117 =>
       array (
         'code' => '+853',
         'country' => 'Macau',
       ),
-      118 => 
+      118 =>
       array (
         'code' => '+389',
         'country' => 'Macedonia',
       ),
-      119 => 
+      119 =>
       array (
         'code' => '+261',
         'country' => 'Madagascar',
       ),
-      120 => 
+      120 =>
       array (
         'code' => '+265',
         'country' => 'Malawi',
       ),
-      121 => 
+      121 =>
       array (
         'code' => '+60',
         'country' => 'Malaysia',
       ),
-      122 => 
+      122 =>
       array (
         'code' => '+960',
         'country' => 'Maldives',
       ),
-      123 => 
+      123 =>
       array (
         'code' => '+223',
         'country' => 'Mali',
       ),
-      124 => 
+      124 =>
       array (
         'code' => '+356',
         'country' => 'Malta',
       ),
-      125 => 
+      125 =>
       array (
         'code' => '+692',
         'country' => 'Marshall Islands',
       ),
-      126 => 
+      126 =>
       array (
         'code' => '+222',
         'country' => 'Mauritania',
       ),
-      127 => 
+      127 =>
       array (
         'code' => '+230',
         'country' => 'Mauritius',
       ),
-      128 => 
+      128 =>
       array (
         'code' => '+262',
         'country' => 'Mayotte',
       ),
-      129 => 
+      129 =>
       array (
         'code' => '+52',
         'country' => 'Mexico',
       ),
-      130 => 
+      130 =>
       array (
         'code' => '+691',
         'country' => 'Micronesia',
       ),
-      131 => 
+      131 =>
       array (
         'code' => '+373',
         'country' => 'Moldova',
       ),
-      132 => 
+      132 =>
       array (
         'code' => '+377',
         'country' => 'Monaco',
       ),
-      133 => 
+      133 =>
       array (
         'code' => '+976',
         'country' => 'Mongolia',
       ),
-      134 => 
+      134 =>
       array (
         'code' => '+382',
         'country' => 'Montenegro',
       ),
-      135 => 
+      135 =>
       array (
         'code' => '+1-664',
         'country' => 'Montserrat',
       ),
-      136 => 
+      136 =>
       array (
         'code' => '+212',
         'country' => 'Morocco',
       ),
-      137 => 
+      137 =>
       array (
         'code' => '+258',
         'country' => 'Mozambique',
       ),
-      138 => 
+      138 =>
       array (
         'code' => '+95',
         'country' => 'Myanmar',
       ),
-      139 => 
+      139 =>
       array (
         'code' => '+264',
         'country' => 'Namibia',
       ),
-      140 => 
+      140 =>
       array (
         'code' => '+674',
         'country' => 'Nauru',
       ),
-      141 => 
+      141 =>
       array (
         'code' => '+977',
         'country' => 'Nepal',
       ),
-      142 => 
+      142 =>
       array (
         'code' => '+31',
         'country' => 'Netherlands',
       ),
-      143 => 
+      143 =>
       array (
         'code' => '+599',
         'country' => 'Netherlands Antilles',
       ),
-      144 => 
+      144 =>
       array (
         'code' => '+687',
         'country' => 'New Caledonia',
       ),
-      145 => 
+      145 =>
       array (
         'code' => '+64',
         'country' => 'New Zealand',
       ),
-      146 => 
+      146 =>
       array (
         'code' => '+505',
         'country' => 'Nicaragua',
       ),
-      147 => 
+      147 =>
       array (
         'code' => '+227',
         'country' => 'Niger',
       ),
-      148 => 
+      148 =>
       array (
         'code' => '+234',
         'country' => 'Nigeria',
       ),
-      149 => 
+      149 =>
       array (
         'code' => '+683',
         'country' => 'Niue',
       ),
-      150 => 
+      150 =>
       array (
         'code' => '+850',
         'country' => 'North Korea',
       ),
-      151 => 
+      151 =>
       array (
         'code' => '+1-670',
         'country' => 'Northern Mariana Islands',
       ),
-      152 => 
+      152 =>
       array (
         'code' => '+47',
         'country' => 'Norway',
       ),
-      153 => 
+      153 =>
       array (
         'code' => '+968',
         'country' => 'Oman',
       ),
-      154 => 
+      154 =>
       array (
         'code' => '+92',
         'country' => 'Pakistan',
       ),
-      155 => 
+      155 =>
       array (
         'code' => '+680',
         'country' => 'Palau',
       ),
-      156 => 
+      156 =>
       array (
         'code' => '+970',
         'country' => 'Palestine',
       ),
-      157 => 
+      157 =>
       array (
         'code' => '+507',
         'country' => 'Panama',
       ),
-      158 => 
+      158 =>
       array (
         'code' => '+675',
         'country' => 'Papua New Guinea',
       ),
-      159 => 
+      159 =>
       array (
         'code' => '+595',
         'country' => 'Paraguay',
       ),
-      160 => 
+      160 =>
       array (
         'code' => '+51',
         'country' => 'Peru',
       ),
-      161 => 
+      161 =>
       array (
         'code' => '+63',
         'country' => 'Philippines',
       ),
-      162 => 
+      162 =>
       array (
         'code' => '+64',
         'country' => 'Pitcairn',
       ),
-      163 => 
+      163 =>
       array (
         'code' => '+48',
         'country' => 'Poland',
       ),
-      164 => 
+      164 =>
       array (
         'code' => '+351',
         'country' => 'Portugal',
       ),
-      165 => 
+      165 =>
       array (
         'code' => '+1-787',
         'country' => 'Puerto Rico',
       ),
-      166 => 
+      166 =>
       array (
         'code' => '+974',
         'country' => 'Qatar',
       ),
-      167 => 
+      167 =>
       array (
         'code' => '+242',
         'country' => 'Republic of the Congo',
       ),
-      168 => 
+      168 =>
       array (
         'code' => '+40',
         'country' => 'Romania',
       ),
-      169 => 
+      169 =>
       array (
         'code' => '+7',
         'country' => 'Russia',
       ),
-      170 => 
+      170 =>
       array (
         'code' => '+250',
         'country' => 'Rwanda',
       ),
-      171 => 
+      171 =>
       array (
         'code' => '+590',
         'country' => 'Saint Barthelemy',
       ),
-      172 => 
+      172 =>
       array (
         'code' => '+290',
         'country' => 'Saint Helena',
       ),
-      173 => 
+      173 =>
       array (
         'code' => '+1-869',
         'country' => 'Saint Kitts and Nevis',
       ),
-      174 => 
+      174 =>
       array (
         'code' => '+1-758',
         'country' => 'Saint Lucia',
       ),
-      175 => 
+      175 =>
       array (
         'code' => '+590',
         'country' => 'Saint Martin',
       ),
-      176 => 
+      176 =>
       array (
         'code' => '+508',
         'country' => 'Saint Pierre and Miquelon',
       ),
-      177 => 
+      177 =>
       array (
         'code' => '+1-784',
         'country' => 'Saint Vincent and the Grenadines',
       ),
-      178 => 
+      178 =>
       array (
         'code' => '+685',
         'country' => 'Samoa',
       ),
-      179 => 
+      179 =>
       array (
         'code' => '+378',
         'country' => 'San Marino',
       ),
-      180 => 
+      180 =>
       array (
         'code' => '+239',
         'country' => 'Sao Tome and Principe',
       ),
-      181 => 
+      181 =>
       array (
         'code' => '+966',
         'country' => 'Saudi Arabia',
       ),
-      182 => 
+      182 =>
       array (
         'code' => '+221',
         'country' => 'Senegal',
       ),
-      183 => 
+      183 =>
       array (
         'code' => '+381',
         'country' => 'Serbia',
       ),
-      184 => 
+      184 =>
       array (
         'code' => '+248',
         'country' => 'Seychelles',
       ),
-      185 => 
+      185 =>
       array (
         'code' => '+232',
         'country' => 'Sierra Leone',
       ),
-      186 => 
+      186 =>
       array (
         'code' => '+65',
         'country' => 'Singapore',
       ),
-      187 => 
+      187 =>
       array (
         'code' => '+1-721',
         'country' => 'Sint Maarten',
       ),
-      188 => 
+      188 =>
       array (
         'code' => '+421',
         'country' => 'Slovakia',
       ),
-      189 => 
+      189 =>
       array (
         'code' => '+386',
         'country' => 'Slovenia',
       ),
-      190 => 
+      190 =>
       array (
         'code' => '+677',
         'country' => 'Solomon Islands',
       ),
-      191 => 
+      191 =>
       array (
         'code' => '+252',
         'country' => 'Somalia',
       ),
-      192 => 
+      192 =>
       array (
         'code' => '+27',
         'country' => 'South Africa',
       ),
-      193 => 
+      193 =>
       array (
         'code' => '+82',
         'country' => 'South Korea',
       ),
-      194 => 
+      194 =>
       array (
         'code' => '+211',
         'country' => 'South Sudan',
       ),
-      195 => 
+      195 =>
       array (
         'code' => '+34',
         'country' => 'Spain',
       ),
-      196 => 
+      196 =>
       array (
         'code' => '+94',
         'country' => 'Sri Lanka',
       ),
-      197 => 
+      197 =>
       array (
         'code' => '+249',
         'country' => 'Sudan',
       ),
-      198 => 
+      198 =>
       array (
         'code' => '+597',
         'country' => 'Suriname',
       ),
-      199 => 
+      199 =>
       array (
         'code' => '+47',
         'country' => 'Svalbard and Jan Mayen',
       ),
-      200 => 
+      200 =>
       array (
         'code' => '+268',
         'country' => 'Swaziland',
       ),
-      201 => 
+      201 =>
       array (
         'code' => '+46',
         'country' => 'Sweden',
       ),
-      202 => 
+      202 =>
       array (
         'code' => '+41',
         'country' => 'Switzerland',
       ),
-      203 => 
+      203 =>
       array (
         'code' => '+963',
         'country' => 'Syria',
       ),
-      204 => 
+      204 =>
       array (
         'code' => '+886',
         'country' => 'Taiwan',
       ),
-      205 => 
+      205 =>
       array (
         'code' => '+992',
         'country' => 'Tajikistan',
       ),
-      206 => 
+      206 =>
       array (
         'code' => '+255',
         'country' => 'Tanzania',
       ),
-      207 => 
+      207 =>
       array (
         'code' => '+66',
         'country' => 'Thailand',
       ),
-      208 => 
+      208 =>
       array (
         'code' => '+228',
         'country' => 'Togo',
       ),
-      209 => 
+      209 =>
       array (
         'code' => '+690',
         'country' => 'Tokelau',
       ),
-      210 => 
+      210 =>
       array (
         'code' => '+676',
         'country' => 'Tonga',
       ),
-      211 => 
+      211 =>
       array (
         'code' => '+1-868',
         'country' => 'Trinidad and Tobago',
       ),
-      212 => 
+      212 =>
       array (
         'code' => '+216',
         'country' => 'Tunisia',
       ),
-      213 => 
+      213 =>
       array (
         'code' => '+90',
         'country' => 'Turkey',
       ),
-      214 => 
+      214 =>
       array (
         'code' => '+993',
         'country' => 'Turkmenistan',
       ),
-      215 => 
+      215 =>
       array (
         'code' => '+1-649',
         'country' => 'Turks and Caicos Islands',
       ),
-      216 => 
+      216 =>
       array (
         'code' => '+688',
         'country' => 'Tuvalu',
       ),
-      217 => 
+      217 =>
       array (
         'code' => '+1-340',
         'country' => 'U.S. Virgin Islands',
       ),
-      218 => 
+      218 =>
       array (
         'code' => '+256',
         'country' => 'Uganda',
       ),
-      219 => 
+      219 =>
       array (
         'code' => '+380',
         'country' => 'Ukraine',
       ),
-      220 => 
+      220 =>
       array (
         'code' => '+971',
         'country' => 'United Arab Emirates',
       ),
-      221 => 
+      221 =>
       array (
         'code' => '+44',
         'country' => 'United Kingdom',
       ),
-      222 => 
+      222 =>
       array (
         'code' => '+1',
         'country' => 'United States',
       ),
-      223 => 
+      223 =>
       array (
         'code' => '+598',
         'country' => 'Uruguay',
       ),
-      224 => 
+      224 =>
       array (
         'code' => '+998',
         'country' => 'Uzbekistan',
       ),
-      225 => 
+      225 =>
       array (
         'code' => '+678',
         'country' => 'Vanuatu',
       ),
-      226 => 
+      226 =>
       array (
         'code' => '+379',
         'country' => 'Vatican',
       ),
-      227 => 
+      227 =>
       array (
         'code' => '+58',
         'country' => 'Venezuela',
       ),
-      228 => 
+      228 =>
       array (
         'code' => '+84',
         'country' => 'Vietnam',
       ),
-      229 => 
+      229 =>
       array (
         'code' => '+681',
         'country' => 'Wallis and Futuna',
       ),
-      230 => 
+      230 =>
       array (
         'code' => '+212',
         'country' => 'Western Sahara',
       ),
-      231 => 
+      231 =>
       array (
         'code' => '+967',
         'country' => 'Yemen',
       ),
-      232 => 
+      232 =>
       array (
         'code' => '+260',
         'country' => 'Zambia',
       ),
-      233 => 
+      233 =>
       array (
         'code' => '+263',
         'country' => 'Zimbabwe',
       ),
     ),
   ),
-  'location' => 
+  'location' =>
   array (
-    'locations' => 
+    'locations' =>
     array (
       1 => 'HA LONG',
       2 => 'SAPA',
@@ -1952,9 +1952,9 @@
       5 => 'CAT BA',
     ),
   ),
-  'settings' => 
+  'settings' =>
   array (
-    'settings' => 
+    'settings' =>
     array (
       'ten-web-chinh' => 'Tên Web Chính',
       'ten-web-phu' => 'Tên Web Phụ',
@@ -1973,24 +1973,24 @@
       'count-from' => 'Số bắt đầu',
     ),
   ),
-  'type' => 
+  'type' =>
   array (
-    'moto_types' => 
+    'moto_types' =>
     array (
       1 => 'Ride by yourself',
       2 => 'Seat behind your friend',
       3 => 'Easyrider',
     ),
   ),
-  'tinker' => 
+  'tinker' =>
   array (
-    'commands' => 
+    'commands' =>
     array (
     ),
-    'alias' => 
+    'alias' =>
     array (
     ),
-    'dont_alias' => 
+    'dont_alias' =>
     array (
       0 => 'App\\Nova',
     ),
