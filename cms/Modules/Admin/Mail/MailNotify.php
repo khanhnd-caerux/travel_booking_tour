@@ -30,8 +30,8 @@ class MailNotify extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@linenbackpacker.com')
+        return $this->from('linenbackpacker@gmail.com')
             ->view('Admin::mail.mail-notify')
-            ->subject('【HA GIANG TRAVEL MOUNTAIN THÔNG BÁO CÓ KHÁCH ĐẶT TOUR】');
+            ->subject('【HA GIANG BACKPACKER THÔNG BÁO CÓ KHÁCH ĐẶT TOUR】');
     }
 }

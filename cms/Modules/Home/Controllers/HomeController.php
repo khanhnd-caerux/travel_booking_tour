@@ -91,8 +91,8 @@ class HomeController extends Controller
             'note' => $request->message,
             'link' => route('admin.contact.list'),
         ];
-        // $users = $this->userService->getAll();
-        // SendEmail::dispatch($message, $users);
+        $users = $this->userService->getAll();
+        SendEmail::dispatch($message, $users);
 
         return redirect()->route('client.index')->with('success', true);
     }
@@ -190,8 +190,8 @@ class HomeController extends Controller
             'note' => $request->message,
             'link' => route('admin.contact.list'),
         ];
-        // $users = $this->userService->getAll();
-        // SendEmail::dispatch($message, $users);
+        $users = $this->userService->getAll();
+        SendEmail::dispatch($message, $users);
 
         session()->remove('cart');
 

@@ -13,7 +13,7 @@ docker-compose up -d --build
 
 #### Cài đặt Laravel
 ```
-docker exec -it php_laravel_base /bin/sh
+docker exec -it php_travel_booking /bin/sh
 
 composer install
 
