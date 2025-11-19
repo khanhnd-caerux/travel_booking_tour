@@ -74,7 +74,7 @@
                         <div class="navicon-line navicon-line-3"></div>
                     </div>
                 </div>
-                <a class="book-btn" href="#tour" title="Booking">Booking</a>
+                <span class="book-btn" title="Booking">Booking</span>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 namespace Cms\Modules\Admin\Jobs;
 
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Cms\Modules\Admin\Mail\MailNotify;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -36,7 +36,12 @@ class SendEmail implements ShouldQueue
     public function handle()
     {
         foreach ($this->users as $user) {
-            Mail::to($user->email)->send(new MailNotify($this->data));
+            try {
+                Mail::to($user->email)->send(new MailNotify($this->data));
+            } catch (\Exception $e) {
+                \Log::error('Failed to send email to ' . $user->email . ': ' . $e->getMessage());
+                // Continue sending to other users even if one fails
+            }
         }
     }
 }

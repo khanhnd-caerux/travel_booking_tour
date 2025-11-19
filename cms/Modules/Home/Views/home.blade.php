@@ -10,25 +10,21 @@
                 <div class="item_content">
                     <div class="item_content_block">
                         <h2>HA GIANG LOOP</h2>
-                        <div class="summary">
-                            <!--The destination for those </br>who like to <span>conquer</span> </div>-->
                     </div>
                 </div>
-
             </div>
 
             <div class="item hide">
                 <img class="owl-lazy" alt="HA GIANG" width="1920px" height="1080px"
-                    data-src="tour-images/44.jpg"
-                    data-srcset="tour-images/44.jpg">
-                <div class="item_content">
-                    <div class="item_content_block">
-                        <h2>HA GIANG</h2>
-                        <div class="summary">
-                            The destination for those </br>who like to <span>conquer</span> </div>
-                    </div>
-                </div>
-
+                    data-src="tour-images/sapa_trekking_labeled.png"
+                    data-srcset="tour-images/sapa_trekking_labeled.png">
+                <!--<div class="item_content">-->
+                <!--    <div class="item_content_block">-->
+                <!--        <h2>HA GIANG</h2>-->
+                <!--        <div class="summary">-->
+                <!--            The destination for those </br>who like to <span>conquer</span> </div>-->
+                <!--    </div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -66,11 +62,12 @@
                         </div>
                         <div class="discover-tour-des">
                             <div class="discover-tour-content">
-                                <h3 class="title">"Each trip, a seed of love - 10$ spreads value to Ha Giang!" 💚🌿</h3>
+                                <h3 class="title">"Each trip, a seed of love - 10$ spreads value to Ha Giang, Sapa!" 💚🌿</h3>
                                 <div class="column_left_content description">
                                     <p>
-                                    <p>Ha Giang, with its breathtaking landscapes and rich culture, is more than just a destination - it’s a journey into the heart of Vietnam’s highlands. Beyond the stunning mountains and winding roads, the ethnic communities here live a life of resilience, facing daily challenges in education, healthcare, and basic necessities.</p>
-                                    <p>That’s why, for every tour booked, we dedicate 10 USD to a community-driven charity program. This ensures that your adventure through Ha Giang leaves not only beautiful memories but also a meaningful impact.</p>
+                                    <p>Ha Giang and Sapa with its breathtaking landscapes and rich culture, is more than just a destination - it’s a journey  of Vietnam’s highlands.</p>
+                                    <p>Beyond the stunning mountains and winding roads, the ethnic communities here live a life of resilience, facing daily challenges in education, healthcare, and basic necessities.</p>
+                                    <p>That’s why, for every tour booked, we dedicate 10 USD to a community-driven charity program. This ensures that your adventure through Ha Giang and Sapa leaves not only beautiful memories but also a meaningful impact. </p>
                                     <p>Join us. Travel with purpose. Leave more than footprints. Take home more than memories.</p>
                                     </p>
                                 </div>
@@ -104,8 +101,8 @@
                         <a href="tour-images/3.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
-                            rel="image_large1" title="Hà Giang Tripadvisor image 5">
-                            <img class="lazy" alt="Hà Giang Tripadvisor image 5" width="220px" height="220px"
+                            rel="image_large1" title="HÃ  Giang Tripadvisor image 5">
+                            <img class="lazy" alt="HÃ  Giang Tripadvisor image 5" width="220px" height="220px"
                                 data-src="tour-images/3.jpg"
                                 data-srcset="tour-images/3.jpg">
                         </a>
@@ -114,8 +111,8 @@
                         <a href="tour-images/4.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
-                            rel="image_large1" title="Hà Giang Tripadvisor image 4">
-                            <img class="lazy" alt="Hà Giang Tripadvisor image 4" width="220px" height="220px"
+                            rel="image_large1" title="HÃ  Giang Tripadvisor image 4">
+                            <img class="lazy" alt="HÃ  Giang Tripadvisor image 4" width="220px" height="220px"
                                 data-src="tour-images/4.jpg"
                                 data-srcset="tour-images/4.jpg">
                         </a>
@@ -124,8 +121,8 @@
                         <a href="tour-images/45.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
-                            rel="image_large1" title="Hà Giang Tripadvisor image 3">
-                            <img class="lazy" alt="Hà Giang Tripadvisor image 3" width="220px" height="220px"
+                            rel="image_large1" title="HÃ  Giang Tripadvisor image 3">
+                            <img class="lazy" alt="HÃ  Giang Tripadvisor image 3" width="220px" height="220px"
                                 data-src="tour-images/45.jpg"
                                 data-srcset="tour-images/45.jpg">
                         </a>
@@ -134,8 +131,8 @@
                         <a href="tour-images/43.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
-                            rel="image_large1" title="Hà Giang Tripadvisor image 2">
-                            <img class="lazy" alt="Hà Giang Tripadvisor image 2" width="220px" height="220px"
+                            rel="image_large1" title="HÃ  Giang Tripadvisor image 2">
+                            <img class="lazy" alt="HÃ  Giang Tripadvisor image 2" width="220px" height="220px"
                                 data-src="tour-images/43.jpg"
                                 data-srcset="tour-images/43.jpg">
                         </a>
@@ -144,8 +141,8 @@
                         <a href="tour-images/47.jpg"
                             data-fancybox="gallery_sc"
                             class="cboxElement_album cboxElement image_al cb-image-link openfancybox image"
-                            rel="image_large1" title="Hà Giang Tripadvisor image 1">
-                            <img class="lazy" alt="Hà Giang Tripadvisor image 1" width="220px" height="220px"
+                            rel="image_large1" title="HÃ  Giang Tripadvisor image 1">
+                            <img class="lazy" alt="HÃ  Giang Tripadvisor image 1" width="220px" height="220px"
                                 data-src="tour-images/47.jpg"
                                 data-srcset="tour-images/47.jpg">
                         </a>
@@ -341,7 +338,7 @@
                                                 </div>
                                             </div>
                                             <div class="note">
-                                                <label for="">NOTE: LinenBackpacker’s Homestay offers one free night in the
+                                                <label for="">NOTE: LinenBackpackerâ€™s Homestay offers one free night in the
                                                     DORM only
                                                     the day before the tour begins, and you can check in after 2 pm. Our
                                                     reception is open 24/7. If you want private room before the tour starts,
@@ -790,7 +787,7 @@
                             <div class="pdutab_content pdutab_content_1">
                                 <div class="openfancybox image" data-fancybox="gallery_sc"
                                     data-src="tour-images/10.jpg">
-                                    <img class="lazy" alt="hà giang 3" width="370px" height="370px"
+                                    <img class="lazy" alt="hÃ  giang 3" width="370px" height="370px"
                                         data-src="tour-images/10.jpg"
                                         data-srcset="tour-images/10.jpg">
                                 </div>
