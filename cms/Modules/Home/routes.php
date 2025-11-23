@@ -23,4 +23,8 @@ Route::group([
     Route::get('/booking/success', 'HomeController@successBooking')->name('client.successBooking');
     Route::post('/ajax-get-prices-tour', 'HomeController@getPricesTour');
     Route::post('/ajax-count-prices-tour', 'HomeController@countPricesTour');
+    
+    // Push Notification Routes (public)
+    Route::post('/push-notification/subscribe', 'HomeController@subscribePush')->name('client.push.subscribe');
+    Route::post('/push-notification/unsubscribe', 'HomeController@unsubscribePush')->name('client.push.unsubscribe');
 });

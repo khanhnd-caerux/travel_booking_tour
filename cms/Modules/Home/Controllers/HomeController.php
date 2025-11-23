@@ -11,14 +11,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
-use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
-use Cms\Modules\Admin\Jobs\SendEmail;
 use Cms\Modules\Home\Requests\ContactRequest;
 
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $tour, $contact, $userService;
+    protected $slider, $post, $tour, $contact;
     protected $orderService;
     protected $orderDetailService;
     /**
@@ -33,8 +31,7 @@ class HomeController extends Controller
         TourServiceContract $tour,
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
-        OrderDetailServiceContract $orderDetailService,
-        UserServiceContract $userService
+        OrderDetailServiceContract $orderDetailService
     ) {
         $this->slider = $slider;
         $this->post = $post;
@@ -42,7 +39,6 @@ class HomeController extends Controller
         $this->contact = $contact;
         $this->orderService = $orderService;
         $this->orderDetailService = $orderDetailService;
-        $this->userService = $userService;
     }
 
     /**
@@ -84,15 +80,6 @@ class HomeController extends Controller
             'note' => $request->message,
         ];
         $this->contact->store($dataContact);
-        $message = [
-            'customer' => $request->contact_name,
-            'phone' => $request->contact_phone,
-            'email' => $request->contact_email,
-            'note' => $request->message,
-            'link' => route('admin.contact.list'),
-        ];
-        $users = DB::table('users')->get();
-        SendEmail::dispatch($message, $users);
 
         return redirect()->route('client.index')->with('success', true);
     }
@@ -182,16 +169,6 @@ class HomeController extends Controller
             ];
             $this->orderDetailService->store($dataOrderDetail);
         }
-
-        $message = [
-            'customer' => $request->contact_name,
-            'phone' => $request->contact_phone,
-            'email' => $request->contact_email,
-            'note' => $request->message,
-            'link' => route('admin.contact.list'),
-        ];
-        $users = DB::table('users')->get();
-        SendEmail::dispatch($message, $users);
 
         session()->remove('cart');
 

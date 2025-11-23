@@ -24,6 +24,12 @@
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <!-- <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js')}}"></script> -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}" />
+    <meta name="theme-color" content="#1877F2" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tour Booking Admin">
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -131,6 +137,75 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
+
+        // Push Notification Handler for Admin
+        (function() {
+            let lastNotificationTime = 0;
+            
+            // Request notification permission
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+
+            // Function to show notification
+            function showNotification(title, body, icon, data) {
+                if ('Notification' in window && Notification.permission === 'granted') {
+                    const notification = new Notification(title, {
+                        body: body,
+                        icon: icon || '/pwa-icons/icon-192x192.png',
+                        badge: '/pwa-icons/icon-72x72.png',
+                        tag: 'admin-notification',
+                        requireInteraction: true,
+                        data: data
+                    });
+
+                    notification.onclick = function() {
+                        if (data && data.url) {
+                            window.focus();
+                            window.location.href = data.url;
+                        }
+                        notification.close();
+                    };
+                }
+            }
+
+            // Poll for new notifications every 3 seconds
+            setInterval(function() {
+                fetch('/api/check-notification?t=' + Date.now(), {
+                    method: 'GET',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '',
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.notification) {
+                        const notificationTime = data.notification.timestamp;
+                        if (notificationTime > lastNotificationTime) {
+                            lastNotificationTime = notificationTime;
+                            showNotification(
+                                data.notification.title,
+                                data.notification.body,
+                                data.notification.icon,
+                                data.notification.data
+                            );
+                            
+                            // Play sound if available
+                            try {
+                                const audio = new Audio('/sounds/notification.mp3');
+                                audio.play().catch(e => console.log('Could not play sound'));
+                            } catch(e) {
+                                // Sound file not available, that's okay
+                            }
+                        }
+                    }
+                })
+                .catch(error => {
+                    // Silently fail - don't spam console
+                });
+            }, 3000);
+        })();
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js')}}"></script>

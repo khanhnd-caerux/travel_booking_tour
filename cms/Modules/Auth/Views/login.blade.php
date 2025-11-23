@@ -134,4 +134,120 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+<!-- PWA and Push Notification Scripts -->
+<script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                    
+                    // Request notification permission
+                    if ('Notification' in window && Notification.permission === 'default') {
+                        Notification.requestPermission().then(function(permission) {
+                            if (permission === 'granted') {
+                                subscribeToPushNotifications(registration);
+                            }
+                        });
+                    } else if (Notification.permission === 'granted') {
+                        subscribeToPushNotifications(registration);
+                    }
+                })
+                .catch(function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        });
+    }
+
+    // Subscribe to push notifications
+    async function subscribeToPushNotifications(registration) {
+        try {
+            let subscription = await registration.pushManager.getSubscription();
+            
+            if (!subscription) {
+                // Get VAPID public key from server
+                const response = await fetch('/api/push-notification/vapid-key');
+                const data = await response.json();
+                
+                if (data.publicKey) {
+                    subscription = await registration.pushManager.subscribe({
+                        userVisibleOnly: true,
+                        applicationServerKey: urlBase64ToUint8Array(data.publicKey)
+                    });
+                    
+                    // Send subscription to server
+                    await sendSubscriptionToServer(subscription);
+                }
+            } else {
+                // Already subscribed, verify with server
+                await sendSubscriptionToServer(subscription);
+            }
+        } catch (error) {
+            console.error('Error subscribing to push notifications:', error);
+        }
+    }
+
+    // Convert VAPID key
+    function urlBase64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding)
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
+    }
+
+    // Send subscription to server
+    async function sendSubscriptionToServer(subscription) {
+        try {
+            const response = await fetch('/api/push-notification/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
+                },
+                body: JSON.stringify({
+                    endpoint: subscription.endpoint,
+                    keys: {
+                        p256dh: arrayBufferToBase64(subscription.getKey('p256dh')),
+                        auth: arrayBufferToBase64(subscription.getKey('auth'))
+                    }
+                })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                console.log('Successfully subscribed to push notifications');
+            }
+        } catch (error) {
+            console.error('Error sending subscription to server:', error);
+        }
+    }
+
+    // Convert ArrayBuffer to Base64
+    function arrayBufferToBase64(buffer) {
+        const bytes = new Uint8Array(buffer);
+        let binary = '';
+        for (let i = 0; i < bytes.byteLength; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        return window.btoa(binary);
+    }
+
+    // Handle install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        console.log('App can be installed');
+    });
+</script>
 @endsection

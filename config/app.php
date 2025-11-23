@@ -241,4 +241,19 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | VAPID Keys for Push Notifications
+    |--------------------------------------------------------------------------
+    |
+    | These keys are used for Web Push Notifications. Generate them using:
+    | composer require minishlink/web-push
+    | Then use VAPID::createVapidKeys() to generate keys
+    |
+    */
+
+    'vapid_public_key' => env('VAPID_PUBLIC_KEY', ''),
+    'vapid_private_key' => env('VAPID_PRIVATE_KEY', ''),
+    'vapid_subject' => env('VAPID_SUBJECT', 'mailto:admin@example.com'),
+
 ];

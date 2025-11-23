@@ -47,6 +47,8 @@ use Cms\Modules\Admin\Repositories\Contracts\TourDetailRepositoryContract;
 use Cms\Modules\Admin\Services\TourPriceService;
 use Cms\Modules\Admin\Repositories\TourPriceRepository;
 use Cms\Modules\Admin\Repositories\Contracts\TourPriceRepositoryContract;
+use Cms\Modules\Admin\Services\Contracts\PushNotificationServiceContract;
+use Cms\Modules\Admin\Services\PushNotificationService;
 use Illuminate\Routing\Router;
 
 class AdminServiceProvider extends CmsServiceProvider{
@@ -79,5 +81,6 @@ class AdminServiceProvider extends CmsServiceProvider{
         $this->app->bind(TourDetailServiceContract::class, TourDetailService::class);
         $this->app->bind(TourPriceServiceContract::class, TourPriceService::class);
         $this->app->bind(TourPriceRepositoryContract::class, TourPriceRepository::class);
+        $this->app->bind(PushNotificationServiceContract::class, PushNotificationService::class);
     }
 }

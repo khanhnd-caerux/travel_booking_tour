@@ -103,4 +103,7 @@ Route::group([
         Route::post('/update/{id}', 'OrderController@update')->name('admin.order.update');
         Route::get('/delete/{id}', 'OrderController@delete')->name('admin.order.delete');
     });
+    
+    // Notification check route
+    Route::get('/check-notification', 'NotificationController@checkNotification')->name('admin.check.notification');
 });

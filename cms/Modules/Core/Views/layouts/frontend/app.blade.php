@@ -32,8 +32,11 @@
     <meta property="fb:app_id" content="647558742055251" />
     <meta property="fb:admins" content="647558742055251" />
     <meta property="og:type" content="website" />
-    <!-- <link rel="manifest" href='' /> -->
-    <meta name="theme-color" content="#fff" />
+    <link rel="manifest" href="{{ asset('manifest.json') }}" />
+    <meta name="theme-color" content="#1877F2" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tour Booking">
     <meta property="og:image" content="https://linenbackpacker.com/frontend/images/config/asset-17_1698816647.jpeg" />
     <meta property="og:image:width" content="600 " />
     <meta property="og:image:alt" content="LinenBackpacker’s Homestay - Linen Backpacker">
@@ -161,6 +164,30 @@
     </div>
     <script async='async' language="javascript" type="text/javascript"
         src="{{asset('frontend/cache/js/app.js')}}"></script>
+    
+    <!-- PWA Scripts -->
+    <script>
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // Handle install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+    </script>
+    @yield('js')
 </body>
 
 </html>
