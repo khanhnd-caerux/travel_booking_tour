@@ -43,4 +43,18 @@ class ContactController extends Controller
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
         }
     }
+
+    public function updateStatus($id)
+    {
+        try {
+            DB::beginTransaction();
+            $this->service->update($id, ['status' => 1]);
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã cập nhật trạng thái liên hệ');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra');
+        }
+    }
 }

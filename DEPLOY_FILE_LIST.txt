@@ -1,0 +1,106 @@
+==========================================
+DANH SÁCH FILE/FOLDER CẦN ZIP ĐỂ DEPLOY
+==========================================
+
+📁 PUBLIC FILES (Bắt buộc)
+----------------------------
+public/manifest.json
+public/sw.js
+public/pwa-icons/
+  ├── icon-72x72.png
+  ├── icon-96x96.png
+  ├── icon-128x128.png
+  ├── icon-144x144.png
+  ├── icon-152x152.png
+  ├── icon-192x192.png
+  ├── icon-384x384.png
+  └── icon-512x512.png
+
+📁 CONFIG (Bắt buộc)
+----------------------------
+config/app.php
+
+📁 COMPOSER (Bắt buộc)
+----------------------------
+composer.json
+composer.lock (nếu có)
+
+📁 ROUTES (Bắt buộc)
+----------------------------
+routes/web.php (đã sửa - thêm routes push notification)
+routes/api.php (đã sửa - xóa routes push notification)
+
+📁 CMS MODULES - ADMIN (Bắt buộc)
+----------------------------
+cms/Modules/Admin/
+  ├── Services/
+  │   ├── PushNotificationService.php
+  │   ├── OrderService.php (đã sửa)
+  │   ├── ContactService.php (đã sửa)
+  │   └── Contracts/
+  │       └── PushNotificationServiceContract.php
+  ├── Controllers/
+  │   ├── PushNotificationController.php
+  │   └── NotificationController.php
+  └── AdminServiceProvider.php (đã sửa)
+
+📁 CMS MODULES - HOME (Bắt buộc)
+----------------------------
+cms/Modules/Home/Controllers/
+  └── HomeController.php (đã sửa - xóa phần gửi mail)
+
+📁 CMS MODULES - CORE VIEWS (Bắt buộc)
+----------------------------
+cms/Modules/Core/Views/layouts/
+  ├── backend/
+  │   └── app.blade.php (đã sửa)
+  └── frontend/
+      └── app.blade.php (đã sửa)
+
+📁 CMS MODULES - AUTH VIEWS (Bắt buộc)
+----------------------------
+cms/Modules/Auth/Views/
+  └── login.blade.php (đã sửa)
+
+📁 SCRIPTS (Tùy chọn - để tạo VAPID keys)
+----------------------------
+generate-vapid-keys.php
+
+📁 DOCUMENTATION (Tùy chọn)
+----------------------------
+DEPLOY_CHANGES.md
+
+==========================================
+TỔNG KẾT
+==========================================
+
+FOLDERS CẦN ZIP:
+1. public/ (chỉ các file đã tạo/sửa)
+2. config/
+3. routes/
+4. cms/Modules/Admin/
+5. cms/Modules/Home/Controllers/
+6. cms/Modules/Core/Views/
+7. cms/Modules/Auth/Views/
+8. composer.json (file root)
+
+FILES KHÔNG CẦN:
+- .env (sẽ tạo trên server)
+- vendor/ (sẽ chạy composer install)
+- node_modules/ (sẽ chạy npm install nếu cần)
+- storage/ (sẽ tạo trên server)
+- .git/ (không cần)
+- Các file .md khác (chỉ giữ DEPLOY_CHANGES.md nếu muốn)
+
+==========================================
+CÁCH TẠO ZIP
+==========================================
+
+Cách 1: Zip từng folder riêng
+zip -r deploy.zip public/manifest.json public/sw.js public/pwa-icons/ config/app.php routes/api.php composer.json cms/Modules/Admin/ cms/Modules/Home/Controllers/ cms/Modules/Core/Views/ cms/Modules/Auth/Views/ generate-vapid-keys.php DEPLOY_CHANGES.md
+
+Cách 2: Zip toàn bộ project (loại trừ .env, vendor, node_modules)
+zip -r deploy.zip . -x ".env*" "vendor/*" "node_modules/*" ".git/*" "storage/*" "*.log"
+
+==========================================
+

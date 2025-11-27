@@ -52,7 +52,8 @@ composer.json                       # Thêm minishlink/web-push
 ### 3. Routes
 ```
 routes/
-└── api.php                         # Thêm routes cho push notification
+├── web.php                         # Thêm routes cho push notification (đã chuyển từ api.php)
+└── api.php                         # Đã xóa routes push notification (chuyển sang web.php)
 ```
 
 ### 4. Services (đã tích hợp push notification)
@@ -99,8 +100,9 @@ cms/Modules/Auth/Views/
 8. ✅ `cms/Modules/Admin/Services/OrderService.php` (đã sửa)
 9. ✅ `cms/Modules/Admin/Services/ContactService.php` (đã sửa)
 10. ✅ `cms/Modules/Admin/AdminServiceProvider.php` (đã sửa)
-11. ✅ `routes/api.php` (đã sửa)
-12. ✅ `config/app.php` (đã sửa)
+11. ✅ `routes/web.php` (đã sửa - thêm routes push notification)
+12. ✅ `routes/api.php` (đã sửa - xóa routes push notification)
+13. ✅ `config/app.php` (đã sửa)
 13. ✅ `composer.json` (đã sửa)
 14. ✅ `cms/Modules/Core/Views/layouts/backend/app.blade.php` (đã sửa)
 15. ✅ `cms/Modules/Core/Views/layouts/frontend/app.blade.php` (đã sửa)

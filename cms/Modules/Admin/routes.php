@@ -93,6 +93,7 @@ Route::group([
     ], function () {
         Route::get('/list', 'ContactController@list')->name('admin.contact.list');
         Route::get('/delete/{id}', 'ContactController@delete')->name('admin.contact.delete');
+        Route::post('/update-status/{id}', 'ContactController@updateStatus')->name('admin.contact.updateStatus');
     });
     Route::group([
         'prefix' => 'order',
@@ -106,4 +107,7 @@ Route::group([
     
     // Notification check route
     Route::get('/check-notification', 'NotificationController@checkNotification')->name('admin.check.notification');
+    
+    // Test mail route
+    Route::get('/test-mail', 'TestMailController@testMail')->name('admin.test.mail');
 });

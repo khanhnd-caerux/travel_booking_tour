@@ -78,6 +78,7 @@ class HomeController extends Controller
             'country' => $request->contact_address,
             'email' => $request->contact_email,
             'note' => $request->message,
+            'status' => '0'
         ];
         $this->contact->store($dataContact);
 
