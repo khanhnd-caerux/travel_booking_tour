@@ -2,18 +2,18 @@
 
 namespace Cms\Modules\Admin\Controllers;
 
-use Cms\Modules\Admin\Traits\StorageImageTrait;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
+use Cms\Modules\Admin\Traits\HandleTransactionTrait;
 use Cms\Modules\Admin\Requests\SliderRequest;
 
 class SliderController extends Controller
 {
-    use StorageImageTrait;
     protected $service;
+
+    use StorageImageTrait, HandleDeleteTrait, HandleTransactionTrait;
 
     public function __construct(SliderServiceContract $service)
     {
@@ -95,17 +95,6 @@ class SliderController extends Controller
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->service->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->service, $id);
     }
 }

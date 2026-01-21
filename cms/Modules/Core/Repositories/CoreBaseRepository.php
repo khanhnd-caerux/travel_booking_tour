@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CoreBaseRepository implements CoreBaseRepositoryContract
 {
-
     protected $model;
 
     public function __construct(Model $model)
@@ -19,14 +18,15 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
     {
         return $this->model->create($data);
     }
+
     public function getAll()
     {
         return $this->model->all();
     }
 
-    public function paginate($number)
+    public function paginate($number = 15)
     {
-        return $this->model->sortByDesc('id')->paginate($number);
+        return $this->model->latest('id')->paginate($number);
     }
 
     public function find($id)
@@ -36,7 +36,9 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
 
     public function update($id, $data)
     {
-        return $this->model->find($id)->update($data);
+        $model = $this->find($id);
+        $model->update($data);
+        return $model;
     }
 
     public function delete($id)
@@ -44,3 +46,4 @@ class CoreBaseRepository implements CoreBaseRepositoryContract
         return $this->model->destroy($id);
     }
 }
+

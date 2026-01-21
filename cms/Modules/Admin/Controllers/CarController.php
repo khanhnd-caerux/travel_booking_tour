@@ -3,21 +3,20 @@
 namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
-use Cms\Modules\Admin\Traits\StorageImageTrait;
 use Cms\Modules\Admin\Services\Contracts\CarServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CarImageServiceContract;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
 use Cms\Modules\Admin\Requests\CarRequest;
 use Cms\Modules\Admin\Requests\CarUpdateRequest;
+use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
+use Illuminate\Support\Str;
 
 class CarController extends Controller
 {
     protected $service, $image, $category;
 
-    use StorageImageTrait;
+    use StorageImageTrait, HandleDeleteTrait;
 
     public function __construct(CarServiceContract $service, CarImageServiceContract $image, CategoryServiceContract $category)
     {
@@ -125,17 +124,6 @@ class CarController extends Controller
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->service->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->service, $id);
     }
 }

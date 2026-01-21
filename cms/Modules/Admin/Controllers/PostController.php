@@ -3,19 +3,19 @@
 namespace Cms\Modules\Admin\Controllers;
 
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
+use Cms\Modules\Admin\Traits\HandleTransactionTrait;
 use Cms\Modules\Admin\Requests\PostRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
     protected $service;
 
-    use StorageImageTrait;
+    use StorageImageTrait, HandleDeleteTrait, HandleTransactionTrait;
 
     public function __construct(PostServiceContract $service)
     {
@@ -34,61 +34,56 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataPost = [
-                'title' => $request->title,
-                'type' => $request->type,
-                'slug' => Str::slug($request->title),
-                'content' => $request->content,
-                'status' => $request->status === 'show' ? 0 : 1,
-                'description' => $request->description
-            ];
+        return $this->executeInTransaction(
+            function () use ($request) {
+                $dataPost = [
+                    'title' => $request->title,
+                    'type' => $request->type,
+                    'slug' => Str::slug($request->title),
+                    'content' => $request->content,
+                    'status' => $request->status === 'show' ? 0 : 1,
+                    'description' => $request->description
+                ];
 
-            $dataImage = $this->storageImageUpload($request, 'image_path', 'post');
+                $dataImage = $this->storageImageUpload($request, 'image_path', 'post');
 
-            if (!empty($dataImage)) {
-                $dataPost['image_name'] = $dataImage['file_name'];
-                $dataPost['image_path'] = $dataImage['file_path'];
-            }
+                if (!empty($dataImage)) {
+                    $dataPost['image_name'] = $dataImage['file_name'];
+                    $dataPost['image_path'] = $dataImage['file_path'];
+                }
 
-            $this->service->store($dataPost);
-
-            DB::commit();
-
-            return redirect()->route('admin.post.list')->with('success', 'Created post success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+                $this->service->store($dataPost);
+            },
+            'Created post success!',
+            'admin.post.list'
+        );
     }
 
     public function update($id, PostRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataPost = [
-                'title' => $request->title,
-                'type' => $request->type,
-                'slug' => Str::slug($request->title),
-                'content' => $request->content,
-                'status' => $request->status === 'show' ? 0 : 1,
-                'description' => $request->description
-            ];
+        return $this->executeInTransaction(
+            function () use ($id, $request) {
+                $dataPost = [
+                    'title' => $request->title,
+                    'type' => $request->type,
+                    'slug' => Str::slug($request->title),
+                    'content' => $request->content,
+                    'status' => $request->status === 'show' ? 0 : 1,
+                    'description' => $request->description
+                ];
 
-            $dataImage = $this->storageImageUpload($request, 'image_path', 'post');
+                $dataImage = $this->storageImageUpload($request, 'image_path', 'post');
 
-            if (!empty($dataImage)) {
-                $dataPost['image_name'] = $dataImage['file_name'];
-                $dataPost['image_path'] = $dataImage['file_path'];
-            }
-            $this->service->update($id, $dataPost);
-            DB::commit();
-            return redirect()->route('admin.post.list')->with('success', 'Update post success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+                if (!empty($dataImage)) {
+                    $dataPost['image_name'] = $dataImage['file_name'];
+                    $dataPost['image_path'] = $dataImage['file_path'];
+                }
+
+                $this->service->update($id, $dataPost);
+            },
+            'Update post success!',
+            'admin.post.list'
+        );
     }
     public function edit($id)
     {
@@ -98,17 +93,6 @@ class PostController extends Controller
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->service->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->service, $id);
     }
 }

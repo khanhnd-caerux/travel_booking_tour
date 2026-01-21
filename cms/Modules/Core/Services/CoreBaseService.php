@@ -18,6 +18,7 @@ class CoreBaseService implements CoreBaseServiceContract
     {
         return $this->repository->store($data);
     }
+
     public function getAll()
     {
         return $this->repository->getAll();
@@ -30,7 +31,7 @@ class CoreBaseService implements CoreBaseServiceContract
 
     public function update($id, $data)
     {
-        return $this->repository->find($id)->update($data);
+        return $this->repository->update($id, $data);
     }
 
     public function delete($id)
@@ -38,7 +39,7 @@ class CoreBaseService implements CoreBaseServiceContract
         return $this->repository->delete($id);
     }
 
-    public function paginate($number)
+    public function paginate($number = 15)
     {
         return $this->repository->paginate($number);
     }

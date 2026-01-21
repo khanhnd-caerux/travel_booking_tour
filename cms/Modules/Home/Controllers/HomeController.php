@@ -7,11 +7,14 @@ use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
+use Cms\Modules\Home\Mail\ContactFormMail;
 use Cms\Modules\Home\Requests\ContactRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -72,17 +75,34 @@ class HomeController extends Controller
 
     public function sendContact(ContactRequest $request)
     {
-        $dataContact = [
-            'whats_app' => $request->contact_phone,
-            'full_name' => $request->contact_name,
-            'country' => $request->contact_address,
-            'email' => $request->contact_email,
-            'note' => $request->message,
-            'status' => '0'
-        ];
-        $this->contact->store($dataContact);
+        try {
+            $dataContact = [
+                'whats_app' => $request->contact_phone,
+                'full_name' => $request->contact_name,
+                'country' => $request->contact_address,
+                'email' => $request->contact_email,
+                'note' => $request->message,
+                'status' => '0'
+            ];
 
-        return redirect()->route('client.index')->with('success', true);
+            // Lưu contact vào database
+            $this->contact->store($dataContact);
+
+            // Gửi email thông báo tới admin
+            $adminEmail = config('mail.from.address');
+            if ($adminEmail) {
+                Mail::to($adminEmail)->send(new ContactFormMail($dataContact));
+            }
+
+            // Gửi email xác nhận tới khách hàng
+            Mail::to($dataContact['email'])->send(new ContactFormMail($dataContact));
+
+            return redirect()->route('client.index')->with('success', true);
+        } catch (\Exception $exception) {
+            Log::error('Contact Form Error: ' . $exception->getMessage() . ' --- Line: ' . $exception->getLine());
+
+            return redirect()->route('client.index')->with('error', 'Có lỗi xảy ra. Vui lòng thử lại!');
+        }
     }
 
     public function successBooking()

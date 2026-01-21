@@ -5,13 +5,14 @@ namespace Cms\Modules\Admin\Controllers;
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
 
 class OrderController extends Controller
 {
     protected $orderService;
     protected $orderDetailService;
+
+    use HandleDeleteTrait;
 
     public function __construct(
         OrderServiceContract $orderService,
@@ -44,17 +45,6 @@ class OrderController extends Controller
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->orderService->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->orderService, $id);
     }
 }

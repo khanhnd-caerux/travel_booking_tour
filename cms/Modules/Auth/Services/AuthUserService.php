@@ -8,10 +8,11 @@ use Cms\Modules\Core\Services\CoreBaseService;
 
 class AuthUserService extends CoreBaseService implements AuthUserServiceContract
 {
-	protected $repository;
+    protected $repository;
 
-	function __construct(AuthUserRepositoryContract $repository)
-	{
-	    $this->repository = $repository;
-	}
+    public function __construct(AuthUserRepositoryContract $repository)
+    {
+        $this->repository = $repository;
+    }
 }
+

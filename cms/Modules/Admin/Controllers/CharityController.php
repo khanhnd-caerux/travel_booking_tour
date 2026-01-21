@@ -2,17 +2,18 @@
 
 namespace Cms\Modules\Admin\Controllers;
 
-use Cms\Modules\Admin\Services\Contracts\CharityServiceContract;
 use App\Http\Controllers\Controller;
+use Cms\Modules\Admin\Services\Contracts\CharityServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
+use Cms\Modules\Admin\Traits\HandleTransactionTrait;
 use Cms\Modules\Admin\Requests\CharityRequest;
 
 class CharityController extends Controller
 {
     protected $service, $tour;
+
+    use HandleDeleteTrait, HandleTransactionTrait;
 
     public function __construct(CharityServiceContract $service, TourServiceContract $tour)
     {
@@ -32,39 +33,28 @@ class CharityController extends Controller
 
     public function store(CharityRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $tours = $this->tour->getAll()->where('deleted_at', null)->pluck('id')->toArray();
-            $dataCharity = [
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'tour_id' => $tours[array_rand($tours, 1)]
-            ];
+        return $this->executeInTransaction(
+            function () use ($request) {
+                $tours = $this->tour->getAll()
+                    ->where('deleted_at', null)
+                    ->pluck('id')
+                    ->toArray();
 
-            $this->service->store($dataCharity);
+                $dataCharity = [
+                    'name' => $request->name,
+                    'phone' => $request->phone,
+                    'tour_id' => $tours[array_rand($tours, 1)]
+                ];
 
-            DB::commit();
-
-            return redirect()->route('admin.charity.list')->with('success', 'Created charity success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+                $this->service->store($dataCharity);
+            },
+            'Created charity success!',
+            'admin.charity.list'
+        );
     }
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->service->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->service, $id);
     }
 }

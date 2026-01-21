@@ -4,24 +4,19 @@ namespace Cms\Modules\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\CategoryServiceContract;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Traits\HandleDeleteTrait;
+use Cms\Modules\Admin\Traits\HandleTransactionTrait;
 use Cms\Modules\Admin\Components\Recusive;
 use Cms\Modules\Admin\Requests\CategoryRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     protected $service;
 
-    use StorageImageTrait;
+    use StorageImageTrait, HandleDeleteTrait, HandleTransactionTrait;
 
     public function __construct(CategoryServiceContract $service)
     {
@@ -43,31 +38,29 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $dataCategoryCreate = [
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'description' => $request->description,
-                'status' => $request->status === "show" ? 0 : 1,
-                'parent_id' => $request->parent_id,
-                'type' => $request->type,
-                'locale' => $request->locale,
-            ];
+        return $this->executeInTransaction(
+            function () use ($request) {
+                $dataCategoryCreate = [
+                    'name' => $request->name,
+                    'slug' => Str::slug($request->name),
+                    'description' => $request->description,
+                    'status' => $request->status === "show" ? 0 : 1,
+                    'parent_id' => $request->parent_id,
+                    'type' => $request->type,
+                    'locale' => $request->locale,
+                ];
 
-            $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
+                $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
 
-            if (!empty($dataImage)) {
-                $dataCategoryCreate['image_path'] = $dataImage['file_path'];
-            }
+                if (!empty($dataImage)) {
+                    $dataCategoryCreate['image_path'] = $dataImage['file_path'];
+                }
 
-            $this->service->store($dataCategoryCreate);
-            DB::commit();
-            return redirect()->route('admin.category.list')->with('success', 'Created category success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+                $this->service->store($dataCategoryCreate);
+            },
+            'Created category success!',
+            'admin.category.list'
+        );
     }
 
     public function edit($id)
@@ -79,47 +72,34 @@ class CategoryController extends Controller
 
     public function update($id, CategoryRequest $request)
     {
-        try {
-            DB::beginTransaction();
-            $data = [
-                'name' => $request->name,
-                'parent_id' => $request->parent_id,
-                'description' => $request->description,
-                'slug' => Str::slug($request->name),
-                'status' => $request->status === "show" ? 0 : 1,
-                'type' => $request->type,
-                'locale' => $request->locale,
-            ];
+        return $this->executeInTransaction(
+            function () use ($id, $request) {
+                $data = [
+                    'name' => $request->name,
+                    'parent_id' => $request->parent_id,
+                    'description' => $request->description,
+                    'slug' => Str::slug($request->name),
+                    'status' => $request->status === "show" ? 0 : 1,
+                    'type' => $request->type,
+                    'locale' => $request->locale,
+                ];
 
-            $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
+                $dataImage = $this->storageImageUpload($request, 'image_path', 'category');
 
-            if (!empty($dataImage)) {
-                $data['image_path'] = $dataImage['file_path'];
-            }
+                if (!empty($dataImage)) {
+                    $data['image_path'] = $dataImage['file_path'];
+                }
 
-            $this->service->update($id, $data);
-            DB::commit();
-            return redirect()->route('admin.category.list')->with('success', 'Updated category success!');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+                $this->service->update($id, $data);
+            },
+            'Updated category success!',
+            'admin.category.list'
+        );
     }
 
     public function delete($id)
     {
-        try {
-            DB::beginTransaction();
-            $this->service->delete($id);
-            DB::commit();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ], 200);
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-        }
+        return $this->handleDelete($this->service, $id);
     }
 
     public function getCategory($parent_id)
