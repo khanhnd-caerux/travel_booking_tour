@@ -89,7 +89,7 @@
             <div class="gid-row">
                 <div class="item item_zalo item-show">
                     <a rel="nofollow" title="Hỗ trợ Facebook" target='_blank'
-                        href="https://www.facebook.com/linenbackpackertour1">
+                        href="https://www.facebook.com/linenbackpacker">
                         <!--<svg height="44px" width="44px" xmlns="http://www.w3.org/2000/svg"-->
                         <!--    xmlns:xlink="http://www.w3.org/1999/xlink" aria-label="Instagram" role="img"-->
                         <!--    viewBox="0 0 512 512" fill="#000000">-->
@@ -164,7 +164,7 @@
     </div>
     <script async='async' language="javascript" type="text/javascript"
         src="{{asset('frontend/cache/js/app.js')}}"></script>
-    
+
     <!-- PWA Scripts -->
     <script>
         // Register Service Worker for PWA

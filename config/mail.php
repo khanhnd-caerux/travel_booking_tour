@@ -43,6 +43,33 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => env('MAIL_TIMEOUT', 60),
             'auth_mode' => null,
+            'verify_peer' => env('MAIL_VERIFY_PEER', true),
+        ],
+
+        // SMTP với port 465 (SSL) - thường hoạt động tốt hơn trên cPanel
+        'smtp_ssl' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'port' => 465,
+            'encryption' => 'ssl',
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'timeout' => env('MAIL_TIMEOUT', 60),
+            'auth_mode' => null,
+            'verify_peer' => env('MAIL_VERIFY_PEER', false),
+        ],
+
+        // SMTP với port 587 (TLS) - mặc định
+        'smtp_tls' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+            'port' => 587,
+            'encryption' => 'tls',
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'timeout' => env('MAIL_TIMEOUT', 60),
+            'auth_mode' => null,
+            'verify_peer' => env('MAIL_VERIFY_PEER', true),
         ],
 
         'ses' => [
@@ -59,7 +86,7 @@ return [
 
         'sendmail' => [
             'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
+            'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs'),
         ],
 
         'log' => [
@@ -75,6 +102,8 @@ return [
             'transport' => 'failover',
             'mailers' => [
                 'smtp',
+                'smtp_ssl',
+                'sendmail',
                 'log',
             ],
         ],
