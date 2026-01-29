@@ -85,13 +85,13 @@
         </div>
 
         <div class="content">
-            <p><span class="label">Tên khách hàng:</span> <span class="value">{{ $data['customer'] }}</span></p>
-            <p><span class="label">Số điện thoại:</span> <span class="value">{{ $data['phone'] }}</span></p>
+            <p><span class="label">Tên khách hàng:</span> <span class="value">{{ $data['full_name'] }}</span></p>
+            <p><span class="label">Số điện thoại:</span> <span class="value">{{ $data['whats_app'] }}</span></p>
             <p><span class="label">Email:</span> <span class="value">{{ $data['email'] }}</span></p>
             <p><span class="label">Ghi chú:</span> <span class="value">{{ $data['note'] }}</span></p>
 
             <p style="text-align:center;">
-                <a href="{{ $data['link'] }}" class="cta-button" target="_blank">Xem Thông Tin Đặt Tour</a>
+                <a href="#" class="cta-button" target="_blank">Xem Thông Tin Đặt Tour</a>
             </p>
         </div>
 
