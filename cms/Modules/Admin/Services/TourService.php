@@ -15,16 +15,6 @@ class TourService extends CoreBaseService implements TourServiceContract
         $this->repository = $repository;
     }
 
-    public function findBySlug($slug)
-    {
-        return $this->repository->findBySlug($slug);
-    }
-
-    public function getTourRelated($id, $category_id)
-    {
-        return $this->repository->getTourRelated($id, $category_id);
-    }
-
     public function getAllTour()
     {
         return $this->repository->getAllTour();

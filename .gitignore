@@ -13,3 +13,12 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/.agent
+
+# Laravel specific
+/bootstrap/cache/*.php
+/public/storage
+/storage/*.key
+.php_cs.cache
+.phpunit.result.cache
+error_log
