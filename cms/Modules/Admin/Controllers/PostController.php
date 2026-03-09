@@ -9,13 +9,16 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
+use Cms\Modules\Admin\Traits\BulkDeletable;
 use Cms\Modules\Admin\Requests\PostRequest;
 
 class PostController extends Controller
 {
     protected $service;
 
-    use StorageImageTrait;
+    use StorageImageTrait, BulkDeletable;
+
+    protected string $bulkDeleteModel = \Cms\Modules\Core\Models\Post::class;
 
     public function __construct(PostServiceContract $service)
     {
@@ -112,19 +115,5 @@ class PostController extends Controller
         }
     }
 
-    public function deleteMultiple(Request $request)
-    {
-        try {
-            DB::beginTransaction();
-            if ($request->has('ids') && is_array($request->ids)) {
-                \Cms\Modules\Core\Models\Post::whereIn('id', $request->ids)->delete();
-            }
-            DB::commit();
-            return redirect()->back()->with('success', 'Đã xoá thành công');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
-        }
-    }
 }
+

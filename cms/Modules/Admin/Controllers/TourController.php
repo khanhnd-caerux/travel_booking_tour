@@ -5,6 +5,8 @@ namespace Cms\Modules\Admin\Controllers;
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Services\Contracts\TourDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\TourPriceServiceContract;
+use Cms\Modules\Admin\Traits\BulkDeletable;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -16,11 +18,9 @@ use Cms\Modules\Admin\Requests\TourDetailRequest;
 
 class TourController extends Controller
 {
-    protected $service;
-    protected $tourPrice;
-    protected $tourDetail;
+    use StorageImageTrait, BulkDeletable;
 
-    use StorageImageTrait;
+    protected string $bulkDeleteModel = \Cms\Modules\Core\Models\Tour::class;
 
     public function __construct(
         TourServiceContract $service,
@@ -98,18 +98,7 @@ class TourController extends Controller
 
     public function deleteMultiple(Request $request)
     {
-        try {
-            DB::beginTransaction();
-            if ($request->has('ids') && is_array($request->ids)) {
-                \Cms\Modules\Core\Models\Tour::whereIn('id', $request->ids)->delete();
-            }
-            DB::commit();
-            return redirect()->back()->with('success', 'Đã xoá thành công');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
-        }
+        return $this->performBulkDelete(\Cms\Modules\Core\Models\Tour::class, $request);
     }
 
     public function list_price()
@@ -149,18 +138,7 @@ class TourController extends Controller
 
     public function deleteMultiplePrice(Request $request)
     {
-        try {
-            DB::beginTransaction();
-            if ($request->has('ids') && is_array($request->ids)) {
-                \Cms\Modules\Core\Models\TourPrice::whereIn('id', $request->ids)->delete();
-            }
-            DB::commit();
-            return redirect()->back()->with('success', 'Đã xoá thành công');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
-        }
+        return $this->performBulkDelete(\Cms\Modules\Core\Models\TourPrice::class, $request);
     }
 
     public function edit_price($id)
@@ -228,18 +206,7 @@ class TourController extends Controller
 
     public function deleteMultipleDetail(Request $request)
     {
-        try {
-            DB::beginTransaction();
-            if ($request->has('ids') && is_array($request->ids)) {
-                \Cms\Modules\Core\Models\TourDetail::whereIn('id', $request->ids)->delete();
-            }
-            DB::commit();
-            return redirect()->back()->with('success', 'Đã xoá thành công');
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
-        }
+        return $this->performBulkDelete(\Cms\Modules\Core\Models\TourDetail::class, $request);
     }
 
     public function edit_detail($id)

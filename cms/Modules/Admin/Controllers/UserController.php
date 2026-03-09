@@ -5,10 +5,14 @@ namespace Cms\Modules\Admin\Controllers;
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Requests\UserRequest;
 use Cms\Modules\Admin\Services\Contracts\UserServiceContract;
+use Cms\Modules\Admin\Traits\BulkDeletable;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    use BulkDeletable;
+
+    protected string $bulkDeleteModel = \App\Models\User::class;
     protected $service;
 
     public function __construct(UserServiceContract $service)
@@ -54,19 +58,5 @@ class UserController extends Controller
         return $this->service->delete($id);
     }
 
-    public function deleteMultiple(Request $request)
-    {
-        try {
-            \Illuminate\Support\Facades\DB::beginTransaction();
-            if ($request->has('ids') && is_array($request->ids)) {
-                \App\Models\User::whereIn('id', $request->ids)->delete();
-            }
-            \Illuminate\Support\Facades\DB::commit();
-            return redirect()->back()->with('success', 'Đã xoá thành công');
-        } catch (\Exception $exception) {
-            \Illuminate\Support\Facades\DB::rollBack();
-            \Illuminate\Support\Facades\Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
-            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
-        }
-    }
 }
+
