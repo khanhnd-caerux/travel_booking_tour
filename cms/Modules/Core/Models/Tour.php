@@ -14,10 +14,6 @@ class Tour extends Model
 
     protected $guarded = [];
 
-    public function tourImages(){
-        return $this->hasMany(TourImage::class, 'tour_id');
-    }
-
     public function tourPrices() {
         return $this->hasMany(TourPrice::class, 'tour_id');
     }

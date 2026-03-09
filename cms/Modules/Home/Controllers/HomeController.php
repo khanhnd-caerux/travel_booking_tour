@@ -5,8 +5,7 @@ namespace Cms\Modules\Home\Controllers;
 use App\Http\Controllers\Controller;
 use Cms\Modules\Admin\Jobs\SendEmail;
 use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
-use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
-use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
+
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +16,7 @@ use Cms\Modules\Home\Requests\ContactRequest;
 class HomeController extends Controller
 {
 
-    protected $slider, $post, $tour, $contact;
+    protected $tour, $contact;
     protected $orderService;
     protected $orderDetailService;
     /**
@@ -27,15 +26,11 @@ class HomeController extends Controller
      */
     public function __construct
     (
-        SliderServiceContract $slider,
-        PostServiceContract $post,
         TourServiceContract $tour,
         ContactServiceContract $contact,
         OrderServiceContract $orderService,
         OrderDetailServiceContract $orderDetailService
     ) {
-        $this->slider = $slider;
-        $this->post = $post;
         $this->tour = $tour;
         $this->contact = $contact;
         $this->orderService = $orderService;
@@ -59,12 +54,6 @@ class HomeController extends Controller
         return view('Home::home', compact('tours'));
     }
 
-    // public function postDetail($slug)
-    // {
-    //     $postDetail = $this->post->getPostBySlug($slug);
-
-    //     return view('Home::postDetail', compact('postDetail'));
-    // }
 
     public function contactPage()
     {
@@ -179,40 +168,5 @@ class HomeController extends Controller
 
 
         return redirect()->route('client.index')->with('success', true);
-    }
-
-    public function getBusCheckbox(Request $request)
-    {
-        $departmentId = $request->input('department_id');
-        $direction = $request->input('direction');
-
-        $buses = DB::table('buses')
-                    ->where('department_id', $departmentId)
-                    ->where('direction', $direction)
-                    ->get();
-
-        return response()->json($buses);
-    }
-
-    public function getPricesBusDeparture(Request $request)
-    {
-        $id = $request->input('id');
-
-        $busDeparture = DB::table('buses')
-                            ->where('id', $id)
-                            ->first();
-
-        return response()->json($busDeparture);
-    }
-
-    public function getPricesBusReturn(Request $request)
-    {
-        $id = $request->input('id');
-
-        $busReturn = DB::table('buses')
-                            ->where('id', $id)
-                            ->first();
-
-        return response()->json($busReturn);
     }
 }

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Cms\Modules\Admin\Traits\StorageImageTrait;
 use Cms\Modules\Admin\Services\Contracts\TourServiceContract;
-use Cms\Modules\Admin\Services\Contracts\TourImageServiceContract;
 use Cms\Modules\Admin\Requests\TourRequest;
 use Cms\Modules\Admin\Requests\TourPriceRequest;
 use Cms\Modules\Admin\Requests\TourDetailRequest;
@@ -18,7 +17,6 @@ use Cms\Modules\Admin\Requests\TourDetailRequest;
 class TourController extends Controller
 {
     protected $service;
-    protected $image;
     protected $tourPrice;
     protected $tourDetail;
 
@@ -26,12 +24,10 @@ class TourController extends Controller
 
     public function __construct(
         TourServiceContract $service,
-        TourImageServiceContract $image,
         TourPriceServiceContract $tourPrice,
         TourDetailServiceContract $tourDetail
     ) {
         $this->service = $service;
-        $this->image = $image;
         $this->tourPrice = $tourPrice;
         $this->tourDetail = $tourDetail;
     }
@@ -100,6 +96,22 @@ class TourController extends Controller
         }
     }
 
+    public function deleteMultiple(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \Cms\Modules\Core\Models\Tour::whereIn('id', $request->ids)->delete();
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá thành công');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
+        }
+    }
+
     public function list_price()
     {
         $tourPrices = $this->tourPrice->getAllTourPrice(10);
@@ -133,6 +145,22 @@ class TourController extends Controller
             'code' => 200,
             'message' => 'success'
         ], 200);
+    }
+
+    public function deleteMultiplePrice(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \Cms\Modules\Core\Models\TourPrice::whereIn('id', $request->ids)->delete();
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá thành công');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
+        }
     }
 
     public function edit_price($id)
@@ -196,6 +224,22 @@ class TourController extends Controller
             'code' => 200,
             'message' => 'success'
         ], 200);
+    }
+
+    public function deleteMultipleDetail(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \Cms\Modules\Core\Models\TourDetail::whereIn('id', $request->ids)->delete();
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá thành công');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
+        }
     }
 
     public function edit_detail($id)

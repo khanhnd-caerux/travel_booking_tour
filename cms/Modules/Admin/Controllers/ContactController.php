@@ -44,6 +44,22 @@ class ContactController extends Controller
         }
     }
 
+    public function deleteMultiple(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \Cms\Modules\Core\Models\Contact::whereIn('id', $request->ids)->delete();
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá các liên hệ được chọn');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
+        }
+    }
+
     public function updateStatus($id)
     {
         try {
@@ -56,5 +72,61 @@ class ContactController extends Controller
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
             return redirect()->back()->with('error', 'Có lỗi xảy ra');
         }
+    }
+
+    public function updateAllStatus()
+    {
+        try {
+            DB::beginTransaction();
+            \Cms\Modules\Core\Models\Contact::where('status', 0)->update(['status' => 1]);
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xác nhận tất cả các liên hệ mới');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi cập nhật trạng thái');
+        }
+    }
+
+    public function export()
+    {
+        $headers = [
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=danh-sach-lien-he.csv",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        ];
+
+        $contacts = \Cms\Modules\Core\Models\Contact::orderBy('id', 'desc')->get();
+        $columns = ['STT', 'Tên khách hàng', 'Email', 'SĐT', 'Ghi chú', 'Địa chỉ', 'Trạng thái', 'Ngày tạo'];
+
+        $callback = function() use($contacts, $columns) {
+            $file = fopen('php://output', 'w');
+            
+            // Add UTF-8 BOM to make it open normally in Excel
+            fputs($file, chr(0xEF) . chr(0xBB) . chr(0xBF));
+            fputcsv($file, $columns);
+            
+            $i = 1;
+            foreach ($contacts as $contact) {
+                $status = $contact->status == 0 ? 'Mới' : 'Đã xử lý';
+                $row = [
+                    $i++,
+                    $contact->full_name,
+                    $contact->email,
+                    $contact->whats_app,
+                    $contact->note,
+                    $contact->country,
+                    $status,
+                    $contact->created_at ? $contact->created_at->format('Y-m-d H:i:s') : ''
+                ];
+                fputcsv($file, $row);
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 }

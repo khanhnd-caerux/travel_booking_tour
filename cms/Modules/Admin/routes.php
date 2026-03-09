@@ -20,6 +20,7 @@ Route::group([
         Route::post('/store', 'UserController@store')->name('admin.user.store');
         Route::put('/update/{id}', 'UserController@update')->name('admin.user.update');
         Route::delete('/delete', 'UserController@delete')->name('admin.user.delete');
+        Route::post('/delete-multiple', 'UserController@deleteMultiple')->name('admin.user.deleteMultiple');
     });
     Route::group([
         'prefix' => 'setting',
@@ -31,6 +32,7 @@ Route::group([
         Route::post('/update/{id}', 'SettingController@update')->name('admin.setting.update');
         Route::post('/store', 'SettingController@store')->name('admin.setting.store');
         Route::get('/delete/{id}', 'SettingController@delete')->name('admin.setting.delete');
+        Route::post('/delete-multiple', 'SettingController@deleteMultiple')->name('admin.setting.deleteMultiple');
     });
     Route::group([
         'prefix' => 'slider',
@@ -42,6 +44,7 @@ Route::group([
         Route::post('/update/{id}', 'SliderController@update')->name('admin.slider.update');
         Route::post('/store', 'SliderController@store')->name('admin.slider.store');
         Route::get('/delete/{id}', 'SliderController@delete')->name('admin.slider.delete');
+        Route::post('/delete-multiple', 'SliderController@deleteMultiple')->name('admin.slider.deleteMultiple');
     });
     Route::group([
         'prefix' => 'post',
@@ -53,6 +56,7 @@ Route::group([
         Route::post('/update/{id}', 'PostController@update')->name('admin.post.update');
         Route::post('/store', 'PostController@store')->name('admin.post.store');
         Route::get('/delete/{id}', 'PostController@delete')->name('admin.post.delete');
+        Route::post('/delete-multiple', 'PostController@deleteMultiple')->name('admin.post.deleteMultiple');
     });
     Route::group([
         'prefix' => 'tour',
@@ -64,6 +68,7 @@ Route::group([
         Route::post('/update/{id}', 'TourController@update')->name('admin.tour.update');
         Route::post('/store', 'TourController@store')->name('admin.tour.store');
         Route::get('/delete/{id}', 'TourController@delete')->name('admin.tour.delete');
+        Route::post('/delete-multiple', 'TourController@deleteMultiple')->name('admin.tour.deleteMultiple');
     });
     Route::group([
         'prefix' => 'tour-detail',
@@ -75,6 +80,7 @@ Route::group([
         Route::post('/update/{id}', 'TourController@update_detail')->name('admin.tour_detail.update');
         Route::post('/store', 'TourController@store_detail')->name('admin.tour_detail.store');
         Route::get('/delete/{id}', 'TourController@delete_detail')->name('admin.tour_detail.delete');
+        Route::post('/delete-multiple', 'TourController@deleteMultipleDetail')->name('admin.tour_detail.deleteMultiple');
     });
     Route::group([
         'prefix' => 'tour-price',
@@ -86,6 +92,7 @@ Route::group([
         Route::post('/update/{id}', 'TourController@update_price')->name('admin.tour_price.update');
         Route::post('/store', 'TourController@store_price')->name('admin.tour_price.store');
         Route::get('/delete/{id}', 'TourController@delete_price')->name('admin.tour_price.delete');
+        Route::post('/delete-multiple', 'TourController@deleteMultiplePrice')->name('admin.tour_price.deleteMultiple');
     });
     Route::group([
         'prefix' => 'contact',
@@ -93,7 +100,10 @@ Route::group([
     ], function () {
         Route::get('/list', 'ContactController@list')->name('admin.contact.list');
         Route::get('/delete/{id}', 'ContactController@delete')->name('admin.contact.delete');
+        Route::post('/delete-multiple', 'ContactController@deleteMultiple')->name('admin.contact.deleteMultiple');
         Route::post('/update-status/{id}', 'ContactController@updateStatus')->name('admin.contact.updateStatus');
+        Route::post('/update-all-status', 'ContactController@updateAllStatus')->name('admin.contact.updateAllStatus');
+        Route::get('/export', 'ContactController@export')->name('admin.contact.export');
     });
     Route::group([
         'prefix' => 'order',
@@ -103,6 +113,7 @@ Route::group([
         Route::get('/detail/{id}', 'OrderController@detail')->name('admin.order.detail');
         Route::post('/update/{id}', 'OrderController@update')->name('admin.order.update');
         Route::get('/delete/{id}', 'OrderController@delete')->name('admin.order.delete');
+        Route::post('/delete-multiple', 'OrderController@deleteMultiple')->name('admin.order.deleteMultiple');
     });
     
     // Notification check route

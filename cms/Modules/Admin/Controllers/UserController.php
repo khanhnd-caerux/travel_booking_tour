@@ -53,4 +53,20 @@ class UserController extends Controller
     public function delete($id) {
         return $this->service->delete($id);
     }
+
+    public function deleteMultiple(Request $request)
+    {
+        try {
+            \Illuminate\Support\Facades\DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \App\Models\User::whereIn('id', $request->ids)->delete();
+            }
+            \Illuminate\Support\Facades\DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá thành công');
+        } catch (\Exception $exception) {
+            \Illuminate\Support\Facades\DB::rollBack();
+            \Illuminate\Support\Facades\Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
+        }
+    }
 }

@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "cliVersion": "0.10.0",
+  "environments": [
+    "antigravity"
+  ],
+  "initializedPhases": [
+    "requirements",
+    "design",
+    "planning",
+    "implementation",
+    "testing",
+    "deployment",
+    "monitoring"
+  ],
+  "installedSkills": [
+    "cxl-ansible",
+    "cxl-aws-architecture",
+    "cxl-brainstorming",
+    "cxl-coding-standards",
+    "cxl-create-pr",
+    "cxl-docusaurus-setup",
+    "cxl-dynamodb",
+    "cxl-fastapi",
+    "cxl-frontend",
+    "cxl-gitignore",
+    "cxl-postgres-patterns",
+    "cxl-python",
+    "cxl-report-po",
+    "cxl-security-review",
+    "cxl-seo",
+    "cxl-terraform"
+  ],
+  "installedCommands": [
+    "capture-knowledge",
+    "check-implementation",
+    "code-review",
+    "create-report-po",
+    "debug",
+    "execute-plan",
+    "new-requirement",
+    "review-deployment",
+    "review-design",
+    "review-monitoring",
+    "review-requirements",
+    "simplify-implementation",
+    "update-docs",
+    "update-planning",
+    "update-requirement",
+    "write-tests"
+  ],
+  "installedRules": [
+    "0-force-rule",
+    "2-dotenv-environments",
+    "3-coding-style"
+  ]
+}

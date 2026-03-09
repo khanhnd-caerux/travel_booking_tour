@@ -7,6 +7,7 @@ use Cms\Modules\Admin\Services\Contracts\OrderDetailServiceContract;
 use Cms\Modules\Admin\Services\Contracts\OrderServiceContract;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -55,6 +56,22 @@ class OrderController extends Controller
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+        }
+    }
+
+    public function deleteMultiple(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            if ($request->has('ids') && is_array($request->ids)) {
+                \Cms\Modules\Core\Models\Order::whereIn('id', $request->ids)->delete();
+            }
+            DB::commit();
+            return redirect()->back()->with('success', 'Đã xoá thành công');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message :' . $exception->getMessage() . ' ----- Line ' . $exception->getLine());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi xoá');
         }
     }
 }
