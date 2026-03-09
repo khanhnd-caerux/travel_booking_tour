@@ -20,6 +20,9 @@ class Language
         if (!session()->has('locale')) {
             session()->put('locale', 'en');
         }
+
+        App::setLocale(session()->get('locale'));
+
         return $next($request);
     }
 }

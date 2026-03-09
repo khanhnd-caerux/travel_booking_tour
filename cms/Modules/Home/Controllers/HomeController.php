@@ -3,6 +3,7 @@
 namespace Cms\Modules\Home\Controllers;
 
 use App\Http\Controllers\Controller;
+use Cms\Modules\Admin\Jobs\SendEmail;
 use Cms\Modules\Admin\Services\Contracts\ContactServiceContract;
 use Cms\Modules\Admin\Services\Contracts\SliderServiceContract;
 use Cms\Modules\Admin\Services\Contracts\PostServiceContract;
@@ -58,12 +59,12 @@ class HomeController extends Controller
         return view('Home::home', compact('tours'));
     }
 
-    public function postDetail($slug)
-    {
-        $postDetail = $this->post->getPostBySlug($slug);
+    // public function postDetail($slug)
+    // {
+    //     $postDetail = $this->post->getPostBySlug($slug);
 
-        return view('Home::postDetail', compact('postDetail'));
-    }
+    //     return view('Home::postDetail', compact('postDetail'));
+    // }
 
     public function contactPage()
     {
@@ -81,6 +82,9 @@ class HomeController extends Controller
             'status' => '0'
         ];
         $this->contact->store($dataContact);
+        $user = DB::table('users')->get();
+
+        SendEmail::dispatch($dataContact, $user)->delay(now()->addSeconds(2));
 
         return redirect()->route('client.index')->with('success', true);
     }

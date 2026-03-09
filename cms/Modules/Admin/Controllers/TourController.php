@@ -17,7 +17,10 @@ use Cms\Modules\Admin\Requests\TourDetailRequest;
 
 class TourController extends Controller
 {
-    protected $service, $image, $category;
+    protected $service;
+    protected $image;
+    protected $tourPrice;
+    protected $tourDetail;
 
     use StorageImageTrait;
 
